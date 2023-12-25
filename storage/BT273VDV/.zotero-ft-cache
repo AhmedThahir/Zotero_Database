@@ -1,0 +1,248 @@
+
+Skip to Content
+↵ ENTER
+Skip to Menu
+↵ ENTER
+Skip to Footer
+↵ ENTER
+✕
+Blog
+
+    Popular
+    Best Practices
+    Perspectives
+    Inspiration
+    Inside Amplitude
+
+Input search top
+
+Correlation vs Causation: Understand the Difference for Your Product
+Archana Madhavan
+Instructional Designer
+
+reacted
+7 -minute Read,
+
+Posted on September 20, 2019
+
+While causation and correlation can exist at the same time, correlation doesn't mean causation.
+Correlation vs Causation Large
+
+Correlation and causality can seem deceptively similar. But recognizing their differences can be the make or break between wasting efforts on low-value features and creating a product that your customers can’t stop raving about.
+
+In this piece we are going to focus on correlation and causation as it relates specifically to building digital products and understanding user behavior. Product managers, data scientists, and analysts will find this useful for leveraging the right insights for product growth, such as whether certain features impact user retention or engagement .
+
+After reading this article you will:
+
+    Know the key differences between correlation and causation
+    The key differences between correlation and causation
+    Two robust solutions your team can use to test for causation
+
+What’s the difference between correlation and causation?
+
+While causation and correlation can exist at the same time, correlation does not imply causation. Causation explicitly applies to cases where action A causes outcome B. On the other hand, correlation is simply a relationship. Action A relates to Action B—but one event doesn’t necessarily cause the other event to happen.
+
+Correlation and causation are often confused because the human mind likes to find patterns even when they do not exist. We often fabricate these patterns when two variables appear to be so closely associated that one is dependent on the other. That would imply a cause and effect relationship where the dependent event is the result of an independent event.
+
+However, we cannot simply assume causation even if we see two events happening, seemingly together, before our eyes. One, our observations are purely anecdotal. Two, there are so many other possibilities for an association, including:
+
+    The opposite is true: B actually causes A.
+    The two are correlated, but there’s more to it: A and B are correlated, but they’re actually caused by C.
+    There’s another variable involved: A does cause B—as long as D happens.
+    There is a chain reaction: A causes E, which leads E to cause B (but you only saw that A causes B from your own eyes).
+
+An example of correlation vs. causation in product analytics
+
+You might expect to find causality in your product, where specific user actions or behaviors result in a particular outcome.
+
+Picture this: you just launched a new version of your mobile app. You make the key bet that user retention for your product is linked to in-app social behaviors. You ask your team to develop a new feature that allows users to join “communities.”
+
+A month after you release and announce your new communities feature, adoption sits at about 20% of all users. Curious about whether communities impact retention, you create two equally-sized cohorts with randomly selected users. One cohort only has users who joined communities, and the other only has users who did not join communities.
+
+Your analysis reveals a shocking finding: Users who joined at least one community are being retained at a rate far greater than the average user.
+
+users-join-community
+
+Nearly 90% of those who joined communities are still around on Day 1 compared to 50% of those who didn’t. By Day 7, you see 60% retention in community-joiners and about 18% retention for those who were not. This seems like a massive coup.
+
+correlation-vs-causation Source
+
+But hold on. The rational you knows that you don’t have enough information to conclude whether joining communities causes better retention. All you know is that the two are correlated.
+RETENTION PLAYBOOK
+To grow your product, you need a strong retention strategy.
+
+Read our playbook for expert advice on tools, strategies, and real-world examples to improve user retention.
+
+📚 Download the playbook >>
+How to test for causation in your product
+
+Causal relationships don’t happen by accident.
+
+It might be tempting to associate two variables as “cause and effect.” But doing so without confirming causality in a robust analysis can lead to a false positive, where a causal relationship seems to exist, but actually isn’t there. This can occur if you don’t extensively test the relationship between a dependent and an independent variable.
+
+False positives are problematic in generating product insights because they can mislead you to think you understand the link between important outcomes and user behaviors . For example, you might think you know which specific key activation event results in long-term user retention, but without rigorous testing you run the risk of basing important product decisions on the wrong user behavior.
+Run robust experiments to determine causation
+
+Once you find a correlation, you can test for causation by running experiments that “ control the other variables and measure the difference .”
+
+Two such experiments or analyses you can use to identify causation with your product are:
+
+    Hypothesis testing
+    A/B/n experiments
+
+1. Hypothesis testing
+
+The most basic hypothesis test will involve a H0 (null hypothesis) and H1 (your primary hypothesis) . You can also have a secondary hypothesis, tertiary hypothesis, and so on.
+
+The null hypothesis is the opposite of your primary hypothesis . Why? Because while you cannot prove your primary hypothesis with 100% certainty (the closest you can get is 99%), you can disprove your null hypothesis.
+
+The primary hypothesis points to the causal relationship you’re researching and should identify an independent variable and dependent variable.
+
+It is best to first create your H1, then identify its opposite and use that for your H0. Your H1 should identify the relationship you’re expecting between your independent and dependent variables. So, if we use the former example of the impact of in-app social features on retention, your independent variable would be joining communities and your dependent variable would be retention. So, your hypotheses might be:
+
+    H1: If a user joins a community within our product in the first month, then they will remain a customer for more than one year.
+
+Then, negate your H1 to generate your null hypothesis:
+
+    H0: There is no relationship between joining an in-app community and user retention.
+
+The goal is to observe any actual difference between your different hypotheses. If you can reject the null hypothesis with statistical  significance (ideally with a minimum of 95% confidence), you are closer to understanding the relationship between your independent and dependent variables. In the example above, if you can reject the null hypothesis by finding that joining a community resulted in greater retention rates (while adjusting for confounding variables that could influence your results), then you can likely conclude that there is some relationship between communities and user retention.
+
+To test this hypothesis, develop an equation that accurately reflects the relationship between your expected cause (independent variable) and effect (outcome variable). If your model allows you to plug in a value for your exposure variable and consistently return an outcome that reflects actual observed data, you are probably onto something.
+When to use hypothesis testing:
+
+Hypothesis testing is helpful when you are trying to identify whether a relationship actually exists between two variables rather than looking at anecdotal evidence. You might want to look at historical data to run a longitudinal analysis that looks at changes over time. For example, you might investigate whether first adopters for product launches are your biggest promoters. You can look at referral patterns and also compare this relationship to product launches over time.
+
+Or, you might run a cross-sectional analysis that analyzes a snapshot of data. This is helpful when you are looking at the effects of a specific exposure and outcome rather than changes in trends over a period. As an example, you might explore the relationship between holiday-specific promotions and sales.
+2. A/B/n Experimentation
+
+Alternatively, A/B/n testing can bring you from correlation to causation. Look at each of your variables, change one and see what happens. If your outcome consistently changes (with the same trend), you’ve found the variable that makes the difference.
+
+Andrew Chen puts it this way , “After you’ve found the model what works for you, then the next step is to try and A/B test it. Do something that prioritizes the input variable and increases it, possibly at the expense of something else.” He continues, “see if those users are more successful as a result. If you see a big difference in your success metric, then you’re on to something. If not, then maybe it’s not a very good model.”
+
+When it comes to making a case that joining communities leads to higher retention rates, you have to eliminate all other variables that could influence the outcome. For example, users could have taken a different path that ultimately affected retention.
+
+To test whether there’s causation, you’ll have to find a direct link between users joining communities and using your app long-term.
+
+Start with your onboarding flow. For the next 1,000 users who sign up, split them into two groups. Half will be forced to join communities when they first sign up and the other half won’t be.
+
+Run the experiment for 30 days and then compare retention rates between the two groups.
+
+If you find that the group that was forced to join communities has a relatively higher retention rate, then you have the evidence you need to confirm there’s a causal relationship between joining communities and retention. This relationship is probably worth digging further into to understand why communities drive retention.
+
+You won’t be certain of a relationship until you run these types of experiments.
+When to use A/B/n testing:
+
+A/B/n, or split testing, is ideal when you’re comparing the impact of different variations (it could be a campaign, a product feature, or a content strategy). A split test of your product’s onboarding flow, for example, might compare how different strategies perform based on certain characteristics, including:
+
+    Copy variations
+    Different graphics
+    Using a third-party app to automatically recognize the name and company of your users
+    Reducing the number of fields in your sign-up form, if you have one
+
+After running multiple product onboarding variations, you can take a look at the results to compare metrics such as drop-off rate, conversion, and even retention.
+Act on the right correlations for sustained product growth
+
+We are always looking for patterns around us, so our default aim is to be able to explain what we see. However, unless causation can be clearly identified, it should be assumed that we’re only seeing correlation.
+
+Events that seem to connect based on common sense can’t be seen as causal unless you’re able to prove a clear and direct connection. And, while causation and correlation can exist at the same time, correlation doesn’t mean causation.
+
+The more adept you become at identifying true correlations within your product, the better you’ll get at prioritizing your efforts for user engagement and retention .
+
+Product Analytics for Dummies
+Archana Madhavan
+
+Archana is an Instructional Designer on the Customer Education team at Amplitude. She develops educational content and courses to help Amplitude users better analyze their customer data to build better products.
+More from Archana
+
+Inside Amplitude
+Behavioral Analytics Dashboard
+Best Practices reacted
+What Is Behavioral Analytics? Definition, Examples, & T...
+8 -minute Read
+
+Learn the essentials of behavioral analytics so you can personalize your digital products and drive business o...
+Mallory Busch
+Content Marketing Manager, Amplitude
+Data democratization definition
+Best Practices reacted
+What Is Data Democratization? Definition and Principles
+7 -minute Read
+
+Data democratization takes a lot more than making data accessible. Learn what it takes to build a true data de...
+Arpit Choudhury
+Founder, astorik
+Digital Analytics
+Best Practices reacted
+What Is Digital Analytics? Definition, Examples, & Tool...
+9 -minute Read
+
+Digital analytics helps you harness the power of customer data to guide product strategy and marketing.
+Audrey Xu
+Solutions Consultant, Amplitude
+
+    Editor's Pick
+    Most Popular
+
+    Behavioral Analytics Dashboard What Is Behavioral Analytics? Defin... Mallory Busch
+    Data democratization definition What Is Data Democratization? Defin... Arpit Choudhury
+    Digital Analytics What Is Digital Analytics? Definiti... Audrey Xu
+    A/B Testing examples What is A/B Testing? How it Works a... Wil Pong
+    Calculate customer lifetime value What is Customer Lifetime Value (CL... Mallory Busch
+
+PRODUCT
+
+    Why Amplitude?
+    What's Product Intelligence?
+    What's New?
+    Engage
+    Govern
+    Insight
+    Accounts
+    Portfolio
+    Query
+
+SOLUTIONS
+
+    Understand Your Users
+    Improve Product Experience
+    Increase Lifetime Value and Retention
+    Amplitude for Ecommerce
+    Amplitude for Media
+    Amplitude for FinTech
+
+RESOURCES
+
+    Blog
+    Content Library
+    Events
+    Customers
+    Partners
+    Integrations
+    Developer Center
+    Retention 101
+    Product Intelligence Guide
+
+COMPANY
+
+    About Us
+    Careers
+    Press Resources
+    Engineering
+    View pricing
+    Amplitude for Startups
+    Amplitude for Black Founders
+
+CONNECT
+
+    Contact us
+    Try it free
+    Help Center
+    System Status
+
+© 2021 Amplitude, Inc. All rights reserved. Amplitude is a registered trademark of Amplitude, Inc.
+
+    Terms of Service
+    Privacy Policy
+    Cookie Settings
+

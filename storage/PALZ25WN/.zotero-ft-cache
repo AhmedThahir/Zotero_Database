@@ -1,0 +1,492 @@
+International Journal of Performance Analysis in Sport
+ISSN: 2474-8668 (Print) 1474-8185 (Online) Journal homepage: http://tandfonline.com/loi/rpan20
+Identifying keys to win in the Chinese professional soccer league
+Lijuan Mao, Zhaofang Peng, Hongyou Liu & Miguel-Angel Gómez
+To cite this article: Lijuan Mao, Zhaofang Peng, Hongyou Liu & Miguel-Angel Gómez (2016) Identifying keys to win in the Chinese professional soccer league, International Journal of Performance Analysis in Sport, 16:3, 935-947 To link to this article: http://dx.doi.org/10.1080/24748668.2016.11868940
+Published online: 03 Apr 2017.
+Submit your article to this journal Article views: 4
+View related articles View Crossmark data
+
+Full Terms & Conditions of access and use can be found at http://tandfonline.com/action/journalInformation?journalCode=rpan20
+
+Download by: [University of Southern Queensland]
+
+Date: 04 May 2017, At: 13:03
+
+International Journal of Performance Analysis in Sport 2016, 16, 935-947.
+I45d-34e4.ntifying keys to win in the Chinese professional
+soccer league
+Lijuan Mao1, Zhaofang Peng2, Hongyou Liu2* and Miguel-Angel Gómez3
+1 School of Physical Education and Sport Training, Shanghai University of Sport, Shanghai, China 2 School of Physical Education & Sports Science, South China Normal University, Guangzhou, China 3 Faculty of Physical Activity and Sport Sciences, Technical University of Madrid, Madrid, Spain
+Abstract
+Quantifying correlations between soccer match statistics and match results is an effective way to identify key performance indicators of soccer competitions. In the current study, generalized linear modelling was employed to identify relationships between 21 performance-related variables and the match outcome (win, draw, loss). Data of all the 480 matches of the 2014 and 2015 season in the Chinese Football Association Super League were collected and analyzed. The cumulative logistic regression was run in the modelling taking the value of each performance-related variable as an independent variable to predict the logarithm of the odds of winning. Relationships were evaluated with magnitude-based inferences and were expressed as effects of a twostandard-deviation increase in the value of each variable on the change in the probability of a team winning a match. Modelling was performed in four match contexts of team and opposition end-of-season rank (classified as upper and lower ranked teams). Shot on Target (positive), Shot Accuracy (positive), Cross Accuracy (trivial), Tackle (trivial) and Yellow Card (trivial) were the five variables that showed consistent effects in all four match contexts, other effects varied depending on the strength of team and opposition. Quantified relationships can provide useful information to coaches and performance analysts in practice of different match scenarios.
+Keywords: notational analysis; performance analysis; performance indicator; situational variables; association football.
+935
+
+1. Introduction
+In the field of soccer performance analysis, it is common to use recorded videos of matches to monitor, evaluate and analyze team performances (James, 2006; Liu et al., 2016). Modern soccer video analysis systems, such as AMISCO, OPTA and ProZone, provide an extensive database of match events and other variables (Mackenzie and Cushion, 2013; Liu et al., 2016), hence, researchers and coaching staff of soccer teams are always exposed to a “big data” of performance-related match statistics. Therefore, it would be important to identify which ones of the piled match statistics are the “keys to win”: those that determine the game result (win or loss). The process of this identification can be achieved by modelling relationships between match results (outcome variables) and performance-related match events and actions (predictor variables), in the means of identifying key performance indicators (Carling et al., 2014; Moura et al., 2014; Liu et al., 2016).
+Previously, different linear models, such as discriminant analysis (Castellano et al., 2012; Lago-Penas et al., 2010; 2011), logistic regression (Tenga et al., 2010a; 2010b; 2010c; Collet, 2013), multivariate combination of principal-component and cluster analysis (Moura et al., 2014), Pearson’s correlation analysis (Yue et al., 2014), and generalized mixed linear modelling (Malcata et al., 2012; Liu et al., 2015a; 2016), were employed to identify relationships of performance-related soccer match statistics with goal scoring or match outcome. While, generalized linear modelling is considered one of the most powerful modelling methods (Malcata et al., 2012; Liu et al., 2015a; 2016).
+It is not difficult to find that almost all the modellings have been achieved in top level soccer leagues (national leagues of European countries, UEFA Champions League) or top championships (World Cup, European Championship), while little have been done in the sub-elite soccer leagues, e.g., Chinese professional soccer league. However, it is suggested that soccer team performances vary in relation to the type of competition both from between- and within-team perspectives (Gómez et al., 2013; Liu et al., 2015a). Thus, it is important to know if the competition level have an impact on the key performance indicators.
+In addition to the competition level, the closeness of the game (i.e., team and opposition strengths, winning and losing margin) provides further contextual information about the tactical and technical success of the competing soccer teams (Liu et al., 2015a). Hence, it would be suggested to include these two situational variables when identifying key performance indicators.
+The current study employed the generalized linear modelling to identify relationships between 21 performance-related variables and the match outcome in games of the 2014 and 2015 season in the Chinese Football Association Super League taking into account situational variables of team and opposition strengths, and the winning and losing margin.
+936
+
+2. Method 2.1. Sample, data resource and variables The Chinese Football Association Super League is the highest tier of professional soccer (association football) in China, which starts in March (spring in China) and ends in November (winter) every season. In each season, every team plays against each of the other teams twice, once at home and the other away. In the current league system, with 16 teams in the League, each team plays 30 games for a total of 240 games in the season. The end-of-season rank is determined by the points (win for 3 points, draw for 1, loss for 0) summed from the 30 games of each team. All the 480 matches in the Chinese Football Association Super League of the 2014 and 2015 season were chosen as the sample of the current study. Performance-related data of these matches were collected from public accessed websites “sina.com”, “sohu.com”, “163.com” and “qq.com” whose data resources are all “SodaSoccer” supported by OPTA Sportsdata Company. Reliability of the tracking system (OPTA Client System) used by OPTA Sportsdata Company to collect soccer match statistics has been tested by Liu and colleagues (Liu et al., 2013), which showed that team match events coded by independent operators using this system reached a very good agreement (weighted kappa values were 0.92 and 0.94). Ethics committee approval of the current study was gained from the local university. In line with the available related literature (Castellano et al., 2012; Lago-Peñas and Lago-Ballesteros, 2011; Lago-Penas et al., 2010; Lago-Peñas et al., 2011; Liu et al., 2013; 2015a; 2015b; 2016), twenty performance-related match events and actions and one contextual variable were chosen as predictor variables in the analyses (See Table 1). Operational definitions of all the variables are included in the table as well (Liu et al., 2013; 2015a; 2015b; 2016).
+937
+
+Table 1. Selected Performance-related Match Events, Actions and Variables (Predictor Variables)
+
+Groups
+
+Predictor Variables: operational definitions
+
+Variables Related to
+
+Shot: an attempt to score a goal, made with any (legal) part of the body, either on or off target
+
+Goal Scoring
+
+Shot on Target: an attempt to goal which required intervention to stop it going in or resulted in a goal/shot which would go in without being diverted
+
+Shot off Target: an attempt to goal that goes out without any intervention stopping it
+
+Shot Accuracy(%): shot on target as a proportion of total shots
+
+Variables Related to
+
+Possession (%): the duration when a team takes over the ball from the opposing team without any clear interruption as a proportion of total duration
+
+Passing and Organizing when the ball was in play
+
+Pass: an intentional played ball from one player to another
+
+Pass Accuracy (%): successful passes as a proportion of total passes
+
+Cross: any ball sent into the opposition team’s area from a wide position
+
+Cross Accuracy (%): successful crosses as a proportion of total crosses
+
+Long Pass: an attempted pass of 25 yards or more
+
+Through Ball: a pass that split the last line of defense and plays the teammate through on goal
+
+Foul Drawn: where a player is fouled by an opponent
+
+Offside: being caught in an offside position resulting in a free kick to the opposing team
+
+Corner: ball goes out of play for a corner kick
+
+Aerial Advantage (%): aerial duels won by a team as a proportion of total duels of the match
+
+Variables Related to
+
+Tackle: the action of gaining possession from an opposition player who is in possession of the ball
+
+Defending
+
+Tackle Success (%):successful tackles as a proportion of total tackles attempted
+
+Foul Committed: any infringement that is penalized as foul play by a referee
+
+Yellow Card: where a player was shown a yellow card by the referee for reasons of foul, persistent infringement, hand ball, dangerous play, time
+
+wasting, etc.
+
+Red Card: where a player was sanctioned a red card by the referee, including straight red card and a red card from the second yellow card
+
+Contextual Variable
+
+Game Location: playing at home or away
+
+938
+
+2.2. Procedure and statistical analysis An analysis of two-step cluster with log-likelihood as the distance measure and Schwartz's Bayesian was undergone to identify the cut-off value in goal difference in order to classify close matches and unbalanced matches (Liu et al., 2015a; 2015b). Results identified one cluster of 63 matches (unbalanced matches) with a goal difference of more than 2 goals (3.57 ± 0.83, ranged from 3 to 7, n = 126 observations), and another cluster of 417 matches (close matches) with a difference of less than and equal to 2 goals (0.89 ± 0.73, ranged from 0 to 2, n = 834 observations). Data of the 417 close matches were proceeded for further statistical analysis. Strength of teams was classified into two groups according to the end-of-season rank (Gómez et al., 2013): upper-ranked teams (rank 1st-8th) and lower-ranked teams (rank: 9th-16th).
+Predictor variables in percent units (Shot Accuracy, Possession, Pass Accuracy, Cross Accuracy, Aerial Advantage and Tackle Success) were analyzed as original values. Other variables related to goal scoring, passing and organizing were analyzed as values adjusted to per 50% of ball possession of the own team (Liu et al., 2015a), which is:
+Vajstd = (Voriginal/Pteam)*50%
+(V = Value of a variable; Pteam = Possession of the own team)
+While other variables related to defending were analyzed as values adjusted to per 50% of ball possession of the opposition team (Liu et al., 2015a), which is:
+Vajstd = (Voriginal/Popposition)*50%
+(V = Value of a variable; Popposition = Possession of the opposition team)
+Independent cumulative logistic regressions were run in the generalized linear modelling which took the value of each predictor as independent variable to predict the logarithm of the odds of a team winning a close match. Modelling was performed separately in four match contexts: (a) upper-ranked teams when facing upper-ranked oppositions; (b) upper-ranked teams when facing lower-ranked oppositions; (c) lowerranked teams when facing upper-ranked oppositions; (d) lower-ranked teams when facing lower-ranked oppositions. Relationships were expressed as effects of a twostandard-deviation (SD) increase in the value of the predictor variable on the change (decrease or increase) in the probability of a team winning a close match (Higham et al., 2014; Liu et al., 2015a; 2016). The two-SD increase stands for the change in a variable from a typical low value (-SD) to a typical high value (+SD) (Hopkins et al., 2009; Higham et al., 2014; Liu et al., 2015a; 2016). For the match events of Yellow Card and Red Card, the “2SDs” was treated as “1” to get the effects of one extra card on the probability of winning. Similarly, in order to obtain the effects of playing at home vs playing away, the same treatment was done in the modelling for the contextual variable of Game Location. Uncertainty in the true effects of the predictors was
+939
+
+evaluated by using non-clinical magnitude-based inference (Hopkins et al., 2009). A 10% change which represents one extra win or loss in every 10 matches was defined as a smallest worthwhile change (Liu et al., 2015a; 2016; Higham et al., 2014). Effects were deemed clear if the confidence interval for the change in the probability of winning did not include substantial positive and negative values (Higham et al., 2014, Hopkins et al., 2009). Magnitudes of clear effects were assessed as follows: <10%, trivial; 10-30%, small; 30-50%, moderate; >50%, large. The likelihood for the magnitude of the true effect was classified as: 25-75%, possible; 75-95%, likely; 9599%, very likely; >99%, most likely.
+The cluster analysis and generalized linear modelling were performed in the data package of IBM SPSS Statistics for Windows, Version 20.0 (Armonk, NY: IBM Corp.). The 90% confidence intervals of effects were calculated in the Microsoft Excel 2007 (Redmond, Washington: Microsoft).
+3. Results
+Descriptive statistics of the values of performance-related match events and actions per match per team in the 417 close matches from the season 2014 and 2015 of Chinese Football Association Super League are presented in Table 2. Relationships between the selected 21 predictor variables and the match outcome identified by the generalized linear modelling are displayed in Figure 1. As can be seen from the figure, the increase in performance-related match events and actions brought different changes on the probability of winning in different match contexts, except for Shot on Target, Shot Accuracy (which showed positive effects in all contexts) and Cross Accuracy, Tackle, Yellow Card (which showed trivial effects in all contexts). There are more substantially clear effects for the strong teams than the weak teams. The contextual variable Game Location had only trivial effects on the winning probability for upper ranked teams when playing against upper ranked opponents, but had positive effects for upper ranked teams when facing lower ranked teams and for lower ranked teams when facing oppositions of whatever strengths.
+940
+
+Table 2. Raw and Adjusted Values of Performance-related Match Events and Actions per Match per Team in the Close Matches of Chinese Football Association Super League 2014 & 2015 (Mean ± Standard Deviation)
+
+Events
+
+Upper Ranked Teams
+
+Lower Ranked Teams
+
+&
+
+vs Upper (n=192)
+
+vs Lower (n=216)
+
+vs Upper (n=216)
+
+vs Lower (n=210)
+
+Actions
+
+Raw
+
+Ajstd
+
+Raw
+
+Ajstd
+
+Raw
+
+Ajstd
+
+Raw
+
+Ajstd
+
+Shot
+
+12.1 ± 4.7 12.3 ± 4.4 14.2 ± 5.9 13.0 ± 4.6
+
+10.2 ± 4.4 11.2 ± 4.3 11.9 ± 4.2 12.0 ± 4.1
+
+Shot on Target 4.3 ± 2.3 4.4 ± 2.3
+
+4.9 ± 2.6
+
+4.5 ± 2.3
+
+3.6 ± 2.1 3.9 ± 2.3 4.0 ± 2.2 4.1 ± 2.4
+
+Shot off Target 7.8 ± 3.5 7.9 ± 3.3
+
+9.4 ± 4.6
+
+8.5 ± 3.6
+
+6.7 ± 3.3 7.3 ± 3.3 7.9 ± 3.4 7.9 ± 3.2
+
+Shot Accuracy 35.4 ± 14.6
+
+34.8 ± 14.8
+
+35.8 ± 17.6
+
+33.6 ± 14.8
+
+Possession
+
+50.0 ± 9.5
+
+54.3 ± 8.8
+
+45.7 ± 8.8
+
+50.0 ± 8.6
+
+Pass
+
+369 ± 85 369 ± 47
+
+426 ± 91
+
+392 ± 50
+
+357 ± 80 391 ± 50 389 ± 86 389 ± 52
+
+Pass Accuracy 75.5 ± 6.8
+
+79.5 ± 6.0
+
+74.9 ± 6.9
+
+77.3 ± 6.2
+
+Cross
+
+18.0 ± 8.2 17.8 ± 6.5 22.1 ± 8.9 20.0 ± 6.4
+
+16.6 ± 7.6 17.8 ± 6.8 19.3 ± 7.2 19.4 ± 6.7
+
+Cross Accuracy 25.7 ± 10.7
+
+24.9 ± 9.9
+
+24.4 ± 12.5
+
+24.0 ± 10.9
+
+Long Pass
+
+59.6 ± 12.8 62.0 ± 19.2 59.8 ± 12.8 56.9 ± 17.1
+
+59.8 ± 12.7 67.5 ± 19.2 59.8 ± 12.9 61.2 ± 15.5
+
+Through Ball
+
+0.6 ± 1.2 0.6 ± 1.2
+
+0.8 ± 1.3
+
+0.8 ± 1.3
+
+0.9 ± 1.9 1.0 ± 2.0 0.7 ± 1.4 0.7 ± 1.4
+
+Foul Drawn
+
+16.6 ± 4.8 17.2 ± 6.0 15.7 ± 4.6 14.8 ± 4.6
+
+15.6 ± 4.3 17.6 ± 5.9 15.4 ± 4.7 15.7 ± 5.1
+
+Offside
+
+2.6 ± 2.0 2.7 ± 2.2
+
+2.4 ± 1.7
+
+2.3 ± 1.7
+
+1.9 ± 1.5 2.1 ± 1.8 2.0 ± 1.7 2.1 ± 1.8
+
+Corner
+
+4.5 ± 2.7 4.5 ± 2.4
+
+5.6 ± 3.0
+
+5.1 ± 2.5
+
+3.9 ± 2.6 4.2 ± 2.5 4.7 ± 2.7 4.7 ± 2.6
+
+Aerial Advantage 50.0 ± 12.2
+
+50.9 ± 12.3
+
+49.1 ± 12.3
+
+50.0 ± 13.9
+
+Tackle
+
+16.4 ± 5.3 16.9 ± 6.2 14.7 ± 4.7 16.6 ± 6.2
+
+15.6 ± 5.0 14.5 ± 4.7 14.9 ± 4.8 15.2 ± 5.1
+
+Tackle Success 81.8 ± 10.7
+
+81.3 ± 11.3
+
+81.0 ± 10.5
+
+80.5 ± 11.4
+
+Foul Committed 2.08 ± 1.41 2.17 ± 1.64 1.68 ± 1.22 1.92 ± 1.49
+
+1.92 ± 1.39 1.78 ± 1.31 1.76 ± 1.21 1.81 ± 1.27
+
+Yellow Card
+
+17.5 ± 5.0 18.1 ± 6.2 16.4 ± 4.4 18.5 ± 6.1
+
+16.6 ± 4.9 15.6 ± 4.8 16.4 ± 4.8 16.8 ± 5.2
+
+Red Card
+
+0.10 ± 0.30 0.10 ± 0.31 0.05 ± 0.22 0.06 ± 0.25
+
+0.10 ± 0.30 0.09 ± 0.29 0.05 ± 0.22 0.05 ± 0.22
+
+941
+
+Upper Ranked Teams
+
+Lower Ranked Teams
+
+-60 -50 -40 -30 -20 -10
+
+0
+
+10 20 30 40 50 60 -60 -50 -40 -30 -20 -10
+
+0
+
+10 20 30 40 50 60
+
+Shot
+
+Shot on Target
+
+Shot off Target
+
+*
+
+Shot Accuracy
+
+Possession
+
+Pass
+
+Pass Accuracy
+
+Cross
+
+*
+
+Cross Accuracy
+
+Long Pass
+
+Through Ball
+
+Foul Drawn
+
+*
+
+Offside
+
+Corner
+
+Aerial Advantage
+
+Tackle
+
+Tackle Success
+
+Foul Committed
+
+Yellow Card
+
+Red Card
+
+***
+
+*
+
+Game Location
+
+** * **
+
+*
+
+*
+
+*
+
+**
+
+*
+* **
+* *
+****
+
+* * **
+* * ** *
+****
+
+***
+
+***
+
+****
+
+*
+** ****
+
+********
+
+**
+
+* ***
+** **
+*
+
+** *
+
+**
+
+** *
+
+**
+** * ** ** * *
+
+** **
+*
+
+* **** ****
+**
+
+* ***
+
+**
+
+****
+
+* *
+*
+
+*
+
+*
+
+* *
+
+-60 -50 -40 -30 -20 -10
+
+0
+
+10 20 30 40 50 60 -60 -50 -40 -30 -20 -10
+
+0
+
+10 20 30 40 50 60
+
+vs Upper Ranked Team
+
+vs Lower Ranked Teams
+
+Figure 1. Relationships of Performance-related Match Events, Actions and Variables with the Match Outcome in the Close Matches of Chinese Football Association Super League 2014 and 2015. Relationships are shown as the effect of a two-standard-deviation increase in the value of
+each selected predictor variable on the change in the probability of winning a close match. Bars are 90% confidence intervals. Dotted lines represent the smallest worthwhile change. Asterisks indicate the likelihood for the magnitude of the true effect as follows: * possible; ** likely;
+*** very likely; **** most likely. Asterisks located in the trivial area denote likelihood of trivial effects.
+
+942
+
+4. Discussion
+Relationships of twenty performance-related match events and actions and one contextual variable with the match outcome in close games of teams of different level when facing oppositions of different of level in the season 2014 and 2015 of Chinese Football Association Super League have been quantified by using the generalized linear model in the current study. Results showed that variables (key performance indicators) related to winning close matches the in Chinese professional soccer league are quite different from those priory identified for competitions of top level soccer leagues (Castellano et al., 2012; Lago-Penas et al., 2010; 2011; Liu et al., 2016; Tenga et al., 2010a; 2010b; 2010c; Yue et al., 2014) and top championships (Collet, 2013; Liu et al., 2015a; Moura et al., 2014). In the close matches of Chinese Football Association Super League season 2014 & 2015, Shot on Target (positive), Shot Accuracy (positive), Cross Accuracy (trivial), Tackle (trivial) and Yellow Card (trivial) were the five variables that showed consistent effects on the winning probability in all four match contexts, other effects varied depending on the strength of team and opposition.
+For the goal scoring-related variables, although the effects of increasing the number of Shot and Shot off Target on the change of winning probability in matches of teams of stronger or weaker teams when facing teams of different strengths varied a lot (from negative, trivial to positive), increases in the variables of Shot on Target and Shot Accuracy brought substantially positive effects on the probability of winning in matches no matter the teams and oppositions are upper-ranked or lower-ranked. This result is in accordance with previous studies that showed that the quality rather than the quantity of shots in soccer matches determines the game results (Liu et al., 2015a; 2016; Yue et al., 2014). Liu and colleagues (2016) emphasized the importance of this statement in the match situation of low-level teams playing against similar level of opposition. While results of the present study tend to indicate that it is an inference that is suitable for all levels of teams, at least in the Chinese Football Association Super League.
+For the variables related to passing and organizing, the most variation in their effects was found according to the strength of team and opposition. For the upper-ranked teams, Pass Accuracy and Through Ball are two variables that were positively correlated with the probability of winning in close matches no matter what strengths were their oppositions, Possession showed positive effects on the winning probability when they faced upper-ranked opponents, while Cross and Foul Drawn were negatively correlated with the probability of winning in close matches when they played against lower-ranked teams. Previous authors showed that, both in national leagues (Bradley et al., 2014; Jones et al., 2004; Lago-Peñas and Dellal, 2010) and international championships (Collet, 2013), successful teams maintained a higher percentage of ball possession than unsuccessful teams, which is agreed by our results. Furthermore, results of the current study tend to suggest that, for the upper-ranked teams of Chinese Football Association Super League, it is more probably to win if they can keep the ball passing continuously
+943
+
+(reduce the interruptions from opponents by fouls) and try to search scoring opportunities with penetrative passes (through balls), rather than send the ball too much into the area by cross, which is also believed an effective strategy in the matches of group stage of 2014 World Cup (Liu et al., 2015a). For the lower-ranked teams, when they faced upper-ranked opponents, more passes in the match would lead a lower probability of winning; when they played against oppositions of similar level, higher Possession, Cross Accuracy and more Corners would bring lower likelihood of winning, while increase in Long Pass and Offside would increase the winning probability. Lower-ranked teams are normally believed to be tactically and strategically worse prepared, and they would have had poorer group-tactical behaviors in pitch, thus, counter attacks rather than possessive play would be their normal options during their offensive phases (Bourbousson et al., 2010; Liu et al., 2016). Pass, pass (cross) accuracy and corners are actually variables related to ball possession: more passes and high pass accuracy leads to higher possession, while only with ball possession it is possible to create corners (Collet, 2013; Liu et al., 2016), hence, their effects on match outcome are consistent with Possession. While the positive effects from Long Pass and Offside are very likely from counter attack situations.
+For the variables related to defending, Tackle and Yellow Card were two variables that had consistent effects (trivial) on the outcome in close matches no matter what level the team and the opposing team was, while Red Card showed clear negative effects on winning for upper-ranked teams and for lower-ranked teams when facing upper-ranked oppositions. Previous findings showed that successful and appropriate tackles might increase the possibility of winning in close matches (Liu et al., 2015a), however, it does not work so well in the Chinese Football Association Super League. Bar-Eli and colleagues (2006) argued that the performance of soccer teams would be weakened in terms of goal scoring and match outcome when they were sanctioned a red card, which are most probably the situation in Chinese professional soccer league; while Liu and colleagues (2016) pointed out that a “sanction of yellow card may compromise a player’s defensive performance in a way to avoid being sent off” (Liu et al., 2016, p.523), which seems to be not supported by our results. This fact may indicate that either players in the Chinese Football Association Super League are less affected by the potential sanctions from the referee, or referees are less decisive in showing the second yellow card.
+Pollard and Gómez (2014) found that there was a home advantage of 63.82% in the Chinese soccer league in seasons 2006 to 2012. Accordingly, results of our study showed that home teams in the close matches of upper-ranked teams vs lower ranked teams would have a 10.9% higher probability of winning, while in the close games between two lower ranked teams, the home teams would have a 14.5% higher chances to win.
+944
+
+5. Conclusion
+By employing the generalized linear modelling, the current study identified some key performance indicator related to winning in the Chinese Football Association Super League. Results of our study proved that the key performance indicators are impacted by the competition level, as well as the strengths of the competing team and opposition. Hence, it is suggested that modellings in the soccer performance-related statistics should be specified to the competition level and should take into consideration the strengths of the team and opposition in the game. In this way, the quantified key performance indicators can provide more useful information to coaches and performance analysts in practice of different match scenarios.
+6. Acknowledgements Removed for blind review.
+7. References
+Bar-Eli, M., Tenenbaum, G. & Geister, S. 2006. Consequences of players' dismissal in professional soccer: a crisis-related analysis of group-size effects. Journal of Sports Sciences, 24, 1083-1094.
+Bourbousson, J., Seve, C. & Mcgarry, T. 2010. Space-time coordination dynamics in basketball: Part 2. The interaction between the two teams. Journal of Sports Sciences, 28, 349-358.
+Bradley, P. S., Lago-Penas, C., Rey, E. & Sampaio, J. 2014. The influence of situational variables on ball possession in the English Premier League. Journal of Sports Sciences, 32, 1867-1873.
+Carling, C., Wright, C., Nelson, L. J. & Bradley, P. S. 2014. Comment on 'Performance analysis in football: A critical review and implications for future research'. Journal of Sports Sciences, 32, 2-7.
+Castellano, J., Casamichana, D. & Lago, C. 2012. The Use of Match Statistics that Discriminate Between Successful and Unsuccessful Soccer Teams. Journal of Human Kinetics, 31, 139-147.
+Collet, C. 2013. The possession game? A comparative analysis of ball retention and team success in European and international football, 2007-2010. Journal of Sports Sciences, 31, 123-36.
+Gomez, M. A., Lago-Penas, C. & Pollard, R. 2013. Situational Variables. In: Mcgarry, T., O’Donoghue, P. & Sampaio, J. (eds.) Routledge Handbook of Sports Performance Analysis. London: Routledge.
+Higham, D. G., Hopkins, W. G., Pyne, D. B. & Anson, J. M. 2014. Performance indicators related to points scoring and winning in international rugby sevens. Journal of Sports Science and Medicine, 13, 358-64.
+Hopkins, W. G., Marshall, S. W., Batterham, A. M. & Hanin, J. 2009. Progressive
+945
+
+statistics for studies in sports medicine and exercise science. Medicine and Science in Sports and Exercise, 41, 3-13. James, N. 2006. Notational analysis in soccer: Past, present and future. International Journal of Performance Analysis in Sport, 6, 67-81. Jones, P. D., James, N. & Mellalieu, S. D. 2004. Possession as a performance indicator in soccer. International Journal of Performance Analysis in Sport, 4, 98-102. Lago-Penas, C. & Dellal, A. 2010. Ball possession strategies in elite soccer according to the evolution of the match-score: the influence of situational variables. Journal of Human Kinetics, 25, 93-100. Lago-Penas, C. & Lago-Ballesteros, J. 2011. Game location and team quality effects on performance profiles in professional soccer. Journal of Sports Science and Medicine, 10, 465-471. Lago-Penas, C., Lago-Ballesteros, J. & Rey, E. 2011. Differences in Performance Indicators between Winning and Losing Teams in the UEFA Champions League. Journal of Human Kinetics, 27, 137-148. Lago-Penas, C., Lago-Ballesteros, J., Dellal, A. & Gomez, M. 2010. Game-related statistics that discriminated winning, drawing and losing teams from the Spanish soccer league. Journal of Sports Science and Medicine, 9, 288-293. Liu, H., Gomez, M. A., Lago-Penas, C. & Sampaio, J. 2015a. Match statistics related to winning in the group stage of 2014 Brazil FIFA World Cup. Journal of Sports Sciences, 33, 1205-13. Liu, H., Hopkins, W., Gomez, M. A. & Molinuevo, J. S. 2013. Inter-operator reliability of live football match statistics from OPTA Sportsdata. International Journal of Performance Analysis in Sport, 13, 803-821. Liu, H., Hopkins, W. G. & Gomez, M. A. 2016. Modelling relationships between match events and match outcome in elite football. European Journal of Sport Science, 16, 516-25. Liu, H., Yi, Q., Gimenez, J. V., Gomez, M. A. & Lago-Penas, C. 2015b. Performance profiles of football teams in the UEFA Champions League considering situational efficiency. International Journal of Performance Analysis in Sport, 15, 371-390. Mackenzie, R. & Cushion, C. 2013. Performance analysis in football: A critical review and implications for future research. Journal of Sports Sciences, 31, 639-676. Malcata, R. M., Hopkins, W. G. & Richardson, S. 2012. Modelling the Progression of Competitive Performance of an Academy's Soccer Teams. Journal of Sports Science and Medicine, 11, 533-536. Moura, F. A., Martins, L. E. & Cunha, S. A. 2014. Analysis of football game-related statistics using multivariate techniques. Journal of Sports Sciences, 32, 18811887. Pollard, R., & Gomez, M. A. 2014. Components of home advantage in 157 national soccer leagues worldwide, International Journal of Sport and Exercise Psychology, 12, 218-233 Tenga, A., Holme, I., Ronglan, L. T. & Bahr, R. 2010a. Effect of playing tactics on achieving score-box possessions in a random series of team possessions from
+946
+
+Norwegian professional soccer matches. Journal of Sports Sciences, 28, 24555. Tenga, A., Holme, I., Ronglan, L. T. & Bahr, R. 2010b. Effect of playing tactics on goal scoring in Norwegian professional soccer. Journal of Sports Sciences, 28, 237244. Tenga, A., Ronglan, L. & Bahr, R. 2010c. Measuring the effectiveness of offensive match-play in professional soccer. European Journal of Sport Science, 28, 237-244. Yue, Z. Y., Broich, H. & Mester, J. 2014. Statistical Analysis for the Soccer Matches of the First Bundesliga. International Journal of Sports Science and Coaching, 9, 553-560. *Corresponding author Dr Hongyou Liu School of Physical Education & Sports Science, South China Normal University, Guangzhou, Guangdong, 510006, China; szu.youyou@hotmail.com; +86-2039310270-8418.
+947
+

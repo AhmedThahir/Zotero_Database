@@ -1,0 +1,972 @@
+European Sport Management Quarterly
+ISSN: 1618-4742 (Print) 1746-031X (Online) Journal homepage: http://www.tandfonline.com/loi/resm20
+Can sporting success in Norwegian football be predicted from budgeted revenues?
+Morten Kringstad & Tor-Eirik Olsen
+To cite this article: Morten Kringstad & Tor-Eirik Olsen (2016) Can sporting success in Norwegian football be predicted from budgeted revenues?, European Sport Management Quarterly, 16:1, 20-37, DOI: 10.1080/16184742.2015.1061032 To link to this article: http://dx.doi.org/10.1080/16184742.2015.1061032
+Published online: 25 Nov 2015.
+Submit your article to this journal Article views: 80
+View related articles View Crossmark data
+
+Full Terms & Conditions of access and use can be found at http://www.tandfonline.com/action/journalInformation?journalCode=resm20
+
+Download by: [Orta Dogu Teknik Universitesi]
+
+Date: 16 February 2016, At: 11:26
+
+Downloaded by [Orta Dogu Teknik Universitesi] at 11:26 16 February 2016
+
+EUROPEAN SPORT MANAGEMENT QUARTERLY, 2016 VOL. 16, NO. 1, 20–37 http://dx.doi.org/10.1080/16184742.2015.1061032
+
+Can sporting success in Norwegian football be predicted from budgeted revenues?
+Morten Kringstad and Tor-Eirik Olsen
+Trondheim Business School, Sør-Trøndelag University College, Klæbuveien 82, 7004 Trondheim, Norway
+
+ABSTRACT
+Research question: Although previous research has shown that there is an association between ﬁnancial strength and sporting outcome, whereby teams with larger budgeted revenues typically perform
+better in sports than other teams, this was not supported by a
+newspaper article describing the 2012 season in Norwegian
+football. Drawing on the Norwegian football league over the period 2011–2013, this paper sets out to explore the association between ﬁnancial strength and sporting outcome in detail. Research methods: To examine fully the association between ﬁnancial strength and sporting outcome, a wide array of different statistical methods is adopted, ranging from simple t-tests to regression analysis and ﬁxed effects regression analysis. Results and ﬁndings: A duality is present in the relationship between budgeted revenues and sporting outcome, as evidence is found suggesting that budgeted revenues are a signiﬁcant driver of sporting outcome among the bottom-half teams but not among
+the top-half teams. Moreover, the static and dynamic regression models, as well as the ﬁxed effects panel data models, support the notion of budgeted revenues being a driver of sporting
+outcome. Implications: The duality in the results is also supported by the ﬁxed effects models, indicating that competitive advantages other than ﬁnancial advantages are relevant. An interpretation of these ﬁndings is that money is a signiﬁcant driver of sporting success, but only to a certain extent (i.e. avoiding relegation). In other
+words, a focus on sports is still important (i.e. Moneyball).
+
+ARTICLE HISTORY Received 2 July 2014 Accepted 3 June 2015
+KEYWORDS team sports; budgeted revenues; correlations ﬁnances and sports; regression analysis; ﬁxed effects
+
+Introduction
+A Norwegian newspaper article (Solem, 2013a) argued that the ﬁnal league standing (among the 16 teams) in the Norwegian top division in football for the 2012 season was more or less independent of the teams’ level of budgeted revenues prior to the season. This is surprising given the ﬁndings from football and other sports. Evidence from earlier literature, both empirical and theoretical, clearly indicates that larger budget clubs perform better in sports than smaller budget clubs. To illustrate, in terms of English football, Szymanski and Kuypers (1999) found a very strong relationship between sporting success, measured by ﬁnal league standing, and ﬁnancial strength,
+CONTACT Morten Kringstad morten.kringstad@hist.no © 2015 European Association for Sport Management
+
+Downloaded by [Orta Dogu Teknik Universitesi] at 11:26 16 February 2016
+
+EUROPEAN SPORT MANAGEMENT QUARTERLY
+
+21
+
+measured by wage expenditure. In their regression analysis, wage expenditure explained as much as 92% of the variation in the ﬁnal league standing across the 20 seasons included in their study.
+The motivation for this paper is based on several issues. Firstly, there is limited knowledge on the relationship between budgeted revenues and sporting outcome in the Norwegian top division. Equally importantly, the Norwegian top division is similar to many European football leagues in some respects, such as the league structure and attendance, besides the big ﬁve. Thus, the ﬁndings can also be relevant beyond the Norwegian context. Secondly, and even more importantly, the claims set forth in the newspaper article were derived from a rather crude analysis and may therefore not portray the whole story. We extend this analysis by adopting a more reﬁned approach using a set of different levels of analysis as well as statistical approaches. This research design allows us to identify the characteristics inherent to this relationship. In addition, the reliance on different levels of analysis as well as different techniques may provide some input related to Moneyball (Gerrard, 2007). Lastly, the general relationship between ﬁnancial strength and sporting outcome has been made topical by the introduction of the Financial Fair Play regulations initiated by the Union of European Football Associations (UEFA).
+Other issues of the newspaper referred to above have provided data on the budgeted revenues for the teams in the top division of the Norwegian football league for the three seasons 2011–2013. Therefore, the aim of this study is to investigate the relationship between budgeted revenues and sporting outcome in the Norwegian top division for 2011–2013. More speciﬁcally, we set out to explore whether budgeted revenues are a signiﬁcant driver of sporting outcome over the sample period. Accordingly, a number of statistical methods are applied in this study (e.g. correlation analysis, two-sample tests, regression analysis, and ﬁxed effects models). The ﬁxed effects models also address whether competitive advantages other than ﬁnancial advantages are present.
+The rest of this paper is organized as follows. The following section reviews the literature dealing with the relationship between ﬁnancial strength and sporting performance. In the third section, the research methodology is presented, while the data along with the models are shown in the fourth section. Next, the empirical results are presented in the ‘Results’ section, followed by conclusions and discussion in the ﬁnal section.
+
+Literature review
+The background for this paper is the hypothesis that ﬁnancial strength is a signiﬁcant driver of the distribution of the sporting outcome among the teams in a league. These relationships are illustrated in our theoretical framework, presented in Figure 1. The hypothesis is based on the assumption that differences in revenues reﬂect different teams’ ability to attract playing talent, whereby wages are the means to win player signatures (partly) through an auction process. The sporting outcome, such as the ﬁnal league standing, is expected to be a function of this distribution of playing talent.
+The literature on the economics of professional team sports has considered all the parts of Figure 1, as well as their interrelationship(s). For example, the distribution of sporting outcome is part of the competitive balance literature (see, e.g. Kringstad & Gerrard, 2007), while how teams can perform better than would be expected from the revenue distribution is related to the Moneyball terminology (see Gerrard, 2007).1
+
+22
+
+M. KRINGSTAD AND T.-E. OLSEN
+
+Downloaded by [Orta Dogu Teknik Universitesi] at 11:26 16 February 2016
+
+Figure 1. The relationship between distribution of revenues and the distribution of sporting outcome.
+On a more general basis, sports leagues have always been engaged in the relationship between competitive balance and the distribution of ﬁnancial capacity among the teams. Rottenberg (1956) also considered this problem, referring back to the ﬁrst professional league (in baseball) and the potential problems related to an open labour market in a league with teams of different ﬁnancial strength. Later, leagues such as the North American major leagues (see, e.g. Fort, 2011) and the English football league (see, e.g. Green, 1953) introduced labour market restrictions, for example on the transfer market. However, academically, Rottenberg (1956) argued through what is referred to as Rottenberg’s invariance proposition that, for example, restricting the free agency system for the transfer of players is not a tool for improving competitive balance. Downward and Dawson (2000) claimed that the same arguments can be used for salary caps. The arguments here are related to the distribution of revenues and the marginal revenue product.2 In the case of strong regulations on the labour market, the wage costs may not be as good a predictor of the distribution of sporting quality as in a free-agent situation, because the exploitation described by Scully (1974) might not be constant among players of different sporting quality. However, in today’s European football, there are few signiﬁcant restrictions on the labour market, something that makes the expected correlation between the player wages and the sporting strength stronger. This was also emphasized by Buraimo (2008), who referred to Simmons and Forrest (2004) and Hall, Szymanski, and Zimbalist (2002) in asserting that wage costs should be a strong driver of the sporting quality of a team. Today this is even more topical with a nearly free labour market for football players in Europe, where (the possibility for) player mobility is high and (also) ‘players move between teams in order to maximize their salaries’ (Buraimo, 2008, p. 516). Further, Hall et al. (2002, p. 150) claimed that ‘Not only are soccer clubs free to buy a better team in the market but the market worldwide is large enough to ensure that such a team can be assembled relatively quickly, and consequently spending determines success.’
+Returning to the literature focusing on the objective of owners in professional team sports in Europe, it might be a matter of win maximization, subject to ﬁnancial restrictions,
+
+EUROPEAN SPORT MANAGEMENT QUARTERLY
+
+23
+
+Downloaded by [Orta Dogu Teknik Universitesi] at 11:26 16 February 2016
+
+rather than proﬁt maximization (see, e.g. Késenne, 1996; Sloane, 1971). Although budgeted revenues and costs are different by nature, in the context of sporting outcome, a strong correlation between the two is expected. This is particularly the case if all clubs are seeking to break even ﬁnancially. In that case, the arguments above should also be valid for revenues. As such, revenue distribution is a driver of sporting outcome because differences in the ability to attract playing talent mean that wages can be one way of winning player signatures. In general, prediction of the distribution of sporting quality has been measured using both the distribution of revenues and the distribution of wages (e.g. Fort, 2011; Gerrard, 2006; Hoehn & Szymanski, 1999; Szymanski & Kuypers, 1999).
+Based on the results from the papers mentioned and the above discussion, our main hypothesis is that the distribution of the total budgeted revenues among the teams in the Norwegian football league is a signiﬁcant driver of the differences in sporting outcome between the teams in a league.
+However, a number of problematic issues are associated with the relationship between the budgeted revenues and the sporting outcome. The budgeted revenues are of course a prediction of the revenues in a future period of time and are therefore not an observation of an exact state. In other words, issues of relevance may occur between the ﬁnalization of a budget and the exact ex post measure of the distribution of sporting outcome (such as the ﬁnal league standing). In addition, the budget may be affected by subjective expectations, which may differ between the teams, such as predictions of the ﬁnancial value of player trading. Especially regarding what Gerrard (2007) referred to as ‘complex invasion team sports’, such as football, many elements of the game can be expected to increase the unexplained variation in a regression analysis, in which sporting performance is the dependent variable on budget, compared with, for example, a less complex team sport such as baseball. The number of seasons should also be relevant here, and it is therefore not surprising to observe that the explanatory power is much smaller when analysing a single season compared with an aggregate number of seasons. This was also evident in Szymanski and Kuypers’s (1999) study on English football and in Hall et al.’s (2002) study, which compared English football and MLB. As the slope coefﬁcient is much higher in English football than in MLB, Hall et al. (2002, p. 157) claimed that: ‘Performance at the top level of English soccer seems much more sensitive to spending than performance at the top level of baseball.’ Even though Hall et al. (2002) found that the explanatory power (measured by R2) was generally smaller in MLB, their season-to-season analysis of wages as a driver of win percentage showed that this driver became signiﬁcant throughout the 1990s and hence increased to an average of about .43. On this basis, Hall et al. (2002, p. 150) stated that ‘ … the sharply growing revenue disparities in MLB since 1990 have reopened the opportunity to differentiate team performance through payroll’. This was also evident in the study by Fort (2011), in which the Gini coefﬁcient for revenues in MLB for the 1990s averaged .15 before the strike in the 1994/1995 season and .20 after the strike. The corresponding Gini coefﬁcients for payroll were, respectively, .15 and .21.
+There are also other issues to be taken into account when analysing the literature on pay and performance. For example, in Szymanski and Kuypers’s (1999) study, the R2 referred to earlier may also be affected by the sampling, which is across the four levels of the professional hierarchy of English football. This implies that teams may compete on a sporting level (a given division of a hierarchy) that more or less ﬁts with the teams’ ﬁnancial capacity or level. In addition, parts of the wages (i.e. bonuses) may be driven by sporting
+
+24
+
+M. KRINGSTAD AND T.-E. OLSEN
+
+success.3 Another problem when applying wages is that external accounting may only register the total wage costs, without clearly distinguishing between the sporting and the administrative part.
+
+Downloaded by [Orta Dogu Teknik Universitesi] at 11:26 16 February 2016
+
+Methods
+The budgeted revenues for 2011, 2012, and 2013 for the teams in the Norwegian top division in football were collected from newspaper articles (Solem, 2012, 2013a, 2013b). The data are based on the standard used by the Norwegian Football Association. This is important because all teams are obliged to report their ﬁnances to the association. In turn, this implies that the budgeted revenues are based on the same reporting and are thus available for all teams (but not for the public). This subsequently implies that the budgeted revenues are based on the same reporting and are thus likely to be valid.
+In our study, the sporting outcome is measured by the ﬁnal league standing as well as point percentages. Some analyses use different versions of these measures (i.e. panel data methods). These are speciﬁed in Table 1. While variables based on the ﬁnal league standing have been used in several other studies (e.g. Szymanski & Kuypers, 1999), the inclusion of point percentages is based on the suggestion of Hall et al. (2002, p. 152), who stated that:
+winning percentages are a more accurate measure of success than rank of winning percentages because a team with the season’s highest winning percentage will generally be deemed more successful if it achieved this with a .65 rather than .60 record.
+To ensure compatibility with the ﬁnal league standing, we use point percentages rather than winning percentages. As for ﬁnancial strength, different measures have been used in previous research (e.g. wage expenditure: Szymanski & Kuypers, 1999), but here ﬁnancial strength is measured using budgeted revenues. Based on the notion that budgeted revenues are expected to be a driver of sporting outcome, all the tests are one-sided.
+
+Table 1. Types of analysis and levels of analysis.
+
+Measure of sporting outcome
+
+Measure of budgeted revenues
+
+Correlation analysis
+
+Final league standing Budgeted revenues (SRCC)
+
+Point percentages (Pearson’s R)
+
+Two-sample tests
+
+Final league standing Mean deviation from average budgeted revenues
+
+Regression analysis
+Panel data analysis
+
+Final league standing Budgeted revenues
+
+Point percentages Semi-log: point percentages Log–log: ln(point percentages)
+
+Both models: ln(xit /xt)
+
+Sample
+2011, 2012 and 2013 separately and combined (2011–2013)
+Whole sample Top half and Bottom half Bottom 12 Quartile 1
+2011, 2012 and 2013 separately and combined (2011–2013) Top half and Bottom half Bottom 12 Quartile 1
+2011, 2012 and 2013 separately and combined (2011–2013)
+Combined (2010–2014) Combined (2011–2013)
+
+EUROPEAN SPORT MANAGEMENT QUARTERLY
+
+25
+
+Downloaded by [Orta Dogu Teknik Universitesi] at 11:26 16 February 2016
+
+To investigate the association between budgeted revenues and sporting outcome in more
+detail, we draw on three different levels of analysis and use four different techniques/
+approaches. As for the levels of analysis, we start out with the total sample (n = 16). Next,
+attention is devoted to the top half (n = 8) and the bottom half (n = 8) before quartile 1
+(n = 4) and the bottom 12 (n = 12) are considered. Different types of analysis are conducted
+for the different levels of analysis. A summary of the levels of analysis and the tests conducted is illustrated in Table 1. While the ﬁnal league standing is drawn upon in all the ana-
+lyses except for the panel data analysis, point percentages are used in all but the two-sample
+tests. The third column in Table 1 shows that different measures of budgeted revenues are
+employed. Lastly, the sample or level of analysis varies depending on the approach taken. These approaches are brieﬂy described in the following subsection.
+Prior to the analysis, serious attention was devoted to the assumptions underlying parametric data (Field, 2000, pp. 37–38). Inspections of histograms,4 skewness, and kurtosis5
+indicated that normality in particular was problematic. This in turn prompted the use of non-parametric tests.6 To signal statistically signiﬁcant differences between the samples in the correlation analysis, we draw primarily on Spearman’s rank correlation coefﬁcient (SRCC)7 due to normality issues. To illustrate, for the two-sample tests in all but two cases,8 equal variances can be assumed (Levene’s non-parametric test9).10 The regression analysis draws on two distinct models. Model I is as follows: yi = b0 + b1xi + ui, where yi is the ﬁnal standing of team i, xi is the budgeted revenues of team i, and ui is the error term. In Model II, the ﬁnal league standing is replaced by point percentages. Thus, this introduces Model II: ppi = b0 + b1xi + ui.
+In addition to the static models above, we follow Gerrard (2006) and account for the
+dynamics in sporting performance across seasons by including a lagged variable for sporting performance in Models III and IV.11 This captures performance persistence by respectively including the ﬁnal league standing and point percentages in the previous
+season, implying that the starting point is the 2010 season. The models are and ppi = b0 + b1xi + b2ppi,t−1 + ui. As the previous season for the promoted teams refers to the second division, not the top division, we use the average point percentages that
+all the promoted teams attained in the current campaign. These averages are calculated drawing on the seasons 1997–2009. Consequently, this is performed for both the ﬁnal
+league standing and the point percentages. Thus, the promoted teams winning the second-level division are given the ﬁnal league standing of 15 (14 when three teams are promoted), while the runners up are given the ﬁnal league standing of 16 (alternatively
+15 when three teams are promoted). As regards the point percentages, the winners, runners up, and in some cases also the team promoted by qualiﬁcation are given the
+values 0.43478, 0.33537, and 0.37692, respectively. Concerning the ﬁxed effects models, it is worth noting that since some teams only
+attend two seasons, the panel data model is unbalanced. The ﬁxed effects models are
+also subject to tests of the underlying assumptions. Although the budgeted revenues
+from one year to the next are (highly) correlated, given the low number of years, the pres-
+ence of serial correlation is not necessarily problematic. Further tests indicate no problems related to heteroskedasticity. For the ﬁxed effects models, two different functional forms are used (semi-log and log–log models). In this study, systematic differences between the teams are of interest. Consequently, two different ﬁxed effects models are applied.
+While both focus on budgeted revenues as the independent variable, a dummy variable
+
+26
+
+M. KRINGSTAD AND T.-E. OLSEN
+
+regression (see, e.g. Wooldridge 2009) is employed to capture team-speciﬁc coefﬁcients. The latter will have the following relationship: yit = b0 + b1xit + Di + uit, where Di is the dummy variable for teami. The time effect is captured by the subscript t (i.e. 2011, 2012, and 2013 season). χit is deﬁned as In(xit)–In(x¯t), where In(xit) is the logarithm of budgeted revenues for teami for season t and In(x¯t) is the logarithm of the average budgeted revenues among all the teams participating in season t, hence controlling for possible inﬂation effects. The semi-log functional form is chosen due to the nonlinear relationship between budgeted revenues and point percentages. The second ﬁxed effects model is a log–
+log model. This implies that the measure of budgeted revenues is the same as in the semilog model, whereas the sporting outcome is deﬁned as Ln ppit. This in turn calls for a different interpretation of the ﬁxed effects models. For the semi-log model, a 1% increase
+in the x-variable changes the y-variable by units (here units in point percentage), while the log–log model means that a 1% increase in the x-variable corresponds to a relative change in the y-variable.12 It is also worth noting that although Aalesund by default was chosen as
+the benchmark (due to the alphabet), we opted for Strømsgodset because this team had the highest signiﬁcant positive sporting outcome relative to its budgeted revenues.
+
+Downloaded by [Orta Dogu Teknik Universitesi] at 11:26 16 February 2016
+
+Descriptive statistics
+Table 2 shows that the average budgeted revenues are very similar in the three seasons, ranging from NOK 75.81 million to NOK 76.31 million. It is also worth noting the relatively large standard deviation (41.45–43.96). This is in turn attributable to the observed
+
+Table 2. Descriptive statistics.
+
+Final league standing
+
+Team
+
+2011
+
+2012
+
+2013
+
+Molde
+
+1
+
+1
+
+6
+
+Strømsgodset
+
+8
+
+2
+
+1
+
+Rosenborg
+
+3
+
+3
+
+2
+
+Tromsø
+
+2
+
+4
+
+15
+
+Viking
+
+11
+
+5
+
+5
+
+Brann
+
+4
+
+6
+
+8
+
+Haugesund
+
+6
+
+7
+
+3
+
+Vålerenga
+
+7
+
+8
+
+11
+
+Lillestrøm
+
+13
+
+9
+
+10
+
+Odd Grenland
+
+5
+
+10
+
+7
+
+Aalesund
+
+9
+
+11
+
+4
+
+Sogndal
+
+14
+
+12
+
+12
+
+Hønefoss BK
+
+13
+
+16
+
+Sandnes Ulf
+
+14
+
+13
+
+Fredrikstad
+
+12
+
+15
+
+Stabæk
+
+10
+
+16
+
+Start
+
+15
+
+9
+
+Sarpsborg08
+
+16
+
+14
+
+Average
+
+Standard deviation
+
+Minimum
+
+Maximum
+
+Range
+
+Gini coefﬁcient
+
+Observations, n
+
+Sources: Solem (2012, 2013a, 2013b) and own calculations.
+
+Budgeted revenues (mill NOK)
+
+2011
+
+2012
+
+2013
+
+78 55 205 72 100 110 45 125 55 68 73 25
+60 70 60 20 76.31 43.96 20.00 205.00 185.00 0.28 16
+
+90 55 195 65 109 110 49 117 90 61 74 26 42 38 60 34
+75.94 42.52 26.00 195.00 169.00 0.28 16
+
+99 64 195 67 99 110 57 107 90 57 70 29 42 37
+60 30 75.81 41.45 29.00 195.00 166.00 0.27 16
+
+EUROPEAN SPORT MANAGEMENT QUARTERLY
+
+27
+
+range (166–185), which is the difference between the highest budget of NOK 195 million and the lowest budget of NOK 26 million for the 2012 season. Both the range itself and the standard deviation indicate that there are differences in ﬁnancial strength in the Norwegian top division. However, the Gini coefﬁcient provides a more accurate picture of the distribution of ﬁnancial strength. Drawing on the budgeted revenues for the teams in the Norwegian top division, we ﬁnd that the Gini coefﬁcients for 2011, 2012, and 2013 are, respectively, .28, .28, and .27.
+Interestingly, the Gini coefﬁcient for the Norwegian top division is higher than that for both ‘payroll imbalance’ and ‘revenue imbalance’ in all North American major leagues (Fort, 2011). In turn, these results indicate more ﬁnancial inequality in Norwegian football than in the major leagues. On the other hand, in the English Football Association Premier League, our calculations show the Gini coefﬁcient on reported wage distribution from Deloitte (2012) to be between .30 and .35 based on the rank for the 2011/2012 season and the wages for the season before. The former is based on the teams participating in both seasons, while the latter also includes the promoted teams (with wages from the second-level division).
+
+Results
+Figures 2–4 show the relationship between budgeted revenues and points gained for the three seasons. The adjusted R2 is between .225 and .299 and the positive slopes imply that an increase in the budgeted revenues is followed by an increase in the points gained.13 One interesting feature of the plots is the nonlinear lines, which are the
+
+Downloaded by [Orta Dogu Teknik Universitesi] at 11:26 16 February 2016
+
+Figure 2. Plots of the relationship between budgeted revenues and points gained in 2011.
+
+28
+
+M. KRINGSTAD AND T.-E. OLSEN
+
+Figure 3. Plots of the relationship between budgeted revenues and points gained in 2012.
+
+Downloaded by [Orta Dogu Teknik Universitesi] at 11:26 16 February 2016
+
+Figure 4. Plots of the relationship between budgeted revenues and points gained in 2013.
+
+EUROPEAN SPORT MANAGEMENT QUARTERLY
+
+29
+
+Table 3. Pearson correlation coefﬁcient between budgeted revenues and point percentages for top 4, top 8, bottom 8 and bottom 12.
+
+Season
+
+2011
+
+2012
+
+2013
+
+Total
+
+Total
+
+.474
+
+.540
+
+.546
+
+.520
+
+Top 4
+
+−.614
+
+.000
+
+.519
+
+.013
+
+Top 8
+
+−.021
+
+.074
+
+.325
+
+.150
+
+Bottom 8
+
+.626
+
+.585
+
+.497
+
+.539
+
+Bottom 12
+
+.503
+
+.687
+
+.648
+
+.580
+
+Downloaded by [Orta Dogu Teknik Universitesi] at 11:26 16 February 2016
+
+conﬁdence intervals (95%) around the mean. These are included because the observations outside the conﬁdence intervals signal the cases in which teams are overperforming (the top left-hand corner) or underperforming (the bottom left-hand corner) in terms of what would be expected given their budgeted revenues. In this respect, it is worth noting that for the 2011 and 2012 seasons, there are more teams overperforming than underperforming, while the opposite is the case for the 2013 season. In general, between ﬁve and eight teams are either overperforming or underperforming.
+The positive slope coefﬁcient between budgeted revenues and sporting performance (in the plots measured by points) are further investigated by drawing on correlation analysis. In this respect, we draw on different sample sizes: top 8, bottom 8, top 4, and bottom 12, as shown in Table 3 (in which the sporting outcome is deﬁned as point percentages).
+Looking at Table 3, it is apparent that the overall correlation between budgeted revenues and point percentages throughout the three seasons is strongly positive, as expected (.520). While the analyses drawing on the total sample, bottom 8, and bottom 12 vary relatively little between/for the individual seasons, the top 4 and top 8 both exhibit far more varying correlation coefﬁcients and even some with opposite signs. This is particularly the case for the top 4, for which we observe that the correlation coefﬁcient is strongly negative in 2011 (−.614) and strongly positive in 2013 (.519). Interestingly, for the top 8, there seems to be no correlation. As such, the additional ﬁnancial strength is not enough to enhance the sporting outcome.
+In Table 4, the point percentages are replaced by the ﬁnal league standing. This in turn allows us to draw on SRCC to check for signiﬁcant correlations. Here, we see that the overall correlation is signiﬁcantly negative (−.568) at the .01 level. This means that an increase in budgeted revenues is likely to be followed by a better league standing. Moreover, we see that the pattern is very much the same as in Table 3 in that a duality is present primarily between the top 4 and the bottom 8 and 12. Generally, although there seems to be no association at all between budgeted revenues and sporting outcome in terms of the
+
+Table 4. SRCC for association between budgeted revenues and ﬁnal league standing for top 4, top 8, bottom 8 and bottom 12.
+
+Season
+
+2011
+
+2012
+
+2013
+
+Total
+
+Total Top 4 Top 8 Bottom 8 Bottom 12
+
+−.622***
+.600 −.357 −.826*** −.435*
+
+−.612*** .000
+.143 −.667** −.734***
+
+−.467** .000
+.108 −.333 −.564**
+
+−.568***
+.065 −.035 −.627*** −.618***
+
+*p < .1 (one-sided). **p < .05 (one-sided). ***p < .01 (one-sided).
+
+30
+
+M. KRINGSTAD AND T.-E. OLSEN
+
+Downloaded by [Orta Dogu Teknik Universitesi] at 11:26 16 February 2016
+
+top 4 and top 8, the correlations for the bottom 8 and bottom 12 are generally signiﬁcant. The correlation is, however, the strongest for the bottom 12, in which they are signiﬁcant at the .01 level for 2011 and 2012 and signiﬁcant at the .05 level for 2013. Combined, the ﬁndings in Tables 3 and 4 clearly illustrate that a duality is present. Equally importantly, the ﬁndings show that there are indications suggesting that an increase in the budgeted revenues is likely to be accompanied by a better sporting outcome, at least by increasing the probability of avoiding relegation. Thus, the sporting outcome is not irrespective of the a priori budgeted revenues. This is in line with the study by Dobson and Goddard (1998, p. 1650) on the English football league, in which they ﬁnd the Granger causality from gate revenue to performance ‘to be proportionately smaller among the “big city” clubs … ’ compared with other clubs.
+To address the association between budgeted revenues and sporting outcome in more detail, regression analysis is performed. In Table 5, the sporting outcome is measured by the ﬁnal league standing in Model I, while point percentages are used in Model II.
+The explanatory power of the models for the individual seasons ranges from .17 to .28. It is also worth noting that except for 2013, Model I seems to be better than Model II based on the adjusted R2. Although the explanatory power is highest for the combined sample (slightly above the result in Hall et al., 2002 for English football), it is still reasonably high for individual seasons compared with the ﬁndings in other studies (such as in MLB from 1980 to the middle of the 1990s in the study by Hall et al., 2002). In addition, it is noteworthy that the results from the regression analysis in Table 5 clearly show that budgeted revenues are an important driver of sporting outcome (signiﬁcant at the .05 level for the individual seasons and signiﬁcant at the .01 level for the combined sample). This is consistent with the literature. Furthermore, note that the interpretations of the signs for the budgeted revenues’ coefﬁcients are the same as earlier.
+Models III and IV are presented in Table 6. These models include, respectively, the ﬁnal league standing and the point percentages in the previous season and take performance persistence into consideration.
+Interestingly, the budgeted revenues are still important in explaining the sporting outcome, albeit only signiﬁcant at the .10 level (p-value = .084) in model IV dealing with point percentages. As expected, both the point percentages in previous seasons and the ﬁnal league standing in previous seasons are highly signiﬁcant, consistent with the ﬁndings of Gerrard (2006).
+So far, the analysis drawing on correlation coefﬁcients and the regression analysis suggest that the higher the relative level of budgeted revenues, the better the sporting outcome expected. Even though this is consistent with the previous literature, it is contradictory to the main conclusions drawn in the newspaper article referred to earlier.
+Due to the inconsistency between the newspaper article and the results above, a deeper analysis is conducted by splitting the sample into different sub-samples. The mean budgeted revenues and standard deviation for each quartile (based on the ﬁnal league standing) are presented below (the mean and standard deviation are based on millions of NOK).
+In general, Table 7 shows that the ﬁndings are in line with the previous analysis in that the teams in quartile 1, on average, have budgeted revenues well above the average team. In a similar vein, the teams in quartile 4 typically have relatively low budgeted revenues in comparison with the average team. These ﬁndings hold for the individual seasons as well as for the combined sample. It is also worth noting the steady descending deviation
+
+Downloaded by [Orta Dogu Teknik Universitesi] at 11:26 16 February 2016
+
+Table 5. Summary of models (standard error in brackets).
+
+2011
+
+Model
+
+I
+
+II
+
+Constant
+Budgeted revenues
+R2 Observations
+
+8.5*** (1.03) −4.51** (1.85)
+.25 16
+
+0.46*** (0.02) 0.09** (0.04)
+.17 16
+
+*p < .1 (two-sided). **p < .05 (two-sided). ***p < .01 (two-sided).
+
+I
+8.5*** (1.01) −4.85** (1.87)
+.28 16
+
+2012
+II
+0.46*** (0.03) 0.12** (0.05)
+.24 16
+
+I
+8.5*** (1.06) −4.40** (2.01)
+.20 16
+
+2013
+II
+0.46*** (0.03) 0.12** (0.05)
+.25 16
+
+Combined
+
+I
+
+II
+
+8.5*** (0.57) −4.59*** (1.05)
+.28 48
+
+0.46*** (0.01) 0.11*** (0.03)
+.25 48
+
+31
+
+EUROPEAN SPORT MANAGEMENT QUARTERLY
+
+Downloaded by [Orta Dogu Teknik Universitesi] at 11:26 16 February 2016
+
+32
+
+M. KRINGSTAD AND T.-E. OLSEN
+
+Table 6. Summary of models (standard errors in brackets).
+
+Model
+
+Combined (2010–2014) III
+
+Constant Budgeted revenues Final league standing previous season Point percentages previous season R2 Observations
+*p < .1 (two-sided). **p < .05 (two-sided). ***p < .01 (two-sided).
+
+7.085** (2.111) −0.032** (0.015)
+0.452*** (0.136)
+.41 48
+
+Combined (2010–2014) IV
+0.155** (0.070) 0.001* (0.000)
+0.523*** (0.171) .37 48
+
+from the mean budgeted revenues that can be observed when moving from Q1 to Q4. Another interesting feature of Table 7 is that there are indications of relatively weak sporting performance amongst the small-budget teams. This is based on the notion of the low mean budgeted revenues along with the low standard deviations in quartile 4 compared with those of the other quartiles. To illustrate, in the 2012 season, among the other teams, only three had lower budgeted revenues than those found in quartile 4. Finally, the teams in the top half are generally the teams with the highest budgeted revenues. The distinction between the top half and the bottom half is analysed in Table 8.
+For all the seasons, the mean budgeted revenues are on average signiﬁcantly higher for the top half than for the bottom half. For the three seasons combined, the difference is statistically signiﬁcant at the .01 level. The deviations from the average budgeted revenues are also relatively stable, ranging from 0.24 to 0.30. Further, and in line with the results obtained so far, the standard deviations are relatively high for the top half. In addition, comparing quartile 1 with the other quartiles (combined), it is worth noting that the results are mixed as there are signiﬁcant differences in the mean budgeted revenues for the 2011 season and the combined sample, although not for the seasons 2012 and 2013. Thus, it seems as though there are two different properties inherent to the association between budgeted revenues and ﬁnal league standing. Firstly, this association appears to be of a random character for the top half. This can help to explain the rationale behind the claims set forth in the Norwegian newspaper article. Secondly, and perhaps more interestingly, there seems to be a marked difference in this association when it comes to the top half and the bottom half.
+
+Fixed effects models
+The ﬁxed effects models should capture the team-speciﬁc differences between teams over time. Therefore, in this model, not only is the estimated slope coefﬁcient of the budgeted revenue driver important, but also the differences between the teams with regard to this
+
+Table 7. Summary statistics for quartiles.
+
+Season
+
+Deviation from mean budgeted revenues (standard deviation in brackets)
+
+2011 2012 2013 Combined
+
+Quartile 1
+0.52 (0.81) 0.33 (0.85) 0.27 (0.87) 0.38 (0.77)
+
+Quartile 2
+−0.04 (0.47) 0.27 (0.42) 0.20 (0.31) 0.14 (0.39)
+
+Quartile 3
+−0.007 (0.22) −0.17 (0.36) −0.06 (0.45) −0.08 (0.33)
+
+Quartile 4
+−0.48 (0.27) −0.43 (0.15) −0.42 (0.21) −0.44 (0.20)
+
+EUROPEAN SPORT MANAGEMENT QUARTERLY
+
+33
+
+Table 8. Summary statistics for different sub-samples.
+
+Season
+
+Top half
+
+Bottom half
+
+Dev. from mean bud. rev. Difference in mean budget Dev. from mean bud. rev. Difference in mean budget Dev. from mean bud. rev. Difference in mean budget Dev. from mean bud. rev. Difference in mean budget
+
+2011 2012 2013 Combined
+
+0.24 (0.68)
+
+−0.24 (0.34)
+
+0.48*
+
+0.30 (0.62)
+
+−0.30 (0.29)
+
+0.60**
+
+0.24 (0.60)
+
+−0.24 (0.38)
+
+0.48**
+
+0.26 (0.61)
+
+−0.26 (0.32)
+
+0.52***
+
+*p < .10 (one-sided). **p < .05 (one-sided). ***p < .01 (one-sided).
+
+Q1
+
+Q2–Q4
+
+0.52 (0.81)
+
+−0.17 (0.38)
+
+0.70**
+
+0.33 (0.85)
+
+−0.11 (0.42)
+
+0.44
+
+0.27 (0.87)
+
+−0.09 (0.41)
+
+0.36
+
+0.38 (0.77)
+
+−0.13 (0.39)
+
+0.50**
+
+Downloaded by [Orta Dogu Teknik Universitesi] at 11:26 16 February 2016
+
+driver. These differences are of particular interest within an analysis of professional team sports, because teams that systematically perform better than expected from their ﬁnancial strength might have some form of non-ﬁnancial competitive advantage. In other words, such an analysis might enable us to detect potential Moneyball candidates.
+We apply a two-step procedure when using the dummy variable regression model. First, we use the statistical program to generate the team-speciﬁc dummy variables. In the statistical program R this is performed in alphabetical order. Hence, the team Aalesund becomes the default team in Table 9. From the analysis of the team-speciﬁc dummy variables, one team has a strong signiﬁcant deviation from Aalesund, Strømgodset. We therefore use this team as the default team in the dummy variable regression model presented in Table 10. The interpretation of the team dummies is therefore deviation from Strømsgodset (the most overperforming team relative to its budgeted revenues).
+Table 10 shows the results from the dummy variable models and deals with the teamspeciﬁc differences over the sample period using Strømsgodset as the default variable. Therefore, the coefﬁcients for the different teams in Table 10 represent the differences from this team.
+Strømsgodset had budgeted revenues below the average for all the seasons but still managed to become the runner-up and champion in 2012 and 2013, respectively. This implies that Strømsgodset was able to beat teams with substantially higher budgeted revenues, such as Viking (Stavanger), Vålerenga (Oslo), Brann (Bergen), and Rosenborg (Trondheim). Taking the whole sample period into account, the majority of the teams show signiﬁcantly weaker performances than Strømsgodset in relative terms.
+
+Conclusions and discussions
+Previous research has clearly demonstrated that ﬁnancial strength is a signiﬁcant driver of sporting outcome (e.g. Gerrard, 2006). However, a recent newspaper article (Solem, 2013a) cast doubt upon this relationship by demonstrating that for the 2012 season in the Norwegian top division, there seemed to be no such association.
+
+Table 9. Fixed effects models.
+
+Semi-log
+
+Constant xit
+
+0.4900 (0.0160) 0.2303 (0.0906)
+
+p-Value
+.000 .017
+
+Log–log
+−0.7160 (0.0355) 0.7184 (0.2012)
+
+p-Value
+.000 .001
+
+34
+
+M. KRINGSTAD AND T.-E. OLSEN
+
+Table 10. Semi-log and log–log on the dummy variable regression, applying Strømsgodset as the default team.
+
+Semi-log
+
+p-Value
+
+Log–log
+
+p-Value
+
+Constant
+
+0.6777 (0.0485)
+
+.000
+
+−0.3002 (0.1078)
+
+.009
+
+xit Sogndal
+
+0.2303 (0.0906)
+
+.017
+
+−0.0619 (0.0918)
+
+.505
+
+0.7184 (0.2012)
+
+.001
+
+0.0708 (0.2040)
+
+.731
+
+Haugesund
+
+−0.0631 (0.0604)
+
+.305
+
+−0.0601 (0.1343)
+
+.658
+
+Sandnes Ulf
+
+−0.1543 (0.0767)
+
+.054
+
+−0.2122 (0.1704)
+
+.223
+
+Hønefoss BK
+
+−0.1971 (0.0720)
+
+.010
+
+−0.3429 (0.1600)
+
+.041
+
+Tromsø
+
+−0.1666 (0.0608)
+
+.010
+
+−0.3757 (0.1350)
+
+.009
+
+Molde
+
+−0.1055 (0.0705)
+
+.145
+
+−0.3189 (0.1567)
+
+.051
+
+Odd
+
+−0.1598 (0.0593)
+
+.012
+
+−0.3101 (0.1318)
+
+.026
+
+Aalesund
+
+−0.1847 (0.0624)
+
+.006
+
+−0.4002 (0.1386)
+
+.007
+
+Stabæk
+
+−0.2641 (0.0678)
+
+.001
+
+−0.6316 (0.1506)
+
+.000
+
+Fredrikstad
+
+−0.2562 (0.0661)
+
+.001
+
+−0.5363 (0.1468)
+
+.001
+
+Viking
+
+−0.2578 (0.0786)
+
+.003
+
+−0.6377 (0.1746)
+
+.001
+
+Lillestrøm
+
+−0.2751 (0.0642)
+
+.000
+
+−0.6118 (0.1425)
+
+.000
+
+Brann
+
+−0.2850 (0.0829)
+
+.002
+
+−0.7076 (0.1842)
+
+.001
+
+Vålerenga
+
+−0.3160 (0.0864)
+
+.001
+
+−0.7881 (0.1919)
+
+.000
+
+Rosenborg
+
+−0.2837 (0.1262)
+
+.032
+
+−0.8796 (0.2804)
+
+.004
+
+Start
+
+−0.2675 (0.0661)
+
+.000
+
+−0.5814 (0.1468)
+
+.000
+
+Sarpsborg Adj. R2
+
+−0.1279 (0.1021)
+
+.220
+
+−0.1464 (0.2268)
+
+.524
+
+.6112
+
+.6453
+
+F
+
+5.10
+
+5.75
+
+Obs
+
+48
+
+48
+
+Downloaded by [Orta Dogu Teknik Universitesi] at 11:26 16 February 2016
+
+Against this background, this paper set out to investigate the association between budgeted revenues and sporting outcome for the top division in Norway over the sample period from 2011 to 2013. In this respect, all the analyses conducted (e.g. static and dynamic regression analysis and ﬁxed effects panel data estimation) support the notion of budgeted revenues being a signiﬁcant driver of sporting outcome. Although the ﬁndings are quite robust and in contrast to the claims set forth in the newspaper article, a further analysis drawing on the ﬁnal standing revealed an interesting feature as a duality was present. This duality was related to differences within the ﬁnal league standing, in which correlations between budgeted revenues and sporting outcome were apparent for the bottom-half teams, while on the other hand no signiﬁcant correlation was found for the top-half teams. In other words, the budgeted revenues seem to be important for teams in the bottom half, while among the top-half teams, the ﬁnal league standing seems to be irrespective of the budgeted revenues. This holds for single seasons as well. Although a similar duality was documented by Dobson and Goddard (1998), the changes inherent to European football in recent decades imply that the duality should not be taken for granted. Thus, this study makes this issue topical.
+The duality highlights some important issues while also raising some important questions. Regarding the former, the lack of support for the top half and the ﬁrst quartile does not imply per se that budgeted revenues are no longer considered to be important. On the contrary, budgeted revenues can be seen as a key driver for reducing the risk of attaining a bottom-half league standing. Furthermore, it seems reasonable to claim that budgeted revenues beyond a certain level play a more prominent role, an issue that may indicate possibilities for ‘Moneyball’. Further indications were also found in the ﬁxed effects models, in which certain teams overperformed throughout the sample period. The reigning champions, Strømsgodset, provide a good illustration of this. In comparison, Szymanski (1993) reviewed English football in the 1970s and 1980s and identiﬁed two cases in
+
+Downloaded by [Orta Dogu Teknik Universitesi] at 11:26 16 February 2016
+
+EUROPEAN SPORT MANAGEMENT QUARTERLY
+
+35
+
+which issues other than ﬁnancial strength were the driver of the sporting outcome. One was attributable to the management of the club (i.e. Liverpool), while the other was related to a particular team manager (i.e. Brian Clough in Nottingham Forest). In the case of Strømsgodset, both explanations may be valid. While the cooperation with Manchester City seems to have been positive for the club, the key driver of the team’s sporting success can probably be attributed to its now former team manager.
+In regards to the limitations of this study, caution should be taken in generalizing the results as they are based on a relatively short sample period. In professional team sports, within single seasons, a high degree of uncertainty and randomness may affect the sporting outcome. Examples of relevance are coincidences in matches of high signiﬁcance (Jennett, 1984), injuries and performance of key players, and ﬁnancial abilities to take advantage of transfer windows, to mention a few.
+Finally, an issue to be aware of is the fact that accounting items can be affected not only by accounting principles, but also by how clubs are formally organized. In sports, these may be further affected by broader strategic issues. Typical examples here are the ownership of the stadium and the focus on player development, including cooperation with bigger clubs abroad. In terms of the latter, loaning players from abroad may lower costs, but then again it may hamper the revenue side by losing out on potential sales. Thus, different strategies impose a different cost structure and ﬂexibility for clubs while also signiﬁcantly inﬂuencing the revenue side. Even in situations in which the net outcome would be the same for two different teams (same net costs), the total costs and total revenues in the proﬁt and loss statement may differ and thus affect the budgeted levels to a greater or lesser extent. Attention should be devoted to these issues in future research. In addition, future research should address whether the ﬁndings in this paper can be generalized to other European football leagues.
+
+Disclosure statement
+No potential conﬂict of interest was reported by the authors.
+
+Notes
+1. Gerrard (2007, p. 207):
+Michael Lewis’ bestseller, Moneyball: The Art of Winning an Unfair Game (2003), tells the story of how the Oakland Athletics in Major League Baseball (MLB) have achieved a sustained competitive advantage over an eight-year period despite being one of the lowest wage spenders.
+2. The marginal revenue product is a concept used to describe a player’s contribution to the team’s revenues (see Scully, 1974, for a comprehensive description of this concept).
+3. To address causality, the Granger causality test is often used. However, this requires time-series data. Thus, this test is not applicable to this data set.
+4. Although histograms are a very useful starting point for addressing deviation from normality, ‘they do not tell us whether this deviation is large enough to be important’ (Field, 2000, p. 48).
+5. The Kolmogorov–Smirnov test was originally a non-parametric test. However, a modiﬁed version can be used to test the normality of the distribution. Other alternatives are the Shapiro–Wilk test and the Anderson–Darling test. According to Stephens (1974), these tests
+
+36
+
+M. KRINGSTAD AND T.-E. OLSEN
+
+are actually more powerful than the Kolmogorov–Smirnov test when it comes to addressing
+normality. 6. Normality could not be assumed for the total sample (for single seasons), the top 8, and the ﬁrst
+quartile. Because all the tests draw on one or more of these sub-samples, non-parametric tests
+were used.
+7. The sports economics literature (e.g. Daly & Moore, 1981) has applied the SRCC when measur-
+ing performance persistence in the context of competitive balance. Note that Groot (2008) argued for Kendall’s tau in the context of competitive balance. 8. More speciﬁcally, this applies to the analysis drawing on the ﬁrst quartile against the rest of the teams (in both 2012 and 2013). Note that in these cases, the two-sample Kolmogorov–Smirnov
+test is used. 9. For a deﬁnition of Levene’s test statistic, see, for example, Brown and Forsythe (1974). 10. Non-parametric two-sample tests are conducted using the Wilcoxon–Mann–Whitney rank
+sum test of two populations by Kanji (1993), in which we want ‘to test if two random samples could have come from two populations with the same mean’ (p. 86).
+11. See Gerrard (2006) for a description of the possible persistence effects in this context.
+12. See, for example, Wooldridge (2009). Note that the functional form that we call semi-log is called ‘level-log’ by Wooldridge (2009).
+13. Hervik, Ohr, and Solum (2000) ﬁnd the R2 to be close to .74 when using the logarithmic sporting success on average over the period 1997–1999 as the independent variable and the logar-
+ithmic revenues as deviation from the average revenues. Applying an additional season, Gammelsæter and Ohr (2002) measured the R2 as .770.
+
+Downloaded by [Orta Dogu Teknik Universitesi] at 11:26 16 February 2016
+
+References
+Brown, M. B., & Forsythe, A. B. (1974). Robust tests for the equality of variances. Journal of the American Statistical Association, 69(346), 364–367.
+Buraimo, B. (2008). Stadium attendance and television audience demand in English league football. Managerial and Decision Economics, 29(6), 513–523. doi:10.1002/mde.1421
+Daly, G., & Moore, W. (1981). Externalities, property rights and the allocation of resources in major league baseball. Economic Inquiry, 19, 77–95.
+Deloitte. (2012). Annual review of football ﬁnance 2012. Manchester: Sports Business Group. Dobson, S. M., & Goddard, J. A. (1998). Performance and revenue in professional league football;
+evidence from Granger causality tests. Applied Economics, 30(12), 1641–1651. Downward, P., & Dawson, A. (2000). The economics of professional team sports. London: Routledge. Field, A. P. (2000). Discovering statistics using SPSS for Windows: Advanced techniques for the begin-
+ner. London: Sage. Fort, R. (2011). Sports economics (3rd ed.). Boston, MA: Prentice-Hall. Gammelsæter, H., & Ohr, F. (2002). Kampen uten ball, om penger, ledelse og identitet i norsk fotball.
+Oslo: Abstrakt. Gerrard, B. (2006). Analysing the win-wage relationship in pro sports leagues: Evidence from the
+FA premier league, 1997/98–2001/02. In P. Rodrígues, S. Késenne, & J. García (Eds.), Sports economics after ﬁfty years: Essays in honour of Simon Rottenberg (pp. 169–190). Oviedo: Oviedo University Press. Gerrard, B. (2007). Is the Moneyball approach transferable to complex invasion team sports? International Journal of Sport Finance, 2(4), 214–230. Green, G. (1953). The history of the football association. London: Naldrett Press for the Football Association. Groot, L. (2008). Economics, uncertainty and European football. Trends in competitive balance. Cheltenham: Edward Elgar. Hall, S., Szymanski, S., & Zimbalist, A. (2002). Testing causality between team performance and payroll: The cases of major league baseball and English soccer. Journal of Sports Economics, 3 (2), 149–168. doi:10.1177/152700250200300204
+
+EUROPEAN SPORT MANAGEMENT QUARTERLY
+
+37
+
+Downloaded by [Orta Dogu Teknik Universitesi] at 11:26 16 February 2016
+
+Hervik, A., Ohr, F., & Solum, N. H. (2000). Tippeligaen 1999: Økonomiske nøkkeltall (Arbeidsrapport 0014). Molde: Møreforsking.
+Hoehn, T., & Szymanski, S. (1999). The Americanization of European football. Economic Policy, 14 (28), 205–240.
+Jennett, N. (1984). Attendances, uncertainty of outcome and policy in Scottish League Football. Scottish Journal of Political Economy, 31(2), 176–198.
+Kanji, G. K. (1993). 100 statistical tests. London: Sage Publications. Késenne, S. (1996). League management in professional team sports with win maximizing clubs.
+European Journal for Sports Management, 2(2), 14–22. Kringstad, M., & Gerrard, B. (2007). Beyond competitive balance. In M. M. Parent & T. Slack (Eds.),
+International perspectives on the management of sport (pp. 149–172). Burlington, MA: Butterworth-Heinemann. Rottenberg, S. (1956). The baseball players’ labor market. Journal of Political Economy, 64(3), 242– 258. Scully, G. (1974). Pay and performance in Major League Baseball. American Economic Review, 64 (6), 915–930. Simmons, R., & Forrest, D. (2004). Buying success: Relationships between team performance and wage bills in the U.S. and European sports leagues. In R. D. Fort & J. Fizel (Eds.), International sports economics comparisons (pp. 123–140). Westport, CT: Praeger. Sloane, P. (1971). The economics of professional football: The football club as a utility maximiser. Scottish Journal of Political Economy, 18(2), 121–146. Solem, L. K. (2012, January 11). Brukte ﬁre mill. per seriepoeng. Dagens Næringsliv, pp. 18–19. Solem, L. K. (2013a, February 4). Gulljubel til halv pris. Dagens Næringsliv, pp. 12–13. Solem, L. K. (2013b, February 22). Klubbene barberer budsjettene. Dagens Næringsliv, pp. 16–17. Stephens, M. A. (1974). EDF statistics for goodness of ﬁt and some comparisons. Journal of the American Statistical Association, 69(347), 730–737. Szymanski, S. (1993). The economics of footballing success. Economic Review, 10(4), 14–18. Szymanski, S., & Kuypers, T. (1999). Winners and losers: The business strategy of football. London: Viking Books. Wooldridge, J. (2009). Introductory econometrics. A modern approach (4th ed.). Mason, OH: SouthWestern Cengage Learning.
+

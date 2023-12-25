@@ -1,0 +1,1031 @@
+International Research Journal of Engineering and Technology (IRJET) e-ISSN: 2395-0056
+
+Volume: 08 Issue: 03 | Mar 2021
+
+www.irjet.net
+
+p-ISSN: 2395-0072
+
+Survey on Predicting the Winning Football Team using Machine Learning Algorithms
+F. Allwin Edilbert1, Iwin Thanakumar Joseph2
+1-2Department of Computer Science and Engineering, Karunya Institute of Technology and Sciences, Coimbatore, Tamil Nadu, India.
+-----------------------------------------------------------------------***-------------------------------------------------------------------Abstract : The survey's emphasis is on analysing and contrasting football's winning team prediction, the advent of Data
+Science has provided us with the potential to construct predictive systems with incredible precision. Machine learning is, owing to its incredible efficiency, used in almost all environments in one direction or another. One field where forecasting methods have achieved more attention is the estimation of the outcomes of football matches. This description shows our focus on developing a common predictive model to forecast winning team outcomes. Using machine learning algorithms predicting the results of a football match, we obtained and create set of features, thus developing with high accurate predictive method using machine learning techniques.
+1. Introduction:
+In over 200 countries, football is played by 250 million players and the world's most common sport. The world's most successful domestic team in the English premier league is several studies and experiments prediction is going on football matches prediction. From analyzing player performance, player chemistry with teammates coaches and etc... And also analyzing team performance how the team perform in wet pitch, dry pitch and weather condition and many more.
+By many ways we can analyze and predict the football matches outcome by using twitter we can able to predict the football outcomes. By applying machine algorithms, by applying artificial neural networks data mining, statistical models, deep learning.
+For gambling, forecasting football matches is used. The annual football match wager is thought to be legally worth $10 billion and unlawfully between $40-50 billion, powered by the global economy as a whole. Mostly, many models are useful for bookmakers. A lot of research is going on in the area of bookmakers.
+2. Related Works
+Here the study has been done in the area of prediction of winning sports team.
+In [1] they have generalized a predictive model in English premier league (EPL), (i.e... Football league) using exploratory data analysis and feature engineering they have used Machine learning approaches such as Support Vector Machine, Gradient boosting (GB). If 0.2156 on the Ranked Probability Score, the GB produced output (RPS). And they also consider a betting organization where the value obtained by the Graded Probability Score (RPS) is 0.2012 for the same duration.
+In [2] they developed a Framework predicting sports result using Machine Learning. The artificial neural network was on (ANN) with that learning methodologies are utilized, data- sources, appropriate-means of evaluation model are used for the results in sport prediction. This architecture (SRP-CRISP-DM) is a Novel sports prediction frame work and it can be used in machine learning technique.
+In [3] they proposed that using a public data it is possible to predict football competition with the help of Machine learning approach. Methods used are naive Bayes (NB), multilayer perceptron classifier and principal component analysis (PCA). Here they have achieved an accuracy of 54.702%. This accuracy have achieved by the naive Bayes multilayer perceptron classifier was used in the combination with principal component analysis (PCA).According to bookmaker odds the accuracy was 55.297%.
+In [4] they suggested the use of big data and machine learning has developed an expert framework for game prediction. This expert system collect data and analyze the data and the performance and good at identifying the important features for winning and predicting the game outcomes. For collecting the game records from a data source a software module was
+© 2021, IRJET | Impact Factor value: 7.529 | ISO 9001:2008 Certified Journal | Page 1805
+
+International Research Journal of Engineering and Technology (IRJET) e-ISSN: 2395-0056
+
+Volume: 08 Issue: 03 | Mar 2021
+
+www.irjet.net
+
+p-ISSN: 2395-0072
+
+developed. The prediction accuracy exceeds above 90% from this it confirms that the Support Vector Machine and Ensemble Machine Learning Algorithm are the most useful for predicting the best results.
+In [5] they proposed a conceptual framework to predict the win or lose team in the score game by using study of social networks and gradient boosting (GB). According to experimental result gradient boosting is the best classifier on performance. And considering and comparing the accuracy of two different type prediction and win-draw-lose prediction. Win-draw-lose accuracy is way lower than the win-lose prediction accuracy of win-draw-lose is 33% and win-lose is 50%.
+In [6] they proposed football betting and prediction of football matches using machine learning with help of player characteristics based on the results. A Machine learning framework was delivered for achieving excess return amount in betting and for forecasting the football matches. The realized profit is around 30%.
+In [7] they proposed predicting the outcomes of pro-league football matches in Iran using an artificial neural network (ANN). Artificial neural networks, maps of self-organization (SOM) and approaches to machine learning. To predict the outcomes of the artificial neural network football matches used (ANN). The outcome shows that five out of six were precisely expected for the AFC Champions League or the AFC Champions League.
+In [8] they proposed an innovative approach on Prediction of football matches using the player attributes. And the models used are LSTM regression model, LSTM classification model, and dense model without (LSTM). This approach produce 3 main models structure in overall. From that the LSTM regression model prediction accuracy of 52.479%. Comparatively it is a good result.
+In [9] they proposed a predictive model for Prediction of the result of the football match using the twitter data sentiment analysis. By applying Support vector machine (SVM) we can extract tweets and clean the tweets and make it structured for sentiment analysis. Tweets are classified into positive negative and neutral. Implementation of text mining, sentiment analysis and machine learning to predict the team’s win-draw-loss ratio. According to their predictive model the accuracy is 67%.
+In [10] the proposed use of Neural Network analysis can be used to predict win lose with past games result. Here they collect the past finished matches’ attributes and their records to predict the outcome of the match. Where they use artificial neural network for design, train, test. Collected past finished matches attributes for sensitive analysis. For optimization sensitive analysis is done. Neural performance models showed a right win percentage of 83 percent and a loss of 72.7 percent.
+In [11] they also created a prolog probabilistic logic software that helps us with the context information of the soccer domain. This method forecasts a team game with the aid of historical data and domain awareness. This probabilistic logic model has better performance than the predictive machine learning algorithm. Observation has been achieved with more parameters and the precision of the model prediction laws.
+In [12] they proposed, prediction can be done in international football tournament matches using random forest. Methods used random forest, covariate-based approaches and regression based approaches. They compared two fundamentally different approaches for modeling and prediction of matches in international football tournaments. Random forest and regression are the two different models. Over all analysis shows regression based approach perform lesser than random forest and with regression based approach the prediction performance has variety of measures. Random forest provides a satisfactory result.
+In [13] they proposed in sports data predictive analysis is done by using goggle prediction API the overall study of this paper is the usage of Google prediction API to analyses the data. Linear regression, Naïve Bayes, Data mining is used here. Data mining is very essential here. Google prediction API choose the best classifier for predicting the values. This proposed model will give results based on the previously provided data. The more the data better the model and result will be better.
+In [14] a novel approach to measuring the on-the-ball contribution of football players to games has been proposed. Here, the passes in games are measured and the possession of the ball by each player is valued. There's a good sense to the Pass process. This approach incorporates dynamic time wrapping with K-nearest neighbor search.
+
+© 2021, IRJET | Impact Factor value: 7.529 | ISO 9001:2008 Certified Journal | Page 1806
+
+International Research Journal of Engineering and Technology (IRJET) e-ISSN: 2395-0056
+
+Volume: 08 Issue: 03 | Mar 2021
+
+www.irjet.net
+
+p-ISSN: 2395-0072
+
+In [15] they introduced a model called DOLORES that predicts the results of football matches around the world. The Dolores model is a combination of complex and hybrid Bayesian networks. The Dolores model will make a good prediction when matching between a and b. With the aid of historical evidence, it is also possible to predict if the opponent's team is not involved in the game. Predictive error is 0.94 per cent higher and 116.78 per cent lower than the bottom participant. Dolores created 20% + ROI on the basis of approximately seven seasons of the English Premier League.
+In [16] they suggested that in nearly two-thirds of situations, the winner of the English county's twenty cricket games could be expected. The classification methods used are Naïve Bayes Logistic regression, random forest and gradient enhanced tress. This classification the most effective one is naive Bayes. At last comparison was done in betting odds benchmarks and naïve Bayes player naive Bayes performance was way better than the old benchmarks.
+In [17] they proposed using machine learning classifier we can predict the outcome of Dutch football. There are some machine learning algorithms are used generalized boost model (GBM) naïve Bayes K-nearest neighbor (KNN). They have used multiple data mining techniques for analysis and prediction. At last the generalized boost model (GBM) made an accuracy of 82.12% correctly. GBM often produce predictive accuracy that cannot be beaten.
+In [18] Work is a system that predicts the winner in the sports game. They used greedy logic, data acquisition, data processing, and predictive decision-making approaches. The outcome can differ if the data features are changed. The result indicates that the best classifier is 5 percent more accurate than the referent classifier, which favors the team with a better ranking.
+In [19] they suggested a comparison between the result-based on ratings and the goal-based ODM (offense defense model). They applied models to the open national soccer database. They considered as covariates all the combination of result-and globally dependent regression with rating and goal-based ODM rating difference. If it was found that Elo based ordered logit model outperforms all the other models. Including a more nuanced literary model.
+In [20] they proposed using machine learning player valuation can be done in European football. Data mining is used. This paper shows that it compares and contrasts the strengths of players, the best statistical abilities in European football. This paper includes the Q function and the effect of a deep reinforcement learning model on the assessment of the player's behavior. This minimized model analyzes players by characterizing the value and in part dependency story. Valuation accuracy F1 top 10 percent, F1 top 25 percent, F1 top 50 percent.
+In [21] they Suggested use of long-term memory recurring neural network prediction can be achieved at a glance to train a soccer player. The problem they addressed and they tackled that with a solution. The data has been collected using PMSys system. The dilemma of deriving peaks in the ability of a soccer player to succeed from a subjective self-reported wellness they train recurrent neural networks with long-term memory using data from two professional soccer teams. Their model predicts with precision positive and negative peaks and recalls over 90 percent.
+In [22] they proposed two fundamental case of sport analysis one is team performance and player performance prediction. They followed two approaches. And first approach gave them a satisfactory result. And the second approach for team performance gave a remarkable result. They used machine learning algorithms for this. Finally SVM with polynomial kernel observed clearly and achieved a good result in every league.
+In [23] they proposed that based on internet information results will be forecasted in football matches. They used some methods based on the weighted sum of indicators, method based on poison distribution, method based on forecasting rules. Method based on weighted sum of indicators predicts match result accuracy is 77.6%. The poison distribution uses another sets and predict match accuracy is 83.5%. Method based on rules of forecasting predict match accuracy of 70.4%. They propose that accuracy is depend upon the forecasting factors. Better the forecasting factor choice better the accuracy.
+In [24] they suggested that a prediction could be made to find the winning team using decision tree. And decision tree algorithm is so simple to understand it and it is primarily used for data interpretation and forecasting. Their experiment showed that two teams were playing in recent matches. Considering both the home and the field. The highest accuracy is 57.7%.
+In [25] they proposed that predicting DE commitments in college football recruiting using twitter data. Here they used logistic regression. By using this model the result ere promising in first step of predicting DE commitments in college
+© 2021, IRJET | Impact Factor value: 7.529 | ISO 9001:2008 Certified Journal | Page 1807
+
+International Research Journal of Engineering and Technology (IRJET) e-ISSN: 2395-0056
+
+Volume: 08 Issue: 03 | Mar 2021
+
+www.irjet.net
+
+p-ISSN: 2395-0072
+
+football. Based on their performance and popularity and skills players will be recruited. Linear combination of parameters and the input vector will be incredibly easy to compute.
+
+In [26] they suggested a novel way of forecasting a soccer match. In this paper, a novel method was developed to forecast soccer matches. Here they demonstrate an alternative sources for curated data. Which can be done through very intensive data collection. This will help the prediction process and result will be very accurate. The main challenge of machine learning project is to collect data by this approach collecting the data will be easy and effective.
+
+In [27] they proposed an open international soccer database for machine learning. Collecting data will be a difficult part in machine learning projects. The more clear data you collect the more accuracy will be appeared. For collecting good data they created a data base and stored about 52 leagues from 35 countries. And also they predicted the result.
+
+In [28] they suggested using Machine Learning to predict football league winners of bookies. Methods used Bayesian Learning, Lazy Learning, Decision Tree, intelligent machine architecture. The result obtained is accurate and established. Finally, it can be concluded that the study requires more practical data and adequate expertise to make the model developed more advanced and accurate.
+
+In [29] using machine learning techniques predicting football. Problem is while predicting the outcome the factors become difficult in processing it so for that they developed a software solution in order to try and solve this problem the solution will be an optimized one. The result shows a satisfactory capability of prediction which I superior to one of the reference method. The accuracy is around 60%.
+
+In [30] they proposed player pairs valuation in ice hockey. This paper covers all about finding the players chemistry level with their teammates in the match. And predicting the best player’s pairs by using data mining analysis and Q function. From coaches data will be collected mainly and they also did hypothesize. Innovative approach has done.
+
+3. Performance Metrics, Methodology, Merits and Demerits of an existing system are:
+
+REF NO
+1
+2
+3
+4
+
+METHODOLOGY
+Support vector machine(SVM) Gradient boosting Ranked Probability
+Score(RPS)
+Artificial neural network(ANN) SRP-CRISP-DM
+frame work
+Naive Bayes or Multilayer perceptron Principal Component
+Analysis (PCA)
+Principal Component Analysis
+Support vector machine Ensemble Machine learning Algorithm
+
+PERFORMANCE METRICS
+Gradient Boosting(0.2156)
+Ranked probability score - (0.2012)
+This model predictive accuracy IS effective.
+Naive Bayes or a Multilayer classifier of
+perceptron’s. Was used in conjunction with the key component
+analysis- (PCA) 54.702 Precision. Ensemble model’s predictive accuracy
+exceeds 90
+
+MERITS
+Lower the RPS to better predictive
+accuracy.
+Framework focuses on the prediction of outcomes for team sport rather than individual sport. It increases the
+combined accuracy of bookmakers by over 0.7% with the help of public data into the model Support vector machine(SVM) Ensemble Machine
+Learning algorithm are useful tool that can reliably predict
+
+DEMERITS
+In spite of encouraging results, The model was unable to surpass the bookmaker's predictions. According to industry methods this model still
+lags
+This was not carried out for
+German bundesliga instead of Dutch eredivise.
+Owing to the transfer of teams, coaches and team
+managers, this model cannot be applied for a single
+season.
+
+© 2021, IRJET | Impact Factor value: 7.529 | ISO 9001:2008 Certified Journal | Page 1808
+
+International Research Journal of Engineering and Technology (IRJET) e-ISSN: 2395-0056
+
+Volume: 08 Issue: 03 | Mar 2021
+
+www.irjet.net
+
+p-ISSN: 2395-0072
+
+games outcomes.
+
+5
+
+Gradient Boosting.
+
+The result Gradient
+
+Support Vector Machine.
+
+Boosting(GB)
+
+Neural Network.
+
+Is the best classifier in
+
+Decision Tree.
+
+terms of efficiency.
+
+Case-Based reasoning.
+
+Logistic Regression.
+
+6
+
+Random Forest
+
+Cumulative return 40%
+
+This Machine
+
+Baseline methods
+
+Boosting.
+
+from 1993 to 1997
+
+learning
+
+have not been able
+
+Support Vector Machine. The realized benefit is
+
+framework
+
+to yield any
+
+Linear Regression.
+
+about 30% for 200
+
+achieves excess
+
+income
+
+matches in 2013/2014. return through
+
+appropriate
+
+betting.
+
+7
+
+Radial Basis Function.
+
+A valid win and loss
+
+The neural
+
+Neural Network.
+
+percentage of 83.3
+
+network can be
+
+percent and 72.7
+
+used to adjust
+
+percent respectively
+
+preparation,
+
+showed the success of
+
+strategies and
+
+the Neural model.
+
+opposition to
+
+Error testing of 0.37
+
+improve results.
+
+percent
+
+Root is the mean sq.
+
+Error if 2.9 percent is
+
+needed
+
+8
+
+Support vector
+
+This model predictive
+
+SVM is a non-
+
+Ensemble model
+
+machine(SVM)
+
+accuracy exceeds 67%
+
+probabilistic
+
+can be used
+
+Naive Bayes(NB)
+
+binary linear
+
+Text mining
+
+classifier
+
+Sentimental analysis
+
+algorithm which
+
+Predictive analysis
+
+takes input and
+
+predicts for each
+
+given input
+
+9
+
+LSTM Regression model LSTM regression model
+
+Innovative
+
+Average book
+
+LSTM classification
+
+prediction accuracy of
+
+approach of
+
+makers accuracy
+
+model
+
+52.479%
+
+processing data
+
+Dense model without
+
+and predict result
+
+(LSTM)
+
+10
+
+Artificial Neural
+
+The result indicates that ANN is used for Genetic Algorithm
+
+Network.
+
+five out of six were
+
+complex patterns (GA) is advised to
+
+Self-Organizing Map.
+
+correctly predicted to
+
+and prediction
+
+set the ANNs
+
+Machine Learning
+
+play in the AFC
+
+problems.
+
+parameters
+
+Approach.
+
+Champions League or
+
+optimally.
+
+the Azadegan League.
+
+11
+
+Ada Boost
+
+Optimized performance They developed It remains an issue
+
+Decision tree.
+
+from probabilistic logic Probabilistic logic to be addressed to
+
+K-Nearest Neighbours.
+
+model
+
+program in
+
+construct
+
+Logistic regression
+
+probLog
+
+probabilistic logic
+
+Random Forest
+
+models with a
+
+Support Vector Machine
+
+large dataset.
+
+Probabilistic logic model
+
+12
+
+Random forest(RF) Random forest provided Random forest is Complexity and
+
+Covariate-based
+
+very satisfactory results.
+
+based on a
+
+long training
+
+approaches
+
+baggage algorithm
+
+period.
+
+Regression based
+
+and uses an
+
+approach
+
+ensemble learning
+
+technique.
+
+© 2021, IRJET | Impact Factor value: 7.529 | ISO 9001:2008 Certified Journal | Page 1809
+
+International Research Journal of Engineering and Technology (IRJET) e-ISSN: 2395-0056
+
+Volume: 08 Issue: 03 | Mar 2021
+
+www.irjet.net
+
+p-ISSN: 2395-0072
+
+13
+
+Linear regression(LR)
+
+The proposed model Linear regression
+
+Under fitting.
+
+Naive Bayes
+
+will generate results on has the lower time Main imitations of
+
+Data Mining
+
+the basis of the data
+
+complexity
+
+Naive Bayes is the
+
+previously given.
+
+Naive Bayes is
+
+assumption
+
+The better the data easy to implement.
+
+predictor.
+
+model, the better the
+
+results.
+
+14
+
+XGBoost algorithm
+
+This model predictive Paper proposed a
+
+XGBoost is
+
+K-nearest
+
+accuracy was very
+
+novel approach to
+
+sensitive to
+
+neighbour(KNN)
+
+satisfactory
+
+assessing on-the-
+
+outliers.
+
+ball football
+
+KNN Accuracy
+
+players'
+
+depends on quality
+
+contributions to
+
+of the data.
+
+games
+
+15
+
+Dynamic ratings
+
+Predictive error of 0.94 Dolores provides In this paper, the
+
+Hybrid Bayesian network
+
+percent
+
+empirical proof model presented
+
+Higher and 116.78
+
+that a model for a had to be limited
+
+percent lower.
+
+match may make a to the data on the
+
+Dolores produced 20% good prediction.
+
+target score.
+
++ ROI on the basis of
+
+approximately seven
+
+EPL seasons.
+
+16
+
+Naïve Bayes
+
+The most effective The prediction has External data’s can
+
+Logistic regression
+
+method was Naive
+
+done almost with
+
+be added to
+
+Random forest
+
+Bayes
+
+two thirds of predict the wining.
+
+Gradient boosted tress
+
+instances
+
+17
+
+Generalized Boost
+
+Using GBM model made
+
+GBM often
+
+GBM can
+
+models(GBM)
+
+is with an accuracy of produce predictive overemphasize the
+
+Naïve Bayes(NB)
+
+82.15%
+
+accuracy that outliers and cause
+
+K-nearest
+
+Correctly.
+
+cannot be beat.
+
+over fitting.
+
+neighbour(KNN)
+
+18
+
+Greedy logic
+
+Modification could lead Easy and effective Few things that
+
+Data Acquisition.
+
+to better outcomes, as
+
+way to select
+
+can be done to
+
+Data Processing.
+
+the selection of features
+
+features and
+
+boost the accuracy
+
+Decision Making
+
+will be eliminated.
+
+model building.
+
+of the forecast
+
+prediction
+
+Methods.
+
+19
+
+Effect and Goal-Based The ordered logit model Effective method Can include more
+
+Regression model.
+
+based on ELo
+
+are used here
+
+complex models
+
+Rating and target is
+
+outperforms all other
+
+based on ODM ranking.
+
+models.
+
+Logit Model Ordered
+
+20
+
+Data mining.
+
+Accuracy of assessment
+
+Among other
+
+Explicitly must
+
+Bayesnet.
+
+F1 from the FW
+
+items, this
+
+take into account.
+
+Naive Bayes.
+
+F1 from the MD
+
+prediction result
+
+Liner Logistic regression
+
+DF's F1
+
+indicates a
+
+model
+
+F1 from the GK
+
+consistent order in
+
+K-nearest neighbour
+
+the position based
+
+Decision tree
+
+on prediction
+
+scores.
+
+21
+
+Machine learning
+
+The overall
+
+RNN can model
+
+Disadvantage is
+
+algorithms.
+
+performance model is sequence of each RNN are vanishing
+
+Recurrent Neural
+
+promising.
+
+sample can be
+
+gradient and
+
+Network(RNN)
+
+assumed to be gradient exploding
+
+dependent on
+
+problem.
+
+previous one.
+
+22
+
+Naive Bayes.
+
+SVM poly kernel is
+
+The risk of over
+
+Larger the
+
+© 2021, IRJET | Impact Factor value: 7.529 | ISO 9001:2008 Certified Journal | Page 1810
+
+International Research Journal of Engineering and Technology (IRJET) e-ISSN: 2395-0056
+
+Volume: 08 Issue: 03 | Mar 2021
+
+www.irjet.net
+
+p-ISSN: 2395-0072
+
+Decision Tree.
+
+observed to steadily
+
+fitting is less in
+
+datasets target
+
+Random Forest.
+
+achieve good results in
+
+SVM.
+
+cases are
+
+K-Nearest Neighbour.
+
+every league.
+
+overlapping.
+
+SVM-rbf kernel, ploy
+
+kernel
+
+XGBoost.
+
+23
+
+Poison distribution.
+
+Poison distribution
+
+Calculations are The method based
+
+Weighted sum.
+
+Predicted results
+
+very straight
+
+rules of
+
+Forecasting rules.
+
+accuracy is of 83.5%.
+
+forward than
+
+forecasting
+
+those binomial.
+
+predicts the
+
+results and in
+
+which takes a little
+
+bit more time.
+
+24
+
+Decision tree algorithm The highest accuracy is
+
+Decision tree
+
+Small changes in
+
+57.7%.
+
+algorithm is easy
+
+data set can
+
+to understand and
+
+change the
+
+to implement.
+
+structure of
+
+decision tree.
+
+25
+
+Logistic regression.
+
+Promising result in first
+
+Linear
+
+Logistic regression
+
+step of predicting DE
+
+combination of can be done with
+
+commitments in college parameters and more than two, but
+
+football. Using online the input vector
+
+not many.
+
+social network
+
+will be incredibly
+
+easy to compute.
+
+26
+
+Principal component Good alternative source
+
+Improves
+
+Data
+
+analysis
+
+for curated data.
+
+algorithm
+
+standardization is
+
+(PCA)
+
+performance.
+
+must for PCA.
+
+Reduce over
+
+fitting.
+
+27
+
+Statistical approaches.
+
+This has a relatively Easy to collect and Not available in a
+
+Poison model.
+
+good database for
+
+implement.
+
+wide variety of
+
+prediction process.
+
+countries and
+
+leagues.
+
+28
+
+Bayesian learning.
+
+The results obtained are Bayesian learning Lazy learning it
+
+Lazy learning.
+
+precise and define.
+
+Provides natural takes large space
+
+Decision tree.
+
+and principal way to store entire
+
+Design of intelligent
+
+of combining prior training dataset.
+
+system.
+
+information with
+
+data.
+
+29
+
+Naive Bayes.
+
+Artificial neural
+
+ANN is used to
+
+KNN with large
+
+Bayesian Networks.
+
+network (ANN) with
+
+model complex data the prediction
+
+Logit Boost.
+
+predictive accuracy up and prediction
+
+stage is slow.
+
+K-Nearest Neighbour. to 68% of the network
+
+problems.
+
+Random forest.
+
+is known to have 5
+
+Artificial Neural
+
+hidden layers.
+
+Network.
+
+30
+
+Data mining.
+
+This analysis shows the
+
+Innovative
+
+Could have added
+
+Analysis.
+
+good chemistry that
+
+approach has
+
+more features.
+
+Q-function.
+
+performed acrossed the
+
+done.
+
+seasons
+
+© 2021, IRJET | Impact Factor value: 7.529 | ISO 9001:2008 Certified Journal | Page 1811
+
+International Research Journal of Engineering and Technology (IRJET) e-ISSN: 2395-0056
+
+Volume: 08 Issue: 03 | Mar 2021
+
+www.irjet.net
+
+p-ISSN: 2395-0072
+
+3. Conclusion
+Survey on prediction of winning football team is still evolving, due to the difficulty of some data collection. Different scholars and researchers are still working hard to find a full prediction model using multiple techniques. The result from this study will support the same with an individual and team performance. This has been accomplished by various preprocessing, selection of features, statistical model, classification as classifiers, machine learning techniques and exceptional precision in prediction of football.
+4. References
+[1]. Baboota, R. and Kaur, H., 2019. Predictive analysis and modelling football results using machine learning approach for English Premier League. International Journal of Forecasting, 35(2), pp.741-755.
+[2]. Bunker, R.P. and Thabtah, F., 2019. A machine learning framework for sport result prediction. Applied computing and informatics, 15(1), pp.27-33.
+[3]. Tax, N. and Joustra, Y., 2015. Predicting the Dutch football competition using public data: A machine learning approach. Trans. Knowl. Data Eng, 10(10), pp.1-13.
+[4]. Gu, W., Foster, K., Shang, J. and Wei, L., 2019. A game-predicting expert system using big data and machine learning. Expert Systems with Applications, 130, pp.293-305.
+[5]. Cho, Y., Yoon, J. and Lee, S., 2018. Using social network analysis and gradient boosting to develop a soccer win–lose prediction model. Engineering Applications of Artificial Intelligence, 72, pp.228-240.
+[6]. Stübinger, J., Mangold, B. and Knoll, J., 2020. Machine Learning in Football Betting: Prediction of Match Results Based on Player Characteristics. Applied Sciences, 10(1), p.46.
+[7]. Arabzad, S.M., Tayebi Araghi, M.E., Sadi-Nezhad, S. and Ghofrani, N., 2014. Football match results prediction using artificial neural networks; the case of Iran Pro League. Journal of Applied Research on Industrial Engineering, 1(3), pp.159179.
+[8]. Danisik, N., Lacko, P. and Farkas, M., 2018, August. Football match prediction using players attributes. In 2018 World Symposium on Digital Intelligence for Systems and Machines (DISA) (pp. 201-206). IEEE.
+[9]. Rathan, M., Deepthi, R.N., Anupriya, S. and Vishnu, V., 2018. Football Match Outcome Prediction Using Sentiment Analysis of Twitter Data. International Journal of Advanced Research in Computer Science, 9(Special Issue 3), p.78.
+[10]. Hassan, A., Akl, A.R., Hassan, I. and Sunderland, C., 2020. Predicting Wins, Losses and Attributes’ Sensitivities in the Soccer World Cup 2018 Using Neural Network Analysis. Sensors, 20(11), p.3213.
+[11]. Saritha, M. and Milton, R.S., 2020. A probabilistic logic approach to outcome prediction in team games using historical data and domain knowledge. JOURNAL OF AMBIENT INTELLIGENCE AND HUMANIZED COMPUTING.
+[12]. Schauberger, G. and Groll, A., 2018. Predicting matches in international football tournaments with random forests. Statistical Modelling, 18(5-6), pp.460-482.
+[13]. Ujwal, U.J., Antony, P.J. and Sachin, D.N., 2018. Predictive analysis of sports data using google prediction API. International Journal of Applied Engineering Research, 13(5), pp.2814-2816.
+[14].Bransen, L. and Van Haaren, J., 2018, September. Measuring football players’ on-the-ball contributions from passes during games. In International Workshop on Machine Learning and Data Mining for Sports Analytics (pp. 3-15). Springer, Cham.
+[15]. Constantinou, A.C., 2019. Dolores: a model that predicts football match outcomes from all over the world. Machine Learning, 108(1), pp.49-75.
+[16]. Kampakis, S. and Thomas, W., 2015. Using machine learning to predict the outcome of english county twenty over cricket matches. arXiv preprint arXiv:1511.05837.
+© 2021, IRJET | Impact Factor value: 7.529 | ISO 9001:2008 Certified Journal | Page 1812
+
+International Research Journal of Engineering and Technology (IRJET) e-ISSN: 2395-0056
+
+Volume: 08 Issue: 03 | Mar 2021
+
+www.irjet.net
+
+p-ISSN: 2395-0072
+
+[17]. Hijmans, A. and Bhulai, S., Dutch football prediction using machine learning classifiers.
+[18]. Zdravevski, E. and Kulakov, A., 2009, September. System for Prediction of the Winner in a Sports Game. In International Conference on ICT Innovations (pp. 55-63). Springer, Berlin, Heidelberg.
+[19]. Robberechts, P. and Davis, J., 2018, September. Forecasting the FIFA World Cup–Combining result-and goal-based team ability parameters. In International Workshop on Machine Learning and Data Mining for Sports Analytics (pp. 1630). Springer, Cham.
+[20]. Nsolo, E., Lambrix, P. and Carlsson, N., 2018, September. Player valuation in European football. In International Workshop on Machine Learning and Data Mining for Sports Analytics (pp. 42-54). Springer, Cham.
+[21]. Wiik, T., Johansen, H.D., Pettersen, S.A., Baptista, I., Kupka, T., Johansen, D., Riegler, M. and Halvorsen, P., 2019, September. Predicting Peek Readiness-to-Train of Soccer Players Using Long Short-Term Memory Recurrent Neural Networks. In 2019 International Conference on Content-Based Multimedia Indexing (CBMI) (pp. 1-6). IEEE.
+[22]. Chazan–Pantzalis, V. and Tjortjis, C., Sports Analytics for Football League Table and Player Performance Prediction.
+[23]. Klyuchka, Y.A., Cherednichenko, O.Y., Vasylenko, A.V. and Yakovleva, O.V., 2017. Forecasting the results of football matches on the Internet based information. Вісник Національного технічного університету ХПІ. Серія: Системний аналіз, управління та інформаційні технології, (55), pp.51-59.
+[24]. Tang, X., Liu, Z., Li, T., Wu, W. and Wei, Z., 2018, August. The Application of Decision Tree in the Prediction of Winning Team. In 2018 International Conference on Virtual Reality and Intelligent Systems (ICVRIS) (pp. 239-242). IEEE.
+[25]. Bigsby, K.G., Ohlmann, J.W. and Zhao, K., 2019. The turf is always greener: Predicting decommitments in college football recruiting using Twitter data. Decision Support Systems, 116, pp.1-12.
+[26]. Shin, J. and Gasparyan, R., 2014. A novel way to soccer match prediction. Stanford University: Department of Computer Science.
+[27]. Dubitzky, W., Lopes, P., Davis, J. and Berrar, D., 2019. The open international soccer database for machine learning. Machine Learning, 108(1), pp.9-28.
+[28]. Esumeh, E.O., 2015. Using machine learning to predict winners of football league for bookies. Int. J. Artif. Intell, 5, p.22.
+[29]. Hucaljuk, J. and Rakipović, A., 2011, May. Predicting football scores using machine learning techniques. In 2011 Proceedings of the 34th International Convention MIPRO (pp. 1623-1627). IEEE.
+[30]. Ljung, D., Carlsson, N. and Lambrix, P., 2018, September. Player pairs valuation in ice hockey. In International Workshop on Machine Learning and Data Mining for Sports Analytics (pp. 82-92). Springer, Cham.
+
+© 2021, IRJET | Impact Factor value: 7.529 | ISO 9001:2008 Certified Journal | Page 1813
+

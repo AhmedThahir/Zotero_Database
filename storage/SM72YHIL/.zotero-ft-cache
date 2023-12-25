@@ -1,0 +1,179 @@
+
+Skip to content
+Menu
+
+    Home
+    Article Index
+    Article Categories
+        Manager Tactics
+        Data Analysis
+        Match Anaysis
+        Player Analysis
+        Tactical Theory
+        21/22 UEFA Top Divisions Club Map
+        21/22 Belgian League Project
+    About
+        Authors
+        Contact
+
+Café Tactiques
+Soccer Tactics and Analysis
+Determining the Most Competitive Top UEFA League
+
+Article by Ben Griffis
+
+UEFA’s country competition coefficient can tell us how strong a nation’s top league is, relative to the other UEFA leagues. But how can we tell what league is the most competitive, internally?
+
+To answer that, I calculated the Gini Coefficients of all UEFA leagues that ended a season in the top 10 over the last 5 seasons.
+
+The Gini coefficient is a measure of inequality . Typically used to measure wealth or income inequality in countries and regions, we can use it to measure the inequality of a league’s points distribution in a season—essentially, how competitive a league is will be based on how even or uneven the distribution of points is.
+
+Overall, 12 leagues have been ranked in the top 10 over the last 5 seasons. Here is a table showing the rankings of all leagues with at least one season in the top 10 since the 2016/17 season.
+Nation	20/21	19/20	18/19	17/18	16/17	Average Rank
+Spain	2	1	1	1	1	1.2
+England	1	2	2	2	3	2
+Italy	3	4	3	3	4	3.4
+Germany	4	3	4	4	2	3.4
+France	5	5	5	5	5	5
+Portugal	6	6	7	7	7	6.6
+Russia	8	7	6	6	6	6.6
+Belgium	9	10	8	9	9	9
+Ukraine	12	9	9	8	8	9.2
+Turkey	13	11	10	10	10	10.8
+Netherlands	7	10	11	14	13	11
+Austria	10	12	12	11	15	12
+
+Methodology
+
+(Skip this part if you don’t care about how I calculated the Gini coefficients!)
+
+Here are the steps I used to calculate each leagues’ Gini coefficients for all 5 seasons. This process discusses the steps to calculate a Gini coefficient for one season in one league, and I repeated this process for all seasons of the 12 leagues.
+
+First, I summed up the total points earned by each team in the league. Then, I calculated the percentage of total points each team earned. [For example, in the 2020/21 Premier League, Manchester City earned 86 points. The total points in the league were1,057, so City’s points were about 8.14% of the total league points.]
+
+Next, I summed up the cumulative percentage of points for each team, starting with the bottom-placed team. This will sum to 1 (or 100%) with the final addition of City’s points. Then, I calculated what the perfect equality distribution for points would be. In a 20-team league, if each team had 5% of the total points it would be perfectly equal (of course, this will never happen). Finally, I summed up those numbers starting with the bottom-placed team. These last two steps are for visualizing the Lorenz Curve below.
+
+As mentioned earlier, I repeated this process for the last 5 seasons of all 12 leagues. For leagues like Belgium, Austria, and Ukraine—who have league splits where groups of teams only play a few others—I took the tables at the time of the split. This is to ensure that each league compares points won when teams are only playing every other team in the league, instead of just a few other of the best or worse teams.
+
+I ran a program in R to calculate the Gini coefficients for each season of a league. Then, I exported the data to excel to visualize in Tableau. For visualizing the calculation of the Gini coefficient, we can use a Lorenz Curve . Lorenz curves plot both a line of perfect equality (a 45-degree angle) as well as the line of what we’re measuring (in this case a specific season in a league). Here is an example of the most recent Premier League season’s Lorenz Curve.
+
+Results: What League is the Most Competitive?
+League	Average Gini Coeff.
+Belgian 1A	0.157
+Süper Lig	0.158
+Ligue 1	0.170
+Bundesliga	0.175
+Russian PL	0.177
+La Liga	0.180
+Premier League	0.192
+Eredivisie	0.192
+Primeira Liga	0.195
+Austrian Bundesliga	0.200
+Serie A	0.205
+Ukrainian PL	0.229
+
+The Belgian First Division A comes out as the most competitive top 10 league of the last 5 seasons. Belgium has the lowest average Gini coefficient (0.157), meaning that overall it is the most competitive league in the sample. However, it does have a relatively high spread of coefficients, which tells us that some years the league is relatively more or less competitive than average. Two of the 5 most competitive league-seasons (of the 60 analyzed here) were from Belgium: 20/21 and 17/18.
+
+The Turkish Süper Lig ranks as a close second using average Gini coefficient. However, I would say these leagues tie for being the most competitive, given that Turkey’s median Gini coefficient is lower than Belgium’s median, and Turkey’s coefficients have less variation. It’s hard to determine, but the fact that Belgium has more seasons in the top 5 most competitive seasons than Turkey puts Turkey 2nd in my mind. This is, of course, a rather subjective decision.
+
+The Ukrainian Premier League has the highest average Gini coefficient, so it ranks as the least competitive league in the sample. The 3 least competitive league-seasons were from Ukraine: 16/17, 19/20, and 18/19.
+
+Which of the Top 5 Leagues is the Mot Competitive?
+
+A burning question for most football fans would be: which of the top 5 leagues is thee most competitive?
+
+Of the top 5 leagues in UEFA—Premier League, La Liga, Bundesliga, Serie A, and Ligue 1—France’s Ligue 1 ranks as the most competitive. That’s pretty counter-intuitive to people who claim the league is a “ farmer’s league “.
+
+    He has a point… 😉 https://t.co/1tnlBLEVYi
+    — Ligue1 English (@Ligue1_ENG) August 15, 2020 
+
+Kylian Mbappé tweeted this out after PSG and Lyon made it to the 2019/20 Champions League Semi-Finals
+
+While PSG win the title most seasons, the spots behind PSG—from continental qualification to relegation—are normally hotly contested. Further, clubs (outside of PSG) tend to be much closer in their points tally than otheer leagues. Ligue 1 also has the lowest standard deviation of all leagues here, meaning each season the Gini coefficient doesn’t differ much—something we can see in the chart above.
+
+Serie A ranks as the least competitive league of the top 5, only ranking as more competitive than the Ukrainian Premier League. Even though some European qualification or relegation spots can be up for grabs, most seasons the top teams have a lot more points than the worst teams.
+
+Spain’s La Liga is interesting, because while it ranks in the middle for competitiveness, it has a season in the top 5 most competitive seasons (18/19) and in the top 5 least competitive seasons (16/17).
+
+Overall, the top 5 leagues in Europe rank with Ligue 1 as the most competitive, followed by the Bundesliga, the Premier League, La Liga, and finally Serie A as the least competitive—based on Gini coefficients of points won by each team.
+
+The Final Word
+
+Belgium or Turkey have the most competitive league of leagues with at least one season in the top 10 UEFA leagues recently, while Ukraine has the least competitive.
+
+In the future, I’d like to extend this work to all the other UEFA leagues, as well as track Gini coefficients further back than 5 seasons (I’d also like to compare different leagues in a nation, such as the EFL competitions and the Premier League). That would allow us to see what the most competitive UEFA top division is. However, that’s a ton of work… So it looks like I’ll turn on some Belgian, Turkish, and French games in the background.
+
+Header image by tookapic from Pixabay
+Share this:
+
+    Twitter
+    Facebook
+    Reddit
+    Email
+
+Like this:
+Loading...
+
+Art on a Football Pitch – Vincent Kompany’s Unique 4-4-2 Tactics April 12, 2022 In "21/22 Belgian League Project"
+
+Goal Contribution Performance – Top 5 Leagues April 22, 2021 In "Data Analysis"
+
+South Korea: The Back 3’s Stronghold July 22, 2021 In "Data Analysis"
+November 5, 2021 Ben Griffis Data Analysis belgian first division a , bundesliga , competitiveness , Data Analysis , gini coefficient , la liga , Ligue 1 , premier league , serie a , Visualization
+One thought on “ Determining the Most Competitive Top UEFA League ”
+
+    David Hancock
+    November 6, 2021 at 12:50 pm Reply
+
+    Interesting analysis. I recommend a different direction for extending this work. Keep the focus on the leagues you just analyzed, but consider there are probably three dimensions of competitiveness that matter: 1) the fight for winning the league; 2) the fight for the last Champions League spot; 3) how evenly distributed the points are among all the teams that did not qualify for Champions League.
+
+    Like Like
+
+Leave a Reply Cancel reply
+
+Post navigation
+Previous Post Analyzing DC United’s Attack in the 2021 MLS
+Next Post Analyzing Gimpo FC’s First K League 2 Match: A Great League Debut 1-2 Win Away at Gwangju FC
+Get the latest articles in your inbox
+
+Enter your email address to receive notifications of new posts by email.
+
+Email Address:
+
+Subscribe
+Search for:
+Write for Café Tactiques
+
+Café Tactiques is looking for more authors. Please get in touch with our founder Ben if you would like to join the team and help the site grow—while getting your work out there and furthering your skills.
+Café Tactiques Twitter
+My Tweets
+Archives
+
+    April 2022
+    February 2022
+    November 2021
+    October 2021
+    September 2021
+    August 2021
+    July 2021
+    June 2021
+    May 2021
+    April 2021
+
+Categories
+
+    21/22 Belgian League Project
+    Data Analysis
+    Manager Tactics
+    Match Anaysis
+    Match Reports
+    Player Analysis
+    Player Performance
+    Scouting Report
+    Tactics
+    Team Reports
+
+Blog at WordPress.com.
+
+    Follow
+

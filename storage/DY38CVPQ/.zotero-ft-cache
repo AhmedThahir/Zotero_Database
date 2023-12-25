@@ -1,0 +1,823 @@
+Hall et al. / TEAM PERFORMJOAUNRCNEAALNODFPASPYORROTLSLECONOMICS / May 2002
+
+Testing Causality Between Team Performance and Payroll
+
+The Cases of Major League Baseball and English Soccer
+
+STEPHEN HALL STEFAN SZYMANSKI
+Imperial College
+ANDREW S. ZIMBALIST
+Smith College
+
+The link between team payroll and competitive balance plays a central role in the theory of team sports but is seldom investigated empirically. This paper uses data on team payrolls in Major League Baseball between 1980 and 2000 to examine the link and implements Granger causality tests to establish whether the relationship runs from payroll to performance or vice versa. While there is no evidence that causality runs from payroll to performance over the entire sample period, the data shows that the cross section correlation between payroll and performance increased significantly in the 1990s. As a comparison, the paper examines the relationship between pay and performance in English soccer, and it is shown that Granger causality from higher payrolls to better performance cannot be rejected. We argue that this difference may be a consequence of the open market for player talent that obtains in soccer compared to the significant restrictions on trade that exist in Major League Baseball.
+The Commissioner’s Blue Ribbon Panel on baseball economics was established
+“to consider whether revenue disparities among clubs are seriously damaging competitive balance, and, if so, to recommend structural reforms to ameliorate the problem” (Levin, Mitchell, Volcker & Will, 2000). The Panel’s report published in July 2000 concluded, inter alia, that “large and growing disparities exist” and that revenue sharing and the payroll tax “have produced neither the intended moderating of payroll disparities nor improved competitive balance” (p. 1). In this article, we examine player payrolls and their effect on outcomes, notably the winning records
+AUTHORS’ NOTE: We wish to thank Roger Noll, Shreya Jain, and Bhavani Harimohan for their comments and research assistance.
+JOURNAL OF SPORTS ECONOMICS, Vol. 3 No. 2, May 2002 149–168 © 2002 Sage Publications
+149
+
+Downloaded from jse.sagepub.com at UNIVERSITY OF WATERLOO on April 7, 2015
+
+150
+
+JOURNAL OF SPORTS ECONOMICS / May 2002
+
+of the teams. There are two aspects to our approach. First, we explore whether there is in fact a large variation in payrolls among the teams that is correlated with winning. Clearly, a (positive) correlation between payrolls and playing success is a sine qua non for establishing that revenue disparities play any role in determining competitive balance. Moreover, this correlation should be strong if it is to bear the weight of a causal link from revenue inequality to competitive imbalance. Second, we test directly whether any such causal link exists, in a statistical sense. In addition to performing the relevant tests for Major League Baseball (MLB), to sharpen our results we carry out similar tests for English soccer.
+We find that the correlation between team performance and payroll is relatively weak in MLB from 1980 to the mid-1990s and robust thereafter. The correlation for English soccer is strong throughout the tested period, 1974-1999. Granger causality tests affirm that in English soccer the causality runs from payroll to performance and that in MLB the causality runs from performance to payroll during 1980-1994. The results for MLB during 1995-2000 are consistent with causality running in both directions.
+We conclude by considering the institutional features of MLB and English professional soccer that may account for these statistical results. We argue that the restrictions on trading in player markets that are a recognized feature of baseball limit the scope for turning income into success and also enhance the opportunities for players to turn success into income. Nevertheless, the sharply growing revenue disparities in MLB since 1990 have reopened the opportunity to differentiate team performance through payroll. The presence of long-term contracts and restrictive labor market rules, however, seem to prevent the identification of unambiguous one-way causality.
+By contrast, the well-established and accepted player markets of soccer leagues (not just in England but worldwide) ensure that players are paid a market rate for what they do. Not only are soccer clubs free to buy a better team in the market but the market worldwide is large enough to ensure that such a team can be assembled relatively quickly, and consequently spending determines success.
+THE CORRELATION BETWEEN PLAYER SPENDING AND WINNING
+
+Baseball
+Playing talent is the principal input used by clubs to generate success on the field. In a perfectly competitive industry, we would expect that each player would receive his expected marginal revenue product in wages. Scully’s (1974) seminal article suggested a direct test of the competitiveness of the market by comparing an individual player’s wages with his estimated marginal revenue product based on the relationship between (a) playing success and team revenue and (b) player performance statistics and success. He found that marginal revenue products were sub-
+
+Downloaded from jse.sagepub.com at UNIVERSITY OF WATERLOO on April 7, 2015
+
+Hall et al. / TEAM PERFORMANCE AND PAYROLL
+
+151
+
+stantially above player salaries, a finding accounted for by the operation of the reserve clause that granted team owners monopsony power.1 The introduction of free agency from 1976 onward substantially undermined, if not eliminated, the monopsony power of the owners. Zimbalist (1992) employed a modified Scully method for baseball and found that salaries were on balance much closer to marginal revenue products, although there were substantial differences among different categories of players. In general, free agents appeared to earn in excess of their marginal revenue products (MRPs), whereas rookies continued to earn substantially less. This finding in itself can be taken as evidence that the market for playing talent does not function efficiently. In an efficient market with free agency, players offered less than their expected MRP would receive better offers from rival teams and move, whereas players whose salaries exceeded MRP would face either layoff or a pay cut. However, this conclusion is necessarily tentative, given the difficulties inherent in measuring MRP.
+Quirk and Fort (1999) suggest another approach. They argue that under free agency, “A player will end up playing for the team for which he adds most revenue . . . and he will earn something between what he is worth to that team and what he would be worth to the team that places the second highest value on his services” (p. 81), and from this they conclude that “teams presumably pretty much get what they pay for” (p. 83). To test this proposition they then look at the correlation between the rank of regular-season winning percentages (i.e., highest, second highest, third highest, etc.) and the rank of player payroll cost by team averaged over the 7 seasons during 1990-1996. They find that for the American League the correlation coefficient is 0.509, whereas for the National League it is 0.135. Neither of these correlations is statistically significant. They conclude that payrolls “were essentially worthless in explaining the won-lost records in baseball (p. 86).” A related exercise conducted by Zimbalist (1992) reports a low correlation coefficient for baseball and concludes that “average team salary has been related only tenuously to team performance” (p. 96).2
+This conclusion is striking because it challenges the idea that teams with larger revenue bases can successfully corner the best players in a free agency market by offering the highest salaries. There might be other mechanisms that enable wealthy teams to attract the best players. First, it might be that benefits in kind and other perquisites that do not appear in the accounting data underlying player salaries are the means by which the wealthy attract the talented, but this seems unlikely in an era of such remarkable salary and payroll inflation. Second, it might be that the quality of the coaching staff and player training facilities gives the wealthier teams the ability to extract more from players of a given talent. This also seems unlikely to explain all of the variation in performance, given that payroll itself constitutes such a large fraction of total costs (53% for the average club in 1999 according to the Blue Ribbon Panel, and even more for the median club). Third, it may be that players are attracted to the largest revenue markets because of the greater opportunities to earn
+
+Downloaded from jse.sagepub.com at UNIVERSITY OF WATERLOO on April 7, 2015
+
+152
+
+JOURNAL OF SPORTS ECONOMICS / May 2002
+
+endorsement and promotional income outside the club. This could imply that salaries need be no higher than (and may be slightly below) the alternative to attract a player to a large revenue market. Indeed, if this were the case, we might expect to find a negative correlation between success and club payrolls.
+In this study, we first look at the relationship between payroll and performance, using pooled data for Major League Baseball (MLB) during the period 1980-2000. In particular, we focus on winning percentages in the regular season and payroll spending by each team relative to the average payroll spending of all teams for the season. If wealthy teams can buy success, we conjecture, then the most precise measure of their spending is the ratio rather than the rank. For example, given that luck still plays a part, then the team that spends the most is more likely to achieve the highest ranking if it spends 10 times the average rather than 5 times the average. Moreover, winning percentages are a more accurate measure of success than rank of winning percentages because a team with the season’s highest winning percentage will generally be deemed more successful if it achieved this with a 0.65 rather than a 0.60 record.
+Figure 1 is a scatter diagram for all clubs during all years in the data. The solid line is a linear regression line, and the figure indicates that the R2 for this regression is about 0.24; in other words, spending relative to the average accounts for about 24% of the variation in yearly winning percentages—only a modest correlation. However, given that there are numerous factors that may influence a team’s performance in a particular season, many of them purely random, a more reliable test of the effect of spending might be to consider those teams that overspend during the long term to see if they outperform the rest. To look at this, we averaged winning percentages for each team during the 21 years and averaged their annual spending relative to the average. Although this process of averaging may obscure a great deal of within-group variation, it gives a clear idea of the relationship between long-term spending and long-term success. The long-term average relationship is depicted in Figure 2.
+Each dot on the graph represents a particular team (the New York Yankees, Florida Marlins, and Montreal Expos are labeled), and as before the regression line shows the linear relationship between the variables and the R2 gives an indication of the degree of correlation.3 What is striking about this chart is that the degree of correlation is much greater than in Figure 1, suggesting that during the longer term consistently high spending is associated with a high level of success.
+
+A Comparison With English Soccer
+The league structure of English soccer is somewhat different from that of MLB. The top division in England (called the Premier League) currently consists of only 20 teams, but at the end of each season the 3 worst performing teams are relegated or demoted to the immediately junior division (called the Football League First Division) and replaced by the 3 best performing teams in that division. An analo-
+
+Downloaded from jse.sagepub.com at UNIVERSITY OF WATERLOO on April 7, 2015
+
+Hall et al. / TEAM PERFORMANCE AND PAYROLL
+
+0.75
+
+0.70
+
+R2 = 0.2364
+
+Regular season winning percentage
+
+0.65
+
+0.60
+
+0.55
+
+0.50
+
+0.45
+
+0.40
+
+0.35
+
+0.30 0
+
+0.5
+
+1
+
+1.5
+
+2
+
+Team payroll spending relative to average team in a season
+
+Figure 1: Annual Payroll and Winning in Baseball: 1980-2000
+
+153
+2.5
+
+0.58 0.56
+
+R2 = 0.7067
+
+0.54
+
+Yankees
+
+Average regular season winning percentage
+
+0.52
+
+Montreal
+
+0.5
+
+0.48
+
+0.46
+
+0.44
+
+Florida
+
+0.42
+
+0.4
+
+0.4
+
+0.6
+
+0.8
+
+1
+
+1.2
+
+1.4
+
+1.6
+
+1.8
+
+Average of team payroll spending relative to annual average
+
+Figure 2: Average Payroll and Average Winning Percentage: 1980-2000
+
+gous relationship exists between the Football League’s First and Second Divisions and its Second and Third Divisions. This system of promotion and relegation permits a significant degree of mobility among the 92 teams that participate in the four divisions, both in theory and in practice. Since 1987, there has also been a small amount of mobility at the bottom, as the worst performing team in the Third Divi-
+
+Downloaded from jse.sagepub.com at UNIVERSITY OF WATERLOO on April 7, 2015
+
+154
+
+JOURNAL OF SPORTS ECONOMICS / May 2002
+
+sion has been relegated to junior competition and replaced by the most successful lower league team. Thus, between 1987 and 1999 there were 99 teams appearing in the four divisions, of which only 5 were never either promoted or relegated. Of the teams, 32% played in only two different divisions, whereas 43% played in three and 12% managed to play in all four during the 12-year period.4
+Given this degree of mobility, it is misleading to analyze the top division in isolation. Instead, we have used a balanced panel of 39 teams that were present in the leagues during the 26 seasons 1973-1974 to 1998-1999. These clubs provide a representative sample of all the divisions during the period. The promotion and relegation structure of league soccer renders the interdivisional comparison of winning percentages meaningless; therefore, some other measure of success needs to be adopted. Here we use league ranks measuring from the top of the Premier League (1) to the bottom of the Football League Third Division (92). Payroll costs5 are taken from published company accounts and are again expressed relative to the average payroll of all teams for a season.6 Figure 3 illustrates the relationship between league rank (transformed into the log odds of league rank) and spending relative to the average.
+Although there are clearly a number of outliers at the top and bottom ends of the performance distribution, the overall correlation between performance and player spending seems much stronger for English soccer than for baseball, as indicated by the R2 of 0.74. When we look at the relationship between payroll and success during 26 years for each of the clubs on average (see Figure 4), we similarly find a much closer correlation than we do in baseball.7
+Before concluding from this that there is a genuinely closer correlation between payrolls and performance in soccer than in baseball, it is necessary to consider the relevant ranges of the data. There is both more variation in success and more variation in payroll spending in soccer than in baseball. Thus, the standard deviation in player payrolls (relative to the season’s average) for the baseball data during the period 1980-2000 is 0.33, less than half that of the soccer data 0.76 (covering 19741999). The differences in performance are also much greater in soccer, given the much larger number of teams involved.
+One way to compare like with like is to look at the winning percentages and salary variation of teams in the Premier League only. The standard deviation of payrolls for teams appearing in the Premier League is only 0.34, almost exactly the same as the standard deviation for MLB. The standard deviation of winning percentages is much larger for the Premier League (0.11) than for baseball (0.07). This is all the more striking because the much longer season in baseball (around 160 games compared to around 40 for the Premier League) would imply that the effect of variation due to chance would be much smaller in the former;8 therefore, if payrolls did influence success systematically the effect should be more, not less apparent.
+
+Downloaded from jse.sagepub.com at UNIVERSITY OF WATERLOO on April 7, 2015
+
+Hall et al. / TEAM PERFORMANCE AND PAYROLL
+
+155
+
+- log [league rank/(93- league rank)]
+
+5 4 3 2 1 0 -1 -2 -3 -4 -5
+-3
+
+R2= 0.7355
+
+-2.5
+
+-2
+
+-1.5
+
+-1
+
+-0.5
+
+0
+
+0.5
+
+1
+
+Log of team payroll relative to the season average
+
+1.5
+
+2
+
+Figure 3: Payroll and Winning in English Soccer: 1974-1999
+
+5
+
+4
+
+R2 = 0.9439
+
+Liverpool
+
+average of - log [league rank/(93 - league rank)]
+
+3
+
+2
+
+1
+
+0
+
+-1
+
+-2 Scunthorpe United
+
+-3
+
+-1.5
+
+-1
+
+-0.5
+
+0
+
+0.5
+
+1
+
+1.5
+
+Average of log team spending relative to season average
+
+Figure 4: Team Average Spending and Average League Position: 1974-1999
+
+Figures 5 and 6 are the analogous charts for Figures 3 and 4, considering only top division soccer teams. In fact, by inspection, these charts now resemble Figures 1 and 2, respectively, rather closely.
+
+Downloaded from jse.sagepub.com at UNIVERSITY OF WATERLOO on April 7, 2015
+
+156
+
+JOURNAL OF SPORTS ECONOMICS / May 2002
+
+0.9
+R2 = 0.3386 0.8
+
+0.7
+
+winning percentage
+
+0.6
+
+0.5
+
+0.4
+
+0.3
+
+0.2
+
+0
+
+0.5
+
+1
+
+1.5
+
+2
+
+2.5
+
+payroll relative to season average
+
+Figure 5: Winning Percentage and Payroll for Top Division Soccer Teams: 1974-1999
+
+average winning percentage
+
+0.7
+
+0.65 0.6
+
+R2 = 0.7883
+
+0.55
+
+0.5
+
+0.45
+
+0.4
+
+0.35
+
+0.3
+
+0.25
+
+0.2 0
+
+0.2
+
+0.4
+
+0.6
+
+0.8
+
+1
+
+1.2
+
+1.4
+
+1.6
+
+Average payroll spend relative to the season average
+
+Figure 6: Team Average Spending in the English Top Division: 1974-1999
+
+We can directly compare the implied relationship between winning percentage and relative payroll spending for MLB and the Premier League by looking at the simple regression equation for Figures 1 and 5:
+Win % in MLB = 0.404 + 0.097 payroll/(average payroll)
+
+Downloaded from jse.sagepub.com at UNIVERSITY OF WATERLOO on April 7, 2015
+
+Hall et al. / TEAM PERFORMANCE AND PAYROLL
+
+157
+
+Win % in Premier League = 0.327 + 0.191 payroll/(average payroll).
+In MLB, a team spending 50% of the average could expect a 0.453 winning percentage, whereas a team in the Premier League with similar underspending would only achieve a record of 0.423. Similarly, a team spending 50% more than the average in baseball could only expect a winning percentage of 0.550, whereas in the Premier League the team could expect a winning percentage of 0.614. Alternatively, a team spending two standard deviations above the mean would have a win percentage of .564 in MLB and .649 in the Premier League. Performance at the top level of English soccer seems much more sensitive to spending than performance at the top level of baseball.
+The regression estimates above are highly significant at conventional levels— for both equations, the t-statistic on relative payrolls is more than 13. However, neither regression directly establishes causality from player spending to team performance.
+SPENDING, PERFORMANCE, AND CAUSALITY
+
+Background
+The commonsense view is that you get what you pay for. Teams compete in the market for playing talent, bidding up salaries to the point where wages equal marginal revenue products, and therefore total payroll is a perfect predictor of performance. Moreover, in sports markets where players perform on a regular basis in front of large audiences, the usual hidden information and hidden action accounts of market failure are not plausible.
+So, how might it come about that a causal relationship from pay to performance is not visible statistically? It might be that the mechanism works but only imperfectly, due to factors such as player complementarities, managerial talent, injuries, luck, poor judgement, and so forth. Too much noise might obscure the true underlying causal relationship. If the trading market is itself very thin, as it has become in baseball in the free agency era, then trades may fail to occur at efficient prices.
+Prior to free agency, player trading was frequent—for example, Daly and Moore (1981) quote an average figure of nine trades per team per season between 1955 and 1964 and eight trades per team per season between 1965 and 1973. Eckard (2001) states that this amounted to 7.8% of all players in the period 1973-1975. Since then, however, player trading has much diminished, and the phenomenon of cash sales has more or less disappeared (Daly, 1992; Fort & Quirk, 1995). Hylan, Lage, and Treglia (1996) found that pitchers in the free agency era with 7 or more years of experience were less likely to move to another team than in the reserve era. Furthermore, although trades continue, the incidence of teams trading first-line players who are likely to have the greatest effect on the outcome of games and therefore win percentage has become even less frequent (Daly, 1992). Horrow (2001) reports that
+
+Downloaded from jse.sagepub.com at UNIVERSITY OF WATERLOO on April 7, 2015
+
+158
+
+JOURNAL OF SPORTS ECONOMICS / May 2002
+
+during 1951-1976 an annual average of 4.7 players per team moved to a different club via cash sales, trades, waivers, and other transactions, and during 1977-1994 that figure was 4.6.9
+Although these market encumbrances may weaken the link between wages and performance, they do not explain why causation might run from performance to wages rather than wages to performance.
+The explanation, in the case of baseball, may be associated with the long-term nature of the employment contract and the impediments to trading star players. The trading of top players in MLB is encumbered by two factors. First, since Commissioner Kuhn prohibited the use of substantial cash in player transactions in 1976, there is no clean or divisible mechanism for clubs to equalize the value of player trades.10 MLB’s young stars who have not yet earned free-agent status generally produce more value than they are paid. But unlike in European soccer, where cash is commonly used in a trade to fill the difference between a player’s MRP and his salary, the best way for an MLB owner to extract surplus is to hold such a player until he becomes a free agent. Second, unlike English soccer, MLB free agent stars frequently have no trade clauses in their contracts.
+Players on a winning team expect to be rewarded for the team’s success. Thus, free agents on a winning team as well as players a year away from free agency often earn handsome salary increases, whereas the salary of other players does not respond to team performance in the short run. Many of these salaries were set years earlier while the player was at a different performance level.11
+In English soccer the situation is quite different. Traditionally, players have been employed on relatively short-term contracts of between 1 and 5 years, and player trading is an important part of the operation of the league. Carmichael, Forrest, and Simmons (1999) report that, for example, 12.3% of players changed teams in the 1993-1994 season, which is not unusual. Moreover, the leading teams regularly trade their top stars in search of a better lineup, whereas players frequently express their ambition to play for a variety of clubs in a variety of leagues during their careers. Thus, English league teams spent just under $2 billion (gross) on player transfers during the seasons 1995-1996 to 1999-2000, an average of $400 million per season and equal to around 70% of total spending on player salaries (see Annual Review, 2001, p. 27).12
+In English soccer, unlike MLB, young stars at the beginning of their careers have mobility similar to the established stars. Importantly, “no trade” clauses are virtually unheard of in English soccer. Soccer fans are more likely to complain if their team’s owners do not go after the best players than they are to grouse that their team’s players rapidly turn over. In a league where the teams themselves are mobile between divisions, mobility of personnel is accepted as part and parcel of the system. Players, in turn, always seek to move up in division, league, and team to maximize their experience and income. The concentration of a large number of teams in English soccer in relative geographic proximity to each other also makes it easier for players to move among clubs without upsetting their social lives. Hence, both
+
+Downloaded from jse.sagepub.com at UNIVERSITY OF WATERLOO on April 7, 2015
+
+Hall et al. / TEAM PERFORMANCE AND PAYROLL
+
+159
+
+for contractual and structural reasons there is much greater freedom in the labor market of English soccer than in MLB. This allows for a closer match between salaries and MRPs and for higher payroll outlays to be converted into performance success more readily. It also means that players are in much less of a position to bargain for any rents that accrue from unexpected success because players demanding unrealistic salaries (i.e., well in excess of their MRP) can be more readily traded.
+
+Testing for Granger Causality
+The problem of identifying economic causality from the statistical analysis of data series has long been recognized as a fundamental problem in econometrics. Causality in its most general sense is nebulous and nonoperational in a statistical sense. We might think, for instance, of future expectations causing things to happen now, which would suggest that the future in some way could cause the past. To make the concept of causality operational we need to define a precise concept that is clear, and this inevitably involves limiting the broad meaning of causality. In operational econometrics there are two broad definitions of causality currently being used: Granger causality and long-run (sometimes weak) causality. Long-run causality is only operational for models containing nonstationary variables. In this case we can divide the model’s properties into two parts: the long-run determination of the system and the short-run adjustment. Long-run causality is defined only with respect to the long-run determination of the model. Granger causality focuses on any structural influence of one variable on another and is therefore operational in the case of stationary and nonstationary data.
+Granger (1969) proposed an operational definition of causality between two or more variables in terms of the influence that one variable may have on another. Consider the case of two processes, x and y, and the information on them contained in their past behavior Xt (Xt = xt – 1, xt – 2, . . . xt – q) and Yt (Yt = yt – 1, yt – 2, . . . yt – q) for a suitable lag length q. y Granger causes x if Yt provides additional information for the forecast of xt above that provided by Xt. Granger causality is usually tested formally within the framework of a stationary vector autoregression (VAR). In this simple bivariate case, the test would involve the following system:
+yt = αYt + βXt + νt
+xt = χYt + δXt + εt,
+where α, β, χ, and δ are conformably dimensioned vectors of parameters. The test of the hypothesis that x does not Granger cause y is given by the joint test that β = 0 and the test of the hypothesis that y does not Granger cause x is given by the joint test that χ = 0. Because this procedure is carried out for a reduced form VAR, it is important to realize that two types of causality are actually being tested for at once. This is the possibility that (a) in the structural form of the model y is simultaneously caused
+
+Downloaded from jse.sagepub.com at UNIVERSITY OF WATERLOO on April 7, 2015
+
+160
+
+JOURNAL OF SPORTS ECONOMICS / May 2002
+
+by x or (b) in the structural form of the model y is caused by lagged values of x. This may be fully appreciated if we state the above system in structural form that allows for contemporaneous interactions:
+
+yt = a12xt + α*Yt + β*Xt + νt xt = a21yt + χ*Yt + δ*Xt + εt.
+In matrix notation we can then write this system as
+
+Azt = BZt,
+
+where z = (y x)′, Z = (Y X)′, and
+
+A
+
+=
+
+1  −a21
+
+−a12 1
+
+ 
+
+B
+
+=
+
+α  χ
+
+* *
+
+β * δ * .
+
+The A and B matrices are the structural form parameters, and the parameters in the reduced form VAR model above are derived as the reduced form of this system (A–1B). So the test that β = 0 would be rejected if either a12 ≠ 0 or if β* ≠ 0, that is, if in the structural form there is either contemporaneous causality from x to y or lagged causality.
+Since the mid-1980s, a revolution has occurred in the analysis of time series data with the development of the concepts of stationarity and cointegration. These methods have led to the development of statistical tests that can reject hypotheses consistent with a particular direction of causality in the long run in isolation from the complete dynamic response. However, we will not pursue this here as subsequent testing of our data revealed it to be stationary. In team sports, as in much of industrial organization, one is often concerned with panel data rather than simple time series. In recent years, several researchers have begun to apply these techniques to the analysis of panel data (e.g., see Hall & Urga, 2000) and one interesting result is that a key feature determining how a panel should be treated is the source of the nonstationarity in the panel. If a nonstationary variable in the panel is driven by only one nonstationary common stochastic trend across the whole panel, this will affect the properties of standard panel estimators in an important way to considerably simplify the problem. In the case being considered here, payment costs are almost certainly nonstationary. But if this nonstationarity comes from only one source (the general rise in wages across all clubs), then this is the single source of nonstationarity and it may be removed by considering a relative payroll variable, which is what we use. It is theoretically possible, of course, that this transformation would not remove the nonstationarity from the data, and this would imply that more than one common stochastic trend underlies the complete panel. This is, of course, a testable hypothesis in terms of testing the relative payroll variable for stationarity. The con-
+
+Downloaded from jse.sagepub.com at UNIVERSITY OF WATERLOO on April 7, 2015
+
+Hall et al. / TEAM PERFORMANCE AND PAYROLL
+
+161
+
+ventional test of stationarity is a Dickey-Fuller test for a unit root. In the panel data context, our regression equation was
+
+∆yi,t = αi + ρyi, t – 1 + ei,t,
+
+i = 1, 2, . . . N, t = 1, 2, . . ., T,
+
+(1)
+
+where the αi are fixed effects. The distribution for the t-statistic on the ρ coefficients is asymptotically normal as the number of clubs goes to infinity; for a small sample it would be closer to a standard Dickey-Fuller distribution, so assuming a critical value close to 3 would be very conservative.
+Note that for this analysis we have reverted to the full English League soccer database, not the restricted Premier League sample. One difficulty with the using the Premier League sample alone would be that due to relegation there is not in general a complete series for lagged winning percentage. In any case, from the point of view of testing for causality from wages to performance there is little sense in excluding more than two thirds of the data.
+Table 1 establishes that all of the variables considered appear to be stationary. Our next step is to use a Granger causality test to examine the direction of causality. In this context, our regression equation is
+
+yi,t = αi + β1yi, t – 1 + β2xi, t – 1 + ui,t,
+
+(2)
+
+where yi is the dependent variable and xi is the independent variable. A variable z can be said to Granger cause a variable w if the coefficient β2 for the regression with w on the left hand side (LHS) is economically and statistically significant, whereas the coefficient β2 for the regression with z on the LHS is economically and statistically insignificant.13
+These results tell a very different story for baseball and soccer (see Table 2). In the baseball case, performance appears to Granger cause wages but wages do not Granger cause performance. In the English soccer case, wages Granger cause performance but performance does not Granger cause wages (the coefficient is very small and not significant at the 1% level).
+From an economic point of view, the implication of the Granger causality test is that English soccer conforms to the efficiency wage model of sporting competition, whereas baseball does not over these time periods. If wages do not cause better performance in baseball, what does? In our model the only other explanatory variable is past success, which diminishes in effect over time. The fixed effects are also insignificant, so the statistical interpretation is that teams randomly achieve success from time to time; this success persists for a while (and is translated into higher wages) but eventually teams regress to the mean 0.50 winning record. Such an interpretation is not economic nonsense but does seem to be at odds with the per-
+
+Downloaded from jse.sagepub.com at UNIVERSITY OF WATERLOO on April 7, 2015
+
+162
+TABLE 1: Estimates of ρ
+Dependent Variable
+Baseball winning percentage Baseball relative payroll Soccer logit of position Soccer relative payroll
+
+JOURNAL OF SPORTS ECONOMICS / May 2002
+
+Coefficient for ρ
+–0.62 –0.33 –0.34 –0.059
+
+t-Statistic
+–15.57 –9.81 –14.04 –3.46
+
+Observation
+527 527 975 975
+
+TABLE 2: Estimates of β2: 1980-2000 for Major League Baseball and 1974-1999 for Soccer
+
+Dependent Variable
+
+Coefficient for β2
+
+t-Statistic
+
+Observation
+
+Baseball winning percentage Baseball relative payroll Soccer logit of position Soccer relative payroll
+
+0.003 0.823 0.372 0.018
+
+0.24
+
+527
+
+5.18
+
+527
+
+5.13
+
+975
+
+2.19
+
+975
+
+ceived development of baseball and the sustained dominance of some teams. One possibility is that other explanatory variables might account for success, thus expanding the statistical model. Many such candidate variables (e.g., expenditures—including signing bonuses—on player development, the extent of ownership synergies with related businesses, and the depth of the pockets of the team owners) should be closely correlated with the ability to pay high salaries and hence to some degree have already been indirectly ruled out. Other variables, such as the intensity of fan support, might have an effect on success but are hard to measure directly. We experimented with the inclusion of local population variables for each team; these had no significant effect on our results, which may not be all that surprising because population tends to change only slowly and is thus similar to the fixed effects. Of course, if tradition itself was an explanation of long-run success, then the fixed effects would indeed be significant, which they are not. Within the Granger framework, the causal influences of success in MLB during 1980-2000 remain difficult to identify unambiguously or at least such influences are not readily quantifiable.
+Testing for a Structural Break in Baseball
+According to MLB’s Blue Ribbon Panel Report, the situation in baseball has changed significantly since 1994, with differentials in economic status having a much greater effect than hitherto. More generally, the argument of a structural shift in the mid-1990s is premised on several factors. First, in 1994 baseball’s new national television contract fell by more than 60%. At the same time, certain big
+
+Downloaded from jse.sagepub.com at UNIVERSITY OF WATERLOO on April 7, 2015
+
+Hall et al. / TEAM PERFORMANCE AND PAYROLL
+
+163
+
+market teams (such as the Yankees) were earning more than $40 million a year in unshared local media revenues, and the era of the new, big revenue–generating stadiums was ushered in by Camden Yards in 1992. With MLB’s centrally distributed monies below $10 million per club, teams with a big market or new stadium found themselves with a rapidly growing revenue advantage. Whereas the revenue disparity between the richest and poorest team was around $30 million in 1989, by 1999 it was $164 million. Local revenues (including all stadium-related and local media income) in 1999 went from a high of $176 million for the Yankees to a low of $12 million for the Montreal Expos.
+Second, the 1990s witnessed the emergence of new franchise owners who also own international communications networks or are attempting to build regional sports channels. These owners value their ballplayers not only by the value they produce on the field but what they produce for their networks. Presumably, when Rupert Murdoch signed 33-year-old Kevin Brown to a 7-year deal worth an average of $15 million annually, he was thinking about the News Corp’s emerging influence via satellite television in the huge Asian market as well as his enhanced ability to prevent the formation of a rival Disney-owned regional sports network in Southern California. Similarly, when George Steinbrenner opened up his wallet for David Cone ($12 million in 2000) or Roger Clemens ($30 million for 2001-2002), he had in mind creating a new New York sports channel built around the Yankees. In these and other instances, the owners of baseball teams do not treat their teams as standalone profit centers; rather, the team is a cog in a larger corporate machine that is used to maximize the long-term profits of a conglomerate.
+Third, baseball’s expansion by four teams in the 1990s, although adding excitement to the game, by decompressing talent makes the star players stand out more and thereby makes it easier to buy a winning team.
+Fourth, the selection of amateur players through the draft (introduced in 1965) had served as an important leveler. In the 1990s, however, the selection of amateurs began to favor the high-revenue teams, contributing to a greater imbalance on the playing field. Sharply growing revenue disparities across the teams came to be reflected in vastly different player development budgets across the teams. In 1999, for instance, the Yankees spent more than $20 million on their player development system, whereas the Oakland Athletics invested less than $6 million. This disparity allows the Yankees, by offering far more handsome signing bonuses, to have greater success in signing foreign players who come to the United States as free agents. It also makes it more difficult for the bottom revenue teams to sign their top draft picks of domestic players.14
+The evidence presented in Table 3 provides prima facie support for a mid-1990s structural break. It shows simple year-by-year regressions of winning percentage on player payrolls.
+From this table, it is apparent that in the 8 seasons between 1980 and 1992, payroll spending was significant at the 5% level only thrice, and never at the 1% level. In the 8 seasons between 1993 and 2000, payroll was always significant at the 5%
+
+Downloaded from jse.sagepub.com at UNIVERSITY OF WATERLOO on April 7, 2015
+
+164
+
+JOURNAL OF SPORTS ECONOMICS / May 2002
+
+TABLE 3: Estimated Equation: Win Pcti = α + β Payrolli + ei
+
+Year
+
+α
+
+β
+
+R2
+
+n
+
+1980 1981 1982 1983 1984 1985 1986 1987 1988 1989 1990 1991 1992 1993 1994 1995 1996 1997 1998 1999 2000
+
+.484 (11.1)
+.464 (9.06)
+.489 (13.31)
+.491 (12.82)
+.418 (10.77)
+.362 (5.26)
+.460 (9.29)
+.466 (9.65)
+.393 (8.12)
+.389 (9.10)
+.460 (9.46)
+.420 (10.44)
+.470 (10.72)
+.398 (9.29)
+.386 (8.39)
+.382 (10.71)
+.397 (14.93)
+.392 (15.65)
+.355 (13.42)
+.389 (15.93)
+.426 (17.67)
+
+3.24 E-09
+
+.006
+
+26
+
+(0.38)
+
+5.66 E-09
+
+.002
+
+26
+
+(0.73)
+
+1.46 E-09
+
+.005
+
+26
+
+(0.34)
+
+9.87 E-10
+
+.003
+
+26
+
+(0.26)
+
+7.48 E-09*
+
+.166
+
+26
+
+(2.18)
+
+1.30 E-08
+
+.149
+
+26
+
+(2.05)
+
+3.41 E-09
+
+.029
+
+26
+
+(0.84)
+
+3.02 E-09
+
+.022
+
+26
+
+(0.74)
+
+9.37 E-09*
+
+.181
+
+26
+
+(2.31)
+
+7.89 E-09*
+
+.232
+
+26
+
+(2.69)
+
+2.30 E-09
+
+.028
+
+26
+
+(0.84)
+
+3.14 E-09
+
+.151
+
+26
+
+(2.07)
+
+9.45 E-10
+
+.020
+
+26
+
+(0.70)
+
+3.17 E-09*
+
+.195
+
+28
+
+(2.51)
+
+3.53 E-09*
+
+.203
+
+28
+
+(2.57)
+
+3.57 E-09**
+
+.319
+
+28
+
+(3.49)
+
+3.07 E-09**
+
+.396
+
+28
+
+(4.13)
+
+2.72 E-09**
+
+.450
+
+28
+
+(4.61)
+
+3.43 E-09**
+
+.554
+
+30
+
+(5.89)
+
+2.26 E-09**
+
+.475
+
+30
+
+(5.03)
+
+1.36 E-09**
+
+.284
+
+30
+
+(3.33)
+
+NOTE: t-statistics in parentheses. *Two-tailed test, significant at 5%. **Two-tailed test, significant at 1%.
+
+Downloaded from jse.sagepub.com at UNIVERSITY OF WATERLOO on April 7, 2015
+
+Hall et al. / TEAM PERFORMANCE AND PAYROLL
+
+165
+
+TABLE 4: Estimates of β2: 1980-1994 and 1995-2000
+
+Dependent Variable
+
+Coefficient for β2
+
+Baseball winning percentage 1980-1994 1995-2000
+Baseball relative payroll 1980-1994 1995-2000
+
+0.006 0.034
+0.864 0.583
+
+NOTE: Number of observations = 527.
+
+t-Statistic
+0.52 2.21 5.38 2.87
+
+level and significant at the 1% in all but the first 2 seasons. This does seem to suggest that payroll spending may have become more important for success after the mid-1990s.
+If this is so, we should also observe a structural break in our econometric model. To test for this we ran our Granger causality regressions to allow for slope coefficients to change in either 1994 or 1995. We found that there did appear to be a change and that the break was most plausibly fixed at the end of 1994. We report the relevant coefficients for the Granger causality tests in Table 4.
+From this it is apparent that lagged wages in the performance regression have become statistically significant since 1994. At the same time, the wages regression shows that the effect of past performance has declined, although it is still significant. These results indicate that although it is still not possible to identify a unique causal relationship from wages to performance, since 1995 it has also become impossible to argue the reverse, that wages are determined by performance, because causality no longer appears to flow in a single direction.
+It is useful, perhaps, to consider the full Granger causality regressions to observe more closely the apparent changes.
+Prior to 1995, our two estimated relationships are
+
+Wpci,t = 0.322 + 0.343 Wpci, t – 1 Wagesi,t = αi + 0.532 wagesi, t – 1 + 0.864 Wpci, t – 1,
+whereas since 1995 the relationships are
+
+Wpci,t = 0.322 + 0.290 Wpci, t – 1 + 0.034 wagesi, t – 1
+Wagesi,t = αi + 0.674 wagesi, t – 1 + 0.583 Wpci, t – 1.
+Wages, as before, are expressed relative to the mean of all clubs in a given season. If these estimates represented a trend in the underlying parameters that drive success in baseball, the model would eventually come to resemble closely the efficiency wage system observable in soccer.
+
+Downloaded from jse.sagepub.com at UNIVERSITY OF WATERLOO on April 7, 2015
+
+166
+
+JOURNAL OF SPORTS ECONOMICS / May 2002
+
+DISCUSSION AND CONCLUSIONS
+The finding that player spending does appear, statistically, to cause improved performance in English soccer confirms not only the earlier research of Szymanski and Smith (1997) but also seems consistent with the more or less unfettered operation of the player market in soccer. Although baseball during 1980-1994 presents no evidence of Granger causality from wages to performance, there appears to be a shift in the mid-1990s. In our tests, since 1995 there is evidence that the causality between performance and payroll runs in both directions. If our measurement of expenditures on players and player development were more precise and complete, it is possible that the causal link from player costs to performance would become stronger.15
+The cause of the differences in the way that the soccer and baseball markets operate are to be found in the institutional rules that govern them. Restrictive agreements that limit player spending, player mobility, roster sizes, the right to trade players, and so forth have made it less likely that teams can fully use their financial muscle to buy success in baseball. The absence of any of these restrictions in English soccer make it more likely that teams can buy success.
+
+NOTES
+1. Scully’s (1974) general method has also been used to test for discrimination through the performance regressions. Limited evidence of salary discrimination has been found in baseball (see Kahn, 2000).
+2. This finding is consistent with Major League Baseball’s (MLB’s) Economic Study Committee Report of December 3, 1992, and the staff analysis on which it is based. See, for instance, Section III of the Major League Baseball Economic Study Committee, Staff Analysis, December 1992.
+3. Removing the Yankees from the regression reduces the coefficient of determination from .24 to .21 in Figure 1 and from .71 to .65 in Figure 2. Clearly, the Yankees are strong contributors to the payperformance link, but the link is still healthy without them.
+4. See Noll (2002 [this issue]) and Szymanski and Ross (2000) for a more detailed analysis of the promotion and relegation system.
+5. Here, payroll refers to all club salaries and not just players. This figure now accounts for more than 50% of total costs. Transfer fees are not included. Transfer fees are best viewed as long-term investment and would require a compelling amortization scheme to be employed. In any event, because it is the most successful clubs that are the highest net transfer fee spenders, if this information were included it would only strengthen the measured pay-performance link in British soccer.
+6. This data set, together with other accounting variables until 1997, can be found in Szymanski and Kuypers (1999).
+7. It might be reasonably asked whether the improved fit for the soccer data is a result of the loglinear specification. Accordingly, we also tested the baseball data using logit and loglinear specifications; the closeness of fit was almost identical.
+8. The “idealized” standard deviation of winning percentages in a league where each team has an equal chance of winning is .5/√m, where m is the number of matches in a season. For a 160-game season it would be 0.0395 and for a 40-game season it would be 0.0791. Thus, the actual standard deviation of the baseball winning percentages is 75% larger than the idealized, whereas for Premier League soccer it is only 40% larger.
+
+Downloaded from jse.sagepub.com at UNIVERSITY OF WATERLOO on April 7, 2015
+
+Hall et al. / TEAM PERFORMANCE AND PAYROLL
+
+167
+
+9. Our own review of the Sporting News’s Baseball Guide from 1960 through 2000 revealed the following pattern of diminished cash sales and trades. From 1960 through 1975 there were 518 cash purchases of players, representing 6% of all players in the major leagues at the time. During the 1980s there were 157 cash purchases, representing 2.4% of major leaguers, and during 1990-2000 there were 9 cash purchases, representing 0.1% of all major leaguers. In contrast, the share of players affected by trades went from 9.0% during 1960-1976 to 11.3% during 1977-2000. Hence, the overall movement of players from trades and cash sales fell from 15.0% during 1960-1976 to 12.2% during 1977-2000. The difference in the extent of cash trading in English soccer is striking. Sloane (1969) reports that in the 6 seasons between 1961-1962 and 1966-1967 more than 5% of professionals were traded for a fee every season. Because professional careers average 3 or 4 seasons in soccer, this implies a much higher degree of turnover than 6% during a period as long as 16 years (1960 to 1975). Moreover, evidence from Dobson and Gerrard (2000) suggests that turnover has increased. In the 4 seasons between 1990-1991 and 19931994, they found that on average 10.3% of professionals were transferred for a fee every season.
+10. In June 1976, Commissioner Bowie Kuhn disallowed Charlie Finley’s attempted sales of Joe Rudi and Rollie Fingers from the Oakland A’s to the Boston Red Sox for $2 million and of Vida Blue from the A’s to the New York Yankees for $1.5 million. Commissioner Kuhn set a rule of thumb that all trades involving more that $400,000 in cash had to be approved by his office. Today, the threshold for commissioner sanction is $1 million. According to the Sporting News’s Baseball Guide, the last time a player moved teams as a result of a cash sale was in 1991.
+11. Note that the correlation between success and payroll in baseball often results from the ability to hold a winning team together rather than the initial purchase of a winning team. The 2001 Yankees were composed mostly of players from their farm system or were acquired through trades. Of course, the Yankee farm system itself benefits from annual player development expenditures in excess of $20 million.
+12. Although a high level of player mobility has always been an accepted part of the soccer system, until recently clubs were able to place some obstacles in the way of players wanting to move. Most notably, until 1995 clubs could demand a transfer fee for players moving to a new club even when their old contract had ended. The famous Bosman judgment of 1995 outlawed this kind arrangement within the European Union, as well as prohibiting restrictions imposed by national governing bodies on the number of foreign players permitted on a team. It is still too early to tell whether this ruling has further increased the mobility of players, but there has certainly been a considerable influx of foreign players into the English Premier League in recent years.
+13. Davies, Downward, and Jackson (1995) and Dobson and Goddard (1998) investigated Granger causality between attendance and performance for the Rugby League and English soccer, respectively. In both cases they found mixed evidence.
+14. This point is treated in more detail in Zimbalist (2001). 15. Another possible factor here is that for most years the baseball salary data in our study reflects end of year payroll, whereas for some years it reflects beginning of year figures. The effect of this is discussed (and illustrated for the National Hockey League) in Zimbalist (2002 [this issue]).
+
+REFERENCES
+Annual review of football finance. (2001). Manchester, UK: Deloitte & Touche. Carmichael, F., Forrest, D., & Simmons, R. (1999). The labour market in association football: Who gets
+transferred and for how much? Bulletin of Economic Research, 51(1), 1-26. Daly, G. (1992). The baseball players’market revisited. In P. Sommers (Ed.), Diamonds are forever: The
+business of baseball. Washington, DC: Brookings Institution. Daly, G., & Moore, W. (1981). Externalities, property rights, and the allocation of resources in Major
+League Baseball. Economic Inquiry, 29, 77-95. Davies, B., Downward, P., & Jackson, I. (1995). The demand for rugby league: Evidence from causality
+tests. Applied Economics, 27, 1003-1007.
+
+Downloaded from jse.sagepub.com at UNIVERSITY OF WATERLOO on April 7, 2015
+
+168
+
+JOURNAL OF SPORTS ECONOMICS / May 2002
+
+Dobson, S., & Gerrard, B. (2000). Testing for monopoly rents in the market for playing talent: Evidence from English professional football. Journal of Economic Studies, 27(3), 142-164.
+Dobson, S., & Goddard, J. (1998). Performance and revenue in professional league football: Evidence from Granger causality tests. Applied Economics, 30, 1641-1651.
+Eckard, E. (2001). Free agency, competitive balance and diminishing returns to pennant contention. Economic Inquiry, 39(3), 430-443.
+Fort, R., & Quirk, J. (1995). Cross subsidization, incentives and outcomes in professional team sports leagues. Journal of Economic Literature, 33(3), 1265-1299.
+Granger, C. (1969). Investigating causal relations by econometric models and cross-spectral methods. Econometrica, 37, 424-438.
+Hall, S., & Urga, G. (2000). New developments in the analysis of panel data sets. In Dahiya (Ed.), The current state of business disciplines (Vol. 2, pp. 537-564). Spellbound.
+Horrow, R. (2001, October 25). Baseball must find new, creative ways to market game. Retrieved from www.sportsline.com
+Hylan, T., Lage, M., & Treglia, M. (1996). The Coase Theorem, free agency, and Major League Baseball: A panel study of pitcher mobility from 1961 to 1992. Southern Economic Journal, 62, 10291042.
+Kahn, L. (2000). The sports business as a labor market laboratory. Journal of Economic Perspectives, 14(3), 75-94.
+Levin, R. C., Mitchell, G. J., Volcker, P. A., & Will, G. F. (2000). The report of the independent members of the commissioner’s blue ribbon panel on baseball economics, Major League Baseball.
+Noll, R. G. (2002). The economics of promotion and relegation in sports leagues: The case of English football. Journal of Sports Economics, 3(2), 169-203.
+Quirk, J., & Fort, R. (1999). Hard ball: The abuse of power in pro team sports. Princeton, NJ: Princeton University Press.
+Scully, G. (1974). Pay and performance in Major League Baseball. American Economic Review, 64, 915-930.
+Sloane, P. J. (1969). The labour market in professional football. British Journal of Industrial Relations, 7(2), 181-199.
+Szymanski, S., & Kuypers, T. (1999). Winners and losers: The business strategy of football. London: Viking.
+Szymanski, S., & Ross, S. (2000). Open competition in league sports. Retrieved from http:// papers.ssrn.com/paper.taf?abstract_id=243756
+Szymanski, S., & Smith, R. (1997). The English football industry, profit, performance and industrial structure. International Review of Applied Economics, 11(1), 135-153.
+Zimbalist, A. (1992). Salaries and performance: Beyond the Scully model. In P. Sommers (Ed.), Diamonds are forever: The business of baseball (pp. 109-133). Washington, DC: Brookings Institution.
+Zimbalist, A. (2001). Competitive balance in Major League Baseball. Milken Institute Review, 3(1). Zimbalist, A. S. (2002). Competitive balance in sports leagues: An introduction. Journal of Sports Eco-
+nomics, 3(2), 111-121.
+
+Stephen Hall is in the School of Management at Imperial College in London.
+Stefan Szymanski is a senior lecturer of economics in the School of Management at Imperial College in London.
+Andrew S. Zimbalist is a professor of economics at Smith College in Northhampton, Massachusetts.
+
+Downloaded from jse.sagepub.com at UNIVERSITY OF WATERLOO on April 7, 2015
+

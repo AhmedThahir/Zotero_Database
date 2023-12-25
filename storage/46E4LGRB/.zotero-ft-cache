@@ -1,0 +1,455 @@
+Skip to content
+geeksforgeeks
+
+    Courses
+    Tutorials
+    Jobs
+    Practice
+    Contests 
+
+    Sign In 
+
+    Sign In
+    Home
+    Saved Videos
+    Courses
+        For Working Professionals
+        For Students
+        Programming Languages
+        Web Development
+        Machine Learning and Data Science
+        School Courses
+        Data Structures
+        Algorithms
+        Analysis of Algorithms
+        Interview Corner
+        Languages
+        Web Development
+        CSS Frameworks
+        JavaScript Frameworks
+        JavaScript Libraries
+        ML & Data Science
+        CS Subjects
+        GATE
+        Software Designs
+        GFG Sheets
+        Web Dev Cheat Sheets
+        Company-Wise SDE Sheets
+        DSA Sheets
+        School Learning
+        Mathematics
+        Maths Notes (Class 8-12)
+        NCERT Solutions
+        RD Sharma Solutions
+        Physics Notes (Class 8-11)
+        Chemistry Notes
+        CS Exams/PSUs
+        ISRO
+        UGC NET
+        Student
+        UPSC
+        SSC CGL
+        Banking Exams
+        SBI Clerk
+        SBI PO
+        IBPS PO
+        IBPS Clerk
+        Post a Job
+        Curated DSA Lists
+        Tutorials
+        Jobs
+        Practice
+    GBlog
+    Puzzles
+    What's New ? 
+
+Change Language
+
+    DSA
+    Data Structures
+    Algorithms
+    Interview Preparation
+    Data Science
+    Topic-wise Practice
+    C++
+    Java
+    Python
+    Competitive Programming
+    JavaScript
+    Machine Learning
+    Write & Earn
+    SDE Sheet
+    Puzzles
+    GFG School
+    Projects 
+
+▲
+Table of Contents
+
+    Write an Article
+    Write an Interview Experience
+    Interview Preparation
+    Practice @Geeksforgeeks
+    Data Structures
+    Algorithms
+    Programming Languages
+    Web Technologies
+    Computer Science Subjects
+    Machine Learning
+    Tutorial Library
+    GATE 2021
+    UGC NET / ISRO
+    QUIZ Section
+    GeeksforGeeks Initiatives
+    School Content
+
+    Write an Article
+    Write an Interview Experience
+    Interview Preparation
+    Practice @Geeksforgeeks
+    Data Structures
+    Algorithms
+    Programming Languages
+    Web Technologies
+    Computer Science Subjects
+    Machine Learning
+    Tutorial Library
+    GATE 2021
+    UGC NET / ISRO
+    QUIZ Section
+    GeeksforGeeks Initiatives
+    School Content
+
+Principles of Programming Languages
+
+    Last Updated : 22 Jan, 2014
+
+Read
+Discuss
+Practice
+Video
+Courses
+ 
+1 2 3 4
+Please wait while the activity loads.
+If this activity does not load, try refreshing your browser. Also, this page requires javascript. Please visit using a browser with javascript enabled.
+If loading fails, click here to try again
+Question 1
+Consider the program given below, in a block-structured pseudo-language with lexical scoping and nesting of procedures permitted.
+
+ Program main;
+  Var ...
+  
+    Procedure A1;
+     Var ...
+     Call A2;
+    End A1
+    
+    Procedure A2;
+      Var ...
+  
+      Procedure A21;
+        Var ...
+        Call A1;
+        End A21
+        
+    Call A21;
+  End A21
+  
+    Call A1;
+  End main.
+
+Consider the calling chain : Main->A1->A2->A21->A1 The correct set of activation records along with their access links is given by : gatecs2012activationrecord gatecs2012activationrecord
+A
+	
+A
+B
+	
+B
+C
+	
+C
+D
+	
+D
+GATE CS 2012      Principles of Programming Languages     
+Discuss it
+
+
+Question 2
+Which languages necessarily need heap allocation in the runtime environment?
+A
+	
+Those that support recursion
+B
+	
+Those that use dynamic scoping
+C
+	
+Those that allow dynamic data structures
+D
+	
+Those that use global variables
+GATE CS 2010      Principles of Programming Languages     
+Discuss it
+
+
+Question 3
+Which of the following are true?
+
+ I. A programming language which does not permit global variables of any
+   kind and has no nesting of procedures/functions, but permits recursion 
+   can be implemented with static storage allocation
+II. Multi-level access link (or display) arrangement is needed to arrange 
+    activation records only if the programming language being implemented 
+    has nesting of procedures/functions
+III. Recursion in programming languages cannot be implemented with dynamic 
+     storage allocation
+IV. Nesting of procedures/functions and recursion require a dynamic heap 
+    allocation scheme and cannot be implemented with a stack-based allocation
+    scheme for activation records
+V. Programming languages which permit a function to return a function as its 
+   result cannot be implemented with a stack-based storage allocation scheme 
+   for activation records
+
+A
+	
+II and V only
+B
+	
+I, III and IV only
+C
+	
+I, II and V only
+D
+	
+II, III and V only
+GATE CS 2008      Principles of Programming Languages     
+Discuss it
+
+
+Question 4
+Which one of the following is NOT performed during compilation?
+A
+	
+Dynamic memory allocation
+B
+	
+Type checking
+C
+	
+Symbol table management
+D
+	
+Inline expansion
+GATE-CS-2014-(Set-2)      Principles of Programming Languages     
+Discuss it
+
+
+Question 5
+Which of the following statements are CORRECT?
+
+ 1) Static allocation of all data areas by a compiler
+   makes it impossible to implement recursion.
+2) Automatic garbage collection is essential 
+   to implement recursion.
+3) Dynamic allocation of activation records is 
+   essential to implement recursion.
+4) Both heap and stack are essential to implement
+   recursion.
+
+A
+	
+1 and 2 only
+B
+	
+2 and 3 only
+C
+	
+3 and 4 only
+D
+	
+1 and 3 only
+GATE-CS-2014-(Set-3)      Principles of Programming Languages     
+Discuss it
+
+
+Question 6
+Consider the following code written in a pass-by-reference language like FORTRAN and these statements about the code.
+
+ subroutine swap(ix,iy)
+     it = ix
+L1 : ix = iy
+L2 : iy = it
+end
+  ia = 3
+  ib = 8
+  call swap (ia, 1b+5)
+  print *, ia, ib
+end 
+
+S1: The compiler will generate code to allocate a temporary nameless cell, initialize it to 13, and pass the address of the cell swap S2: On execution the code will generate a runtime error on line L1 S3: On execution the code will generate a runtime error on line L2 S4: The program will print 13 and 8 S5: The program will print 13 and -2 Exactly the following set of statement(s) is correct:
+A
+	
+S1 and S2
+B
+	
+S1 and S4
+C
+	
+S3
+D
+	
+S1 and S5
+GATE-CS-2006      Principles of Programming Languages     
+Discuss it
+
+
+Question 7
+A common property of logic programming languages and functional languages is:
+A
+	
+both are procedural languages
+B
+	
+both are based on λ-calculus
+C
+	
+both are declarative
+D
+	
+both use Horn-clauses
+GATE-CS-2005      Principles of Programming Languages     
+Discuss it
+
+
+Question 8
+The goal of structured programming is to:
+A
+	
+have well indented programs
+B
+	
+be able to infer the flow of control from the compiled code
+C
+	
+be able to infer the flow of control from the program text
+D
+	
+avoid the use of GOTO statements
+GATE-CS-2004      Principles of Programming Languages     
+Discuss it
+
+
+Question 9
+Choose the best matching between the programming styles in Group 1 and their characteristics in Group 2.
+	 Group-1		 Group-2
+ P.	 Functional	 1.	 Command-based, proce-dural
+ Q.	 Logic	 2.	 Imperative, abstract data type
+ R.	 Object-oriented	 3.	 Side-effect free, declarative, expression evaluation
+ S.	 Imperative	 4.	 Declarative, clausal representation, theorem proving
+A
+	
+P-2, Q-3, R-4, S-1
+B
+	
+P-4, Q-3, R-2, S-1
+C
+	
+P-3, Q-4, R-1, S-2
+D
+	
+P-3, Q-4, R-2, S-1
+GATE-CS-2004      Principles of Programming Languages     
+Discuss it
+
+
+Question 10
+Which of the following statements is FALSE ?
+A
+	
+In statically typed language, each variable in a program has a fixed type
+B
+	
+In un-typed languages, values do not have any types
+C
+	
+In dynamically typed languages, variables have no types
+D
+	
+In all statically typed languages, each variable in a program is associated with values of only a single type during the execution of the program
+GATE-CS-2003      Principles of Programming Languages     
+Discuss it
+
+
+There are 35 questions to complete.
+1 2 3 4
+Complete Data Science Program
+View Details
+What's New
+Complete Interview Preparation- Self Paced Course
+View Details
+Data Structures & Algorithms- Self Paced Course
+View Details
+A-143, 9th Floor, Sovereign Corporate Tower,
+Sector-136, Noida, Uttar Pradesh - 201305
+feedback@geeksforgeeks.org
+
+    Company
+    About Us
+    Careers
+    In Media
+    Contact Us
+    Privacy Policy
+    Copyright Policy
+    Advertise with us 
+
+    Learn
+    DSA
+    Algorithms
+    Data Structures
+    SDE Cheat Sheet
+    Machine learning
+    CS Subjects
+    Video Tutorials
+    Courses 
+
+    News
+    Top News
+    Technology
+    Work & Career
+    Business
+    Finance
+    Lifestyle
+    Knowledge 
+
+    Languages
+    Python
+    Java
+    CPP
+    Golang
+    C#
+    SQL
+    Kotlin 
+
+    Web Development
+    Web Tutorials
+    Django Tutorial
+    HTML
+    JavaScript
+    Bootstrap
+    ReactJS
+    NodeJS 
+
+    Contribute
+    Write an Article
+    Improve an Article
+    Pick Topics to Write
+    Write Interview Experience
+    Internships
+    Video Internship 
+
+@geeksforgeeks , Some rights reserved
+Lightbox
+Start Your Coding Journey Now!
+Login Register

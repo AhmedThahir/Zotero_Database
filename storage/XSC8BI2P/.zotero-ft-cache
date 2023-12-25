@@ -1,0 +1,88 @@
+
+brokensandals.net -> Technical -> Backup Tooling -> Automatic backup for Google Docs, Sheets, and Slides
+
+Posted 2019-01-22.
+
+I’m a little paranoid about losing data. Services like Google Sheets are great, but it worries me that if I lost access to my Google account, or if a bug in the service caused my files to be deleted, I would have no way to ever get that data back.
+
+Ideally, I want all my data in each cloud service to be automatically synced to my own computer’s filesystem, so that I can set up automated backups from there to multiple destinations. This post is about how I’ve set that up for Google Docs, Sheets, and Slides.
+
+There are some sites out there that will back up your Google data for you. I didn’t want to use them, because I don’t really feel comfortable authorizing them to access my Google account.
+Approach
+
+By installing Google Backup & Sync, you can get all the files in your Google Drive automatically synced to your computer. Unfortunately, the files for Docs, Sheets, and Slides don’t actually contain any of the document contents. They’re just tiny placeholders that link to the document in Google’s services. If you lost access to your account or Google lost the data, backups of those placeholder files would be worthless.
+
+Google supports exporting to Microsoft Office file formats (.docx, .xlsx, .pptx), and those exported files include your actual data. So, I want to produce those exports automatically on a regular basis and store them in a folder on Google Drive, so that they’ll get synced to my computer and I can back them up like I would any other files.
+
+Google lets you create scripts that can access files in your Google Drive and run on a schedule. I wrote a script that looks for all the Docs, Sheets, and Slides you own, exports each of them to both a PDF and an Office file which are combined into a zip file, and puts each zip file into a backup folder you specify.
+Caveats
+
+This only creates exports of docs that you own (as opposed to ones that have been shared with you), but that could be changed by altering the line that starts with if (file.getOwner()…
+
+The exports are placed in zip files, rather than directly in the backup folder, so that they don’t clutter up the list of recent files on the Docs/Sheets/Slides home pages. But the zip files will still appear in the list of recent activity on drive.google.com .
+
+If your backups folder already has a backup for a particular file, and the backup’s “last updated” date is at least as recent as the “last updated” date on the file, then that file will be skipped. So this won’t work correctly if anything is corrupting or failing to update the “last updated” dates on your documents.
+
+As always, this code may have defects that prevent it from working properly. Use at your own risk and remember to periodically verify that your backups are actually working as expected.
+Instructions
+
+First, create a folder in Google Drive to hold the backups. In this screenshot, I created a folder named GoogleDocs inside a folder named Backup, but you can put it wherever and call it whatever.
+
+Screenshot of a new folder.
+
+Then open that folder and copy its ID from the URL.
+
+Screenshot of a folder ID in an address bar.
+
+Go to script.google.com and create a new script.
+
+Screenshot of the New Script button.
+
+Copy and paste the script from here: https://gist.github.com/brokensandals/6b77f73666323d6e4b94ff1df12a532a#file-code-gs
+
+Screenshot of the script pasted from the gist into Google Scripts.
+
+Replace INSERT_FOLDER_ID_HERE with the ID you copied earlier:
+
+Screenshot of a folder ID pasted into the script.
+
+Save the project (I’d suggest giving it a better name than “Untitled project”), then test it by choosing Run -> Run function -> backupAll.
+
+Screenshot of the menu item for choosing to run the function.
+
+You’ll probably be prompted to authorize the script.
+
+Screenshot of the Authorization Required dialog.
+
+Click Review Permissions, and select your account when prompted. You’ll probably end up at this scary warning:
+
+Screenshot of the This App Isn't Verified warning.
+
+Since you own the script, this shouldn’t be overly concerning, as long as you trust the code you copied from the gist above. Click ‘Advanced’, then the ‘Go to’ link.
+
+Screenshot showing the Go To (unsafe) link.
+
+Then click Allow.
+
+Screenshot showing the Allow button.
+
+If it works, you should see a zip file in your backup folder for each of your docs/sheets/presentations - open one and make sure it looks right.
+
+If everything’s working, you can set it up to run on a schedule by choosing Edit -> Current project’s triggers
+
+Screenshot of the menu item for viewing the project's triggers.
+
+Choose Add Trigger.
+
+Screenshot showing the Add Trigger button.
+
+Under Choose which function to run , make sure backupAll is selected, and fill in other options as desired. The screenshot shows how to set it up to run nightly at midnight.
+
+Screenshot showing possible settings for the trigger.
+
+Then click Save, and you’re done!
+Credits
+
+I used this gist by Abhijeet Chopra as a starting point.
+
+Questions or feedback on this post? Email me at jacobaw@gmail.com or leave a comment on my gist !

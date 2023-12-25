@@ -1,0 +1,80 @@
+
+Encyclopedia Britannica
+Browse Search
+Dictionary Quizzes On This Day
+Subscribe Login
+ordinary differential equation
+
+    Introduction
+
+Fast Facts
+
+    Related Content
+
+More
+
+    More Articles On This Topic
+    Contributors
+    Article History
+
+Home Science Mathematics
+ordinary differential equation
+mathematics
+Print Cite Share More
+Give Feedback External Websites
+By The Editors of Encyclopaedia Britannica • Edit History
+
+Related Topics:
+    differential equation ...
+
+See all related content →
+
+ordinary differential equation , in mathematics , an equation relating a function f of one variable to its derivatives . (The adjective ordinary here refers to those differential equations involving one variable, as distinguished from such equations involving several variables, called partial differential equations .)
+
+The derivative , written f ′ or d f / d x , of a function f expresses its rate of change at each point—that is, how fast the value of the function increases or decreases as the value of the variable increases or decreases. For the function f  =  a x  +  b (representing a straight line), the rate of change is simply its slope, expressed as f ′ =  a . For other functions, the rate of change varies along the curve of the function, and the precise way of defining and calculating it is the subject of differential calculus . In general, the derivative of a function is again a function, and therefore the derivative of the derivative can also be calculated, ( f ′)′ or simply f ″ or d 2 f / d x 2 , and is called the second- order derivative of the original function. Higher-order derivatives can be similarly defined.
+The transformation of a circular region into an approximately rectangular regionThis suggests that the same constant (π) appears in the formula for the circumference, 2πr, and in the formula for the area, πr2. As the number of pieces increases (from left to right), the “rectangle” converges on a πr by r rectangle with area πr2—the same area as that of the circle. This method of approximating a (complex) region by dividing it into simpler regions dates from antiquity and reappears in the calculus.
+Read More on This Topic
+analysis: Ordinary differential equations
+Analysis is one of the cornerstones of mathematics. It is important not only within mathematics itself but also because of its extensive...
+
+The order of a differential equation is defined to be that of the highest order derivative it contains. The degree of a differential equation is defined as the power to which the highest order derivative is raised. The equation ( f ‴) 2  + ( f ″) 4  +  f  =  x is an example of a second-degree, third-order differential equation. A first-degree equation is called linear if the function and all its derivatives occur to the first power and if the coefficient of each derivative in the equation involves only the independent variable x .
+
+Some equations, such as f ′=  x 2 , can be solved by merely recalling which function has a derivative that will satisfy the equation, but in most cases the solution is not obvious by inspection, and the subject of differential equations consists partly of classifying the numerous types of equations that can be solved by various techniques.
+This article was most recently revised and updated by William L. Hosch .
+exact equation
+
+    Introduction
+
+Fast Facts
+
+    Facts & Related Content
+
+More
+
+    More Articles On This Topic
+    Contributors
+    Article History
+
+Home Science Mathematics
+exact equation
+Alternate titles: exact differential equation, total differential equation
+Print Cite Share More
+Give Feedback External Websites
+By The Editors of Encyclopaedia Britannica • Edit History
+
+Related Topics:
+    differential equation ...
+
+See all related content →
+
+exact equation , type of differential equation that can be solved directly without the use of any of the special techniques in the subject. A first-order differential equation (of one variable) is called exact, or an exact differential, if it is the result of a simple differentiation . The equation P ( x ,  y ) y ′ + Q ( x ,  y ) = 0, or in the equivalent alternate notation P ( x ,  y ) d y  +  Q ( x ,  y ) d x  = 0, is exact if P x ( x ,  y ) =  Q y ( x ,  y ). (The subscripts in this equation indicate which variable the partial derivative is taken with respect to.) In this case, there will be a function R ( x ,  y ), the partial x - derivative of which is Q and the partial y -derivative of which is P , such that the equation R ( x ,  y ) =  c (where c is constant) will implicitly define a function y that will satisfy the original differential equation.
+
+For example, in the equation ( x 2  + 2 y ) y ′ + 2 x y  + 1 = 0, the x -derivative of x 2  + 2 y is 2 x and the y -derivative of 2 x y  + 1 is also 2 x , and the function R  =  x 2 y  +  x  +  y 2 satisfies the conditions R x  =  Q and R y  =  P . The function defined implicitly by x 2 y  +  x  +  y 2  =  c will solve the original equation. Sometimes if an equation is not exact, it can be made exact by multiplying each term by a suitable function called an integrating factor. For example, if the equation 3 y  + 2 x y ′ = 0 is multiplied by 1/ x y , it becomes 3/ x  + 2 y ′/ y  = 0, which is the direct result of differentiating the equation in which the natural logarithmic function (ln) appears: 3 ln  x  + 2 ln  y  =  c , or equivalently x 3 y 2  =  c , which implicitly defines a function that will satisfy the original equation.
+Read More default image
+Read More on This Topic
+thermodynamics: Entropy as an exact differential
+Because the quantity dS = d′Qmax/T is an exact differential,...
+
+Higher-order equations are also called exact if they are the result of differentiating a lower-order equation. For example, the second-order equation p ( x ) y ″ +  q ( x ) y ′ +  r ( x ) y  = 0 is exact if there is a first-order expression p ( x ) y ′ +  s ( x ) y such that its derivative is the given equation. The given equation will be exact if, and only if, p ″ −  q ′ +  r  = 0, in which case s in the reduced equation will equal q  −  p ′. If the equation is not exact, there may be a function z ( x ), also called an integrating factor, such that when the equation is multiplied by the function z it becomes exact.
+This article was most recently revised and updated by William L. Hosch .
+Ask us a question

@@ -1,0 +1,2249 @@
+Applied Economics
+ISSN: 0003-6846 (Print) 1466-4283 (Online) Journal homepage: https://www.tandfonline.com/loi/raec20
+Performance and revenue in professional league football: evidence from Granger causality tests
+S. M. Dobson & J. A. Goddard
+To cite this article: S. M. Dobson & J. A. Goddard (1998) Performance and revenue in professional league football: evidence from Granger causality tests, Applied Economics, 30:12, 1641-1651, DOI: 10.1080/000368498324715 To link to this article: https://doi.org/10.1080/000368498324715
+Published online: 04 Oct 2010. Submit your article to this journal Article views: 534 View related articles Citing articles: 8 View citing articles
+Full Terms & Conditions of access and use can be found at https://www.tandfonline.com/action/journalInformation?journalCode=raec20
+
+Applied Economics, 1998, 30, 1641Ð 1651
+Performance and revenue in professional league football: evidence from Granger causality tests
+S . M. D O B S O N and J.A . G O D D A R D * Department of Economics, University of Hull, UK and *School of Accounting, Banking and Economics, University of W ales, Bangor, UK
+
+Using a dataset comprising annual performance (measured by ® nal league position) and gate revenue for 77 Football League clubs which maintained unbroken league membership between 1946 and 1994, the relationship between performance and revenue is investigated using cointegration and causality tests. A cointegrating relationship between performance and revenue is established in only 10 cases out of 77, although it is argued that some caution is required in interpreting these results, due to the low power of the relevant tests in relatively small samples. In Granger causality tests, more evidence is found of causality running from lagged revenue to current performance than of causality in the opposite direction, while the dependence of performance on revenue seems to be greater for the smaller clubs than for the larger. These results lend empirical support to the popular view that, unless checked by mechanisms for revenue redistribution within the league, the natural tendency is for success to become concentrated increasingly among a small group of elite, wealthy clubs.
+
+I. INTRODUCTION
+Recent changes in both the ® nancial structure and the organization of professional league football in England and Wales have fuelled popular discussion about the extent to which a relative increase in the ® nancial power of a small group of elite clubs at the top end of the league structure creates a tendency for playing success also to be concentrated increasingly among the same group of clubs.
+Such developments include the withdrawal in 1992 of the former division 1 clubs from the Football League to form a break-away Premier League, which since 1992 has been considerably more e ective than was the Football League previously in exploiting commercial opportunities in areas such as sponsorship, merchandizing and the sale of television rights. Also signi® cant has been the relaxation of a number of regulations which previously restricted mobility in the players’ transfer market, especially at international level. The abolition of the `three players rule’ (which prevented clubs from ® elding more than three overseas players at any one time) and the European Court of Justice ruling in the Bosman case (which prevents a club holding
+0003Ð 6846 Ó 1998 Routledge
+
+the registration of an out-of-contract player from receiving a fee if the player moves to another club in a di erent EU country) have created greater ¯ exibility in the football labour market, arguably making it easier for the clubs with the most resources to secure the best players simply by paying them more than the rest can a ord. However, while the complaint that the odds of success seem to be loaded in favour of the wealthiest clubs may have achieved new impetus as a result of recent developments, there is no doubt that the same complaint has a history as long as that of professional league competition itself.
+As pointed out by Davies et al. (1995) in a study of rugby league performance and attendance, these considerations are to some extent counter to the approach which has been adopted in most previous econometric studies of the demand for professional team sports. Typically in this literature, a single equation is estimated in which the dependent variable, attendance, is explained by independent variables which, as well as various team performance measures, may include factors such as admission price, income and population. The individual observations are either match attendances (see Peel and Thomas, 1996; Wilson and Sim, 1995;
+1641
+
+1642
+Baimbridge et al., 1996 for recent examples; and Cairns, 1990 for a survey of the earlier literature) or seasonby-season average or aggregate attendances (Bird, 1982; Burkitt and Cameron, 1992; Dobson and Goddard, 1995, 1996; Simmons, 1996; Szymanski and Smith, 1997). Implicit in the speci® cation of the empirical model is a presumption that the direction of causality runs from performance to attendance (a successful team will attract more spectators) but not the other way round (a team with large attendances has the resources to attract better players and thereby generate better performance). Davies et al. (1995) argue that if reverse causality (from attendance to performance) is present, then at best the dynamics in most previous econometric models have been speci® ed incorrectly, and at worst, misleading policy recommendations may have arisen in some cases. Granger causality tests (Granger, 1969) provide a suitable framework within which such patterns of causality can be investigated, as well as allowing the dynamics of performance and attendance time series to be modelled with considerable ¯ exibility and without needing to impose any prior assumptions (e.g. about lag length and structure) before estimation takes place.
+This paper follows the approach developed by Davies et al. (1995), using an England and Wales Football League (and Premier League) dataset on season-by-seaso n team performance and gate revenues, which encompasses the period between the 1946Ð 7 and 1993Ð 4 seasons (inclusive). Because the two papers adopt similar methodologies, we now comment in some detail on the two main improvements which we believe this paper o ers vis-a-vis the Davies et al. study.
+The ® rst improvement comes by testing for Granger causality between gate revenue and performance (rather than attendance and performance). The use of revenue data o ers two advantages over attendance. First, if it is access to ® nancial resources which allows clubs to attract better players so as to improve performance, then revenue is a more appropriate measure of ® nancial strength than attendance. Secondly, if successful performance generates more demand, clubs may respond either by allowing attendances to increase, or by raising admission prices. An attendance series captures the former response but not the latter,
+
+S. M. Dobson and J. A. Goddard
+whereas a revenue series captures both. Where a club is already operating close to its ground’s physical capacity, it is likely to respond to excess ticket demand by raising prices.1 All of these points suggest that it is more appropriate to test for Granger causality between performance and revenue, rather than attendance. A limitation which remains is that total revenue (from all sources) would be preferable in many respects to gate revenue. However, the former could only be obtained from club company accounts, which are not available over a su cient time period to permit an analysis of the type implemented here. In any event, it seems likely that revenues from sources such as merchandizing, sponsorship and television are closely correlated with gate revenues for most clubs.
+Our second improvement derives from the fact that our dataset is both comprehensive, and more extensive in its duration than that of Davies et al. Although we have performance and revenue data for all 103 clubs which competed in the Football League between 1946 and 1994, we have restricted the Granger causality analysis to the 77 clubs which maintained Football (or Premier) League membership continuously during this period. Nevertheless, a cross section of 77 clubs allows us to derive some very much more general conclusions than were possible in the earlier study (which used data on just ® ve major rugby league clubs). Indeed, we do not even attempt to draw conclusions about the dynamic structure of the performanceÐ revenue relationship which are speci® c to individual clubs in the manner attempted by Davies et al. Instead, we search for patterns of Granger causality which appear common across all 77 clubs taken as a whole, or across ® ve groups of clubs with similar characteristics which are used to classify the sample of 77.2
+The ® ve group de® nitions are based on three criteria which are distinct from performance or revenue: local population, date of initial entry into the league, and broad geographical location (even though, as shown below, these characteristics are highly correlated with both performance and revenue indicators). Broad group de® nitions are as follows: Group 1 (G1) comprises major clubs from the largest cities (with populations greater than half million in the 1961 Census) which entered the League before its early1920s expansion;3 G2 comprises clubs from other large
+
+1 Recently, the coincidence of reductions in many ground capacities (resulting from the replacement of standing by seated accommodation)
+with an increase in spectator demand for attendance has elicited precisely this response from many leading clubs. 2 We take the view that it is unrealistic to search for strong conclusions about di erences between clubs in the dynamic structure of the performanceÐ revenue relationship from the signi® cance or otherwise of individual lagged variable coe cients obtained from estimations using 30 (Davies et al.) or even 48 (in the present study) time series observations. This is simply because the relevant tests lack power in such small samples. Like Davies et al., we prefer to carry out separate estimations for individual clubs, and therefore do not wish to pool our
+data cross-sectionally. However, by compiling the results of the individual tests at an aggregate level, we are able to address the problem of
+low power, at least in an informal manner. So although we do not consider the result of any individual signi® cance test to be conclusive, if
+a coe cient is signi® cant in say 30 cases out of 77, this certainly indicates a stronger overall e ect than if the proportion is 15 out of 77. 3 In the 1920Ð 21 season, Football League membership increased from 44 clubs to 66 with the incorporation of 22 former Southern League clubs into a new division 3 (south). In 1921Ð 22, a 20 club (subsequently expanded to 22) division 3 (north) was created, increasing total
+membership to 86. The combined membership of the Premier League and Football League stands currently at 92, after further small adjustments in size in 1923Ð 24 and 1950Ð 51.
+
+Performance and revenue in league football
+
+1643
+
+Fig. 1. Group performance (% total score), 1946Ð 47 to 1993Ð 94
+
+Fig. 2. Group revenue (% share), 1946Ð 47 to 1993Ð 94
+
+(around
+
+1 4
+
+to
+
+1 2
+
+million)
+
+population
+
+centres
+
+in
+
+the
+
+Midlands
+
+and the North, which entered before the 1920s; G3 com-
+
+prises all clubs from London, the South of England and
+
+South Wales not in G1 (most of which entered during or
+
+after the early-1920s expansion); G4 and G5 comprise clubs
+
+from the smaller towns in the Midlands and the North
+
+which entered before and after the early-1920s expansion
+
+respectively. The membership of the ® ve groups is identi® ed
+
+in the left hand column of Table 1.
+
+Figures 1 and 2 show performance and gate revenue share
+
+measures for the clubs in each of the ® ve groups between the
+
+1946Ð 7 and 1993Ð 4 seasons. For each club, we measure
+
+performance in season t, pt, on a scale of 1 to 92, where
+pt = 92 indicates the club ® nished 1st in division 1 (or the Premier League), pt = 2 indicates 2nd, and so on. Each
+club’s revenue measure, rt, is its percentage share of aggre-
+gate league gate revenue. The performance data were ob-
+
+tained from various issues of Rothmans Football Y earbook,
+
+and the revenue data from the Football League’s archives
+
+and (for recent seasons) Digest of Football Statistics. Fig-
+
+ure 1 shows the total performance score for clubs in each of
+
+the ® ve groups, expressed as a percentage of the total perfor-
+
+mance score for all league clubs (including clubs not in the
+
+sample). Similarly, Fig. 2 shows the percentage shares of
+
+aggregate league gate revenue for clubs in each of the ® ve
+
+groups. The levels of the plots in Figs 1 and 2 are in¯ uenced
+
+by the numbers of clubs in each group (so the more numer-
+
+ous G3 clubs `outperform’ the G1 clubs in Fig. 1). However,
+
+our main interest is in the movements of the plots rather
+
+than their levels.
+
+The main features of Figs 1 and 2 are as follows. G1 clubs
+
+have enjoyed an increase of around 15 percentage points in
+
+their revenue share, even though their performance has
+
+remained approximately static. G2 clubs have held steady in
+
+terms of both indicators. The performance of G3 clubs has
+
+improved steadily while their revenue share has been rough-
+
+ly constant. This primarily re¯ ects a catching up process for a number of relatively strong southern clubs, which entered the League relatively late (many in the early-1920s), and which as a group have been consolidating and improving their average position throughout most of the time since. The improved revenue share of G1 and performance of G3 are both mainly at the expense of clubs in G4, which have experienced a marked decline in both indicators. The fortunes of the nine surviving G5 clubs have held reasonably steady, although a pattern of decline would be more evident if G5 were expanded to include other clubs with similar characteristics which have not maintained a continuous League presence.
+
+II. EMPIRICAL TECHNIQUES
+
+In this section, bivarite tests of Granger causality between performance and revenue are carried out for the 77 clubs which enjoyed continuous membership of the Football (or Premier) League between the 1946Ð 7 and 1993Ð 4 seasons inclusive. Multivariate tests (which might include other variables impacting on performance and/or revenue, such as demographic or economic variables at local level) are not considered, since we lack suitable time series data. For each club, the evolution of pt and rt (see Section 1) can be represented in its most general form as a vector autoregression (VAR) as follows:
+
+1 2 1 2 1 2 1 2 1 2 pt = c1
+
+rt
+
+c2
+
++ d1 t +
+d2 t
+
+/
+
+(1 ) 11
+
+/
+
+(1 ) 21
+
+/
+
+(1 ) 12
+
+/
+
+(1 ) 22
+
+pt ± 1 + ¼
+rt ± 1
+
+1 2 1 2 1 2 +
+
+/
+
+(m) 11
+
+/
+
+(m) 21
+
+/
+
+(m) 12
+
+/
+
+(m) 22
+
+pt ± m + u1 t
+
+rt ± m
+
+u2 t
+
+(1)
+
+1644
+
+where uit (i = 1, 2) are random error terms, ci, di and
+
+/
+
+( k) ij
+
+(i, j = 1, 2;
+
+k = 1¼
+
+m) are constants and t represents
+
+a deterministic time trend. The time trend is included to allow
+
+for the long term trends in performance and revenue share
+
+identi® ed in Section I among the clubs in some of the groups.
+
+However, for some sets of values of the parameters /
+
+( i
+
+kj ),
+
+the
+
+trend becomes redundant and we can set di = 0 (see below).
+
+Before any tests of the relationship between pt and rt can
+
+be carried out, two issues concerning Equation 1 need to be
+
+addressed. The ® rst is the choice of the number of lagged
+
+terms, m, to include on the right hand side of the VAR to
+
+capture the dynamics of the process generating pt and rt. The second is the question whether the series pt and rt are stationary, in which case Equation 1 represents a suitable
+
+formulation of the data generating process for purposes of
+
+estimation and hypothesis testing, or whether pt and rt are nonstationary , in which case it is more appropriate to work
+
+with a transformed version of Equation 1, expressed in either di erence or error correction form.4
+
+The lag length can be determined by comparing estima-
+tions of Equation 1 with m = m0 against m = m0 - 1, with m = m0 - 1 against m = m0 - 2, and so on. Additional
+lagged terms are deleted successively until a point is reached
+
+at which further deletions signi® cantly reduce the quality of
+
+the ® tted model. The likelihood ratio test statistic for the
+
+joint signi® cance of the coe cients on the mth lagged terms,
+
+/
+
+( i
+
+m j
+
+),
+
+whose
+
+distribution
+
+under
+
+the
+
+null
+
+is
+
+x
+
+2 (4), is:
+
+l = ( T - m) {ln| V Ã m ± 1 | - ln |V Ã m |}
+
+where T is the total number of time series observations;
+V Ã m is the (2 3 2) residual covariance matrix obtained by
+estimating Equation 1 as a system of two seemingly unre-
+
+lated regressions with m lags, estimated using the observa-
+
+tions for t = m + 1 ¼ for i, j = 1, 2); and V Ã m ±
+
+T (V Ã m = {v W ij}, v W ij = S uW ituW jt/( T - m)
+1 is the covariance matrix from the
+
+VAR with m - 1 lags also estimated using the observations
+
+for t = m + 1 ¼ T . Carrying out this procedure for each of
+
+S. M. Dobson and J. A. Goddard
+
+the 77 clubs individually, H0 : m = 3 was rejected in favour of H1 : m = 4 in 7 cases; m = 2 was rejected in favour of m = 3 in 4 cases; m = 1 was rejected in favour of m = 2 in 16
+
+cases; and m = 0 was rejected in favour of m = 1 in all 77
+
+cases.5 As it seems desirable to adopt the same speci® cation
+
+for all clubs to facilitate comparisons between clubs of
+
+subsequent test results, these ® ndings suggest that m = 2 is
+
+the appropriate lag length for the VAR.6
+
+Intuitively, the stationarity or nonstationarit y of pt and rt hinges on the question whether, for each club, there exist `equilibrium’ levels of performance and revenue share to-
+
+wards which the club has a tendency to revert in the long
+
+run, even though it may depart from them (perhaps by
+
+a large distance) in the short term; or whether it is possible
+
+for a club, as a result of a few seasons of exceptional success
+
+or failure, to a ect a permanent change to its expected
+
+position in the future, without any automatic tendency to
+
+gravitate back towards its former status.7 Technically, the
+
+stationarity or nonstationarit y of pt and rt is important
+
+because if these series are nonstationary , likelihood ratio
+
+(and
+
+other)
+
+tests
+
+of
+
+H0 : /
+
+= ( k)
+12
+
+0
+
+for
+
+k = 1¼
+
+m (which if
+
+accepted implies lagged revenue does not appear in the
+
+performance equation) and H0 : /
+
+( k) 21
+
+=
+
+0
+
+(lagged performance
+
+does not appear in the revenue equation) do not follow the
+
+standard asymptotic distributions, and will therefore give rise
+
+to misleading inferences if applied indiscriminately (Hamil-
+
+ton, 1994). This is the case even though the same di culty
+
+does not arise with the tests for lag structure reported above.
+
+In order to establish whether adjustment to the model
+
+speci® cation is needed before estimation, it is convenient to
+
+reparameterize Equation 1 (with m = 2) as follows:
+
+1 2 1 2 1 2 1 2 1 2 D pt = c1 + d1 t + j 1 1 j 1 2
+
+D rt
+
+c2
+
+d2 t
+
+j 21 j 22
+
+D pt ± 1 D rt ± 1
+
+1 2 1 2 1 2 + p 11 p 12 p 21 p 22
+
++ pt ± 1
+
+u1 t
+
+rt ± 1
+
+u2 t
+
+(2)
+
+4 An issue which we do not pursue in this paper is that the data generating process for pt is in fact rather more complex than is captured by standard assumptions concerning u1 t in Equation 1. For example, pt is bounded above at 92 and below at 1; this imposes constraints on the distribution of u1 t for clubs at or near the top or bottom of the league. Promotion and relegation also imposes constraints on the direction of movement in pt between certain values in successive seasons. Without attempting any justi® cation, we assume that the impact of these constraints on the tests which follow is su ciently small to be ignored. 5 Testing using the bivariate version of Akaike’s Information Criterion, which recommends the lag length which minimises
+AIC = ln|V m | + (2k*/ T), where k* is the total number of parameters in the VAR with m lags, produces a very similar distribution of results,
+although with a slight tendency towards the recommendation of less parsimonious speci® cations than the likelihood ratio test for a few
+clubs. The equivalent rejection rates using AIC were 14 (m = 3 in favour of m = 4); 8 (m = 2 in favour of m = 3); 22 (m = 1 in favour of m = 2) ; and all 77 (m = 0 in favour of m = 1). 6 Seven rejections of H0 : m = 3 against H1 : m = 4 gives a rejection rate of 0.091, which does not test as signi® cantly di erent from 0.05 at the 5% level. Therefore, the 7 rejections can plausibly be considered as Type I errors, suggesting that a lag length of m = 4 is not necessary. On the same criterion, the 16 rejections of H0 : m = 1 against H1 : m = 2 are too numerous to be attributable to Type I error, so we conclude m = 2 is the appropriate lag length.
+7 Anecdotal evidence can support either view. For example, evidence of stationarity can be found in the case histories of `big’ clubs which
+have hit hard times and subsequently recovered (e.g. She eld Wednesday in the 1970s, Wolverhampton in the 1980s) and `small’ clubs
+which have temporarily prospered before returning to relative obscurity (e.g. Northampton in the 1960s, Swansea in the late-1970s and
+early-1980s). On the other hand, the continued success of Wimbledon, which entered the League in 1977 and spent several years in the
+lower divisions attracting small attendances before a meteoric mid-1980s ascent to division 1 status, argues persuasively in favour of
+a nonstationarity assumption.
+
+Performance and revenue in league football
+
+where
+
+j ii = -
+
+/
+
+(2 ii
+
+)
+
+,
+
+j ij = -
+
+/
+
+( i
+
+2 j
+
+),
+
+= + - p ii
+
+/
+
+(1 ) ii
+
+/
+
+(2 ) ii
+
+1,
+
+p
+
+ij = /
+
++ ( 1 )
+ij
+
+/
+
+( i
+
+2 j
+
+)
+
+,
+
+and
+
+D
+
+pt = pt -
+
+pt ± 1 etc.
+
+Johansen (1988, 1991) has shown that the stationarity or
+
+nonstationarit y of pt and rt, and consequently the choice
+
+of speci® cation for purposes of estimation and inference,
+
+depends upon whether the parameters /
+
+(k) ij
+
+are
+
+such
+
+that
+
+it
+
+is
+
+possible to impose restrictions on the rank of the matrix
+
+P ( = {p ij }) in Equation 2. There are three cases. First, if rank(P ) = 2 (so no restrictions are possible), the VAR does
+
+not contain a unit root. pt and rt are stationary, although they may contain a deterministic time trend. The following
+
+(the same as Equation 1 with m = 2) then represents the
+
+most appropriate speci® cation:
+
+1 2 1 2 1 2 1 2 1 2 pt = c1
+
+rt
+
+c2
+
++
+
+d1 t +
+d2 t
+
+/
+
+(1 ) 11
+
+/
+
+(1 ) 21
+
+/
+
+(1 ) 12
+
+/
+
+(1 ) 22
+
+pt ± 1 rt ± 1
+
+1 2 1 2 1 2 +
+
+/
+
+(2 ) 11
+
+/
+
+(2 ) 21
+
+/
+
+(2 ) 12
+
+/
+
+(2 ) 22
+
++ pt ± 2
+
+u1 t
+
+rt ± 2
+
+u2 t
+
+(3)
+
+The relevant hypotheses for the causality tests are
+
+H0 : /
+
+= (1 )
+12
+
+/
+
+(2 ) 12
+
+=
+
+0
+
+(lagged
+
+revenue
+
+does
+
+not
+
+a
+
+ect current
+
+performance) and H0 : /
+
+= (1 )
+21
+
+/
+
+(2 ) 21
+
+=
+
+0
+
+(lagged
+
+performanc e
+
+does not a ect current revenue). These can be tested using
+the likelihood ratio statistic l = ( T - 2) {ln| V Ã R| - ln | V U|} where V Ã R and V Ã U are the restricted and unrestricted residual
+covariance matrices obtained by estimating Equation 3 as
+
+a system of two seemingly unrelated regressions. Under
+
+each null, l follows an asymptotic x 2 (2) distribution.
+
+Secondly, if rank(P ) = 1, this implies that the VAR does
+
+contain a unit root. pt and rt are nonstationary , but it is possible to ® nd a linear combination of the two series,
+
+zt = pt - b rt, which is stationary. In other words, pt and rt are cointegrated. The condition rank(P ) = 1 implies a
+(2 3 1) vector a = {a i} can be found such that
+
+1 2 1 2 a 1 (1 - b ) = p 1 1 p 1 2
+
+a2
+
+p 21 p 22
+
+The VAR can be written in error correction form as follows:
+
+1 2 1 2 1 D pt = c1 + j 1 1
+
+D rt
+
+c2
+
+j 21
+
+2 1 2 1 2 1 2 j 12
+j 22
+
++ + D pt ± 1
+D rt ± 1
+
+a1 a2
+
+zt± 1
+
+u1 t u2 t
+
+(4)
+
+As pt and rt are nonstationary, any time trend is captured by
+the constant terms ci, so we can set di = 0. All series in
+Equation 4 are stationary, so the same likelihood ratio
+procedure can be used to test H0 : j 1 2 = a 1 = 0 (lagged
+revenue does not appear in the performance equation) and
+H0 : j 2 1 = a 2 = 0 (lagged performance does not appear in
+the revenue equation). This formulation also allows us to
+distinguish inter-relationships between the series a ecting
+the short run dynamics (by testing j 1 2 = 0 and j 2 1 = 0)
+from those a ecting the long run relationship through the
+error correction term (by testing a 1 = 0 and a 2 = 0).
+
+1645
+
+Thirdly, if rank(P ) = 0 (i.e. p ij = 0 for i, j = 1, 2), the VAR
+does contain a unit root, and pt and rt are nonstationary. In this case it is not possible to ® nd a stationary linear combi-
+nation of pt and rt, and the data generating process should be expressed in pure di erence form as follows:
+
+1 2 1 2 1 2 1 2 1 2 D pt = c1 + j 11 j 12
+
+D rt
+
+c2
+
+j 21 j 22
+
++ D pt ± 1
+
+u1 t
+
+D rt ± 1
+
+u2 t
+
+(5)
+
+As before, the presence of a unit root implies the deterministic trend is redundant. Although there is no long run, equilibrium relationship between pt and rt, the speci® cation does allow for short run e ects. Likelihood ratio tests of H0 :
+j 1 2 = 0 and H0 : j 2 1 = 0 can be used to establish whether
+there is causality from revenue to performance, or from performance to revenue, respectively.
+Johansen (1988, 1991) also provides a framework to determine which of the three speci® cations discussed above should be adopted. For a VAR with two equations, this is a two-step procedure as follows:
+
+(1) Test H0 : rank (P ) = 0 against H1 : rank (P ) > 1. If H0
+is accepted, the VAR is diagnosed as nonstationary with no cointegrating relationship, so Equation 5 is
+adopted. If H0 is rejected, proceed to step 2. Two alternative tests of H0 , based on the maximal eigenvalue statistic and the trace statistic, are available.
+(2) Test H0 : rank (P ) < 1 against H1 : rank (P ) = 2. If H0 is accepted and provided b = > 0, the VAR is diagnosed as
+nonstationary with a satisfactory cointegrating relation-
+ship (in accordance with expectations of a positive rela-
+tionship between performance and revenue) so Equation
+4 is adopted. If H0 is accepted and b = < 0, the VAR is
+diagnosed as nonstationary with no satisfactory cointe-
+grating relationship, so Equation 5 is adopted. If H0 is rejected the VAR is diagnosed as stationary, so Equa-
+tion 3 is adopted.
+
+III. RESULTS
+Table 1 shows the diagnoses of the status of the VARs for each of the 77 clubs obtained by following the procedure described in the previous paragraph. Columns 1 and 2
+show the results of the tests for H0 : rank (P ) = 0 using the
+maximal eigenvalue statistic and the trace statistic respectively (step 1), and column 3 shows the test for H0 : rank (P ) < 1 (step 2). Since the maximal eigenvalue statistic and the trace statistic can give contradictory results, two sets of overall diagnoses for the VAR (stationary; nonstationary and cointegrated; nonstationary and not cointegrated) are possible at each signi® cance level. These are reported (at the 5% and 10% levels) in columns 4 to 7. As the results from the two procedures are generally similar, the commentary will refer only to the tests based on the maximal eigenvalue statistic.
+
+1646
+Table 1. Cointegration tests
+
+GROUP 1
+Arsenal Aston Villa Birmingham Chelsea Everton Leeds Liverpool Manchester Utd Manchester City She eld Utd She eld Wed Tottenham West Bromwich West Ham
+GROUP 2 Bradford Coventry Derby Hull Leicester Newcastle Nottm Forest Notts County Port Vale Stoke Sunderland Wolverhampton
+GROUP 3 Bournemouth Brentford Brighton Bristol City Bristol Rovs Cardi Charlton Crystal Palace Exeter Fulham Ipswich Leyton Orient Luton Millwall Northampton Norwich Plymouth Portsmouth QPR Reading Southampton Southend Swindon Torquay Watford
+
+H0 : rank(P ) = 0
+
+ME
+
+Trace
+
+23.38** 11.65
+9.59 19.56** 12.58*** 11.34
+6.53 14.16** 14.09** 12.03
+5.91 17.70** 15.47**
+5.56
+
+27.62** 18.65** 14.60*** 24.13** 19.79** 13.45***
+7.51 22.81** 15.21*** 17.18**
+8.43 22.65** 16.19**
+7.57
+
+8.62 6.61 14.87** 10.90 9.94 16.82** 10.26 10.65 10.04 13.83*** 13.16*** 24.72**
+
+13.66***
+8.52 18.74** 19.40** 16.41** 29.99** 15.89** 14.91*** 14.17*** 21.51** 22.13** 29.80**
+
+12.72*** 6.04
+11.21 10.42 16.20** 12.73*** 12.57*** 15.21**
+9.46 22.33**
+9.05 6.74 19.13** 9.13 13.28*** 15.63** 11.86 9.37 11.81 6.96 10.97 11.84 13.90*** 37.42** 13.42***
+
+19.01** 9.78
+14.40*** 15.51** 18.75** 15.20*** 19.64** 16.48**
+11.23 24.70**
+13.02 11.09 23.82** 11.73 17.72** 20.10** 15.89** 10.78 16.31**
+9.30 14.02*** 17.24** 15.74** 39.78** 16.66**
+
+S. M. Dobson and J. A. Goddard
+
+Diagnosis
+
+H0 : rank(P ) < 1 5% level
+
+10% level
+
+ME Trace
+
+ME Trace
+
+4.24** 6.99** 5.01** 4.58** 7.20** 2.11 0.98 8.14** 1.12 5.15** 2.52 4.96** 0.72 2.01
+5.04** 1.91 3.87** 8.51** 6.47** 13.17** 5.64** 4.26** 4.13** 7.68** 8.97** 5.08**
+6.30** 3.74*** 3.19*** 5.09** 2.55 2.47 7.06** 1.27 1.77 2.38 3.97** 4.35** 4.68** 2.60 4.44** 4.47** 4.03** 1.41 4.50** 2.34 3.05*** 5.40** 1.84 2.36 3.24***
+
+s
+
+s
+
+n
+
+s
+
+n
+
+n
+
+n
+
+n
+
+n
+
+s
+
+n
+
+n
+
+n
+
+n
+
+s
+
+s
+
+n
+
+n
+
+n
+
+n
+
+n
+
+n
+
+s
+
+s
+
+c
+
+c
+
+n
+
+n
+
+n
+
+n
+
+n
+
+n
+
+s
+
+s
+
+n
+
+s
+
+n
+
+s
+
+s
+
+s
+
+n
+
+s
+
+n
+
+n
+
+n
+
+n
+
+n
+
+s
+
+n
+
+s
+
+s
+
+s
+
+n
+
+s
+
+n
+
+n
+
+n
+
+n
+
+n
+
+s
+
+c
+
+c
+
+n
+
+n
+
+n
+
+s
+
+c
+
+c
+
+n
+
+n
+
+c
+
+c
+
+n
+
+n
+
+n
+
+n
+
+s
+
+s
+
+n
+
+n
+
+n
+
+s
+
+s
+
+s
+
+n
+
+s
+
+n
+
+n
+
+n
+
+n
+
+n
+
+n
+
+n
+
+n
+
+n
+
+s
+
+n
+
+c
+
+c
+
+c
+
+n
+
+c
+
+s
+
+s
+
+n
+
+s
+
+n
+
+s
+
+n
+
+n
+
+s
+
+s
+
+n
+
+c
+
+n
+
+n
+
+s
+
+s
+
+n
+
+n
+
+n
+
+n
+
+n
+
+n
+
+s
+
+s
+
+c
+
+c
+
+n
+
+n
+
+n
+
+s
+
+n
+
+n
+
+s
+
+s
+
+n
+
+s
+
+n
+
+s
+
+s
+
+s
+
+n
+
+s
+
+n
+
+s
+
+n
+
+s
+
+s
+
+s
+
+s
+
+s
+
+s
+
+s
+
+s
+
+s
+
+n
+
+n
+
+n
+
+s
+
+n
+
+s
+
+c
+
+c
+
+c
+
+c
+
+s
+
+s
+
+c
+
+c
+
+n
+
+n
+
+c
+
+c
+
+n
+
+n
+
+n
+
+n
+
+s
+
+s
+
+n
+
+n
+
+s
+
+s
+
+s
+
+s
+
+n
+
+s
+
+n
+
+n
+
+n
+
+n
+
+n
+
+n
+
+n
+
+s
+
+n
+
+s
+
+c
+
+c
+
+c
+
+c
+
+s
+
+s
+
+Performance and revenue in league football
+
+Table 1. (continued )
+
+Diagnosis
+
+H0 : rank(P ) = 0
+
+H0 : rank(P ) < 1 5% level
+
+10% level
+
+ME
+
+Trace
+
+ME Trace
+
+ME Trace
+
+GROUP 4 Barnsley Blackburn Blackpool Bolton Burnley Bury Crewe Doncaster Grimsby Hudders® eld Middlesbrough Oldham Preston Rotherham Stockport
+
+17.44** 6.81
+10.49 15.78** 13.93*** 12.16***
+9.64 9.62 25.69** 10.86 23.09** 17.83**
+8.15 14.16** 12.94***
+
+21.77** 9.41
+10.58 18.55** 14.46** 13.11 14.91*** 12.53 28.10** 15.41*** 25.50** 28.20**
+10.19 15.69** 16.60**
+
+4.32** 2.60 0.09 2.77*** 0.53 0.95 5.27** 2.91*** 2.41 4.56** 2.41 10.38** 2.04 1.53 3.66***
+
+GROUP 5 Carlisle Chester Chester® eld Hartlepool Mans® eld Rochdale Swansea Tranmere Walsall Wrexham York
+
+11.90
+11.15 16.13** 20.26** 14.06*** 29.26** 21.91** 15.06**
+8.26 13.11*** 17.68**
+
+16.70** 14.36*** 19.40** 23.86** 18.36** 36.29** 31.46** 20.89**
+12.54 18.58** 27.34**
+
+4.80** 3.21*** 3.27*** 3.59*** 4.30** 7.09** 4.55** 5.84** 4.29** 5.47** 9.66**
+
+Overall summary (number of diagnoses) stationary (3) cointegration (4) non-stationary (5)
+
+s
+
+s
+
+n
+
+n
+
+n
+
+n
+
+c
+
+c
+
+n
+
+n
+
+n
+
+n
+
+n
+
+n
+
+n
+
+n
+
+c
+
+c
+
+n
+
+n
+
+c
+
+c
+
+s
+
+s
+
+n
+
+n
+
+c
+
+c
+
+n
+
+c
+
+n
+
+s
+
+n
+
+n
+
+c
+
+c
+
+n
+
+n
+
+n
+
+s
+
+s
+
+s
+
+s
+
+s
+
+s
+
+s
+
+n
+
+n
+
+n
+
+s
+
+s
+
+s
+
+14
+
+30
+
+10
+
+13
+
+53
+
+34
+
+s
+
+s
+
+n
+
+n
+
+n
+
+n
+
+s
+
+s
+
+c
+
+c
+
+c
+
+n
+
+n
+
+s
+
+n
+
+n
+
+c
+
+c
+
+n
+
+s
+
+c
+
+c
+
+s
+
+s
+
+n
+
+n
+
+c
+
+c
+
+s
+
+s
+
+n
+
+s
+
+n
+
+n
+
+s
+
+s
+
+n
+
+n
+
+s
+
+s
+
+s
+
+s
+
+s
+
+s
+
+s
+
+s
+
+n
+
+n
+
+s
+
+s
+
+s
+
+s
+
+26
+
+42
+
+12
+
+12
+
+39
+
+23
+
+Note: Columns 1 to 3 show the results of tests on rank (P ) in (2). Columns 4 to 7 show the diagnoses produced by the tests,
+using the maximal eigenvalue and trace statistics, at the 5% and 10% signi® cance levels.
+ME = Maximal Eigenvalue Statistic; Trace = Trace Statistic. ** = Signi® cant at 5% level; *** = Signi® cant at 10% level. s = Stationary diagnosis; c = nonstationary/cointegration diagnosis; *n = nonstationary/no cointegration diagnosis.
+
+1647
+
+At the 5% level, in 53 of the 77 cases, the VAR is diagnosed as nonstationary with no cointegrating relationship. Performance and revenue are diagnosed as nonstationary but cointegrated in 10 cases, and in a further 14 cases the VAR is diagnosed as stationary. Only one of the ten cases for which cointegration is diagnosed occurs among the 26 clubs in G1 and G2, whereas there are nine diagnoses of cointegration among the 51 smaller clubs in G3, G4 and G5. A link between performance and revenue therefore seems to be more evident for the smaller clubs than for the larger.
+Although the overall proportions of diagnoses of cointegration and stationarity are relatively small, both require the
+rejection of H0 : rank (P ) = 0 (see Section II) and cointegra-
+
+tion also requires the acceptance of H0 : rank (P ) < 1. In view of the relatively low power of most unit root and cointegration tests in small samples (see e.g. Maddala, 1992 for general discussion and Kremers et al., 1992 for a Monte Carlo analysis) the evidence against cointegration (or stationarity) is less persuasive than would be apparent from a super® cial reading of these results. Twenty-four rejections
+of H0 : rank (P ) = 0 out of 77 is considerably more than
+could plausibly be attributed to Type I error at the 5% level, and there must also be a certain (unknown) proportion of Type II errors among the 53 acceptances.
+In view of the results shown in Table 1, it seems di cult to argue on empirical grounds that a common speci® cation for
+
+Table 2. Granger causality tests
+
+Equation
+
+3
+
+Direction of causality p to r r to p
+
+Test statistic
+
+l1
+
+l2
+
+GROUP 1 Arsenal Aston Villa Birmingham Chelsea Everton Leeds Liverpool Manchester Utd Manchester City She eld Utd She eld Wed Tottenham West Bromwich West Ham
+GROUP 2 Bradford Coventry Derby Hull Leicester Newcastle Nottm Forest Notts County Port Vale Stoke Sunderland Wolverhampton
+GROUP 3 Bournemouth Brentford Brighton Bristol City Bristol Rovs Cardi Charlton Crystal Palace Exeter Fulham Ipswich Leyton Orient Luton Millwall Northampton
+
+2.55 3.85 5.31*** 12.15* 2.01
+2.41 0.92
+0.29 0.98 9.99*
+1.22 0.29
+2.38 0.10
+
+4.39 6.96** 5.32***
+4.47 3.11 7.17** 5.09***
+1.59 1.21 1.52 9.85* 3.69
+1.64 0.04
+
+2.06 0.30 5.19*** 2.27 3.47 2.47 0.76 1.18 0.42 3.38 6.59** 0.78
+
+9.30 * 5.84*** 8.30**
+2.06 7.13** 7.56**
+0.07 4.96*** 9.92* 5.66***
+2.02 4.78***
+
+3.72 8.39** 4.84*** 0.39 0.82 0.71 4.03 3.43 1.21 2.66 3.35 4.25 6.61** 0.09 1.68
+
+5.48***
+0.41 7.97** 7.19** 3.70 7.50**
+4.51 6.92** 5.98*** 5.74***
+2.47 0.41 1.16
+0.30 8.56**
+
+4
+
+p to r
+
+l3
+
+l4
+
+l5
+
+0.29 1.65 2.72*** 16.48* 0.02
+0.19 0.29
+2.32 2.98*** 10.58*
+2.25 0.96
+0.85 0.26
+
+2.07 5.36** 6.35** 14.77* 2.91*** 4.30**
+0.15 5.13**
+1.54 10.38*
+0.06
+2.26 14.10*
+0.70
+
+2.29 6.47** 7.92** 22.43* 3.44 4.65*** 0.35 5.38*** 3.14 17.74*
+2.25 2.36 15.64* 0.77
+
+2.03 0.36 4.46** 0.37 3.19*** 0.05 0.56 0.02 0.06 0.60 1.33 0.42
+
+5.19** 3.51*** 3.12*** 6.60**
+1.10 0.07 4.27** 5.18** 0.05 3.05*** 8.21*
+2.15
+
+5.26*** 4.15 5.33*** 6.80**
+3.39 0.10 4.31 5.33*** 0.08
+3.77 9.68*
+2.47
+
+2.75*** 1.98 0.03 0.23 0.03 0.71 1.28 0.19 0.03 2.61 0.32 1.50 2.08 0.00 1.08
+
+11.68* 5.84** 5.40** 10.39* 4.14** 3.16***
+2.36 14.68*
+4.83**
+0.24 7.51*
+1.16 9.39* 8.68*
+0.31
+
+13.19* 8.66** 6.76** 10.85*
+4.41
+3.52 4.67*** 15.20* 6.24**
+2.91 8.04**
+2.56 11.07* 8.69**
+1.13
+
+r to p
+
+l6
+
+l7
+
+l8
+
+9.53* 0.73 0.82 7.78* 0.10
+0.03 0.17
+0.31 1.20 3.29*** 4.20** 0.74
+1.88 0.02
+
+11.02* 3.45***
+0.07 9.50* 2.79*** 11.29* 6.39** 14.15* 14.08* 4.74**
+2.67 17.61*
+2.13 5.38**
+
+16.39* 6.67**
+0.84 13.43*
+3.97 12.62* 6.54** 14.73* 14.10* 5.95*** 11.09* 17.66*
+2.82
+3.24
+
+3.55*** 1.55 0.23 0.00 8.40* 0.46 0.04 0.12 6.18** 0.03 0.33 0.04
+
+0.11 0.41 14.66* 8.94* 9.35* 13.57* 0.42
+0.11 8.37* 3.07*** 0.47 5.54**
+
+2.12 8.54** 14.99* 0.93
+1.08 0.26 5.39*** 10.65* 18.47* 5.21*** 2.59
+0.41
+
+6.90* 0.01 0.08 9.76* 0.63 2.04 1.13 6.34** 5.93** 2.49 0.64 0.01 0.41 0.51 0.04
+
+2.58 3.11*** 12.32* 3.05*** 15.96* 1.58
+1.48 6.21** 8.38* 14.66*
+2.05 0.81 0.10
+0.95 8.17*
+
+14.58*
+3.69 5.09*** 15.87* 9.55* 13.13* 18.89* 0.43
+0.27 15.44*
+4.12 0.57 6.91** 13.05* 3.72
+
+5
+
+p to r l9
+
+r to p l 10
+
+0.22 1.11 1.57 7.65* 0.53 0.35 0.20 0.25 1.60 7.36* 2.19 0.10 1.54 0.07
+
+5.36** 3.22*** 0.77 3.93** 1.18
+1.33 0.15
+0.58 0.02 1.21 8.41* 0.05
+0.68 0.02
+
+0.07
+
+4.98**
+
+0.64
+
+2.18
+
+2.21
+
+1.21
+
+0.20
+
+0.61
+
+2.28
+
+3.78***
+
+0.03
+
+5.32**
+
+0.05
+
+0.01
+
+0.14
+
+0.16
+
+0.03
+
+7.08*
+
+0.72
+
+1.05
+
+1.47
+
+0.10
+
+0.32
+
+1.38
+
+1.51 2.81*** 1.36 0.46 0.27 0.37 2.31 0.52 1.41 2.67 0.52 1.40 1.68 0.01 0.82
+
+4.79**
+0.13 3.45*** 7.60* 2.51 3.63***
+0.64 2.33 6.25** 0.33
+0.11 0.12 0.31
+0.13 5.02**
+
+Preferred speci® cation
+(3) (5) (5) (5) (5) (5) (5) (3) (5) (5) (5) (3) (4) (5)
+(5) (5) (3) (5) (5) (3) (5) (5) (5) (5) (5) (3)
+(5) (5) (5) (5) (4) (5) (5) (4) (5) (4) (5) (5) (3) (5) (5)
+
+Preferred speci® cation
+p to r r to p
+
+yes
+
+yes
+
+yes yes
+yes
+yes yes
+yes
+yes
+yes
+yes yes
+yes yes yes
+yes yes
+
+S. M. Dobson and J. A. Goddard
+
+1648
+
+Performance and revenue in league football
+
+Norwich Plymouth Portsmouth QPR Reading Southampton Southend Swindon Torquay Watford
+
+1.62 6.91** 0.08 1.65 3.33 0.65 1.20 1.04 3.69 2.57
+
+1.30 4.61***
+3.32
+0.09
+1.29
+2.54 5.25*** 10.04* 12.28* 11.47*
+
+1.64 0.65
+0.55 0.14 6.52** 0.08 2.89***
+0.02 5.41**
+0.39
+
+5.44** 14.66*
+1.94 7.25* 7.35*
+1.32
+0.09 4.25** 6.35**
+0.14
+
+6.02** 16.80*
+2.25 8.04**
+9.60 1.81 3.06 4.91*** 7.04**
+0.97
+
+GROUP 4 Barnsley Blackburn Blackpool Bolton Burnley Bury Crewe Doncaster Grimsby Hudders® eld Middlesbrough Oldham Preston Rotherham Stockport
+
+1.06 15.11*
+
+0.29
+
+2.19
+
+5.90*** 0.09
+
+2.10
+
+1.76
+
+0.30
+
+0.79
+
+6.09**
+
+0.00
+
+2.86
+
+2.46
+
+1.85
+
+3.65
+
+2.26
+
+1.60
+
+3.64
+
+6.07**
+
+0.31
+
+3.76 18.83*
+
+0.06
+
+4.80*** 13.22*
+
+1.71
+
+6.95** 2.74
+
+0.09
+
+2.62
+
+3.38
+
+0.50
+
+1.63
+
+3.99
+
+1.83
+
+7.57** 3.22
+
+0.01
+
+1.13
+
+0.04
+
+0.09
+
+0.68
+
+8.71**
+
+2.44
+
+5.84**
+0.05
+0.11
+1.67 8.63* 4.60** 4.53** 3.20***
+2.21 13.04* 10.32* 4.80** 2.86*** 3.03***
+0.63
+
+5.85***
+0.21
+0.34
+1.70 10.31* 4.77*** 6.53**
+3.32 7.37** 13.35* 11.13* 6.35**
+3.35
+4.60
+2.45
+
+GROUP 5 Carlisle Chester Chester® eld Hartlepool Mans® eld Rochdale Swansea Tranmere Walsall Wrexham York
+
+10.71* 7.27**
+0.47 0.07 6.86** 1.62 3.05
+3.87 3.58 3.24
+0.47
+
+0.30 0.49
+0.99 2.37 7.92** 5.70*** 3.00 5.06*** 0.46 7.32** 7.22**
+
+5.92** 6.92*
+0.27 0.58 7.10* 0.21 1.92
+0.61 4.27** 6.40** 3.10***
+
+7.73* 16.79*
+0.02 5.92** 12.39* 3.35***
+0.17 2.71*** 11.96*
+2.24 8.05*
+
+13.45* 18.31*
+0.40 6.12** 12.91* 5.61***
+1.97
+2.71 13.17* 6.93** 8.69**
+
+Overall summary Number of cases signi® cant at:
+
+1% level
+
+3
+
+9
+
+4
+
+21
+
+17
+
+5% level
+
+11
+
+25
+
+10
+
+41
+
+34
+
+10% level
+
+15
+
+39
+
+16
+
+51
+
+44
+
+0.42 0.55
+0.00 0.00
+1.85 0.00 3.05*** 4.62** 0.03
+0.94
+
+0.42 11.63*
+2.59
+0.22 9.66* 3.18***
+1.80
+0.36 24.35*
+5.12**
+
+8.58** 4.93***
+2.44 11.39* 5.35*** 12.26* 23.84* 17.68*
+2.46
+1.65
+
+6.10**
+0.04 1.03 0.81
+2.33 0.70 2.27 3.27*** 3.33*** 2.39
+0.71 5.67**
+1.44 0.94 2.85***
+
+3.11*** 3.49*** 8.49*
+2.16
+0.02 11.13*
+7.64* 8.27* 5.13**
+0.38
+0.36
+0.25 12.31*
+0.98
+1.61
+
+5.97*** 12.60*
+1.38 7.87** 6.58** 7.37** 15.77* 14.63*
+2.16 13.19*
+1.39
+3.16 10.87* 7.98** 8.62**
+
+0.01 2.02 0.01 0.00 0.07 0.55 0.04 0.02 1.11 2.39 7.43*
+
+0.11 6.49** 4.38** 11.82* 16.62* 10.26* 7.17* 6.73* 6.26**
+2.47
+0.55
+
+7.62** 26.77* 11.29*
+0.11 6.92** 12.07* 20.21* 16.20* 7.72** 8.43** 7.90**
+
+6
+
+29
+
+31
+
+13
+
+39
+
+46
+
+19
+
+47
+
+53
+
+0.59
+
+0.97
+
+(3)
+
+2.14
+
+2.95*** (5)
+
+0.31
+
+0.57
+
+(5)
+
+0.79
+
+0.04
+
+(5)
+
+2.25
+
+1.21
+
+(5)
+
+0.49
+
+0.51
+
+(5)
+
+2.97*** 6.18** (5)
+
+0.66
+
+7.26*
+
+(5)
+
+0.69
+
+2.42
+
+(4)
+
+0.83
+
+6.18** (5)
+
+0.01
+
+9.94*
+
+(3)
+
+0.16
+
+0.23
+
+(5)
+
+0.23
+
+0.09
+
+(5)
+
+0.03
+
+2.77*** (4)
+
+1.68
+
+2.42
+
+(5)
+
+0.18
+
+0.26
+
+(5)
+
+2.00
+
+4.62** (5)
+
+0.12
+
+15.56*
+
+(5)
+
+5.16** 12.55*
+
+(4)
+
+0.31
+
+2.08
+
+(5)
+
+0.81
+
+1.29
+
+(4)
+
+1.55
+
+5.73** (3)
+
+0.49
+
+0.29
+
+(5)
+
+1.56
+
+0.40
+
+(4)
+
+1.82
+
+6.26** (5)
+
+5.71** 1.52 0.38 0.20 0.52 2.26 1.80 0.00 1.21 4.69** 0.64
+
+0.00
+
+(5)
+
+0.43
+
+(5)
+
+0.97
+
+(4)
+
+0.25
+
+(5)
+
+3.59*** (5)
+
+5.94** (3)
+
+1.45
+
+(3)
+
+0.99
+
+(3)
+
+0.32
+
+(5)
+
+5.96** (5)
+
+7.35*
+
+(3)
+
+2
+
+8
+
+5
+
+22
+
+7
+
+29
+
+yes yes yes yes
+yes
+yes
+yes yes yes yes
+yes yes
+yes yes
+
+yes
+
+yes
+
+yes
+
+Notes : Columns 1 to 10 show the results of Granger causality tests based on Equations 3, 4 and 5, for lagged performance in the revenue equation (p to r) and lagged revenue in
+
+the performance equation (r to p).
+
+Column 11 shows the preferred speci® cation (out of Equations 3, 4 and 5), diagnosed by the cointegration tests using the maximal eigenvalue statistic and a 5% signi® cance
+
+level, as reported in Table 1.
+
+Columns 12 and 13 identify cases in which Granger causality is diagnosed in the preferred speci® cation at the 5% signi® cance level (using l 5 and l 8 in cases where Equation 4 is the preferred speci® cation).
+l j are likelihood ratio statistics (distributed x 2 (r) where r = number of restrictions) for the following null hypotheses:
+
+l 1: /
+
+= (1 )
+12
+
+/
+
+(2 ) 12
+
+=
+
+0
+
+in
+
+Equation
+
+3
+
+l 5 : j 1 2 = a 1 = 0 in Equation 4
+
+l 9 : j 1 2 = 0 in Equation 5
+
+l 2: /
+
+= (1 )
+21
+
+/
+
+(2 ) 21
+
+=
+
+0
+
+in
+
+Equation
+
+3
+
+l 6 : j 2 1 = 0 in Equation 4
+
+l 1 0 : j 2 1 = 0 in Equation 5
+
+l 3 : j 1 2 = 0 in Equation 4 l 7 : a 2 = 0 in Equation 4
+
+l 4 : a 1 = 0 in Equation 4 l 8 : j 2 1 = a 2 = 0 in Equation 4
+
+*signi® cant at 1% level
+
+**signi® cant at 5% level
+
+***signi® cant at 10% level
+
+1649
+
+1650
+the VAR (Equations 3, 4 or 5) should be used in the Granger causality tests for all clubs. On the other hand, lacking any strong theoretical argument as to why the VAR should be nonstationar y or cointegrated for some clubs and stationary for others, the use of di erent speci® cations for di erent clubs also seems questionable. Basing the Granger causality tests solely on the speci® cation diagnosed individually for each club is likely to imply speci® cation error in a large number of cases, due to Type I and II error as discussed above.
+Our approach is to remain agnostic on the issue of model speci® cation. In columns 1 to 10 of Table 2, we report three complete sets of Granger causality tests, using Equations 3, 4 and 5 respectively as a common speci® cation for all 77 clubs. For Equation 4, the tests for Granger causality a ecting the short run dynamics, the error correction term, and both together, are shown separately. Column 11 shows the `preferred’ speci® cation (Equations 3, 4 or 5) diagnosed using the maximal eigenvalue statistic at the 5% signi® cance level (as in Table 1). Columns 12 and 13 identify cases in which the tests for Granger causality are positive in the preferred speci® cation (again, testing at the 5% level). If similar patterns are evident in the three original sets of results, and in those compiled using the preferred speci® cations, this should allow us to draw inferences about the patterns of Granger causality, without needing to commit ourselves either to a common VAR speci® cation for all 77 clubs, or to di erent speci® cations for individual clubs or groups of clubs.
+Comparing the results of the Granger causality tests shown in Table 2, it is apparent that the null of no Granger causality is rejected more frequently using the error correction speci® cation Equation 4 than with either Equations 3 or 5. This is because with Equation 4, the null implies the deletion from one of the equations of the entire error correction term, which is a more severe restriction than those tested under Equations 3 and 5. Nevertheless, drawing comparisons between the results within each set of tests, a consistent pattern does emerge. The number of cases in which a relationship is detected between lagged revenue and current performance is almost always greater (and usually much greater) than the number in which a relationship is detected between lagged performance and current revenue. The same pattern is evident when the results from the preferred speci® cations for each club are compared, where there are only ten diagnosies of Granger causality from lagged performance to current revenue, but 24 diagnoses from lagged revenue to current performance.
+Comparing the `preferred speci® cation’ results between the ® ve groups of clubs, the number of diagnosies of Granger causality from revenue to performance appears to be proportionatel y smaller among the `big city’ clubs of G1 than among the other four groups. Using the maximal eigenvalue statistic and a 5% signi® cance level, in G1 there are only two rejections of the no Granger causality null out of 14, a proportion of 14.3%. For G2, G3, G4 and G5
+
+S. M. Dobson and J. A. Goddard
+combined, there are 22 rejections out of 63, or 34.9%. In recent years, this might re¯ ect the lesser dependence of the larger clubs on gate receipts, given their greater potential to attract television revenues, sponsorship and other sources of income; however, it is not entirely clear whether this sort of explanation would su ce for the post-war period as a whole. Other than this, there appears to be little evidence of marked di erences among the other four groups of clubs in the pattern of acceptances and rejections of the null in the various formulations of the Granger causality tests.
+IV. CONCLUSIONS
+The following general conclusions can be drawn from the analysis. First, after classifying clubs according to characteristics other than performance and revenue, it is clear that di erent types of club have had markedly di erent experiences as regards both performance and revenue since the 1940s. Speci® cally, the major clubs from the largest cities have enjoyed a large increase in their percentage share of revenue which is not explained by a corresponding improvement in performance. Southern clubs (other than the major London clubs) have enjoyed a steady improvement in performance but no corresponding trend in market share. Correspondingly, the relative position of the older clubs from smaller towns in the Midlands and North has deteriorated in terms of both performance and revenue.
+This evidence of heterogeneity among clubs may in part explain the diversity in the results obtained when the 77 club-speci® c VARs are tested for stationarity, nonstationarity and cointegration, and for Granger causality between performance and revenue. However, a recurrent argument of this paper has been that the lack of power of the relevant tests (even with time series comprising 48 annual observations) could quite easily account for the di erences in test results between clubs. In view of this, for purposes of presentation and interpretation of the results, we prefer to look for patterns in results aggregate d across clubs, rather than attempt to draw strong inferences from individual results.
+Despite these caveats, several conclusions do emerge from the empirical analysis. Most importantly, there is strong evidence that the in¯ uence of lagged revenue on current performance is greater than the in¯ uence of lagged performance on current revenue. This complements a similar ® nding by Davies et al. (1995) concerning performance and attendance, based on a much smaller rugby league dataset. Somewhat ironically, our results also suggest that the link between lagged revenue and current performance may be weaker for the wealthiest clubs than for the rest; i.e. the clubs which draw the largest attendances and charge the highest admission prices are also those whose future success depends least on their current gate revenues.
+Limited evidence is found to support the notion that our performance and/or revenue measures are stationary, or if
+
+Performance and revenue in league football
+not, that a long run cointegrating relationship exists between them. Evidence of cointegration appears stronger for the smaller clubs (G3, G4 and G5) than for those from the largest cities or other major provincial centres (G1 and G2). However, although the sample proportions of stationary or cointegration diagnosies are too high to be attributable purely to Type I error, we are unable to reject null hypotheses of non-stationarit y without cointegration for a majority of clubs in all groups.
+Observers who prefer sporting competition to be meritocratic may be disappointed in (but perhaps unsurprised by) these results, which lend empirical support to the popular notion that the chances of success are loaded in favour of the wealthiest clubs. Although we have examined only the relationship between league gate revenues and performance, it seems plausible to suggest that a continuation of the current tendency for the leading clubs (in particular) to augment receipts from ticket sales with additional revenue from other sources can be expected to lead to a further concentration of playing success among a small group of elite clubs in the future. A possible policy implication for the football authorities is that to preserve some degree of competitive balance within the league, there will be a continued and perhaps enhanced need for revenue redistribution between clubs, through mechanisms such as the transfer system (the future of which looks uncertain, however, in the light of the 1995 Bosman ruling) or the pooling of television and sponsorship proceeds.
+REFERENCES
+Baimbridge, M., Cameron, S. and Dawson, P. (1996) Satellite television and the demand for football, Scottish Journal of Political Economy, 43(3), 317Ð 33.
+
+1651
+Bird, P. (1982) The demand for league football, Applied Economics, 14(6), 637Ð 49.
+Burkitt, B. and Cameron, S. (1992) Impact of league reconstruction on team sport attendances: the case of rugby league, Applied Economics, 24(2), 265Ð 71.
+Cairns, J. A. (1990) The demand for professional team sports, British Review of Economic Issues, 12(28), 1Ð 20.
+Davies, B., Downward, P. and Jackson, I. (1995) The demand for rugby league: evidence from causality tests, Applied Economics, 27(10), 1003Ð 07.
+Digest of Football Statistics, various issues, The Football Trust, Leicester.
+Dobson, S. and Goddard, J. (1995) The demand for professional league football in England and Wales, 1925Ð 92, Journal of the Royal Statistical Society Series D, The Statistician, 44(2), 259Ð 77.
+Dobson, S. and Goddard, J. (1996) The demand for football in the regions of England and Wales, Regional Studies, 30(5), 443Ð 53.
+Granger, C. W. J. (1969) Investigating causal relations by econometric models and cross-spectral methods, Econometrica, 37(1), 24Ð 36.
+Hamilton, J. (1994) Time Series Analysis, Princeton, New Jersey. Johansen, S. (1988) Statistical analysis of cointegration vectors,
+Journal of Economic Dynamics and Control, 12(2/3), 231Ð 54. Johansen, S. (1991) Estimation and hypothesis testing of cointegra-
+tion vectors in Gaussian vector autoregression models, Econometrica, 59(6), 1551Ð 80. Kremers, J. J. M., Ericsson, N. R. and Dolado, J. J. (1992) The power of cointegration tests, Oxford Bulletin of Economics and Statistics, 54(3), 325Ð 48. Maddala, G. S. (1992) Introduction to Econometrics, 2nd edn, Macmillan, New York. Peel, D. and Thomas, D. (1996) Attendance demand: an investigation of repeat ® xtures, Applied Economics L etters, 3(6), 391Ð 94. Rothmans Football Y earbook, various issues, Headline, London. Simmons, R. (1996) The demand for English league football: a club level analysis, Applied Economics, 28(2), 139Ð 55. Szymanski, S. and Smith, R. (1997) The English football industry: performance, pro® t and industrial structure, International Review of Applied Economics, 11(2), 135Ð 54. Wilson, P. R. D. and Sim, B. (1995) The demand for semi-pro football in Malaysia 1989Ð 91: a panel data approach, Applied Economics, 27(1), 131Ð 38.
+

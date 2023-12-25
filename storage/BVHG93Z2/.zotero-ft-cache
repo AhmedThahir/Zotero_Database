@@ -1,0 +1,260 @@
+Applied Economics Letters
+ISSN: 1350-4851 (Print) 1466-4291 (Online) Journal homepage: https://www.tandfonline.com/loi/rael20
+Can machine learning on economic data better forecast the unemployment rate?
+Aaron Kreiner & John V. Duca
+To cite this article: Aaron Kreiner & John V. Duca (2019): Can machine learning on economic data better forecast the unemployment rate?, Applied Economics Letters, DOI: 10.1080/13504851.2019.1688237 To link to this article: https://doi.org/10.1080/13504851.2019.1688237
+Published online: 11 Nov 2019. Submit your article to this journal Article views: 33 View related articles View Crossmark data
+Full Terms & Conditions of access and use can be found at https://www.tandfonline.com/action/journalInformation?journalCode=rael20
+
+APPLIED ECONOMICS LETTERS https://doi.org/10.1080/13504851.2019.1688237
+ARTICLE
+Can machine learning on economic data better forecast the unemployment rate?
+Aaron Kreinera and John V. Ducab,c
+aGlobal Markets Division, Nomura Securities, New York, NY, USA; bEconomics Department, Oberlin College, Oberlin, OH, USA; cResearch Department, Federal Reserve Bank of Dallas, Dallas, TX, USA
+
+ABSTRACT
+Using FRED data, a machine-learning model outperforms the Survey of Professional Forecasters and other models since 2001 in forecasting the unemployment rate.
+
+KEYWORDS Machine learning; forecasting; artiﬁcial intelligence; unemployment
+JEL CLASSIFICATION C10; C45; E24
+
+I. Introduction
+While some conventional models have outperformed the mean response from the Survey of Professional Forecasters (SPF) in forecasting the unemployment rate since Montgomery et al. (1998) (e.g. Barnichon and Nekarda 2012; Meyer and Tasci 2015), few have used machine learning. Exceptions are Two Sigma (2016), who use taxi data to forecast the New York City unemployment rate, and Xu, Li, and Chen (2013), who use Google searches and slightly outperform the mean SPF forecast. Cook and Hall (2017) use neural networks on one indicator, unemployment lags, and outforecast the SPF over short horizons. We outperform the SPF over one-, two- and four-quarter horizons, following Cook and Hall (2017) and Xu, Li, and Chen (2013) in using neural networks, but use machine learning to select data from over 600,000 variables in the FRED database, structured as a recursive tree with data binned into eight categories (Table 2).
+II. Constructing a neural network model
+Our algorithm recursively calls this tree to acquire and clean data. Variables must be non-forecast data that are monthly or quarterly (higher frequency is converted into monthly), not reported as lags or leads, and continuously available over 1970:01–2018:12. Values are from a variable’s ﬁrst revision and include the current and four lags of
+
+unemployment. Under 2% of FRED variables are culled, with ‘international’ variables the most numerous and none from the ‘academic’ category. To these, we apply a principal components analysis (PCA) algorithm with a variance threshold of 0.99 yielding a dataset with fewer variables (185 linearly independent data columns) to reduce over-ﬁtting.
+The principal components are inputted into an artiﬁcial neuron network (ANN) in which the neurons perform three functions: propagation, activation, and output (Kriesel 2009). Our PCA is a pre-processing phase reducing the dimensionality of initial inputs. These principal components enter our ANN as inputs (t-1 to t-4) received by neurons in the ﬁrst propagation phase, which neurons transform into intermediate signals in an activation phase using computational methods to convert the inputs into more usable intermediate signals. In the output phase, neurons produce four-quarter ahead forecasts of unemployment. Since the latter are continuous, positive real numbers, we can use a multilayer perceptron (MLP) regression in the activation function.
+Networks are comprised of neurons, which contain propagation, activation, and output functions. Neurons are grouped into ‘hidden layers’ transform inputs into outputs. Each layer produces net output (netj) from a member neuron j that receives outputs oi1; oi2 . . . ; oin from neurons i1; i2; . . . ; in. Neuron j’s propagation function transforms the oi into a weighted sum of the outputs by calculating
+
+CONTACT John V. Duca jduca@oberlin.edu Economics Department, Oberlin College, Oberlin, OH, USA © 2019 Informa UK Limited, trading as Taylor & Francis Group
+
+2
+
+A. KREINER AND J. V. DUCA
+
+weights (wij) to determine the slope of the para-
+
+meters of the activation function. It also estimates
+
+an associated bias (biasj) or intercept of the activa-
+
+tion function. These yield the optimal output (netj,
+
+a number with singular dimension) at each net-
+
+work layer:
+
+X
+
+netj ¼ biasj þ oi Ã wi;j
+
+(1)
+
+i2I
+
+The propagation function thus reduces the dimensionality of the inputs of neuron j from n to 1.
+An optimization procedure minimizes the sum of in-sample squared errors. Assume there are p pairings of inputs and outputs. Let x(i) be a n-dimensional vector for the i-th input into a neuron x, d(i) be a singleton for the output of neuron x(i), w be the unknown weight matrix of the ANN and b be the unknown bias of the ANN. If y(x: w; b) denotes the predicted output of x conditional on w and b, minimizing the squared error of the predicted output implies the objective function:
+
+Xp
+
+min kyðxðiÞ : w; bÞ À dðiÞk2
+
+(2)
+
+i¼1
+
+The y function depends on the activation of the neurons and the numbers of hidden layers and inputs. This process generates weights and biases from the training data.
+Several choices were made in constructing an optimal ANN that minimize the root mean squared error for predicting the unemployment rate fourquarters ahead. The size and number of hidden layers are chosen from tests that jointly evaluated four computational methods used by the neurons from activation functions in Python’s ANN library: Identity, Logistic, Tanh, and Relu. One, two, and three hidden layers were tested. More were not tested due to computational complexity and runtime. The size (number of neurons) of each hidden layer was varied between 1 and 150. More layers were not tested because the RMSE was at a minimum for activation at about 120 neurons for each number of hidden layer sizes. For a fourquarter ahead forecast, the best conﬁguration minimized the RMSE at 0.20 over the longest training
+
+sample using three hidden layers and 97 neurons per layer, with a size of 120 neutrons that used Python’s logistic activation function. These hyperparameters are ﬁxed as diﬀerent rolling forecasts are made.
+The ﬁrst ANN forecast uses 1970:q1-2000:q3 PCA data to train the model – estimate the weights, biases, and other metrics – to forecast the unemployment rate in 2001:q3. Each subsequent forecast repeats this process (including the PCA algorithm).1 We tested a nonrolling window variant that ﬁxes the beginning of training at 1970:q1 and sequentially extends the end-of-training period by one quarter against a variant, which roles the start and end training points forward by one quarter. We select the non-rolling window whose RMSE was lower, implying that old business cycles are informative, consistent with Montgomery et. al.’s (1998) ﬁnding that including more data lags increased forecast accuracy.2
+III. Lasso regression
+As an alternative, we construct a Lasso model, which uses variable selection and regularization to maximize prediction accuracy and coeﬃcient interpretation. While this model uses the same overall structure as our ANN and beneﬁts from reducing raw data with PCA (Fonti 2017), the only hyper-parameter tested is 0 ≤ λ ≤ 1, which shrinks the number of beta coeﬃcients, reducing over-ﬁtting. For four-quarter ahead forecasts from 2001–2018, λ = 0.15 minimizes the RMSE at 0.31.
+IV. Results
+We compare four-quarter ahead unemployment rate forecasts from the ANN and Lasso models with the mean SPF forecast and a naïve forecast equal to the sum of the current unemployment rate plus its change over the prior four quarters. The Lasso and ANN models use 185 principal components derived from FRED and SPF data through 2018:12 and retrieved on 7 January 2019.
+The naive forecast severely underperforms, having ﬁve and eight times the RMSE of the Lasso and
+
+1For each data row, we include four observations of each variable from the current date to a year before. 2For one- and two-quarter ahead forecasts, the RMSE was also minimized using non-rolling forecasts, and a logistic activation function with three hidden layers.
+
+APPLIED ECONOMICS LETTERS
+
+3
+
+Figure 1. Four-quarter ahead forecasts of the unemployment rate 2001:q3-2018:q4.
+Sources: FRED and authors’ calculations.
+
+ANN models over 2001–18, respectively, with similar results for 2001–2007 and 2007–2012 (Figure 1 and Table 1). This reﬂects that the SPF, Lasso, and ANN forecasts capture information from other variables. Importantly, the ANN model performs best in each period, particularly 2007–2012, which spans the Great Recession. Similar qualitative rankings obtain for one and two-quarter ahead forecasts (Table 1 reports 2001–18 to preserve space), with neural networks outperforming more at the fourquarter horizon. The relative performance of the Lasso model is unchanged if continuously available FRED variables replace principal components, except that the latter version of Lasso outperforms one- and two-quarters ahead.
+Table 2 reports which types of variables are most informative at a four-quarter horizon, showing how
+
+much the RMSE rose above that of the full baseline model when each category is dropped. The biggest loss over the full and 2001–06 samples occurs if international data are excluded, consistent with globalization aﬀecting US labour markets, especially after China entered the WTO in the early 2000s (see Autor, Dorn, and Hanson 2016). Nevertheless, the marginal information of international data has fallen since the late-2000s, consistent with slower pace of globalization. The second largest loss for the full and 2001–06 periods and the highest over 2007–2012 comes from omitting labourdemographic variables. The third largest loss in the 2001–18, 2001–2006 and 2007–2012 samples arises from dropping ﬁnancial data, likely reﬂecting the role of asset prices in the recessions of 2001 and 2007–09.3
+
+Table 1. Forecast errors.
+
+s
+
+Source
+
+RMSE 2001–18
+
+SPF
+
+0.35
+
+Naive
+
+1.60
+
+Neural Networks
+
+0.20
+
+Lasso, PCA
+
+0.31
+
+Lasso all variables
+
+0.31
+
+Sources: FRED and authors’ calculations.
+
+4Q Ahead
+
+RMSE 2001–06
+
+RMSE 2007–12
+
+0.23
+
+0.51
+
+1.10
+
+2.50
+
+0.19
+
+0.23
+
+0.20
+
+0.34
+
+0.20
+
+0.34
+
+RMSE 2013–18
+0.23 0.45 0.18 0.37 0.37
+
+1Q ahead
+RMSE 2001–18
+0.15 0.23 0.12 0.13 0.17
+
+2Q ahead
+RMSE 2001–18
+0.25 0.74 0.16 0.21 0.23
+
+3The three most informative categories for the full sample were international, production and prices for two-quarter ahead forecasts, and international, prices, and labour for one-quarter ahead forecasts.
+
+4
+
+A. KREINER AND J. V. DUCA
+
+Table 2. Impact on forecast RMSE of omitting a variable category versus baseline.
+
+Category Omitted
+
+RMSE 2001–18 vs. Baseline RMSE 2001–06 vs. Baseline RMSE 2007–12 vs. Baseline
+
+Academic
+
+N/A
+
+N/A
+
+N/A
+
+International
+
+0.09
+
+0.12
+
+0.10
+
+Money, Banking, Finance
+
+0.05
+
+0.05
+
+0.08
+
+National Accounts
+
+0.04
+
+0.04
+
+0.04
+
+Population, Employment, Labour
+
+0.06
+
+0.07
+
+0.08
+
+Prices
+
+0.03
+
+0.00
+
+0.06
+
+Production and Business Activity
+
+0.03
+
+0.00
+
+0.08
+
+Regional
+
+0.03
+
+0.03
+
+0.04
+
+Sources: FRED, authors’ calculations. ‘vs. baseline’: RMSE of model omitting listed category minus RMSE from baseline.
+
+RMSE 2013–18 vs. Baseline
+N/A 0.04 0.01 0.05 0.02 0.03 −0.03 0.01
+
+The non-PCA Lasso can assess which individual variables are most important. For four-quarter ahead forecasts, the 10 most informative, in order, were: housing starts, the change in nonﬁnancial corporate commercial mortgages, unﬁlled German job vacancies, retail vehicle registrations, weekly aggregate payrolls, household net lending, 3-month Australian Treasury rates, and producer prices for pharmaceuticals and tractors.4 The top two are real estate variables, but are classiﬁed into diﬀerent FRED categories, which reﬂects a limitation of assessing FRED categories. On the other hand, the marginal impact of a variable in an ANN versus a Lasso model can diﬀer reﬂecting the nonlinear nature of the ANN and the degree of multicollinearity across variables.
+V. Conclusion
+For forecasting the unemployment rate, our neural network/machine learning model outperforms the SPF, as does a Lasso approach to a lesser extent. Our method can be eﬃciently implemented using an SQL database to update data and produce forecasts in minutes.
+Acknowledgments
+We thank an anonymous referee for suggestions. Views and errors are those of the authors and are not necessarily those of the Federal Reserve Bank of Dallas or the Federal Reserve System.
+
+Disclosure statement
+No potential conﬂict of interest was reported by the authors.
+References
+Autor, D. H., D. Dorn, and G. H. Hanson. 2016. “The China Shock: Learning from Labor Market Adjustment to Large Changes in Trade.” Annual Review of Economics 8 (1): 205–240. doi:10.1146/annurev-economics-080315-015041.
+Barnichon, R., and C. Nekarda. 2012. “The Ins and Outs of Forecasting Unemployment: Using Labor Force Flows to Forecast the Labor Market.” Brookings Papers on Economic Activity 2: 83–117. doi:10.1353/eca.2012.0018.
+Cook, T., and A. Hall. 2017. “Macroeconomic Indicator Forecasting with Deep Neural Networks.” Research Working Paper RWP 17–11, Federal Reserve Bank of Kansas City.
+Fonti, V. 2017. “Feature Selection Using LASSO - VU.” Manuscript, University of Amsterdam. beta.vu.nl/nl/ Images/werkstuk-fonti_tcm235-836234.pdf
+Kriesel, D. 2009. A Brief Introduction to Neural Networks. SelfPublished.
+Meyer, B., and M. Tasci. 2015. “Lessons for Forecasting Unemployment in the U.S.: Use Flow Rates, Mind the Trend.” Working Paper 1502, Federal Reserve Bank of Cleveland.
+Montgomery, A. L., V. Zarnowitz, R. S. Tsay, and G. C. Tiao. 1998. “Forecasting the U.S. Unemployment Rate.” Journal of the American Statistical Association 93: 478–493. doi:10.1080/01621459.1998.10473696.
+Two Sigma. 2016. Predicting New York City Unemployment Rate Using Taxi Cab Data.
+Xu, W., Z. Li, and Q. Chen. 2013. “Forecasting the Unemployment Rate by Neural Networks Using Search Engine Query Data.” Service Oriented Computing Applications 7 (1): 33–42. doi:10.1007/s11761-012-0122-2.
+
+4These were in the top-ten for one- and two-quarter-ahead forecasts, with slightly diﬀerent rankings from four to ten.
+

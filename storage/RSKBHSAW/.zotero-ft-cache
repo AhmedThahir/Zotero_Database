@@ -1,0 +1,150 @@
+
+Skip to main content
+Skip to main content
+Microsoft
+Applied Sciences
+
+    Projects
+    People
+    News
+    Careers
+
+    All Microsoft
+
+Search Search Microsoft.com
+
+Applied Sciences
+
+    Applied Sciences
+    Projects
+
+Keyboard ghosting interactive demonstration
+Test which key combinations work on your keyboard
+
+This page does not work with Internet Explorer.  Please view it using a modern browser such as .
+Click to Start Demo
+Assistive technology note: If you use a screen reader, you may need to turn it off after starting the demo or it may intercept keystrokes, interfering with the demo.
+
+Type on your computer keyboard to see results.  , press the key on your keyboard.
+
+by pressing the key.  To resume the demo, click the button above.
+0 	
+KEYS
+Using this demonstration
+
+Type on your physical keyboard and see the on-screen keyboard show which keypresses are recognized.
+
+Using the demo, you can see if there are certain key combinations that do not work correctly with your keyboard.
+How to hunt for ghosts
+
+Ghosts can be somewhat elusive.  Just because you find some combination of 6 keys that reports correctly does not necessarily mean that every combination of 6 works.  In fact, the most straightforward keyboard design has thousands of 3-key combinations that do not work! That is a lot, but it is still less than 5% of the total number of 3-key combinations.
+
+A quick way to find problematic combinations is to press and hold A S D W (the most popular keys for moving around in games), and then, while holding those down, press every other key in turn.  If you find a key that does not work, try releasing some of the A S D W keys.  Odds are high that you will find a three-key combination that fails.
+
+If you have an application that uses other combinations of keys, be sure to try those too!
+Limitations
+
+Some keys cannot be captured.  Notably, on Windows browsers generally cannot detect when the Print Screen key is pressed.
+
+Certain keys will take the input focus away from the web page.  For example, pressing the Windows key will give focus to the Start menu.  To continue using the demo, move the focus back to the web page by clicking on the demo window.
+
+This demo was developed and tested using a standard full-sized U.S. keyboard and major Windows-based browsers.  The key names and layout may not match your system, but the the ghosting behavior will still be evident.
+Related
+
+    Keyboard Ghosting and the SideWinder X4
+    SideWinder X4 Anti-Ghosting Keyboard: F.A.Q.
+
+Visit Applied Sciences
+
+    Twitter icon
+    YouTube icon
+
+Share this page
+
+    Twitter icon
+    LinkedIn icon
+    Facebook icon
+
+What's new
+
+    Surface Pro 9
+    Surface Laptop 5
+    Surface Studio 2+
+    Surface Laptop Go 2
+    Surface Laptop Studio
+    Surface Go 3
+    Microsoft 365
+    Windows 11 apps
+
+Microsoft Store
+
+    Account profile
+    Download Center
+    Microsoft Store support
+    Returns
+    Order tracking
+    Virtual workshops and training
+    Microsoft Store Promise
+    Flexible Payments
+
+Education
+
+    Microsoft in education
+    Devices for education
+    Microsoft Teams for Education
+    Microsoft 365 Education
+    Education consultation appointment
+    Educator training and development
+    Deals for students and parents
+    Azure for students
+
+Business
+
+    Microsoft Cloud
+    Microsoft Security
+    Dynamics 365
+    Microsoft 365
+    Microsoft Power Platform
+    Microsoft Teams
+    Microsoft Industry
+    Small Business
+
+Developer & IT
+
+    Azure
+    Developer Center
+    Documentation
+    Microsoft Learn
+    Microsoft Tech Community
+    Azure Marketplace
+    AppSource
+    Visual Studio
+
+Company
+
+    Careers
+    About Microsoft
+    Company news
+    Privacy at Microsoft
+    Investors
+    Diversity and inclusion
+    Accessibility
+    Sustainability
+
+English (United States) California Consumer Privacy Act (CCPA) Opt-Out Icon California Consumer Privacy Act (CCPA) Opt-Out Icon Your California Privacy Choices
+
+    Sitemap
+    Contact Microsoft
+    Privacy
+    Terms of use
+    Trademarks
+    Safety & eco
+    Recycling
+    About our ads
+    © Microsoft 2023
+
+var _isInternetExplorer;
+
+JavaScript Required
+
+This demonstration requires JavaScript, but JavaScript is disabled in your browser.  Please enable JavaScript in your browser settings.

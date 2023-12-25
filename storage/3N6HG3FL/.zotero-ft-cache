@@ -1,0 +1,325 @@
+Mathematics in Industry Reports (MIIR)
+
+1
+
+Big Data in Sports: Predictive Models for Basketball Player’s Performance
+Dae-Jin Lee 1†,and Garritt L. Page 2
+1 Basque Center for Applied Mathematics, Bilbao, Spain 2 Department of Statistics, Brigham Young University, Provo UT, USA
+(Communicated to MIIR on 14 April 2021)
+Study Group: ESGI 131. 15–19 May 2017, Bilbao, Spain. Communicated by: Tim Myers Industrial Partner: Xpheres Basketball Management/Aryuna Team Members: Amaia Abanda Elustondo, BCAM, Bilbao; Bruno Flores Barrio, University of La Rioja; Silvia Garc´ıa de Garayo D´ıaz, UPV/EHU – University of the Basque Country; Manuel Higueras Herna´ez, University of La Rioja; Amaia Iparragirre Letamendia, UPV/EHU – University of the Basque Country; Mariam Kamal, UPV/EHU – University of the Basque Country; Gorka Labata Lezaun, University of Zaragoza; Roi Naveiro Flores, ICMAT – Institute of Mathematical Sciences, Madrid; Argyrios Petras, BCAM, Bilbao; Simo´n Rodr´ıguez Santana, ICMAT - Institute of Mathematical Sciences, Madrid; Quan Wu, UPV/EHU – University of the Basque Country. Industrial Sector: Sports Tools: Statistical Modelling, Predictive Models, Clustering, Regression Techniques Key Words: Basketball, Sports Data Analytics, Big Data MSC2020 Codes: 62
+
+Summary
+Aryuna is a platform that allows to perform advanced data analytics of men’s professional basketball statistics of the last 16 seasons in more than 25 professional leagues and 71 FIBA tournaments. The complete database consists of more than 37,000 games and upwards of 20,000 players. Based on a historical database, the report aims to: characterize the performance curve, peak and optimal age in professional men’s basketball using performance ratings of players in top basketball leagues; determine a rating correction factor for diﬀerent basketball leagues, which accounts for intra-league and cross-league variability as well as for player characteristics (position, age, player ratings, etc.); determine which are the most important factors for predicting future outcomes of a basketball player.
+† Corresponding Author: dlee@bcamath.org
+
+Challenge 4 – Big Data in Sports: Predictive Models for Basketball Player’s Performance
+June 2, 2017
+Keywords | Basketball; sport data analytics; statistical modelling, predictive models, clustering, regression techniques. AMS classiﬁcation | 62-07 (Data Analysis)
+1. Introduction and challenge description
+Data analytics in professional sports has experienced rapid growth in recent years1. Development of predictive tools and techniques began to better measure both player and team performance. Statistics in basketball, for example, evaluate a player’s and/or a team’s performance2.
+Aryuna c is a platform that allows to perform advanced data analytics of men’s professional basketball statistics of the last 16 seasons in more than 25 professional leagues and 71 FIBA tournaments. The complete database consists of more than 37,000 games and upwards of 20,000 players. Based on a historical database, the aim of the challenge is to:
+• Characterize the performance curve, peak and optimal age in professional men’s basketball using performance ratings of players in top basketball leagues. See [6, 3]
+• Determine a rating correction factor for diﬀerent basketball leagues, which accounts for intra-league and cross-league variability as well as for player characteristics (position, age, player ratings, etc.). See [1]
+• Determine which are the most important factors for predicting future outcomes (a successful professional career) of a basketball player. See [2, 6]
+1https://en.wikipedia.org/wiki/APBRmetrics#Common_statistics 2https://en.wikipedia.org/wiki/Basketball_statistics
+|1
+
+131 ESGI, 15–19 May, 2017, Bilbao, Spain
+• Study statistical models to evaluate the performance of a player based on position, age, skills, league and other characteristics, and their inﬂuence in the game. See [5]
+2. Data description
+The ﬁle Aryuna_sample_DB.csv contains a sample of the full database. The number of players are 5227, for 16 Seasons (2000-2015), and 6 competitions (Euroliga, Eurocup, ACB, Argentina, ABA, ProA). The total number of variables in the database is 44.
+Some important concepts:
+• Variables with suﬃx ‘X100Possessions’: are the statistics produced by the player per 100 Team’s possessions, e.g. ‘Ptsx100Possessions = 20,5’ means the player scores 20,5 points per 100 Team’s possessions.
+• Possession: In basketball, possessions are deﬁned as the time a team gains oﬀensive possession of the ball until it scores, loses the ball or commits a violation or foul.
+• Usage%: Usage percentage is an estimate of the percentage of team plays used by a player while he was on the ﬂoor. The formula is :
+100 * ((FieldGoals Attempts + (0,44*FreeThrows Attempts) + Turnovers) * Team minutes) / (Player minutes * Team FieldGoals Attempts + 0,44 * Team FreeThrows Attempts + Team Turnovers)
+• Free throw: are unopposed attempts to score points from a restricted area on the court (the free throw line; informally known as the foul line or the charity stripe), and are generally awarded after a foul on the shooter by the opposing team.
+• Field Goals: it refers to a basket scored on any shot or tap other than a free throw, worth two or three points depending on the distance of the attempt from the basket.
+• BPM (Box Plus Minus): is a box score-based metric for evaluating basketball players’ quality and contribution to the team. http://www. basketball-reference.com/about/bpm.html
+There are also some deﬁnitions that measure the player performance (called metrics).
+2|
+
+• EOPx40M(Eﬃcient Oﬀensive Production per 40 Min): To calculate EOPx40M we need to get OE (Oﬀensive Eﬃciency).
+• OE (Oﬀensive Eﬃciency): Metric that measures the quality of offensive production. An OE of 1.0 correspond to 100 percent eﬃciency. OE is the total number of successful oﬀensive possessions the player was directly involved in divided by that player’s total number of potential ends of possessions. OE formula:
+(FieldGoalsMade + Assists) / (FieldGoalsAttempts - OﬀensiveReb + Assists + Turnovers)
+In order to compute EOPx40M, ﬁrst we calculate EOP, this metric measures the oﬀensive production with a measure of eﬃciency (OE), it uses points and assists. To use assists in the formula, it needs to know the value of an assist relative to a point scored, the author consider an assist meaningful if the assist led to a basket at the rim. By average about 38% of assists led to a basket at the rim, if a player had 100 assists, he created 2*0,38*100= 76 points, so 1 assists = 0,76 points. EOP Formula:
+EOP = (0,76 * Assists + Points) * OE
+EOPx40M = (EOP / Player seconds played) * (40 * 60)
+Note: OE y EOP are metrics created by Stephen M. Shea in his book Basketball Analytics [8].
+3. Objectives
+Based on the data collected from Aryuna c , the team assigned to this challenge worked in small groups and focused in 4 main goals:
+1. Study the performance curve, peak and optimal age of a basketball player in top European leagues.
+2. Player’s performance and their inﬂuence in the game.
+3. Rating correction factor for diﬀerent basketball leagues.
+4. Which factors predicts a successful professional career?
+|3
+
+131 ESGI, 15–19 May, 2017, Bilbao, Spain
+
+Goal 1: Performance of players by age and experience
+In order to analyse the performance curves, we chose the variable EOP per 40 minutes (EOPx40M) for each player in one season and one competition. We ﬁtted a mixed-eﬀects model with a quadratic ﬁxed eﬀect for the age of the player interacting with the position. There is also a random eﬀect for each player, to account the variability of each individual. Thus the model is
+EOPx40M = β0Position + β1Position:Age + β2Position:Age2 + uPlayer + , (1)
+where uPlayer ∼ N (0, σPlayer) is a random eﬀect per player and is the error term, i.e. ∼ N (0, σ).
+
+Registers of players whose minutes played at the season-competition are lower or equal to 50 minutes are discarded. The data for this model include 10,712 observations for 3,743 diﬀerent players.
+The estimation of the standard deviation of the random eﬀect is σˆPlayer = 2.08 with p-value < 0.0001, indicating a signiﬁcant variability for the players.
+The ﬁxed eﬀects of this model produce three performance curves, one for each position. The peaks for each position are calculated by calculating their maximums. Let the curve of performance for position p be
+
+y = β0,p + β1,px + β2,px2,
+
+the derivative is
+
+y = β1,p + 2β2,px,
+
+and the maximum of the curve (if β2,p < 0, because y = 2β2,p) is found for the value which solves the derivative equals to 0,
+
+β1,p
+
++
+
+2β2,pxmax
+
+=
+
+0
+
+⇒
+
+xmax
+
+=
+
+− β1,p . 2β2,p
+
+For each position p, −βˆ1,p/(2βˆ2,p) is the peak performance age and by the δ-method the 95% conﬁdence intervals bound limits are
+
+−
+
+βˆ1,p 2βˆ2,p
+
+±
+
+1.96
+
+·
+
+1 − 2βˆ2,p
+
+,
+
+βˆ1,p 2βˆ22,p
+
+· Σ12,p ·
+
+−
+
+1 2βˆ2,p
+
+,
+
+βˆ1,p 2βˆ22,p
+
+T
+
+where Σ12,p is the variance covariance matrix of β1,p and β2,p. Peak performance ages (and their 95% conﬁdence intervals) by position
+are:
+
+• Center: 27.23 (26.48, 27.98) years;
+
+• Forward: 27.46 (27.00, 27.92) years;
+
+4|
+
+• Guard: 28.08 (27.57, 28.59) years.
+These peaks and their statistical uncertainties are between 26 and 29, which are similar to those for the NBA, 27-30, as shown in [6].
+Analogously, curves of performance by the experience of the player interacting with the position have been calculated, with a random eﬀect for each player. As there is no information of the debut season of the registered players, it is assumed that new players from the 2001 season younger than 20 are in their ﬁrst season. The model has the same structure changing the age of the player by the his experience (time since his debut season). Registers of players whose time contributed in the season-competition is lower or equal to 50 minutes are discarded. The data in this model are 986 observations for 283 diﬀerent players.
+Peak performance experiences (and their 95% conﬁdence intervals) by position are:
+• Center: 10.63 (2.37, 18.88) years;
+• Forward: 7.35 (5.76, 8.93) years;
+• Guard: 9.46 (6.38, 12.55) years.
+Peak performance experiences are between 7 and 11 years, which are similar to those for the NBA (6-8 years, see [6]). The 95% conﬁdence intervals are huge (mainly for the center players) because of the lack of information (121 centers, 364 forwards and 501 guards). Information about the debut season for each player would give bigger dataset to be analysed in this model.
+Figure 1 shows the plot of the ﬁxed eﬀect curves by position for both models.
+Extraction of Performance Patterns
+In order to deal with individual performance trajectories, we split the database according to diﬀerent competitions and once a competition was selected, we redimensionalized the database as follows: each row di represents a player who played in this competition and each column dj refers to an age. Each element dij of the new matrix represents the EOP performance index of the player i by the age j.
+First of all, it should be mentioned that there are quite a few gaps or undetermined values in the performance matrix due to the lack of data or the restriction to one competition. For example, if a player has been in the ACB for 5 season, then he moved to the NBA for 4 season and ﬁnally he came up for 3 season to the ACB, there would be a 4 years long gap in the ACB-Performance matrix of this player.
+|5
+
+131 ESGI, 15–19 May, 2017, Bilbao, Spain
+
+25
+
+20
+
+20
+
+15
+
+EOP per 40 Min
+
+15
+
+EOP per 40 Min
+
+10
+
+10
+
+5
+
+5
+
+0
+
+0
+
+15
+
+20
+
+25
+
+30
+
+35
+
+40
+
+Age (y)
+
+0
+
+2
+
+4
+
+6
+
+8
+
+10
+
+12
+
+14
+
+Experience (y)
+
+Figure 1: Performance curves by age (left) and experience (right). The grey dots are the observed performances. The solid lines are the performance curves for centers, forwards and guards, and their respective peaks are represented by the solid dots and the dashed lines.
+
+Figure 2: New Performance Matrix Figure 3: Example of Performance Matrix of ACB
+Therefore, each row on the matrix corresponds to the performance curve of a player in one competition. In Figure 3 some examples of ACB player’s performance curves are shown. We only have the points so we tried to do a regression (ﬁnd the curve that describes those points) with polynomials approximations of diﬀerent grades.
+Nevertheless, this approximations were not good enough and we wanted to go further. If one looks at A. Hervelle and C. Jimenez player’s performance curves (the real data, the points in Figure 3), it can be seen that their pattern is very similar. Consequently, we noticed that it make sense to exists diﬀerent patterns on the performance curves.
+In order to extract meaningful patterns, we took advantage of the fact
+6|
+
+Figure 4: Some performance curves
+that this performance curve are, actually, time series. That is, each value has been taken by a speciﬁc age and the values are, some kind, sorted. In other words, the values on an individual performance curve can not be considered independently, because they are correlated to each other and this is the main characteristic of the time series. Once this contemplated, the goal is to group the performance curve by their patterns, for which a clustering method was used. Clustering is the task of grouping a set of objects in such a way that objects in the same group (cluster) are more similar to each other than to those in other clusters, so the aim is to ﬁnd groups of patterns in the performance curves.
+With the intention of clustering the performance curves, a similarity measure between series has to be chosen. Since our interest focuses on the shape of the performance curve, a distance between curve that deals with time warping and shifting was used, namely, Dynamic Time Warping (DTW). DTW is a well-known technique to ﬁnd an optimal alignment between two given (timedependent) sequences under certain restrictions. It is able to deal with local warping and shifting by searching the optimal alignment between two series that minimizes the distance, so if two series have the same shape but they are out of phase, Dynamic Time Warping will align them and compute the minimal distance between all possible alignments. Figure 5, illustrates the DTW idea.
+|7
+
+131 ESGI, 15–19 May, 2017, Bilbao, Spain
+Figure 5: Dynamic Time Warping
+Figure 6: Cluster Dendogram Therefore, a hierarchical cluster analysis with Dynamic Time Warping was carried out, with the resulting agglomeration dendogram shown in Figure 6. It illustrates the arrangement of the clusters based on the Dynamic Time Warping distance between performance curves, distinguishing 2 or maybe 3 main clusters. We chose to split de database in 3 clusters, but the same analysis could be made for 2 clusters. The meaning of this partition is that the cluster analysis show that, based on the similarity of the shape of the performance curves, there are 3 main groups. Once the three clusters are divided, we made a regression for each position within each group. The resulting regressions for ACB performance curves are shown in Figure 7. It can be seen the partition on three clusters (each plot shows one cluster) and, in fact, the diﬀerent patterns for each cluster. In the ﬁrst one, the pattern of the performance curve is very similar for Forwards and Guards. Actually, the performance pattern starts with a rela8|
+
+Figure 7: Regression of Clusters by Position (ACB)
+tively low EOP in early ages, the players enhance their EOP quickly in the ﬁrst 5-10 years of competition and reach their performance peak by the age of 25 for Forwards and 27-28 for Guards. After the peak, this kind of players tend to worsen the EOP. It has to be mentioned that for Centers this analysis is not meaningful, due to the lack of data (the error interval coloured by gray is too wide to conclude anything).
+The second kind of player (plot in the middle), has a very diﬀerent pattern of performance. The players in this cluster start with a quite high EOP from a very early ages (as high as the maximum of the player in the ﬁrst cluster) and they tend to improve, or increase their EOP, over almost their entire career. The performance peak of this kind of player is reached at the age of 31 for Forwards and 29 for Guards. As happened before, there is not enough information to conclude anything for Centers.
+The last kind of player starts very similar to the second one, with a quite high EOP in the ﬁrst years of competition, but instead of keep improving the performance over the years, they reach a peak and start getting worse. For this kind of player, depending on the position, the peak is reached at 27 for Forwards, 24 for Guards. Again, the lack of data does not allow to conclude anything for Centers.
+Goal 2: Player’s performance and their inﬂuence in the game
+For this goal, we considered as player’s performance measure the shot precision. Figure 8 shows a boxplot per Competition (for all the seasons) with the kernel
+|9
+
+131 ESGI, 15–19 May, 2017, Bilbao, Spain
+density estimator on each side (this is known as violin plot). It is shown that the shot precision in all competitions look very similar in 2 points shots (top plots) and very symmetric around their respective averages. The distribution of the shoots for 3 points and free throws are very skewed.
+
+Figure 8: Shot precision by Competition and type of shoot (free, 2 points and points).
+
+Figure 9 shows by player position and age, the increase in % shots in Argentina and Euroleague. There seems to be an increasing percentage in free throws in all the positions. For the rest of the points (2 and 3 points throws) the increase is not so evident due to the high variability of the data.
+
+Argentina
+
+Euroleague
+
+Figure 9: Increase in % shots in Argentina and Euroleague by player position, type of shoot and age.
+The conclusions of this goal are not very strong: i) most results are (still) inconclusive due to the need of long-career-players? data; ii) in some rare cases it can be shown that the precision does experience minor changes; and iii) some leagues need more data to obtain better results (if any at all) and ﬁnally iv) the nature of each league might be intrinsically diﬀerent.
+10 |
+
+Goal 3: Rating correction factor for diﬀerent basketball leagues
+Our second goal was to try to ﬁnd a conversion factor between the 6 diﬀerent leagues. As each league has its own characteristics, (some might be more offensive whereas others may use more 3 points shots, for example). Hence, an interesting goal is the need of ﬁnding an algorithm that transforms the performance obtained by a player in one league into the performance in another league. This would let them compare diﬀerent players from diﬀerent leagues to ﬁnd the best ones to represent. Interpretation of the results will be left to experts, so we will just focus on the data.
+The biggest problem here is to ﬁnd diﬀerences between leagues. Due to the heterogeneity of players, all leagues look similar, as it can be seen in Figure 10. This happens not only for the EOP coeﬃcient but for any other one too. It cannot be seen any diﬀerence in terms of mean, variance of distribution that cannot be attributed to noise in the observations.
+Figure 10: Violin plots obtained for de EOP factor dividing by league.
+However, by computing ANOVA (Analysis Of Variance) models, we can get some diﬀerences for some particular factors and competitions. Using the Euroleague as the base league to compare with, we can see how some means are further than the sum of the standard deviation of both, and all with small p-values, what would imply that there are diﬀerences between those means (see Figure 11).
+As performance is an abstract concept, many diﬀerent measures can be built. Indeed, EOP is a measure of oﬀensive performance generated by combination of some basic variables so it might not consider players with high block skills. To consider all diﬀerent measures, what we propose to do is to predict
+| 11
+
+131 ESGI, 15–19 May, 2017, Bilbao, Spain
+Figure 11: Termplots obtained for EOP (left), Fouls ×100 possessions (center) and Blocks per hundred possessions(right) ANOVA models. The intercept is not taken into account. Continuous lines represent means whereas discontinuous lines represent mean plus or minus standard deviation.
+over those basic variables, so that when a diﬀerent measure is used, the agent just has to apply the formula of the measure to the predictions of the basic variables it uses.
+A complete and very visual table with the diﬀerences between means for each basic variable and taking into account the p-values of the ANOVA model can be generated so it will help the agent (see Figure 12).
+Figure 12: Coeﬃcients of the ANOVA model for each of the basic variables. Darker colours imply smaller p-values ranking from smaller than 0.001 to smaller to 0.01, to 0.05 and to 0.1.
+To be more accurate, we can divide players into diﬀerent categories. A good start could be to divide by positions as it is not the same the number of 3 points shots a center can score than this number of scores for a forward or guard. We used an ANOVA model with interactions where now dummies variables for belonging to a league and playing in a certain position are added.
+Taking into account all player characteristics doesn’t have a big computational impact. Although there are just 3 variables to characterize players (age, height and position), some of them can take too many values. Instead of giv12 |
+
+ing a conversion factor for each value, that would give an enormous amount of diﬀerent players, we use a linear model tree. Since ANOVA models are linear models with factors, what we are really doing is to ﬁt an ANOVA model at each leave of the tree. Diﬀerent values for the minimum number of individuals in each leave allow to adjust the number of types of players.
+Following the linear model approach, we performed a linear regression tree, allowing for a recursive partition of the variables. Figure 13 shows the obtained tree.
+
+Figure 13: Example of linear model tree to predict the EOP variable adjusted to produce 7 types of players.
+
+The beneﬁts of this last model are that produces good ﬁtting of the data and meantime gives information of the classes of players. All this rules of transformation can be traduced into factors by adding the coeﬃcient in the ANOVA model to the intercept and dividing by the intercept. Thus, a player with a coeﬃcient of 9 in the ACB in a category in which the mean of the Euroleague is 10 and the coeﬃcient of the ANOVA model for the ACB is -0.5 would get a coeﬃcient of:
+
+10
+
+9·
+
+= 9 · 1.05 = 9.4
+
+10 − 0.5
+
+Other ways to obtain this correction factor could be to just consider players that played at two leagues at the same time (one of them should be Euroleague or Eurocup), but we would not have a conversion factor for Argentina league. We could also consider players who were transferred to other leagues. We could observe the level of a player in one league just before leaving and compare it with the level in the other league a few years later, when we think he got used to the new league.
+
+| 13
+
+131 ESGI, 15–19 May, 2017, Bilbao, Spain
+Goal 4: Which factors predicts a successful professional career?
+This is the most challenging task. In fact, from our view there is no relevant information in the provided database to quantify a successful professional career. From a basketball point of view, ‘success’ could be considered as winning a MVP (most valuable player) trophy at least 3 times in a row during a professional career, signing a contract of several millions of $ etc ... However, we tried to answer the following question: “how can we predict success?”.
+Any statistical model has to be interpretable and have a strong predictive power. Firstly, we considered the variable EOPx40M and transformed this variables in a dichotomous variables (0=Fail and 1=Success). Note that this partition is completely subjective, and was performed only to obtain a measure of success. We performed a popular machine learning technique in order to perform a feature (or variable) selection, called random forest. Figure 14, shows the number of most important variables for prediction selected by the random forests, i.e. there are 13 out of the 44 variables that are the most relevant variables to predict a successful player based on the transformation we proposed.
+Figure 14: Number of selected features using Random forests and Crossvalidation.
+Figure 15 presents the selected features. The variables with symbol ∗ are those that are highly correlated as shown in the correlation matrix in Figure 16. The accuracy of the model range between (0.854, 0.874). Table 1 shows the sensitivity and speciﬁcity and the positive and negative predictive values. 14 |
+
+PercentageTwoPoints PercentageThreePoints TwoPointsScoredx100Possessions(*)
+
+Selected Variables Assists(*)
+Assistsx100Possessions Pointsx100Possessions
+
+Steals Stealsx100Possessions Turnoversx100Possessions
+
+ThreePointsScoredx100Possessions(*) OffensiveReboundsx100Possessions
+
+USAGEpercentage(*)
+
+DefensiveReboundsx100Possessions
+
+Figure 15: Selected features using Random forests and Cross-validation.
+
+Figure 16: Correlation matrix of selected features.
+4. Recommendations and further directions
+Most of the patterns found are well-known by specialists in the ﬁeld of sports analytics in Basketball, but mainly in NBA where the is only one competition and the data has been collected during many years. We provided some statistical support to the data from Aryuna c , with special focus on the comparison of several basketball leagues. It is important to mention that metrics are subjective, but they are very useful as it is not easy to ﬁnd a overall global measure.
+We recommend to include in the database some variables such as “experi-
+| 15
+
+131 ESGI, 15–19 May, 2017, Bilbao, Spain Sensitivity 0.85 Speciﬁcity 0.88
+Pos Pred Val 0.86 Neg Pred Val 0.87 Table 1: Predictive performance measures. ence” i.e. the number of professional years or other variables to account for the team and coach eﬀects. The proposed statistical analysis allows for a further validation step in the complete database. However, there are still many open questions.
+16 |
+
+References
+[1] S.M. Berry, C.S. Reese and P.D. Larkey. “Bridging diﬀerent eras in Sports”, Journal of the American Statistical Association.Vol. 94, No 447 (1999), pp. 661–676.
+[2] S. Bruce. “A Scalable Framework for NBA Player and Team Comparisons Using Player Tracking Data” (2016) https://arxiv.org/pdf/1511. 04351.pdf
+[3] D. Coates and B. Oguntimein. “The Length and Success of NBA Careers: Does College Production Predict Professional Outcomes”, Working Papers Series, Paper No. 08–06. International Association of Sports Economists (2008).
+[4] P. Fearnhead. and B.M. Taylor. “On estimating the Ability of NBA players”. Journal of Quantitative Analysis in Sports. Vol. 7, Issue 3, Article 11, (2011).
+[5] J. Kubatko, D. Oliver, K. Pelton and D.T. Rosenbaum. “A starting point for analyzing Basketball statistics”, Journal of Quantitative Analysis in Sports.Vol. 3, Issue 3, Art 1 (2007).
+[6] G.L. Page, B.J. Barney, and A.T. McGuire. “Eﬀect of position, usage rate, and per game minutes played on NBA player production curves”. Journal of Quantitative Analysis in Sports, Vol. 9, issue 4, Dec (2013).
+[7] G.L. Page and F. Quintana. “Predictions based on the Clustering of Heterogeneous Functions via Shape and Subject-speciﬁc covariates”. Bayesian Analysis, 10, number 2, pp. 379–410.
+[8] S. Shea. Basketball Analytics: spatial tracking (2014). http://www. basketballanalyticsbook.com.
+[9] R.P. Schumaker, O.K. Solieman and H. Chen. Sports Data Mining. Integrated Series in Information Systems 26 (2010). Springer.
+| 17
+

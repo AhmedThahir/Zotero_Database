@@ -1,0 +1,148 @@
+
+The Game Designer
+Tuesday, May 29, 2012
+Pythagoras Explained
+
+Pythagoras of Samos, mathematician and philosopher, died about 2500 years ago. Nevertheless, his name is familiar to baseball fans. The "Pythagorean Expectation", invented by Bill James in the 1980s, predicts a team's winning percentage from runs scored and runs allowed. Despite the intimidating name, Pythagorean win expectations can now be found on mainstream sites like ESPN and MLB.com .
+
+The Pythagorean Theorem
+The original Pythagorean Theorem states the following for right triangles (triangles with a 90-degree angle):
+
+The square of the longest side equals the sum of the squares of the two shorter sides.
+
+To put it visually, the area of square 'c' always equals the combined areas of squares 'a' and 'b':
+
+
+Pythagorean Expectations
+James' Pythagorean Expectation uses a similar formula to express the fact that a team's winning percentage can be predicted by comparing the square of the team's runs scored to the square of the team's runs allowed.
+
+Specifically, the ratio of wins to losses correlates with the ratio of those two squares:
+
+Wins : Losses   =   Runs Scored  2 : Runs Allowed  2
+
+The reason this formula evokes Pythagoras' name can be seen in this diagram. If the lengths of each side are represented by a team's runs scored and allowed, their balance of wins to losses is shown by the area of the squares.
+
+
+Take the 2004 Red Sox as an example. They scored 949 runs while only allowing 768.
+
+    949   2  = 900601
+    768   2  = 589824
+    Projected Winning Percentage = Projected Wins / (Projected Wins + Projected Losses)
+    Projected Winning Percentage = 900601 / (900601 +  589824)
+    Projected Winning Percentage = .604 (98 - 64)
+
+A .604 winning percentage in a 162-game season equals a record of 98-64. In real life, the 2004 Red Sox were 98-64. So, as some stat nerds might say, "Pythagoras was right".
+Player Value
+Predicting team winning percentage is useful, but the Holy Grail for general managers is a formula that determines player value. So, we use the Pythagorean formula to determine how many runs a player needs to create (or prevent) for that team to win one more game than it would otherwise.
+
+If a team scores 810 runs and allows 810 runs, we can predict a winning percentage of .500. That is, the team should go 81-81 over a 162-game season.
+
+For a team that scores 820 runs  but still allows 810, the Pythagorean formula predicts a winning percentage of .506. This corresponds to a record of 82-80. In other words, 10 additional runs are needed to turn one loss into a win.
+
+This is the math that underpins modern player valuation techniques such as Wins Above Replacement (WAR). By analyzing thousands of games over the last 50+ years, we calculate how many runs each play creates. For example, a double creates about 0.85 runs. A home run creates about 1.40 runs.
+
+Then, if the above team adds a player in the off-season who contributes 21 more doubles and 30 more home runs than the player he replaces, that will create an additional 59.85 runs (21 * 0.85 + 30 * 1.40). Since every 10 runs creates an additional win, this player will add about 6 wins to the team's projected won-loss record.
+
+The same math is used for pitching and defense. If a center fielder with great range converts 20 doubles into outs over the course of a season, he has prevented the opposition from scoring about 17 runs -- the equivalent of 1.7 wins.
+Email This BlogThis! Share to Twitter Share to Facebook Share to Pinterest
+Labels: Baseball , Baseball Mogul , FAQ , Sports , Statistics
+2 comments:
+
+Zug said...
+
+    May be a typo here:
+
+    "Projected Winning Percentage = .604 (98 - 64)
+
+    A .604 winning percentage in a 162-game season equals a record of 96-66."
+
+    The first part is true, so the second part should read "equals a record of 98-64 ". And, since the Red Sox actually FINISHED with a 98-64 record, the prediction was right on.
+    June 30, 2012 at 4:24 PM 
+Clay Dreslough said...
+
+    @Zug. Fixed. Thanks!
+    July 6, 2012 at 8:55 AM 
+
+Post a Comment
+Newer Post Older Post Home
+Subscribe to: Post Comments (Atom)
+Search This Blog
+	
+Featured Post
+Improvements to Baseball Mogul 2017
+
+Baseball Mogul 2017 includes more than 130 improvements and bug fixes. As you would expect, we have included hundreds of new major and...
+About
+Clay Photo
+
+
+Clay Dreslough (DRESS-lock) is the President of Sports Mogul Inc. , and the creator and designer of Baseball Mogul and Football Mogul .
+
+Past design work includes: MLB Slugfest , Blitz: The League , Microsoft Baseball , Madden NFL , and the Tony LaRussa Baseball series .
+
+Permission is granted to share and remix all content on this site.
+Posts by Category
+
+    Baseball (31)
+    Baseball Mogul (35)
+    FAQ (11)
+    Football (25)
+    Football Mogul (18)
+    Game Design (14)
+    Masters of the Gridiron (1)
+
+Blog Archive
+
+    ►  2017 (7)
+
+    ►  2016 (13)
+
+    ►  2015 (13)
+
+    ►  2014 (12)
+
+    ►  2013 (17)
+
+    ▼  2012 (22)
+        ►  November (1)
+        ►  September (2)
+        ►  July (2)
+        ►  June (2)
+        ▼  May (3)
+            Baseball Mogul's Simulation Engine
+            Pythagoras Explained
+            Baseball Mogul 2013 - Version 15.07
+        ►  March (6)
+        ►  February (2)
+        ►  January (4)
+
+    ►  2011 (2)
+
+    ►  2010 (3)
+
+    ►  2009 (1)
+
+    ►  2008 (6)
+
+    ►  2007 (2)
+
+    ►  2006 (2)
+
+    ►  2005 (3)
+
+Followers
+Stuff We Like
+
+    Baseball Mogul
+    Baseball Prospectus
+    Baseball-Reference
+    Fan Graphs
+    Football Mogul
+    Masters of the Gridiron
+    Sports Mogul Facebook Page
+    Sports Mogul Forums
+    Sports Mogul Web Site
+    Sportsthodoxy (blog)
+
+	
+Copyright Clay Dreslough, 1995-2012. Awesome Inc. theme. Powered by Blogger .

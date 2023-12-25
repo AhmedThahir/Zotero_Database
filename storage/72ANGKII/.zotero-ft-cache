@@ -1,0 +1,358 @@
+Skip to Main Content
+Coursera
+Open Coursera membership menu
+Explore
+Online Degrees Find your New Career For Enterprise
+
+    User Filled Ahmed Thahir
+
+Browse
+Data Science
+Data Analysis
+
+This course is part of the Sports Performance Analytics Specialization
+Foundations of Sports Analytics: Data, Representation, and Models in Sports
+
+    Filled Star Filled Star Filled Star Filled Star Half Faded Star
+    4.4
+    stars
+    75 ratings
+
+Image of instructor, Wenche Wang Wenche Wang +1 more instructor   
+Go To Course
+
+Already enrolled
+7,876 already enrolled
+
+Offered By
+University of Michigan
+
+    About
+    Instructors
+    Syllabus
+    Reviews
+    Enrollment Options
+    FAQ 
+
+About this Course
+37,063 recent views
+
+This course provides an introduction to using Python to analyze team performance in sports. Learners will discover a variety of techniques that can be used to represent sports data and how to extract narratives based on these analytical techniques. The main focus of the introduction will be on the use of regression analysis to analyze team and player performance data, using examples drawn from the National Football League (NFL), the National Basketball Association (NBA), the National Hockey League (NHL), the English Premier LEague (EPL, soccer) and the Indian Premier League (IPL, cricket).
+
+This course does not simply explain methods and techniques, it enables the learner to apply them to sports datasets of interest so that they can generate their own results, rather than relying on the data processing performed by others. As a consequence the learning will be empowered to explore their own ideas about sports team performance, test them out using the data, and so become a producer of sports analytics rather than a consumer. While the course materials have been developed using Python, code has also been produced to derive all of the results in R, for those who prefer that environment.
+Flexible deadlines
+Flexible deadlines
+Reset deadlines in accordance to your schedule.
+Shareable Certificate
+Shareable Certificate
+Earn a Certificate upon completion
+100% online
+100% online
+Start instantly and learn at your own schedule.
+Specialization
+Course 1 of 5 in the
+Sports Performance Analytics Specialization
+Hours to complete
+Approx. 49 hours to complete
+Available languages
+English
+Subtitles: English
+Instructors
+Instructor rating
+4.34/5   (28 Ratings)
+We asked all learners to give feedback on our instructors based on the quality of their teaching style.
+Image of instructor, Wenche Wang
+Wenche Wang
+Assistant Professor in Sport Management
+School of Kinesiology
+7,876 Learners
+1 Course
+Image of instructor, Stefan Szymanski
+Stefan Szymanski
+Stephen J. Galetti Professor of Sport Management
+School of Kinesiology
+8,640 Learners
+3 Courses
+Offered by
+University of Michigan logo
+University of Michigan
+
+The mission of the University of Michigan is to serve the people of Michigan and the world through preeminence in creating, communicating, preserving and applying knowledge, art, and academic values, and in developing leaders and citizens who will challenge the present and enrich the future.
+go to previous testimonial
+
+With Coursera, I gained the confidence I needed to start a new journey in life. Now I’m in the process of transitioning to what I’ve always dreamed of doing.
+— Khadija A.
+
+Learning isn't just about being better at your job: it's so much more than that. Coursera allows me to learn without limits.
+— Chaitanya A.
+
+Without Coursera, it would be difficult for me to gain the skills I need to maintain a consistent pace of learning, especially while working full-time.
+— Dapeng W.
+
+With Coursera, I gained the confidence I needed to start a new journey in life. Now I’m in the process of transitioning to what I’ve always dreamed of doing.
+— Khadija A.
+
+Learning isn't just about being better at your job: it's so much more than that. Coursera allows me to learn without limits.
+— Chaitanya A.
+
+Without Coursera, it would be difficult for me to gain the skills I need to maintain a consistent pace of learning, especially while working full-time.
+— Dapeng W.
+
+With Coursera, I gained the confidence I needed to start a new journey in life. Now I’m in the process of transitioning to what I’ve always dreamed of doing.
+— Khadija A.
+
+Learning isn't just about being better at your job: it's so much more than that. Coursera allows me to learn without limits.
+— Chaitanya A.
+
+Without Coursera, it would be difficult for me to gain the skills I need to maintain a consistent pace of learning, especially while working full-time.
+— Dapeng W.
+go to next testimonial
+
+    1
+    2
+    3 
+
+Related Courses Degrees Recommended
+Other courses in this Specialization
+Moneyball and Beyond
+University of Michigan
+1 course
+Prediction Models with Sports Data
+University of Michigan
+1 course
+Wearable Technologies and Sports Analytics
+University of Michigan
+1 course
+Introduction to Machine Learning in Sports Analytics
+University of Michigan
+1 course
+Syllabus - What you will learn from this course
+Week
+1
+Hours to complete
+10 hours to complete
+Introduction to Sports Performance and Data
+
+This week introduces a simple example of sports analytics in practice - the calculation of the Pythagorean expectation to model winning in team sports. This can also be used for the purposes of prediction. Examples are developed for five different sports leagues, Major League Baseball (MLB), the National Basketball Association (NBA), the National Hockey League (NHL), the English Premier League (EPL-soccer) and the Indian Premier League (IPL-cricket).
+Reading
+8 videos (Total 78 min) , 6 readings , 1 quiz
+See All
+Video 8 videos
+Introduction to Foundations and Instructor Stefan Szymanski 6m
+Faculty Introduction: Wenche Wang 35s
+Pythagorean Expectation & Baseball Part 1 18m
+Pythagorean Expectation & Baseball Part 2 12m
+Pythagorean Expectation & the IPL 12m
+Pythagorean Expectation & the NBA 5m
+Pythagorean Expectation & English Football 9m
+Pythagorean Expectation as a Predictor in the MLB 13m
+Reading 6 readings
+Foundations of Sports Analytics Course Syllabus 10m
+Help Us Learn More About You 5m
+A Note on Notebooks 10m
+Assignment Overview 10m
+Week 1 - Sample Notebook 10m
+Week 1 R Content 10m
+Quiz 1 practice exercise
+Week 1 Quiz 30m
+Week
+2
+Hours to complete
+9 hours to complete
+Introduction to Data Sources
+
+This week will use NBA data to introduce basic and important Python codes to conduct data cleaning and data preparation. This week also discusses summary and descriptive analyses with statistics and graphs to understand the distribution of data, the characteristics and pattern of variables as well as the relationship between two variables. At the end of this week, we will introduce correlation coefficients to summarize the linear relationship between two variables.
+Reading
+6 videos (Total 67 min) , 6 readings , 3 quizzes
+See All
+Video 6 videos
+Accessing Data in Python I 13m
+Accessing Data in Python II 11m
+Data Exploration 10m
+Summary Statistics 7m
+More on Summary Statistics 11m
+Correlation Analysis 12m
+Reading 6 readings
+Assignment Overview 10m
+Assignment Instructions- Part 1 10m
+Assignment Instructions- Part 2 10m
+Assignment Instructions- Part 3 10m
+Week 2 - Sample Notebook 10m
+Week 2 R Content 10m
+Quiz 3 practice exercises
+Week 2 - Quiz 1 30m
+Week 2 - Quiz 2 30m
+Week 2 - Quiz 3 30m
+Week
+3
+Hours to complete
+8 hours to complete
+Introduction to Sports Data and Plots in Python
+
+This module introduces some ways of representing data using examples from MLB, the NBA and Indian Premier League. MLB data is used to analyze the spatial distribution of different hits. NBA data is used to generate heatmaps to illustrate the different ways in which players contribute. IPL data is used to show how team performances can be compared graphically.
+Reading
+4 videos (Total 52 min) , 6 readings , 2 quizzes
+See All
+Video 4 videos
+Data Representation: Cricket Pt. 1 11m
+Data Representation: Cricket Pt. 2 14m
+Data Representation: Baseball 12m
+Data Representation: Basketball 13m
+Reading 6 readings
+Assignment Overview 10m
+Assignment Instructions - Part 1 10m
+Week 3 - Part 1 - Sample Notebooks 10m
+Assignment Instructions - Part 2 10m
+Week 3 - Part 2 - Sample Notebook 10m
+Week 3 R Content 10m
+Quiz 2 practice exercises
+Week 3 - Quiz 1 30m
+Week 3 - Quiz 2 30m
+Week
+4
+Hours to complete
+7 hours to complete
+Introduction to Sports Data and Regression Using Python
+
+This week introduces the fundamentals of regression analysis. We will discuss how to perform regression analysis using Python and how to interpret regression output. We will use NHL data to estimate multiple regression models to identify the team level performance factors that affect the team's winning percentage. We will also use cricket data from the Indian Premier League to run regression analyses to examine whether player performance impacts player salary.
+Reading
+6 videos (Total 55 min) , 6 readings , 3 quizzes
+See All
+Video 6 videos
+Introduction to Regression Analysis 10m
+Interpreting Regression Results 8m
+More on Regressions 8m
+Regression Analysis - Intro to Cricket Data 11m
+Regression Analysis - Batsman's performance and salary 8m
+Regression Analysis - Bowler's performance and salary 8m
+Reading 6 readings
+Assignment Overview 10m
+Assignment Instructions - Part 1 10m
+Assignment Instructions- Part 2 10m
+Assignment Instructions- Part 3 10m
+Week 4 - Sample Notebook 10m
+Week 4 R Content 10m
+Quiz 3 practice exercises
+Week 4 - Quiz 1 30m
+Week 4 - Quiz 2 30m
+Week 4 - Quiz 3 30m
+
+    Show More
+
+Reviews
+4.4
+Filled Star Filled Star Filled Star Filled Star Half Filled Star
+17 reviews
+
+    5 stars
+    66.66%
+    4 stars
+    24.13%
+    3 stars
+    2.29%
+    2 stars
+    3.44%
+    1 star
+    3.44%
+
+TOP REVIEWS FROM FOUNDATIONS OF SPORTS ANALYTICS: DATA, REPRESENTATION, AND MODELS IN SPORTS
+Filled Star Filled Star Filled Star Filled Star Filled Star
+by KY Aug 27, 2021
+
+Great course. Although this course focuses on sports analysis, the analyzing process I learned from it can apply to any other areas of analysis.
+Filled Star Filled Star Filled Star Filled Star Filled Star
+by KJ Jul 6, 2021
+
+Best course to interact with data representation programming and libraries, especially for the great sports fan.
+Filled Star Filled Star Filled Star Filled Star Star
+by HH Sep 5, 2021
+
+Great material and well paced for people working. One instructor is a bit green though.
+Filled Star Filled Star Filled Star Filled Star Filled Star
+by MH Mar 8, 2022
+
+An excellent way to get hands-on experience exploring sports data in Python/R
+View all reviews
+About the Sports Performance Analytics Specialization
+
+Sports analytics has emerged as a field of research with increasing popularity propelled, in part, by the real-world success illustrated by the best-selling book and motion picture, Moneyball. Analysis of team and player performance data has continued to revolutionize the sports industry on the field, court, and ice as well as in living rooms among fantasy sports players and online sports gambling.
+
+Drawing from real data sets in Major League Baseball (MLB), the National Basketball Association (NBA), the National Hockey League (NHL), the English Premier League (EPL-soccer), and the Indian Premier League (IPL-cricket), you’ll learn how to construct predictive models to anticipate team and player performance. You’ll also replicate the success of Moneyball using real statistical models, use the Linear Probability Model (LPM) to anticipate categorical outcomes variables in sports contests, explore how teams collect and organize an athlete’s performance data with wearable technologies, and how to apply machine learning in a sports analytics context. This introduction to the field of sports analytics is designed for sports managers, coaches, physical therapists, as well as sports fans who want to understand the science behind athlete performance and game prediction. New Python programmers and data analysts who are looking for a fun and practical way to apply their Python, statistics, or predictive modeling skills will enjoy exploring courses in this series.
+SHOW ALL context SHOW ALL
+Sports Performance Analytics
+Start Learning Today
+This Course Plus the Full Specialization
+Shareable Certificates
+Self-Paced Learning Option
+Course Videos & Readings
+Practice Quizzes
+Graded Assignments with Peer Feedback
+Graded Quizzes with Feedback
+Graded Programming Assignments
+Go To Course
+7,876 already enrolled
+Shareable on
+LinkedIn
+You can share your Course Certificates in the Certifications section of your LinkedIn profile, on printed resumes, CVs, or other documents.
+Frequently Asked Questions
+
+    When will I have access to the lectures and assignments?
+
+    What will I get if I subscribe to this Specialization?
+
+    Is financial aid available?
+
+More questions? Visit the Learner Help Center .
+Coursera Footer
+Coursera
+
+    About
+    What We Offer
+    Leadership
+    Careers
+    Catalog
+    Coursera Plus
+    Professional Certificates
+    MasterTrack® Certificates
+    Degrees
+    For Enterprise
+    For Government
+    For Campus
+    Become a Partner
+    Coronavirus Response 
+
+Community
+
+    Learners
+    Partners
+    Developers
+    Beta Testers
+    Translators
+    Blog
+    Tech Blog
+    Teaching Center 
+
+More
+
+    Press
+    Investors
+    Terms
+    Privacy
+    Help
+    Accessibility
+    Contact
+    Articles
+    Directory
+    Affiliates 
+
+Mobile App
+Download on the App Store Get it on Google Play
+Logo of Certified B Corporation
+© 2022 Coursera Inc. All rights reserved.
+
+    Coursera Facebook
+    Coursera Linkedin
+    Coursera Twitter
+    Coursera YouTube
+    Coursera Instagram
+

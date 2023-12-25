@@ -1,0 +1,131 @@
+Materials Today: Proceedings xxx (xxxx) xxx
+Contents lists available at ScienceDirect
+Materials Today: Proceedings
+journal homepage: www.elsevier.com/locate/matpr
+
+Study on the effect of porosity on crack propagation
+Saravanan a, S. Sachin b, K. Ramesh b,⇑
+a Sardar Vallabhbhai National Institute of Technology, Ichchhanath, Surat 395007, India b Indian Institute of Technology Madras, Chennai 600036, India
+
+article info
+Article history: Received 19 September 2019 Received in revised form 12 November 2019 Accepted 26 December 2019 Available online xxxx
+Keywords: Crack propagation Linear elastic fracture mechanics Porosity XFEM Simulation Turbine blades
+
+abstract
+The detrimental effect of porosity in cast turbine and compressor blades has been a major issue since long. Though there has been extensive development in casting technology and the incorporation of advanced strategies to reduce the defects, the complete preclusion of porosity in the cast products has not been achieved. The inﬂuence of porosity on the path of propagation of a crack has been studied in this work. Quasi-static tensile simulation was performed on polymethyl methacrylate specimens, using Extended Finite Element Method (XFEM). This was done to observe the changes in the crack propagation path due to the presence of macro porosity. The XFEM results were validated by experimental tensile testing on the same specimens. This serves as a pilot study to understand and predict the path of crack propagation in cast components such as turbine/compressor blades with inherent porosity. Ó 2020 Elsevier Ltd. All rights reserved. Selection and peer-review under responsibility of the scientiﬁc committee of the 2nd International Conference on Recent Advances in Materials & Manufacturing Technologies.
+
+1. Introduction
+One of the aerospace materials used as turbine/compressor
+blades is Ti6Al4V, an a + b type alloy. Investment Casting has been
+widely used for casting TiAl alloys [1]. Some reasons justifying the commercial usage of this production technique are the high temperature brittle-ductile transition, narrow solidiﬁcation range, cost and time intensive machining.
+One of the most common issues associated with casting is porosity. The major factors contributing to porosity have often been either due to shrinkage or gas formation/entrapment. There are several studies which have investigated the effects of porosity on cast materials. Ammar et al. [2] have shown that the presence of porosity is detrimental to the mechanical properties of cast alloys as they lead to lower fatigue life, strength and ductility, and serve as crack initiation sites. Hero et al. [3] investigated on parameters such as Argon pressure, mould venting, and investment permeability on the mould ﬁlling of titanium to show the inﬂuence of each of the factors in the formation of porosity in the cast products.
+The pores present after casting are highly random and vary in number and size. du Plessis and Rossouw [4] reported macro porosity as large as 2.7 mm in cast Ti6Al4V alloy. Cotton et al. [5] have reported, in their work, about the existence of voids of the
+⇑ Corresponding author.
+E-mail address: kramesh@iitm.ac.in (K. Ramesh).
+
+order of 10–20 mm in the cast titanium products. Though it is a common practice to subject the cast specimens to hot isostatic pressing (HIP) in order to eliminate or minimise the porosity, the ability of HIP to completely eliminate macro porosity is still under research. Zhang et al. [6] made one such attempt to study the applicability of HIP for healing millimetre sized pores in cast Ni based alloys.
+The numerical simulation of crack propagation can be attempted by meshless methods, ﬁnite element (FE) method, boundary element method etc. [7]. However, ﬁnite element method has been extensively used for the simulation of fracture problems. The propagation of crack into arbitrary directions creates discontinuity in the displacement ﬁeld which demands remeshing in ﬁnite element code, at every stage of crack propagation. Nevertheless, Extended Finite element method (XFEM) precludes the necessity of remeshing by incorporating enrichment functions into the code. The modelling of crack geometry is performed independent of the mesh and eliminates the need to remesh as the crack propagates. Singh et al. [7] have shown that XFEM results were in good agreement with experimental as well as numerical remeshing solutions.
+The current study explores the behaviour of a crack in the presence of porosity. The inﬂuence of the pores in altering the crack trajectory due to the interaction of the stress ﬁelds is simulated using the XFEM module in Abaqus software [8] and presented here.
+
+https://doi.org/10.1016/j.matpr.2019.12.306 2214-7853/Ó 2020 Elsevier Ltd. All rights reserved. Selection and peer-review under responsibility of the scientiﬁc committee of the 2nd International Conference on Recent Advances in Materials & Manufacturing Technologies.
+
+Please cite this article as: Saravanan, S. Sachin and K. Ramesh, Study on the effect of porosity on crack propagation, Materials Today: Proceedings, https:// doi.org/10.1016/j.matpr.2019.12.306
+
+2
+
+Saravanan et al. / Materials Today: Proceedings xxx (xxxx) xxx
+
+2. Details on ﬁnite element analysis
+
+In this simulation, porosity is modelled as small holes of 3 mm diameter. An edge cracked polymethyl methacrylate (PMMA) is simulated for various conﬁgurations to study the inﬂuence of small holes in affecting the crack propagation path. The properties of the PMMA [9] specimen used for the analysis is speciﬁed in Table 1.
+Maximum principal stress criterion [10] is used to determine the direction of crack growth which postulates the growth of the crack in the direction perpendicular to the maximum principal stress. While maximum principal stress determines the damage initiation, fracture energy is used as a criterion to predict the behaviour of the model once the damage is initiated and hence dictates the damage evolution of the specimen.
+A rectangular specimen of 100 mm Â 40 mm is used for 2dimensional XFEM analysis. An edge crack of 5 mm length is modelled in the specimen. The domain of the specimen is discretized using CPS4R, four node plane stress elements, in this analysis. A quasi static uniaxial tensile analysis is performed on the specimen by loading (displacement control = 1 mm/min) the top edge and constraining the lower edge. The mesh is reﬁned in the vicinity of the holes for accurate prediction of the crack path near the holes. The meshed specimen (meshed with 1377 CPS4R elements) with the loading and boundary conditions is shown in Fig. 1.
+
+3. Parametric study
+
+3.1. Effect of the perpendicular distance between hole and the crack
+The ﬁrst simulation study was aimed at ﬁnding out an approximate maximum perpendicular distance of the centre of the hole from the crack tip (Fig. 2) which causes the crack to completely merge into the hole for the given conditions.
+For this, a quasi static tensile simulation was carried out by varying the ordinate of the hole with respect to the crack, starting from 4 mm in decrements of 0.5 mm. The results of few cases are shown in Fig. 3. It was found out that the crack merges into the hole when the perpendicular distance was 2.5 mm from the crack tip. It is also observed that even in the case of multiple porosities distributed in a deﬁned manner as shown in Fig. 4, the distance of 2.5 mm which causes the crack to merge into the hole remains the same.
+From this study, it was found that for the given mode of loading, hole diameter and fracture energy, there is limiting distance between the crack tip and the centre of the hole which dictates whether the crack would merge into the hole or not.
+
+Fig. 1. FE model of the specimen with three holes showing the load and boundary conditions.
+
+3.2. Effect of hole location and number of holes
+
+The next simulation studied various conﬁgurations of the holes distributed in the vicinity of the crack path in a deﬁned way. The conﬁgurations included no hole, 1 hole, 2 holes and 3 holes specimens as shown in Fig. 4. The perpendicular distances of the centre of the holes are selected at 3 mm below, 3 mm above and 2 mm below (with respect to the crack tip) for the ﬁrst, second and third hole respectively.
+Prominent changes in the path of the crack due to the presence of porosity can be clearly seen from the results shown next. (All the
+
+Table 1 PMMA properties used for the analysis.
+Young’s Modulus Poisson’s ratio Maximum Principal Stress Fracture energy
+
+3 GPa 0.33 70 MPa 240 N/m
+
+Fig. 2. Perpendicular distance of the hole from the crack tip.
+images of the simulation shown only covers the portion of the crack in the vicinity of the holes as marked by the red region shown in Fig. 2. The simulation images are extracted at different instances during which the load is ramped in the analysis)
+1. For the specimen without any holes, the crack propagates undisturbed and perpendicular to the direction of loading throughout the test as shown in Fig. 5.
+
+Please cite this article as: Saravanan, S. Sachin and K. Ramesh, Study on the effect of porosity on crack propagation, Materials Today: Proceedings, https:// doi.org/10.1016/j.matpr.2019.12.306
+
+Saravanan et al. / Materials Today: Proceedings xxx (xxxx) xxx
+
+3
+
+Fig. 3. Crack path with the hole at a perpendicular distance of: (a) 4 mm, (b) 3 mm, (c) 2.5 mm von Misses stress ﬁeld corresponding to: (d) Image ‘a’, (e) Image ‘b’, (f) Image ‘c’.
+
+Fig. 4. Conﬁgurations of the simulated specimens, (a) no hole specimen, (b) 1-hole specimen, (c) 2-hole specimen, (d) 3-hole specimen.
+
+Fig. 5. Crack propagation path of no hole specimen (a-c) and von Misses stress ﬁeld corresponding to: (d) Image ‘a’, (e) Image ‘b’.
+
+Fig. 6. Crack propagation path of 1 hole specimen (a-c) and von Misses stress ﬁeld corresponding to: (d) Image ‘a’, (e) Image ‘b’.
+
+Please cite this article as: Saravanan, S. Sachin and K. Ramesh, Study on the effect of porosity on crack propagation, Materials Today: Proceedings, https:// doi.org/10.1016/j.matpr.2019.12.306
+
+4
+
+Saravanan et al. / Materials Today: Proceedings xxx (xxxx) xxx
+
+Fig. 7. Crack propagation path of 2 hole specimen (a-c) and von Misses stress ﬁeld corresponding to: (d) Image ‘a’, (e) Image ‘b’.
+
+seen that the crack doesn’t merge into the upper hole. This is because the hole is located above the maximum perpendicular limit which merges the crack into a hole. The crack then assumes the path perpendicular to the loading direction and propagates almost undisturbed as shown in Fig. 7. 4. For the specimen with three holes, the inﬂuence of the ﬁrst two holes is the same as case 3. It is observed that the crack is then inﬂuenced by the presence of the third hole and kinks towards it. It is seen that the crack terminates into this ﬁnal hole as it is located below the limiting distance (<2.5 mm). After termination, a continued tensile simulation shows new cracks emerging from the periphery of the second (upper hole) and third holes. However, it is seen that only the crack which emerged from the third hole propagates. Also, it doesn’t propagate completely perpendicular to the loading direction but is seen to curve towards the edge as shown in Fig. 8.
+It is worth noting that linear elastic fracture mechanics is employed for the analysis since the plasticity at the crack tip is neglected due to the highly brittle nature of the material used here. The von Misses stress ﬁeld plot is shown for all the specimen conﬁgurations. It can be clearly seen that the stress at the crack tip is highly ampliﬁed when compared to the far ﬁeld stress. The crack tip stress attains value as high as 135 MPa while the far ﬁeld stress remains as low as 35 MPa as seen in Fig. 7(d). The same trend of higher stress at the crack tip can be observed for all the cases.
+
+Fig. 8. Crack propagation path of 3 hole specimen (a-c) and von Misses stress ﬁeld corresponding to: (d) Image ‘a’, (e) Image ‘b’.
+2. For the specimen with a single hole, the crack tip is initially inﬂuenced by the presence of the hole near it. The hole present below the crack kinks the crack towards the hole, but the crack doesn’t merge into the hole. This is because of the presence of hole at a perpendicular distance greater than the limiting distance (2.5 mm here). The crack reverts back to the perpendicular path due to the diminishing effect of the hole, after which it propagates perpendicular to the loading direction as shown in Fig. 6.
+3. In case of the specimen with two holes, after kinking towards the hole at the bottom, the crack then kinks upwards being inﬂuenced by the hole above in its path of propagation. It is
+
+4. Experiment The tensile testing of the conﬁgurations of the specimens
+shown in Fig. 4 was also performed experimentally to validate the crack path obtained by XFEM simulation. A displacement controlled tensile test, at the rate of 1 mm/min was performed using a 5 kN capacity UTM of Dak System Inc. The results obtained experimentally closely match the simulated results and hence validate the XFEM study. The experimental results for the 1-hole and
+Fig. 10. Load Displacement curve obtained by simulation and experiment for the no hole cracked specimen.
+
+Fig. 9. Crack path obtained for 1-hole specimen (a) experimental, (b) simulation, and for 3-holes specimen (c) experimental, (d) simulation.
+Please cite this article as: Saravanan, S. Sachin and K. Ramesh, Study on the effect of porosity on crack propagation, Materials Today: Proceedings, https:// doi.org/10.1016/j.matpr.2019.12.306
+
+Saravanan et al. / Materials Today: Proceedings xxx (xxxx) xxx
+
+5
+
+3-holes specimens along with their simulated counterparts are shown in Fig. 9.
+The load displacement curves obtained from the simulation and the experiment, for the no hole cracked specimen (Fig. 4(a)), are as shown in Fig. 10.
+As it can be seen from the graph, the curves obtained both by experiment and simulation are in close proximity with each other. The actual specimen exhibits strain hardening during the tensile test which has not been captured by the simulation since plastic behavior of the specimen is not accounted in the simulation owing to small scale yielding. The simulation employs the ssumption of linear elastic fracture mechanics.
+5. Conclusion
+Modelling porosity as small holes serves as a ﬁrst approximation for this study. By distributing the holes near the crack in a deﬁned manner, the study was able to capture the domineering effect of the holes in affecting the crack path. The experimental validation of the numerical simulation approves the usage of XFEM for the purpose required here. The outcome of this study provides a glimpse of the behaviour of a crack in materials with inherent porosity. The inﬂuence of the perpendicular distance limit which marks whether a crack would merge into a hole or not, and the conﬁguration of the holes in altering the crack path have been studied.
+These are valuable parameters which could be extrapolated to deviate the crack to a desired direction, arrest a crack, reduce the rate of crack propagation and hence increase the lifetime of the ﬂawed turbine/compressor blade. The numerical simulation can also be extended to study the effect of subsurface porosities, thermal effects, etc. in inﬂuencing the crack initiation and propagation. The current study and the future attempts in the same direction are ultimately aimed at a fail-safe design approach.
+
+CRediT authorship contribution statement
+Saravanan: Methodology, Formal analysis, Software, Writing original draft. Sachin Sasikumar: Validation, Investigation, Writing - review & editing, Supervision. K. Ramesh: Conceptualization, Resources, Writing - review & editing, Supervision, Project administration.
+Declaration of Competing Interest
+The authors declare that they have no known competing ﬁnancial interests or personal relationships that could have appeared to inﬂuence the work reported in this paper.
+References
+[1] J. Aguilar, A. Schievenbusch, O. Kättlitz, Investment casting technology for production of TiAl low pressure turbine blades - process engineering and parameter analysis, Intermetallics 19 (6) (2011) 757–761.
+[2] H.R. Ammar, A.M. Samuel, F.H. Samuel, Porosity and the fatigue behavior of hypoeutectic and hypereutectic aluminum–silicon casting alloys, Int. J. Fatigue 30 (6) (2008) 1024–1035.
+[3] H. Hero, M. Syverud, M. Waarli, Mold ﬁlling and porosity in castings of titanium, Dent. Mater. 9 (1993) 15–18.
+[4] A. du Plessis, P. Rossouw, Investigation of porosity changes in cast Ti6Al4V rods after hot isostatic pressing, J. Mater. Eng. Perform. 24 (8) (2015).
+[5] J.D. Cotton, L.P. Clark, H.R. Phelps, Titanium investment casting defects: a metallographic overview, J. Min. Met. Mater. Soc. 58 (6) (2016) 13–16.
+[6] J. Zhang, Z. Zhang, Z. Zhao, Q. Zhong, B. Nie, Research on the healing behavior of the millimeter-sized cavity defect inside the superalloy by hot isostatic pressing, Mater. Lett. 235 (2018) 57–60.
+[7] I.V. Singh, B.K. Mishra, S. Bhattacharya, R.U. Patil, The numerical simulation of fatigue crack growth using extended ﬁnite element method, Int. J. Fatigue 36 (1) (2012) 109–119.
+[8] ABAQUS Documentation, Abaqus Analysis User’s Guide, Version 6.13, 2013. [9] M. Hough, R. Dolbey, The plastics compendium: key properties and sources,
+Acrylic (PMMA) (1995) 22. [10] M. Duﬂot, H. Nguyen-Dang, Fatigue crack growth analysis by an enriched
+meshless method, J. Comput. Appl. Math. 168 (1) (2004) 155–164.
+
+Please cite this article as: Saravanan, S. Sachin and K. Ramesh, Study on the effect of porosity on crack propagation, Materials Today: Proceedings, https:// doi.org/10.1016/j.matpr.2019.12.306
+

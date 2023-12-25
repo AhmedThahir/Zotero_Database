@@ -1,0 +1,408 @@
+
+Stack Overflow
+
+    About
+    Products
+    For Teams
+
+    Log in
+    Sign up
+
+2022 Developer Survey is open! Take survey .
+
+Join Stack Overflow to find the best answer to your technical question, help others answer theirs.
+Sign up with email Sign up Sign up with Google Sign up with GitHub Sign up with Facebook
+
+    Home
+        Public
+        Questions
+        Tags
+        Users
+        Companies
+        Collectives
+        Explore Collectives
+        Teams
+        Stack Overflow for Teams – Start collaborating and sharing organizational knowledge. Create a free Team Why Teams?
+
+How to group pandas DataFrame entries by date in a non-unique column
+Ask Question
+Asked 9 years, 10 months ago
+Modified 7 months ago
+Viewed 144k times
+This question shows research effort; it is useful and clear
+97
+This question does not show any research effort; it is unclear or not useful
+35
+Bookmark this question.
+Show activity on this post.
+
+A Pandas DataFrame contains column named "date" that contains non-unique datetime values. I can group the lines in this frame using:
+
+ data.groupby(data[ 'date' ])  
+
+However, this splits the data by the datetime values. I would like to group these data by the year stored in the "date" column. This page shows how to group by year in cases where the time stamp is used as an index, which is not true in my case.
+
+How do I achieve this grouping?
+python pandas
+Share
+Follow
+Follow this question to receive notifications
+edited Jan 4, 2017 at 23:47
+user avatar
+piRSquared
+265k 48 48 gold badges 422 422 silver badges 565 565 bronze badges
+asked Jul 9, 2012 at 9:04
+user avatar
+Boris Gorelik Boris Gorelik
+27.3k 36 36 gold badges 122 122 silver badges 169 169 bronze badges
+1
+
+    For those coming here in 2017+, there are several new ways to groupby a particular amount of time. See this answer below
+    –  Ted Petrou
+    Nov 6, 2017 at 15:35
+
+Add a comment  | 
+6 Answers 6
+Sorted by: Reset to default
+This answer is useful
+119
+This answer is not useful
+Show activity on this post.
+
+I'm using pandas 0.16.2. This has better performance on my large dataset:
+
+ data.groupby(data.date.dt.year)  
+
+Using the dt option and playing around with weekofyear , dayofweek etc. becomes far easier.
+Share
+Follow
+Follow this answer to receive notifications
+edited Dec 8, 2016 at 19:58
+user avatar
+feetwet
+2,914 7 7 gold badges 41 41 silver badges 80 80 bronze badges
+answered Sep 25, 2015 at 13:55
+user avatar
+DACW DACW
+2,323 1 1 gold badge 16 16 silver badges 15 15 bronze badges
+1
+
+    Concur, this seems to be the pandaic way of accessing date attributes for a series.
+    –  dancow
+    May 24, 2016 at 0:59
+
+Add a comment  | 
+This answer is useful
+80
+This answer is not useful
+Show activity on this post.
+
+ecatmur's solution will work fine. This will be better performance on large datasets, though:
+
+ data.groupby(data[ 'date' ]. map ( lambda x: x.year))  
+
+Share
+Follow
+Follow this answer to receive notifications
+answered Jul 9, 2012 at 14:25
+user avatar
+Wes McKinney Wes McKinney
+92.7k 30 30 gold badges 138 138 silver badges 108 108 bronze badges
+2
+
+    9
+    Why map instead of apply?
+    –  Gus
+    Sep 27, 2015 at 1:01
+    1
+    Afaik, map usually has some good efficiency qualities when applying arbitrary functions as compared to just using apply .
+    –  Coolio2654
+    Apr 24, 2018 at 15:35
+
+Add a comment  | 
+This answer is useful
+40
+This answer is not useful
+Show activity on this post.
+
+This might be easier to explain with a sample dataset.
+
+Create Sample Data
+
+Let's assume we have a single column of Timestamps, date and another column we would like to perform an aggregation on, a .
+
+ df = pd.DataFrame({ 'date' :pd.DatetimeIndex([ '2012-1-1' , '2012-6-1' , '2015-1-1' , '2015-2-1' , '2015-3-1' ]), 'a' :[ 9 , 5 , 1 , 2 , 3 ]}, columns=[ 'date' , 'a' ]) df date a 0 2012 -01-01 9 1 2012 -06-01 5 2 2015 -01-01 1 3 2015 -02-01 2 4 2015 -03-01 3  
+
+There are several ways to group by year
+
+    Use the dt accessor with year property
+    Put date in index and use anonymous function to access year
+    Use resample method
+    Convert to pandas Period
+
+.dt accessor with year property
+
+When you have a column (and not an index) of pandas Timestamps, you can access many more extra properties and methods with the dt accessor. For instance:
+
+ df[ 'date' ].dt.year 0 2012 1 2012 2 2015 3 2015 4 2015 Name: date, dtype: int64  
+
+We can use this to form our groups and calculate some aggregations on a particular column:
+
+ df.groupby(df[ 'date' ].dt.year)[ 'a' ].agg([ 'sum' , 'mean' , 'max' ]) sum mean max date 2012 14 7 9 2015 6 2 3  
+
+put date in index and use anonymous function to access year
+
+If you set the date column as the index, it becomes a DateTimeIndex with the same properties and methods as the dt accessor gives normal columns
+
+ df1 = df.set_index( 'date' ) df1.index.year Int64Index([ 2012 , 2012 , 2015 , 2015 , 2015 ], dtype= 'int64' , name= 'date' )  
+
+Interestingly, when using the groupby method, you can pass it a function. This function will be implicitly passed the DataFrame's index. So, we can get the same result from above with the following:
+
+ df1.groupby( lambda x: x.year)[ 'a' ].agg([ 'sum' , 'mean' , 'max' ]) sum mean max 2012 14 7 9 2015 6 2 3  
+
+Use the resample method
+
+If your date column is not in the index, you must specify the column with the on parameter. You also need to specify the offset alias as a string.
+
+ df.resample( 'AS' , on= 'date' )[ 'a' ].agg([ 'sum' , 'mean' , 'max' ]) sum mean max date 2012 -01-01 14.0 7.0 9.0 2013 -01-01 NaN NaN NaN 2014 -01-01 NaN NaN NaN 2015 -01-01 6.0 2.0 3.0  
+
+Convert to pandas Period
+
+You can also convert the date column to a pandas Period object. We must pass in the offset alias as a string to determine the length of the Period.
+
+ df[ 'date' ].dt.to_period( 'A' ) 0 2012 1 2012 2 2015 3 2015 4 2015 Name: date, dtype: object  
+
+We can then use this as a group
+
+ df.groupby(df[ 'date' ].dt.to_period( 'Y' ))[ 'a' ].agg([ 'sum' , 'mean' , 'max' ]) sum mean max 2012 14 7 9 2015 6 2 3  
+
+Share
+Follow
+Follow this answer to receive notifications
+answered Nov 6, 2017 at 15:34
+user avatar
+Ted Petrou Ted Petrou
+52.2k 17 17 gold badges 118 118 silver badges 125 125 bronze badges
+3
+
+    In the last method where you use to_period('A') , what is that ('A') for?
+    –  shiv_90
+    Feb 6, 2018 at 17:51
+    2
+    @Shiv_90 the 'A' is a timeseries offset-alias: pandas.pydata.org/pandas-docs/stable/…
+    –  ptim
+    Feb 7, 2018 at 4:33
+    Which method would you recommend if one needs a separate 'date' column to be saved as well? For example, if I run the simple .dt.year method and save it in a new data frame, the dates are saved as indices and that becomes problematic if say I need to plot the data because the 'dates' column is not really there but only the three provided in .agg()
+    –  shiv_90
+    Feb 7, 2018 at 10:53
+
+Add a comment  | 
+This answer is useful
+15
+This answer is not useful
+Show activity on this post.
+
+This should work:
+
+ data.groupby( lambda x: data[ 'date' ][x].year)  
+
+Share
+Follow
+Follow this answer to receive notifications
+answered Jul 9, 2012 at 12:39
+user avatar
+ecatmur ecatmur
+145k 24 24 gold badges 280 280 silver badges 356 356 bronze badges
+Add a comment  | 
+This answer is useful
+0
+This answer is not useful
+Show activity on this post.
+
+this will also work
+
+data.groupby(data['date'].dt.year)
+Share
+Follow
+Follow this answer to receive notifications
+answered Oct 8, 2017 at 20:39
+user avatar
+Chetan Kabra Chetan Kabra
+333 5 5 silver badges 10 10 bronze badges
+1
+
+    Should work but when executed it outputs the location of the object in the memory but no real output. <pandas.core.groupby.DataFrameGroupBy object at 0x10d7f6438> is what I get when executed.
+    –  shiv_90
+    Feb 6, 2018 at 17:49
+
+Add a comment  | 
+This answer is useful
+0
+This answer is not useful
+Show activity on this post.
+
+Use:
+
+ data.groupby([ 'col1' , data.date.dt.year]).agg({ 'col2' : 'agg_func' }).reset_index()  
+
+In case you want to group by year from datetime column and also by another different type column (col1)
+Share
+Follow
+Follow this answer to receive notifications
+edited Oct 10, 2021 at 17:10
+answered Oct 5, 2021 at 21:43
+user avatar
+Juan Paco Hernandez Juan Paco Hernandez
+46 4 4 bronze badges
+Add a comment  | 
+Your Answer
+
+Draft saved
+Draft discarded
+Sign up or log in
+Sign up using Google
+Sign up using Facebook
+Sign up using Email and Password
+Submit
+Post as a guest
+Name
+Email
+
+Required, but never shown
+Post as a guest
+Name
+Email
+
+Required, but never shown
+Post Your Answer Discard
+
+By clicking “Post Your Answer”, you agree to our terms of service , privacy policy and cookie policy
+Not the answer you're looking for? Browse other questions tagged python pandas or ask your own question .
+
+    The Overflow Blog
+    Stack under attack: what we learned about handling DDoS attacks
+    Software is adopted, not sold (Ep. 441)
+    Featured on Meta
+    Retiring Community-Specific Closure Reasons for Server Fault and Super User
+    Staging Ground: Reviewer Motivation, Scaling, and Open Questions
+
+Linked
+1
+How do I sum for column values like YYYY-MM-DD in a column by only YYYY in Pandas?
+6
+How to group dataframe by hour using timestamp with Pandas
+1
+Grouping data in a dataframe to produce lists against unique ids in Pandas/Python
+1
+Computing cumulative values for each year of a dataframe separately
+1
+how to get last week's data of all past years from a python dataframe?
+1
+Grouping dataframe by custom date
+2
+missing date columns in pandas dataframe after using groupby
+1
+Group non-unique datetime column by date and sum values in python
+0
+Groupby month parameter in Multi-level Index in pandas
+1
+How to group a date column into year and sum a spending column according to the year?
+See more linked questions
+Related
+622
+Converting a Pandas GroupBy output from Series to DataFrame
+1552
+Selecting multiple columns in a Pandas dataframe
+2547
+Renaming column names in Pandas
+581
+How to replace NaN values by Zeroes in a column of a Pandas Dataframe?
+1920
+Delete a column from a Pandas DataFrame
+3399
+How to iterate over rows in a DataFrame in Pandas
+3006
+How do I select rows from a DataFrame based on column values?
+693
+Get statistics for each group (such as count, mean, etc) using pandas GroupBy?
+1253
+Get a list from Pandas DataFrame column headers
+455
+How to group dataframe rows into list in pandas groupby
+Hot Network Questions
+
+    Would like to change a 230 Volt 12/2 into 2 each 115 Volt separate plug lines without having to run another 12/3 from panel?
+    Usefulness of Splendor rare moves
+    Association vs Pair - Creation performance, Selection performance
+    Are brake calipers directional?
+    Should we give up pstricks?
+    Connect Two Pipes
+    Can the NPC Archdruid from Monsters of the Multiverse cast wildfire when using change shape?
+    What's a good way to create waist elastic band on pants?
+    Would a person baptized by a Biblical Unitarian church be considered a Christian by the Catholic Church?
+    What was the first software company to go public?
+    How do temporary HP stack in D&D 3.5 under the rules as written?
+    Should I meet my manager, in person, if he is on a business trip a 2 hour flight away from my city?
+    Why is a set with one element distinct from the element itself?
+    Difference between 抜きにして and 抜きでは
+    I don't see menu in QGIS Print Layout for enabling atlas, or browsing through atlas pages
+    Are nozzle plugs taken out before launch or are they ejected upon ignition?
+    How to write Master's thesis summary for PhD application
+    Use a different twig media template if it is being rendered inside a WYIWYG
+    Did Russia once want to join NATO? Does former Russian Prime Minister Mikhail Kasyanov refer to a serious interest in the past?
+    How can we write a binary variable as a power to a constant number?
+    Debian: "dpkg -l" name field sometimes includes arch/abi, sometimes not. Why?
+    How did GLaDOS open portals in the beginning?
+    Lean: dubious noncomputability
+    What are the effects of removing P, I, and D from a PID controller respectively?
+
+Question feed
+Subscribe to RSS
+Question feed
+
+To subscribe to this RSS feed, copy and paste this URL into your RSS reader.
+lang-py
+Stack Overflow
+
+    Questions
+    Help
+
+Products
+
+    Teams
+    Advertising
+    Collectives
+    Talent
+
+Company
+
+    About
+    Press
+    Work Here
+    Legal
+    Privacy Policy
+    Terms of Service
+    Contact Us
+    Cookie Settings
+    Cookie Policy
+
+Stack Exchange Network
+
+    Technology
+    Culture & recreation
+    Life & arts
+    Science
+    Professional
+    Business
+    API
+    Data
+
+    Blog
+    Facebook
+    Twitter
+    LinkedIn
+    Instagram
+
+Site design / logo © 2022 Stack Exchange Inc; user contributions licensed under cc by-sa . rev 2022.5.16.42139
+ 
+ 

@@ -1,0 +1,367 @@
+	  
+
+	   	  
+
+Analysis of Growth Strategies in Social Media:
+
+	   	  
+
+the Instagram Use Case
+
+	  
+
+	  
+
+	  
+
+Paolo Bellavista, Luca Foschini, Nicola Ghiselli
+
+	  
+
+University of Bologna, Italy
+
+	  
+
+paolo.bellavista, luca.foschini, nicola.ghiselli@unibo.it
+
+	  
+
+	  
+
+	  
+
+Abstract—Social Networking describes the phenomena found Starting from these information we studied the possible
+
+	   	   	  
+
+in participatory and self-expressive Web sites—such as YouTube, Facebook and Instagram. Online communities represent a growing class of marketplace communities where participants can provide and exchange information on products, services, or common
+
+social media platforms and we decided to target our activities on Instagram. This choice was drove by the fact that Instagram (i) counts 1 billion users [3], where (ii) 500 millions are daily
+
+	   interests. Exploiting the phenomena, companies, artists, and new users [4] that (iii) share on average 95 million photos and
+
+	   professional ﬁgures as inﬂuencers, youtubers and resellers, are videos per day [5]. Moreover, (iv) the high user engagement
+
+	   increasingly using online communities to create value for their level [6] decrees Instagram the most effective social for
+
+	   	  
+
+ﬁrms and customers, ensuring that their activities are relevant to the social network audience. However, from a marketing perspective, being able to distinguish a brand or an original
+
+audience and networking [7]. Finally, (v) we did not found in literature similar works based on Instagram. Indeed, most of
+
+	   work in a sea of competitors is a difﬁcult challenge. From a more the related works studied Facebook as Social Media platform.
+
+	   economic perspective, having a social media plan and strategy in The above consideration seemed to us a perfect environment
+
+	   place is becoming a must. At the same time, from the technical for our studies purposes. Indeed, in this environment, we
+
+	   perspective, becoming popular in those platforms it is not so intended to study how those Social Bots are considered from
+
+	  
+
+easy. This paper presents a seminal effort to investigate some strategies to growth on Instagram without using promotion tools.
+
+the community. Anyway, this study activity, could be adapted
+
+	   In particular, we studied how ”Benign” Social Bots, using the to work also with other SNs, as Facebook, Twitter, Linkedin
+
+	   provided platform APIs, can affect the Social Media world. Our and so on.
+
+	   experimental results assess and benchmark the effectiveness of Starting from related works, we present an analysis of the
+
+	   some approaches, increasing the diffusion of users content on the Instagram Algorithm. In particular, we propose a Generalized
+
+	  
+
+Social Media and consequentially speeding up growth. Index Terms—Social Media; Social Media Bot; Instagram;
+
+Growth Strategy that could be considered as a model and
+
+	   Social Media Strategy; Marketing Strategy, Social Network.
+
+a partial implementation of a solution mimiking those users
+
+	  
+
+that want to grow on Instagram. We believe that this work
+
+	  
+
+I. INTRODUCTION
+
+could help social media providers, as Instagram, for a deeper
+
+	  
+
+Social Networks (SNs) are becoming more and more im- comprehension for their inner content promotion mechanisms.
+
+	   portant from a marketing point of view. This is true both The remainder of the paper is structured as follows. Sec-
+
+	   from the consumer than from the professional points of view. tion II highlights the needed background to fully understand
+
+	   Indeed, as pointed out in [1], through SNs consumers can our work and the primary motivations behind our approach.
+
+	   share their opinion, experiences and advice with each other, Section III describes a generalized method to enhance the
+
+	   increasing at the same time their own knowledge with respect diffusion and afﬁrmation process on Instagram, highlighting
+
+	   with products, services, or common interests. Companies some of the implementation insights. Section IV overviews
+
+	   or inﬂuencers, can exploit SNs as valuable alternatives to the experimental work accomplished in measuring the effec-
+
+	   standard research methods. In this way, they can easily get tiveness of the proposed approach, while related works and
+
+	   or ask consumer opinions, retain the consumers, or make conclusive remarks end the paper.
+
+	   studies of interests, even localized in a certain speciﬁed region. 	   This situation opened up to a new marketing area: the so
+
+II. BACKGROUND & MOTIVATIONS
+
+	   called Inﬂuencer Marketing. [2] deﬁnes the term as ”a form of A. Background
+
+	   marketing in which focus is placed on speciﬁc key individuals Before introducing our work, to give a complete understand-
+
+	   	   	  
+
+rather than the target market as a whole”. Indeed, companies ing of what we have done, we want to introduce some needed hope that by showcasing people of interest to their target background material and deﬁnitions.
+
+	   markets, consumers will be more inclined to try the product or To increase the growth probability on SNs, usually a Grow-
+
+	   service that the company offers. This is possible because now, ing Technique is taken in to consideration. It is a procedure
+
+	   more than ever, consumers are looking to other consumers composed from a set of activities that helps to have better
+
+	   or inﬂuencers to take their purchasing decisions. This new results over the selected SN. Those techniques can usually be
+
+	   marketing strategies are very effective and this is proved, for of two different nature: (i) organic, if users only use tools
+
+	   example, by the fact that in 2019 Instagram advertisement provided by the social media or (ii) inorganic, if users use
+
+	   revenue could reach over $10 billions [3].
+
+the Social Media promotions or automated tools, as Social
+
+	  
+
+	  
+
+	   978-1-7281-1016-5/19/$31.00 ©2019 IEEE
+
+	  
+
+	  
+
+Bots. Since, it is difﬁcult that all SN users can be interested in the user contents, usually the Growing Techniques are applied to a Niche, so to accounts potentially interested in the user contents.
+The more widespread and adopted Growing Technique is the so called Follow/Unfollow technique. It is a method that consists in three simple steps: (i) Following, (ii) Waiting and (iii) Unfollowing. Indeed a general user, to apply this technique, it must ﬁnd some accounts belonging to the selected niche and follow them. Statistically 20%-35% of the followed accounts will follow back [8]. Then, the user must wait an appropriate amount of time (typically between 3 to 7 days) to give to the followed accounts the chance to follow back. Finally, the last step of the techniques, consists in unfollow the undesired accounts. This unfollow operation is usually enforced for one of the following motivations: the user is following too much proﬁles, the followed proﬁle does not post good content, or the followed account did not follow back.
+In the considered scenario, deﬁning which is a good result or not is tricky. Indeed, it depends on (i) the niche dimension and so by the proﬁle theme, on (ii) nature of the growing technique and on (iii) the users activities and their frequencies. So, to determine the goodness of the adopted strategy, it is possible to use the number of Followers and Likes as metrics. First of all, an analysis of the needed amount of time for the accounts to reach 1k followers, without using promotions or advertisement, was necessary. From this analysis came out that a general account implies between 2 to 5 months to reach 1k followers. Then, from another analysis investigating which is a sufﬁcient likes result, for each post, came out that the 20% of the post reachability can be assumed as a good result. However, can be noticed that those metrics are function of the Post Reachability, the Weekly Visits and the proﬁle Engagement Rate (ER). The post reachability is an estimation of the number of accounts, without repetitions, that saw at least one of the user post, while the weekly visits metric correspond to the number of accounts that weekly visited the analyzed proﬁle. Finally, the ER is a percentage given by the average of likes and comments over the last 12 posts (excluding the most recent) divided by the total number of followers. This value usually varies accordingly to the following followers ranges [9]:
+• less than 1.000 follower: ER ≥8%; • between 1.000 and 5.000 followers: ER ≥5,7%; • between 5.000 and 10.000 followers: ER ≥4%; • between 10.000 and 100.000 followers: ER ≥2,4%; • more than 100.000 follower: ER ≥1,7%
+All the statistic that will be showed in the remaining of this paper are retrieved from (i) the Instagram Application [10], from (ii) the Ninjalitics Platform [9] and from (iii) Instagram Business Proﬁle [11]. Ninjalitics is web platform that allow to check the statistics of a general proﬁles, checking daily how they are growing and giving some weekly or monthly aggregated results or comparisons with the previous period. Instead Instagram Business is integrated with the Instagram
+
+App and it provides, if enabled, a better insight on the ongoing visits on the analyzed proﬁle, on how many users the posts are reaching and so on.
+B. Motivations
+Gaining audience in Social Medias is a difﬁcult and time consuming activity. Indeed, for new brands and artists or new professional ﬁgures as inﬂuencers, youtubers or resellers, being able to differentiate their own work can be non trivial in real life, but it is even more challenging in Social Media environments, that count millions of other person doing similar activities.
+Many people, as [12], justiﬁed those difﬁculties afﬁrming that some SN can be comparable to pay-per-win systems. These people afﬁrm that, to make users spend time or money on these platforms, there are algorithms that decide the user experience, and so their results, based on the turnover they generate. If users use promotions, they immediately gain visibility. Instead, if they are not willing to spend money, then they will have to produce many posts, interact a lot with other users and see a lot of advertisements to compensate the situation and be able to grow in popularity. Furthermore, with [13], the author demonstrates with the help of data how the Instagram algorithm works, and in particular the close correlation between the number of followers and likes.
+So, at this point a question comes spontaneously: is there a way to grow by overcoming algorithms? Investigating better some possible solutions to this problem was not difﬁcult to ﬁnd many unofﬁcial responses, but they are based on the personal experiences and without being proved by data. Moreover, most of those unofﬁcial responses are repetitive, incomplete or not coherently with the growth purpose. So, we tried to generalize the steps of those approaches, deriving a general strategy that works up to mimik users who want to grow on Instagram. Then, we tested this strategy deploying, as we will describe in the following section, a Social Bot. Furthermore, this experiment goes in the same direction of [13], where the author concluded his experiments afﬁrming that to grow with the higher potential and growth rate, the use of Social Bots is necessary.
+So, to try to conﬁrm the previous statements, in April 2017 we decided to create a new Instagram proﬁle, that we will call @PROFILEA, monitoring its activities. This account were used as a normal user until February 2019, mimiking the fact that the account owner had the hobby of photography and his intention was to use his Instagram account to show to the people his works, obtaining feedbacks from other people and growth in popularity. Then, between February and May 2019, we applied a Growth Strategy, deploying a Social Bot to study the differences. Those elements are detailed in the following Section.
+III. GROWTH STRATEGIES
+As anticipated in the previous section, we found many people that, on the basis of their experiences, suggested strategies to growth on Instagram. Since there are a lot of
+
+different strategies, composed on dozens of steps, ﬁrst of all we resumed the fundamental steps to implement an effective strategy.
+So our Generalized Growth Strategy on Instagram is composed of the following guidelines and operative steps, to be repeated over time:
+1) Follow engaged and active followers: so those users that puts many likes, comments and that follows many proﬁles. Indeed, it would be pointless to engage passive proﬁles, they cannot bring beneﬁts;
+2) Adopt a Follow/Unfollow Strategy: to apply this strategy the user must follow a consistent amount of new users, unfollowing those users that, after a certain period of time, are not following back the user;
+3) Publish new contents frequently: this will help the proﬁle content diffusion over Instagram. Another element that could help the diffusion process is to tag inside the post inﬂuential pages related to the published content;
+4) Good quality content and relevant #hashtags: it is mandatory to use hashtag to spread better the post over Instagram. However, it is important to choose the hashtag and the content with care to optimize the post diffusion;
+5) Like, comment, post on #instastory: the user must be active and engaged with others proﬁles. This will be recognized by the Instagram algorithms and will have positive effects on the post diffusion over Instagram;
+6) Share the Instagram content: this will help other people or accounts to be aware of the user content;
+7) Stay consistent: these activities must be done for long period time (i.e. some months) to be really effective;
+8) Use analytic tools (i.e. ninjalitics [9], Instagram business account [11]): this step is important to receive a feedback on proﬁle growth. In this way the user can react if the results are unsatisfying.
+However, in the highlighted strategy, the adoption of the correct Follow/Unfollow Strategy is a critical point, that can highly affect the effectiveness of the overall strategy. So, we decided to deepen this topic, realizing a Follow/Unfollow Strategy Classiﬁcation. The main differences between the following Follow/Unfollow techniques, regards the way in which the users are retrieved. Those different ways to retrieve the posts can be resumed as:
+• Random: users are retrieved by the posts that are randomly selected between all available media on Instagram;
+• Relevant #hashtags (i.e. #photography): users are retrieved by the posts that are retrieved from the provided hashtag list;
+• Localized Posts (i.e. Bologna): users are retrieved by the posts that are retrieved based on the post localization;
+• Targeted on inﬂuencers followers (i.e. Brandon Woelfel): users are selected from the list of the latest users that are following a certain target inﬂuencer. This strategy is more effective if the inﬂuencer and the user applying this strategy have similar contents;
+• Targeted on Inﬂuencer Proﬁles: this strategy is the dual
+
+of the precedent one. It is repeated several times during the day with the aim is to keep the user proﬁle in the latest following users, so to be engaged by other users applying the Follow/Unfollow strategy explained in the previous point; • Targeted on inﬂuencers active followers: targeting the strategy on the inﬂuencers followers, there is the risk to follow a non active proﬁle, so a proﬁle that does not likes too many posts or that does not follows too many accounts (it is not engaged). So a way to increase the probability to avoid this unwanted behavior is to select a list of user not from the followers list, but from the list of accounts that liked the inﬂuencer latest posts; • Dynamically targeted on inﬂuencers active followers, depending on the last user post (i.e. Brandon Woelfel, National Geographics): this strategy is the same that at the previous point, but will change the utilized inﬂuencers list based on the last user post. This will provide more dynamism to the Follow/Unfollow Strategy, that, with high probability, will ever go to engage new people interested with the last content published by the user.
+These Follow/Unfollow Strategies are outlined in order of effectiveness.
+Applying those strategies can be really effective. However, they have a drawback: most of those points are really timeconsuming, and keep doing those steps over the time is difﬁcult, preventing being consistent in applying the strategy. Anyway, after a further analysis, we pointed out that many point of the Generalized Growth Strategy on Instagram (at least 1,2,5,7) can be automated. We will explain a possible automation procedure in the following subsection.
+A. Implementation Insights
+After few researches, we found out some open-source projects that could work well as initial starting point for a ﬁrst Social Bot deployment.
+So we decided to study and extend a GitHub project called instabot-py [14] (version 1.2.2).
+Instabot.py is an extremely light instagram bot, written in Python, that uses the undocumented Instagram Web API. Unlike other bots, Instabot.py does not require Selenium [15] or a WebDriver [16]. Indeed, it does not need a graphical environment since it interacts with the API over simple HTTP Requests.
+At an high-level, the Social Bot works as follows. It personiﬁes an Instagram user account: so as soon as it starts, it logins as the speciﬁed user. Then, it enters in an inﬁnite loop on which it automates the implemented Follow/Unfollow Strategy. In the initial implementation were possible to implement only the ﬁrst three options of the previously introduced Follow/Unfollow Strategy Classiﬁcation. So the Bot, on the basis of the given hashtags or locations (i) retrieves the post on which it will operate (i.e. it likes, comment the post, or follows the post user). Then, (ii) it takes in account the state of the operations, using a database to store the activities and saving also the user session. Finally, it automates (iii) Likes/Unlikes,
+
+(iv) Follow/Unfollow and (v) Comment activities. Being more precise, for what concerns the unfollow operations, the Social Bot will unfollow only who does not follows the given user. Instead, for what concerns the likes and the comments, it works randomly on the basis of the retrieved posts.
+The Bot operations can be steered through a list of parameters. The most relevant instabot-py parameters for us are the instagram account (i) username and (ii) password, the number of (iii) likes and (iv) comments that the Social Bot must leave every day, the number of (v) following/unfollowing operations to do every day and the (vi) hashtag and localization list. Hashtags and locations are treated in a similar way, with the only difference that the locations have the preﬁx ”l:”.
+In particular, our Social Bot ended its activities doing 1000 (1000) like, 24 (400) comments, 300 (500) following and 500 (500) unfollowing operations. Instead for what concerns the hashtag we used the most relevant photography hashtags and we used ad locations the main Emilia-Romagna cities. Between parenthesis are listed the respective limits to do not pass to decrease the possibility to obtain an activity suspension by Instagram [17]. However, we do not started directly from the reported parameter values, but we slowly increased those value until we reach the indicated values. Moreover, many times the conﬁguration parameters were changed, to increase or decrease the Social Bot activities, to ﬁt better to certain post themes, to improve the hashtag list quality or the Bot targets. In this way we were able to manage better the current needs (i.e. a number of following too high or too low, avoid the risk to be suspended by Instagram).
+With this approach, and as our experimental result will demonstrate, it is possible to overcome the Instagram algorithm limitations. This because the Bot will interact with a lot of users, that with a good probability could visit the user proﬁle, leave some feedbacks (i.e. likes or comments) or follow the proﬁle.
+However, the instabot-py project [14] were not satisfying all our needs. Thus, to better ﬁt the introduced strategy, we decided to extend the project adding:
+• Separation between the Bot and User Space: in this way the Social Bots activities do not affect the user activities. This were implemented creating a new DB table in which record if a certain user were added from the bot of from the user;
+• Targeting on inﬂuencer followers (new parameter: proﬁles target list parameter): this extension allows to apply the follow/unfollow strategy on proﬁles similar to the own proﬁle, increasing the probability to obtain likes, comments or new followers, since we already know that the followed user is interested on similar posts (4th point of the Follow/Unfollow classiﬁcation);
+• Follow/Unfollow on a give inﬂuencer list: do a follow/unfollow activity on an inﬂuencer helps to exploit the same principle of the previous point, but being followed from other users that are applying the follow/unfollow strategy (5th point of the Follow/Unfollow classiﬁcation).
+
+IV. EXPERIMENTAL RESULTS
+To have a good evaluation of the Social Bot activities, we started taking a snapshot of the most relevant proﬁle statistics achieved before the use of the Social Bot deployment and then we repeated the same process after the Social Bot utilization. In particular, during our analysis, we ﬁrst focused our attention in the following proﬁle information before starting the Social Bot (Figure 1):
+Figure 1. Growth Results with normal activity
+From Figure 1, we can retrieve that, even after 22 months of activity, the proﬁle did not gain a good success. Indeed, the follower metric was not satisﬁed.
+Coherently with what rated in [13], we think that these bad results are driven by the fact that the posts were not spread correctly to new users by the Instagram algorithm. Indeed, the were mimiking an user focused on providing a good post content without being concerned on how the Instagram algorithm is working or on how to exploit it in the best way, as many of the Instagram users are doing. The fact that the @PROFILEA posts were not well spread over Instagram is proved by the maximum post reachability value, that is comparable with the number of followers (550 vs 541). So, considering that, since most of the user followers will see all the followed proﬁle posts, the probability that the post reaches new users is very low (<20%, 15% in our case), and this will affect all the other statistics. Being the reachability an indicator for how many account the user posts can reach, having a low reachability has as direct consequence, even if the user posts good contents, to have a low probability to receive likes, comments or new followers. Those considerations are proved by the weekly proﬁle visitors statistics. Indeed, only 100 users by week, both new users or followers, were visiting the proﬁle, certifying that, even if the user intent was to reach more new users as possible, something was wrong in his strategy.
+Another aspect proving that the user strategy was not working, is the ratio followers/posts is equal to 4.15, really low with respect with the Instagram possibilities and expectations. In cases of good growth, depending on the posts frequency, the followers/posts ratio can be greater than 100, a big difference from the actual situation. This situation also affects the likes result that, in average and after almost 2 years of activity,
+
+still does not reach the hundred likes, not satisfying the likes metric.
+The overall, situation is summarized also from the ER. In our case, the ER should be at least 8%, instead to be at 5%.
+After those considerations, we tried to have a better insight on the followers growth of the @PROFILEA account, and so we collected the historical followers data to be able to plot the following graph (Figure 2):
+
+Figure 3. Followers Growth Comparison with/without Social Bot
+
+Figure 2. Followers Growth Result with normal activity
+
+The element to notice from this graph, a part the difference in the follower growth itself, is that employing the Social Bot, we obtain a +367,83% of growth in less than 1/5 of the time.
+B. Likes
+Also for what concern the likes growth we observed really good and immediate results, as evinced in the following graph (Figure 4):
+
+From the previous graph we can point out that the follower growth, over the examined 22 months, was really slow and ineffective. In addition the curve slope was decreasing in time, bringing the proﬁle followers growth near to a stale situation. This slowdown in the curve slope is also given by the fact that at the beginning many acquaintances were following the user proﬁle.
+So, In February 2019 we decided to deploy the Social Bot. Thus we decided to deploy it inside a Docker container, because this allowed us to manage and monitor the Social Bot in a most efﬁcient way. Then we deployed the Social Bot on a server on which it worked 8 hours by day from February, 4th until February, 14th. Then since February, 15th it worked 24/7 until May 31th. Then, through the introduced analytic tools [9][11], we collected some of the achieved results. The overall results were satisfying, but we observed some really good results on the followers growth, on like growth and on the number of weekly proﬁle visitors. Those results are explained in the following subsections.
+A. Followers
+From the followers point of view, we observed an increase of 1990 followers (from 541 to 2531). So, in less than the usual period in which an user can grow of 1k followers, the analyzed proﬁles doubled the indicated value. This growth is represented in the following graph (Figure 3), where is highly visible the differences on the follower growth between the case in which the Social Bot were not used (blue line) and the case in which the Social Bot were used (orange line):
+
+Figure 4. Likes Growth Comparison with/without Social Bot
+In the previous graph are highlighted the likes received by the @PROFILEA proﬁle during the same period of two different years. As it is observable, the Social Bot exploitation is really effective. Indeed, the number of likes in the most liked post increased from 130 to 694 (+433,84%), the like average on the posts increased from 94 to 521 (+454,26%), while the ratio likes/reachability is constantly over the 30%, reaching peaks of 53%. Moreover, also some of the post published before the Social Bot deployment gained likes from its activities. Indeed, many visiting users saw all the proﬁles post, sometimes leaving dozens of likes and increasing also the old statistics.
+C. Weekly Proﬁle Visits
+We also observed an huge increase of the weekly proﬁle visits. Indeed, the average of the weekly visit values increased from 100 to 1800 (+1700%) and the maximum visit values increased from 160 to 2200 (+1275%).
+
+From an empirical analysis, we strongly believe that, since the proﬁle has good contents, all the positive results were drove by this feature. D. Overall Results
+Finally, for the sake of completeness of information, we have summarized all the results obtained in the following table (Figure 5):
+Figure 5. Overall Growth Comparison with/without Social Bot
+E. Comparison with others Approaches Finally, we compared our work with other similar works
+[18]. For privacy reasons, we called @PROFILEB and @PROFILEC the used proﬁled. As we can see in the following table (Figure 6), the followers enhancement is comparable between all the Bots, but our work performs much better for what concerns the likes average and the ER.
+Figure 6. Comparison with different Social Bots
+So we can conclude this section saying that the employed Social Bot consistently increased all the analyzed statistics and really accomplished its initial purpose to help the proﬁle diffusion over Instagram.
+
+content analyses, deﬁning if a Bot must be considered Benign or Malign, with a set of subcategory cases. Those works were useful because they offered a general overview on how Bots can be classiﬁed, giving a deﬁnition of Social Bot and pointing out which elements can be ambiguous using Bots. Then we found out many works, as [21], [22] and [23], that respectively classiﬁes the detection techniques, realized a bot detection and a spam detection algorithm.
+Then, for what concerns the Social Media Strategies, [24] described, on a sample of 14 companies, why they use social media strategies, why those strategies are important and which activities they are enforcing through social medias. Those activities are principally discounts, customer communication, customer service and the introduction of new products, stating that those activities have many beneﬁts for the companies. Then, [25] describes the importance of Social Network Sites (SNss) and how they have changed the companies marketing strategies. Indeed, for the authors SNSs are real marketing tools to inform, attract and engage new customers. Moreover, [26] investigated how the formation of trust is the motivating factor for a high rate of socialization between two social network users. Indeed, authors think that, in virtual environments, a healthy positive social interaction between a pair of individuals builds up to trust. This trust in turn leads to more socialization. However, all the cited strategies are more general and not well deﬁned as our and all of them are applied on Facebook.
+Instead as Social Media Indicators, [27] intention was to let understand to companies how Social Media Marketing (SMM) really works in practice. So they analysed KPIs for Facebook. Accordingly to what we did, authors deﬁned as KPI number of brand’s fans on Facebook and number of active fans interacting with the brand on Facebook. Moreover, authors formulated a number of hypotheses about relationships among analyzed KPIs. These indicators are comparable to those one that we deﬁned. Differently, [28] presented a work on formalization and identiﬁcation of social networks users. They developed the special system of user activity indicators. Each of them is a set of tuples that is logging some different facet of user activity in social network environments. Indicators, that they have proposed, are basis for allocation of special groups of users, such as opinion leaders, opponents, trolls.
+Finally, at the best of our knowledge, we can afﬁrm that there are no works in literature testing Growing Strategies and Social Bots on Instagram.
+
+V. RELATED WORK
+In this section we analyzed work targeted on Bot Classiﬁcation, Social Media Strategies and on Social Media Key Performance Indicator (KPI), pointing out the differences with our work.
+[19] outlined all the possible bot typologies. Then, through this typology, they deﬁned the three main distinguish components: structure, function and uses. In a similar way, [20] studied if bots are a threat or an opportunity. More in detail, authors did a bot classiﬁcation based on the Bot activities
+
+VI. CONCLUSIONS
+This paper claims that using Strategies and Social Bots speeds up the growth process on Social Medias. Indeed, we proved that this approach is much more effective and it is able to overcome the limitation imposed by the Social Media algorithms. Moreover, this work could be considered an advice to big Social Media, as Instagram, on how user can behave to reach their goals, eventually taking some countermeasures. We want to precise that, we do not used our Social Bots in an harmful situation. Indeed, we think that using Malign Social
+
+Bots (or Social Bots in harmful situations) must be avoided. Indeed, the purpose of this work was not focused on how to avoid the behavior of Malign Bots, but on hot to exploit the use of Benign Bots. Further activities can be focused on this direction.
+The preliminary results achieved so far are encouraging further research and development activities towards the inclusion of additional features in the project implementation. In particular could be interesting implement all the cited Follow/Unfollow strategies make a comparison between them. Then those strategies could be enhanced using some Machine Learning techniques (i.e. Reinforcement Learning). This last approach could be interesting to better address the Bot operations and to avoid some undesired behavior (i.e avoid to leave likes or comments on discriminatory posts).
+Finally, must be noticed that Instagram updated his algorithm on the beginning June 2019. This was made to force users to use more authentic content as possible. So, a way to adapt the Social Bot behavior to this new environment should be eventually tested.
+
+REFERENCES
+
+[1] A. Patino, D. A. Pitta, and R. Quinones, “Social media’s
+
+emerging importance in market research,” Journal of Consumer
+
+Marketing, vol. 29, no. 3, pp. 233–237, 2012. [Online]. Available:
+
+https://doi.org/10.1108/07363761211221800
+
+[2] M. Glucksman, “The rise of social media inﬂuencer marketing on
+
+lifestyle branding: A case study of lucie ﬁnk,” Elon Journal of Under-
+
+graduate Research in Communications, vol. 8, no. 2, pp. 77–87, 2017.
+
+[3] WordStream. (2019) 49 incredible instagram statistics. [Online].
+
+Available: https://www.brandwatch.com/blog/instagram-stats/
+
+[4] Adespresso. (2018) 49 incredible instagram statistics. [Online].
+
+Available: https://adespresso.com/blog/instagram-statistics/
+
+[5] Buffer. (2019) A complete guide to instagram marketing: Get the
+
+playbook that drives results for instagram’s top proﬁles. [Online].
+
+Available: https://buffer.com/library/instagram-marketing
+
+[6] Medium. (2019) How to gain a massive following on instagram: 10
+
+proven tactics to grow followers and engagement. [Online]. Available:
+
+https://medium.com/social-media-tips/how-to-gain-a-massive-following-
+
+on-instagram-10-proven-tactics-to-grow-followers-and-engagement-
+
+e9c652aff974
+
+[7] WordStream. (2019) 11 ways to get more
+
+(real!)
+
+instagram
+
+followers.
+
+[Online].
+
+Available:
+
+https://www.wordstream.com/blog/ws/2016/10/19/get-more-instagram-
+
+followers
+
+[8] SocialInﬂuence. (2018) The follow/unfollow method. [Online]. Avail-
+
+able: https://socialinﬂuence.com/blogs/the-news-feed/follow-unfollow-
+
+method/
+
+[9] Ninjalitics. (2019) Ninjialitics platform. [Online]. Available:
+
+https://www.ninjalitics.com
+
+[10] Instagram. (2019) Instagram. [Online]. Available:
+
+https://www.instagram.com/?hl=en
+
+[11] ——. (2019) Instagram business. [Online]. Available:
+
+https://business.instagram.com/getting-started?locale=en EN
+
+[12] GeoFelix. (2018) Social networks are a pay per win game. [Online].
+
+Available: https://www.geofelix.com/social-network-pay-per-win/
+
+[13] ——. (2018) How the instagram algorithm really works. [Online]. Avail-
+
+able: https://www.geofelix.com/come-funziona-algoritmo-instagram/
+
+[14] GitHuB. (2019) Instabot-py project. [Online]. Available:
+
+https://github.com/instabot-py/instabot.py
+
+[15] SeleniumHQ. (2019) Selenium - web browser automation. [Online].
+
+Available: https://www.seleniumhq.org/
+
+[16] ——. (2019) Selenium web driver. [Online]. Available:
+
+https://www.seleniumhq.org/projects/webdriver/
+
+[17] SocialPros. (2018) 3 ways to get around instagram’s daily limits in
+
+2019. [Online]. Available: https://socialpros.co/instagram-daily-limits/
+
+[18] AgoraPulse. (2018) Scientiﬁc proof on the follow/unfollow strategy: Twitter & instagram. [Online]. Available: https://www.agorapulse.com/social-media-lab/follow-unfollowstrategy-twitter-instagram
+[19] R. Gorwa and D. Guilbeault, “Unpacking the social media bot: A typology to guide research and policy,” Policy and Internet, 08 2018.
+[20] F. Brachten, M. Mirbabaie, S. Stieglitz, O. Berger, S. Bludau, and K. Schrickel, “Threat or opportunity? - examining social bots in social media crisis communication,” CoRR, vol. abs/1810.09159, 2018.
+[21] E. Ferrara, O. Varol, C. Davis, F. Menczer, and A. Flammini, “The rise of social bots,” Commun. ACM, vol. 59, no. 7, pp. 96–104, Jun. 2016. [Online]. Available: http://doi.acm.org/10.1145/2818717
+[22] H. Ping and S. Qin, “A social bots detection model based on deep learning algorithm,” in 2018 IEEE 18th International Conference on Communication Technology (ICCT), Oct 2018, pp. 1435–1439.
+[23] W. Zhang and H. Sun, “Instagram spam detection,” in 2017 IEEE 22nd Paciﬁc Rim International Symposium on Dependable Computing (PRDC), Jan 2017, pp. 227–228.
+[24] G. Tsimonis and S. Dimitriadis, “Brand strategies in social media,” Marketing Intelligence & Planning, vol. 32, no. 3, pp. 328–344, 2014. [Online]. Available: https://doi.org/10.1108/MIP-04-2013-0056
+[25] C. Assimakopoulos, I. Antoniadis, O. G. Kayas, and D. Dvizac, “Effective social media marketing strategy: Facebook as an opportunity for universities,” International Journal of Retail & Distribution Management, vol. 45, no. 5, pp. 532–549, 2017. [Online]. Available: https://doi.org/10.1108/IJRDM-11-2016-0211
+[26] A. Roy, Z. H. Borbora, and J. Srivastava, “Socialization and trust formation: A mutual reinforcement? an exploratory analysis in an online virtual setting,” in 2013 IEEE/ACM International Conference on Advances in Social Networks Analysis and Mining (ASONAM 2013), Aug 2013, pp. 653–660.
+[27] V. Podobnik, “An analysis of facebook social media marketing key performance indicators: The case of premier league brands,” in Proceedings of the 12th International Conference on Telecommunications, June 2013, pp. 131–138.
+[28] A. Peleshchyshyn, V. Vus, O. Markovets, and S. Albota, “Identifying speciﬁc roles of users of social networks and their inﬂuence methods,” in 2018 IEEE 13th International Scientiﬁc and Technical Conference on Computer Sciences and Information Technologies (CSIT), vol. 2, Sep. 2018, pp. 39–42.
+

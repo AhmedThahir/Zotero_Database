@@ -1,0 +1,307 @@
+Skip to content
+
+    Courses
+    Tutorials
+    Jobs
+    Events 
+
+    Write
+    Write
+    Come write articles for us and get featured
+    Practice
+    Practice
+    Learn and code with the best industry experts
+    Premium
+    Premium
+    Get access to ad-free content, doubt assistance and more!
+    Jobs
+    Jobs
+    Come and find your dream job with us
+        Geeks Digest
+        Quizzes
+        Geeks Campus 
+        Gblog Articles
+        IDE
+        Campus Mantri 
+
+    Home
+    Saved Videos
+    Courses
+    GBlog
+    Puzzles
+    What's New ? 
+
+Change Language
+
+    Data Structures
+    Algorithms
+    Interview Preparation
+    Topic-wise Practice
+    C++
+    Java
+    Python
+    Competitive Programming
+    Machine Learning
+    HTML
+    SDE Sheet
+    Puzzles
+    GFG School
+    Projects 
+
+▲
+Related Articles
+
+    Difference between Primary Key and Foreign Key
+    Types of Keys in Relational Model (Candidate, Super, Primary, Alternate and Foreign)
+    Number of Possible Super Keys in DBMS
+    Anomalies in Relational Model
+    Mapping from ER Model to Relational Model
+    Strategies for Schema design in DBMS
+    Schema Integration in DBMS
+    Star Schema in Data Warehouse modeling
+    Snowflake Schema in Data Warehouse Model
+    Dimensional Data Modeling
+    Introduction of B-Tree
+    Insert Operation in B-Tree
+    Delete Operation in B-Tree
+    Introduction of B+ Tree
+    Bitmap Indexing in DBMS
+    Inverted Index
+    Difference between Inverted Index and Forward Index
+    SQL queries on clustered and non-clustered Indexes
+    Difference between Clustered and Non-clustered index
+    Difference between Primary key and Unique key
+    SQL | Join (Inner, Left, Right and Full Joins)
+    SQL query to find second highest salary?
+    ACID Properties in DBMS
+    SQL | WITH clause
+    Normal Forms in DBMS
+    SQL Trigger | Student Database
+    Introduction of DBMS (Database Management System) | Set 1
+    Introduction of ER Model
+    Commonly asked DBMS interview questions 
+
+Table of Contents
+
+    Difference between Primary Key and Foreign Key
+    Types of Keys in Relational Model (Candidate, Super, Primary, Alternate and Foreign)
+    Number of Possible Super Keys in DBMS
+    Anomalies in Relational Model
+    Mapping from ER Model to Relational Model
+    Strategies for Schema design in DBMS
+    Schema Integration in DBMS
+    Star Schema in Data Warehouse modeling
+    Snowflake Schema in Data Warehouse Model
+    Dimensional Data Modeling
+    Introduction of B-Tree
+    Insert Operation in B-Tree
+    Delete Operation in B-Tree
+    Introduction of B+ Tree
+    Bitmap Indexing in DBMS
+    Inverted Index
+    Difference between Inverted Index and Forward Index
+    SQL queries on clustered and non-clustered Indexes
+    Difference between Clustered and Non-clustered index
+    Difference between Primary key and Unique key
+    SQL | Join (Inner, Left, Right and Full Joins)
+    SQL query to find second highest salary?
+    ACID Properties in DBMS
+    SQL | WITH clause
+    Normal Forms in DBMS
+    SQL Trigger | Student Database
+    Introduction of DBMS (Database Management System) | Set 1
+    Introduction of ER Model
+    Commonly asked DBMS interview questions 
+
+Improve Article
+Save Article
+Like Article
+Schema Integration in DBMS
+
+    Difficulty Level : Basic
+    Last Updated : 07 Apr, 2021 
+
+Definition : Schema integration is used to merge two or more database schemas into a single schema that can store data from both the original databases. For large databases with many expected users and applications, the integration approach of designing individual schema and then merging them can be used. Because the individual views can be kept relatively small and simple. Schema Integration is divided into the following subtask. 
+
+1. Identifying correspondences and conflicts among the schema:  
+As the schemas are designed individually it is necessary to specify constructs in the schemas that represent the same real-world concept. We must identify these correspondences before proceeding with the integration. During this process, several types of conflicts may occur such as: 
+ 
+
+    Naming conflict –  
+    Naming conflicts are of two types synonyms and homonyms. A synonym occurs when two schemas use different names to describe the same concept, for example, an entity type CUSTOMER in one schema may describe an entity type CLIENT in another schema. A homonym occurs when two schemas use the same name to describe different concepts. For example, an entity type Classes may represent TRAIN classes in one schema and AEROPLANE classes in another schema. 
+     
+    Type conflicts –  
+    A similar concept may be represented in two schemas by different modeling constructs. For example, DEPARTMENT may be an entity type in one schema and an attribute in another. 
+     
+    Domain conflicts –  
+    A single attribute may have different domains in different schemas. For example, we may declare Ssn as an integer in one schema and a character string in another. A conflict of the unit of measure could occur if one schema represented weight in pounds and the other used kgs. 
+     
+    Conflicts among constraints –  
+    Two schemas may impose different constraints, for example, the KEY of an entity type may be different in each schema. 
+     
+
+2. Modifying views to conform to one another:  
+Some schemas are modified so that they conform to other schemas more closely. Some of the conflicts that may occur during the first steps are resolved in this step. 
+
+3. Merging of Views and Restructuring:  
+The global schemas are created by merging the individual schemas. Corresponding concepts are represented only once in the global schema and mapping between the views and the global schemas are specified. This is the hardest step to achieve in real-world databases which involve hundreds of entities and relations. It involves a considerable amount of human intervention and negotiation to resolve conflicts and to settle on the most reasonable and acceptable solution for a global schema. Restructuring As a final optional step the global schemas may be analyzed and restructured to remove any redundancies or unnecessary complexity.
+ 
+Like
+Previous
+Strategies for Schema design in DBMS
+Next
+Star Schema in Data Warehouse modeling
+Recommended Articles
+Page :
+Difference between Star Schema and Snowflake Schema
+27, May 19
+Difference between Snowflake Schema and Fact Constellation Schema
+27, Dec 19
+Difference between Star Schema and Fact Constellation Schema
+31, Dec 19
+Strategies for Schema design in DBMS
+04, Oct 18
+Difference between Schema and Instance in DBMS
+19, May 20
+Relation Schema in DBMS
+12, Jun 20
+Snowflake Schema in Data Warehouse Model
+29, Aug 18
+Star Schema in Data Warehouse modeling
+12, Oct 18
+Difference between Schema and Database
+28, May 19
+Create, Alter and Drop schema in MS SQL Server
+12, Jun 20
+Types of Keys in Data Warehouse Schema
+19, Jun 20
+DROP SCHEMA in SQL Server
+01, Sep 20
+ALTER SCHEMA in SQL Server
+01, Sep 20
+Components and Analysis of Star Schema Design
+01, Nov 21
+How to Show Schema of a Table in MySQL Database?
+23, Sep 21
+What is Integration Databases in NoSQL?
+02, Feb 22
+What is EII(Enterprise Information Integration)?
+15, Jul 20
+Lossless Decomposition in DBMS
+11, Dec 16
+Introduction of Relational Algebra in DBMS
+02, Jul 15
+Need for DBMS
+23, Aug 16
+Commonly asked DBMS interview questions
+21, Oct 13
+Normal Forms in DBMS
+08, Jul 15
+Relational Model in DBMS
+27, Oct 15
+Commonly asked DBMS interview questions | Set 2
+07, Dec 15
+Article Contributed By :
+https://media.geeksforgeeks.org/auth/avatar.png
+Akashkumar17
+@Akashkumar17
+Vote for difficulty
+Current difficulty : Basic
+Easy Normal Medium Hard Expert
+Improved By :
+
+    sunakshi
+    vaibhavsinghtanwar 
+
+Article Tags :
+
+    DBMS 
+
+Practice Tags :
+
+    DBMS 
+
+Report Issue
+
+Writing code in comment? Please use ide.geeksforgeeks.org , generate link and share the link here.
+
+Load Comments
+What's New
+Must Do Coding Questions - Self Paced
+View Details
+Data Structures & Algorithms- Self Paced Course
+View Details
+Complete Interview Preparation
+View Details
+Most popular in DBMS
+
+    CTE in SQL
+    SQL Interview Questions
+    SQL | Views
+    Third Normal Form (3NF)
+    Conflict Serializability in DBMS 
+
+More related articles in DBMS
+
+    Difference between SQL and NoSQL
+    SQL | GROUP BY
+    Difference between DELETE, DROP and TRUNCATE
+    Second Normal Form (2NF)
+    Data Preprocessing in Data Mining 
+
+5th Floor, A-118,
+Sector-136, Noida, Uttar Pradesh - 201305
+feedback@geeksforgeeks.org
+
+    Company
+    About Us
+    Careers
+    In Media
+    Contact Us
+    Privacy Policy
+    Copyright Policy 
+
+    Learn
+    Algorithms
+    Data Structures
+    SDE Cheat Sheet
+    Machine learning
+    CS Subjects
+    Video Tutorials 
+
+    News
+    Top News
+    Technology
+    Work & Career
+    Business
+    Finance
+    Lifestyle 
+
+    Languages
+    Python
+    Java
+    CPP
+    Golang
+    C#
+    SQL 
+
+    Web Development
+    Web Tutorials
+    Django Tutorial
+    HTML
+    CSS
+    JavaScript
+    Bootstrap 
+
+    Contribute
+    Write an Article
+    Improve an Article
+    Pick Topics to Write
+    Write Interview Experience
+    Internships
+    Video Internship 
+
+@geeksforgeeks , Some rights reserved
+Lightbox
+Start Your Coding Journey Now!
+Login Register

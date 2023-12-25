@@ -1,0 +1,397 @@
+
+< !-- Digital window verification 001 -->
+learntocodewith.me learntocodewith.me
+
+    About
+    Blog
+    Podcast
+    What to learn
+    Where to learn
+    Work in tech
+
+LTCWM > Blog > What to learn > Skill > What is SQL? A Beginner’s Guide to the SQL Language
+Introduction to SQL Introduction to SQL
+What is SQL? A Beginner’s Guide to the SQL Language
+
+Updated on June 28th, 2021 | Sign up for learn to code tips
+
+There’s a lot of buzz in the tech world about data–but of course, raw data isn’t very useful on its own. That’s where a language called SQL (also called Sequel) comes in.
+
+In this guest post, Anastasia Stefanuk explains what SQL is, the basics involved in SQL programming, which industries it’s most commonly used in, common SQL database systems, and how to start learning the language yourself. 
+
+Here’s Anastasia with her beginner’s guide to SQL.
+
+Table of Contents
+
+    What Is SQL?
+    How to Use SQL
+    What Is SQL Used For?
+    SQL Database Systems You Should Know About
+    How to Learn SQL
+    Where to Ask for Help Learning SQL
+    How Long Does It Take to Learn SQL Language? 
+
+Disclosure: I’m a proud affiliate for some of the resources mentioned in this article. If you buy a product through my links on this page, I may get a small commission for referring you. Thanks!
+
+These days, almost all businesses, from small online stores to Fortune 500 corporations, use data to run their operations. They manage this data using databases. Because of this, the demand for database administration experts has exploded, and because of this demand, working as a database developer, particularly an SQL developer, can be very lucrative .
+
+In this article, we’ll look at what SQL is and why you might want to learn it.
+Curious about learning SQL? Here’s a handy beginner’s guide.
+
+Click To Tweet
+What Is SQL?
+
+Data is a core part of many web applications and mobile apps . For example, an application like Facebook holds a user’s profile information, including data about their friends and posts. To hold this data, a database system is used. SQL is a programming language that enables programmers to work with that data. 
+What Does SQL Stand For?
+
+SQL stands for Structured Query Language. Essentially, it’s a language that allows communication with databases in order to manage all the data they contain. 
+
+Start coding now
+
+Stop waiting and start learning! Get my 10 tips on teaching yourself how to code.
+Enter your email address
+Get the tips! Don't worry. I'll never, ever spam you! Powered by ConvertKit
+How to Pronounce SQL
+
+🗣️ SQL is usually pronounced like the word “sequel”. However, it’s a matter of preference (like gif vs. jif)—some people pronounce it in acronym form as all three letters, like “ess-que-el”.
+Database Database
+Is SQL a Programming Language?
+
+Yes, SQL is a programming language. It offers looping, logic directives, variables, and so on. However, it’s not a language in the same sense as, say, Java or C++.
+
+SQL is considered a fourth-generation language (4GL), whereas Java and C++ are third-generation languages (3GLs).
+
+Instead of being a programming language for building websites, apps, or software, SQL is a language that enables storing, retrieving, and manipulating data in databases.
+History of SQL
+
+SQL was first developed in the early 1970s by IBM researchers Raymond Boyce and Donald Chamberlin. It was initially called SEQUEL (Structured English Query Language) and was designed to manipulate and retrieve data in IBM’s database management system, System R . 
+
+In the late 70s, Relational Software, Inc. (now Oracle) was inspired to create their own version and introduced the first commercially available implementation of SQL.
+
+By 1986, the American National Standards Institute (ANSI) and the International Organization for Standardization (ISO) had adopted a standard definition of SQL.
+
+☝️ Back to the table of contents
+How to Use SQL 
+
+While an application might be programmed in a language like Python , PHP or Ruby, databases are not configured to understand these. Historically, databases understand only Sequel (though this has changed significantly in recent years). Because of this, learning SQL is almost a must if you intend to work in web development or app development.
+
+Like other programming languages, SQL has its own markup. This makes it necessary for a programmer to learn SQL markup before they can use it effectively. 
+
+Besides markup, another feature unique to database programming is the concept of tables. A database may be represented as a number of tables. Each table has its own number of columns and rows and represents a set of data.
+
+📚 Imagine a library. We could create a database that stores data about books in the library.
+Library Library
+
+In this case, we would need only one table: 
+Database Database
+
+This table would allow us to store all the information we need.
+SQL Language Elements
+
+SQL is made up of statements that start with a keyword or command, e.g. CREATE, and end with a semicolon. 
+
+Other SQL examples of language elements include:
+
+    Keywords: Words that are used to perform various operations in a database, such as ADD, JOIN, VIEW, etc. Here’s a list of SQL keywords .
+    Identifiers: The names of objects in the database, such as tables, views, indexes, columns, etc.
+    Expressions: A symbol or string of symbols that perform mathematical operations on data.
+    Search conditions: Used to select a subset of the rows from a table. Also allows you to create IF statements to specify whether a condition is true or false in a certain row or group of rows.
+    Data types: As the name suggests, the type of data that will be stored inside each column when creating a table. Examples include number, string, date and time, etc.
+    Nulls: Use a Null to specify that value that is unknown or missing.
+    Comments: Explains sections of SQL statements.
+
+And much more.
+List of SQL Commands
+
+There are a few frequently used SQL commands you should be familiar with for database work. When working with databases, a programmer might write commands such as:
+
+    CREATE DATABASE – to create a database
+    CREATE TABLE – to create tables
+    SELECT – to find/extract some data from a database
+    UPDATE – make adjustments and edit data
+    DELETE – to delete some data
+    DROP – to remove tables and databases
+    INSERT INTO – to insert new data into a database
+
+These are just the most common commands. The more complicated the database is, the more commands you as the programmer will need to use.
+
+These Sequel commands are used when writing queries–inquiries that allow you to operate data in databases. In other words, when you enter these commands in a database system, the system interprets the commands and processes them. The result could be, for example, a new record in the database, or the creation of a new database. 
+
+Here are some quick SQL examples of queries:
+
+CREATE DATABASE name_of_a_database – creates a database;
+
+CREATE TABLE n ame_of_a_table ( 
+
+ column1 data_type,
+
+  column2 data_type,
+
+  columnX data_type );
+
+The first query is responsible for creating a new database. For example, an app like Facebook might contain databases for each of the following:
+
+    Users – this database would store all the information about profiles of the users
+    Interests – this database would hold all the different interests that can be used to track the hobbies that users are into
+    Geographic locations – this database would hold all the cities around the world in which Facebook users live
+
+Facebook Facebook
+
+The second query (CREATE_TABLE) is responsible for creating a new table inside a particular database.
+
+☝️ Back to the table of contents
+What Is SQL Used For?
+
+Databases (and therefore SQL) are used in the technology field in almost every area where significant amounts of data are involved. Let’s look at some of the industries that most commonly use SQL. 
+
+💰 In the finance industry , banking applications and payment processors such as Stripe store and operate data about financial transactions and users. Behind these processes is a complicated database, which SQL is often used for. Moreover, bank database systems have extra security requirements that call for the highest levels of risk compliance in the SQL code used.
+Code Code
+
+🎵 Music applications like Spotify and Pandora also make intensive-use databases. Among other things, Sequel databases help these apps to store vast libraries of music files and albums by various artists, operate this data to find what the user is looking for, store the data about users and their preferences, etc.
+Spotify Spotify
+
+📱 Social media platforms involve a lot of data processing. Apps like Instagram and Snapchat use SQL to store a user’s profile information such as bio and location, to update the app’s database when a user creates a new post or shares a photo, and to record messages sent from one user to another so the user can retrieve the messages to read again at a later time.
+
+Start coding now
+
+Stop waiting and start learning! Get my 10 tips on teaching yourself how to code.
+Enter your email address
+Get the tips! Don't worry. I'll never, ever spam you! Powered by ConvertKit
+
+All around you, the SQL language is being used to drive these databases. From the social networks on your phone to the apps on your computer, so many pieces of software are running some version of SQL. With such universal applicability, you can see why this database programming language is such a useful tool to have in your developer’s tool belt. 
+
+☝️ Back to the table of contents
+SQL Careers and Skills In Demand
+
+SQL is one of the most in-demand skills among all jobs in data, appearing in 42.7% of all data job postings . In addition to dedicated SQL developer jobs, some careers that commonly require SQL skills include:
+
+    Database Administrator (DBA): Make sure that data is stored, organized, and managed properly to make it easier to retrieve data quickly and accurately.
+    Database Engineer: Plans, creates, and manages databases for a company.
+    Data Analyst: Sorts through massive amounts of data to draw important business insights from it. Data analysts use SQL to access, manipulate, and analyze data stored in a database.
+    Business Intelligence Analyst/Engineer: Analyzes data that is used to make important business decisions. Often supports statistical analysis initiatives. 
+    QA Engineer/Tester: QA engineers and testers, like penetration testers , find, investigate, and report bugs in software. Needs to know SQL in order to verify that databases are functioning properly. 
+    Software Engineer: Many software engineers either work directly or indirectly with databases, which means knowing SQL can be highly beneficial.
+
+☝️ Back to the table of contents
+SQL Database Systems You Should Know About
+
+A database system is a program that allows a developer to work with databases with the help of a user interface. Database systems often have ready templates, builders, and constructors.
+
+These tools make the life of a database programmer much easier. This is because such tools automate common tasks, such as cleaning up the database system.
+
+Now let’s look at some of the most common SQL database systems. These systems are ranked based on DB-Engines popularity scores . The ranking takes into account the following variables:
+
+    Number of mentions of the system on websites, measured as the number of results in search engine queries
+    General interest in the system or frequency of searches in Google Trends
+    Frequency of technical discussions about the system
+    Number of job offers in which the system is mentioned
+    Number of profiles in professional networks in which the system is mentioned
+    Relevance in social networks
+
+SQL database systems SQL database systems
+Oracle Database
+
+Oracle is the leading SQL database system in the world. It’s used in a wide range of industries, but is particularly popular in data warehousing and online transaction processing.
+
+➡️ Learn Oracle here: LinkedIn Learning’s Oracle Database 12c: Basic SQL
+MySQL
+
+This open-source database system is available for free to individuals and businesses. It’s highly popular with small businesses and startups since there’s no license fee. Because of its open-source model, MySQL is used in many open-source software programs and applications.
+
+Curious about the difference between SQL and MySQL? The name can confuse some people, so when it comes to SQL vs. MySQL, remember that SQL is the language and MySQL is a database system. SQL and MySQL work together, but are completely different. You use SQL to access, update, and manipulate data stored in a MySQL database.
+
+➡️ Learn MySQL here: LinkedIn Learning’s MySQL Essential Training
+Microsoft SQL Server
+
+SQL Server is Microsoft’s bespoke SQL database management system. This database runs on all major versions of Windows operating systems. It’s used in consumer software as well as on web servers that run Windows. It has a large user base.
+
+➡️ Learn SQL Server here: Pluralsight’s SQL Server Fundamentals
+PostgreSQL
+
+A major competitor to MySQL, PostgreSQL is another free, open source database system. It’s used widely by technology startups for its free licensing model. PostgreSQL supports all major operating systems–MacOS, Windows and Linux. It places greater emphasis on following standard SQL syntax than other databases. Other databases (like SQL Server) greatly modify the SQL standard, making them harder to learn.
+
+➡️ Learn PostgreSQL here: Pluralsight’s PostgreSQL: Getting Started
+NoSQL
+
+NoSQL (aka “not only SQL”) refers to a type of “non-relational” database (i.e., it does not use a schema of rows and columns found in most traditional database systems). 
+
+While SQL databases have a predefined schema, NoSQL databases allow you to store data in many different ways, depending on the requirements of the type of data being stored. NoSQL or non-relational databases include MongoDB, Apache Cassandra, and Couchbase. (You cannot use SQL to access these databases.)
+
+➡️ Learn NoSQL here: Coursera’s Introduction to NoSQL Databases
+
+Choosing a Sequel database system to learn can seem challenging given so many good choices. If in doubt, go with one of the free, open-source options such as MySQL or PostgreSQL.
+
+☝️ Back to the table of contents
+Where to Learn SQL
+
+So how do you actually go about learning SQL as a beginner? Here’s a quick rundown of the steps:
+
+    Master the basics. Start by learning the basic SQL syntax. W3Schools has great SQL tutorials that can help you get familiar with the language. 
+    Take a SQL course. Take a course to build up your SQL knowledge.
+    Work on real-world projects. Practice with real data + a database. 
+
+Below, find specific resources for where to learn SQL, including books and courses that will take you from beginner to advanced (and ready to hunt for SQL developer jobs).
+The Best Books For Learning SQL
+
+A well-written book on SQL will cover SQL and databases in-depth, giving you a firm grounding in the fundamentals. In addition, you will learn the common mistakes that developers make when writing SQL, and how to avoid them. 
+Reading books Reading books
+
+Here are some popular books for learning SQL.
+
+Disclosure: The books below are available on Amazon. As an Amazon Associate I earn from qualifying purchases, so if you click one of the links below and buy a product, I may get a small commission at no extra cost to you.
+
+    SQL Cookbook: Query Solutions and Techniques for Database Developers (via Amazon) – covers the functionality of popular databases such as Oracle, SQL Server, and PostgreSQL
+    Head First SQL: Your Brain on SQL — A Learner’s Guide, by Lynn Beighley (via Amazon) – teaches you SQL from the very basics
+    Sams Teach Yourself SQL In 10 Minutes, by Ben Forta (via Amazon) – covers SQL in an approachable, beginner-friendly way
+    Getting Started with SQL: A Hands-On Approach for Beginners (via Amazon)- a short and concise guide for beginners
+    SQL QuickStart Guide: The Simplified Beginner’s Guide To SQL (via Amazon) – takes you from knowing absolutely nothing about SQL and databases to mastering core parts of database programming. The book builds up to advanced topics such as differences in SQL syntax among popular database programs.
+    Introduction to SQL by Launch School – Free ebook that walks you through how to manipulate and query data in modern relational databases.
+
+Check out other programming books here.  
+Online Courses For Learning SQL
+
+Besides books, you can also get started by taking an online SQL course.
+Woman on laptop Woman on laptop
+
+Here are some of the best courses for learning SQL. 
+For Beginner Developers
+
+    Zero to Mastery’s Complete SQL + Databases Bootcamp
+    Codecademy’s SQL Course
+    Intro To SQL Course by Khan Academy
+    Pluralsight’s Introduction to SQL
+    Pluralsight’s SQL Server Fundamentals
+    LinkedIn Learning’s SQL Essential Training
+    Team Treehouse’s SQL Basics
+    Coursera’s SQL for Data Science
+    Coursera’s Introduction to Structured Query Language (SQL)
+    Udemy’s The Complete SQL Bootcamp 2021: Go from Zero to Hero
+    Udacity’s SQL Nanodegree Program
+    Skillshare’s SQL: Master SQL Database Queries in Just 90 Mins! (free 14-day trial available!)
+    Code With Mosh’s Complete SQL Mastery 
+
+For Intermediate and Advanced Developers
+
+    Stanford’s Online SQL Course (intermediate)
+    Udacity’s Intro to Relational Databases Course (intermediate)
+    Team Treehouse’s Querying Relational Databases (intermediate)
+    Kaggle’s Advanced SQL Lessons (advanced)
+
+☝️ Back to the table of contents
+
+Start coding now
+
+Stop waiting and start learning! Get my 10 tips on teaching yourself how to code.
+Enter your email address
+Get the tips! Don't worry. I'll never, ever spam you! Powered by ConvertKit
+Where to Ask for Help Learning SQL
+
+In your programming journey, there will be times where you get stuck on an SQL problem or other coding challenges. Books and SQL guides can only take you so far sometimes. Turning to online coding discussion sites is one of the best ways to get help and improve your SQL skills. Programmer sites such as Stack Overflow provide you with free help from experienced programmers.
+Asking for help Asking for help
+
+Here are some Q&A sites to check out for SQL examples, discussions, and help from the pros:
+
+    Stack Overflow – discussion site for programmers, covering SQL and many other topics
+    Quora – Q&A site where you can ask more conceptual questions
+    Reddit – Reddit has a sizable community of programmers who hang in subreddits like r/SQL .
+    StackExchange – StackExchange has numerous discussion sites for various programming topics
+
+☝️ Back to the table of contents
+How Long Does It Take to Learn SQL Language?
+
+⏰ It’s possible to learn the basics of SQL in just a matter of weeks if you’re already familiar with programming concepts and have learned other coding languages before. If you’re totally new to programming, going through an SQL tutorial for beginners might take a bit longer.
+
+The best way to learn SQL and accelerate your language learning is to work on projects. There’s no need to start big here. Once you learn the basics, find a small project that involves making use of SQL, then write the code for that. 
+
+For example, you could create a database that organizes your music collection. You could also write a small web app that connects to a database system such as MySQL or PostgreSQL. As you improve your knowledge, you can tackle progressively larger projects.
+Man on laptop with headphones Man on laptop with headphones
+
+Daily coding practice and coursework will improve your skills very quickly. When applying for junior SQL developer jobs, it should be enough to have at least one successful project done. This will prove that you have basic skills like creating a database, connecting it to the application, and operating (input, edit, output) data from the application.
+
+To reach an advanced level, you should work on real projects and real SQL example cases that will help you to master your skills and gain a lot of unique experience.
+
+☝️ Back to the table of contents
+Ready to Teach Yourself SQL Language? 
+
+Now is a great time to learn SQL. As the top programming language for databases, SQL is used by many companies in almost every industry. If you want to learn an in-demand skill , Sequel language is the way to go! Use this beginner’s guide to SQL to find the resources you need and start your journey.
+What is SQL, which industries is it used in, and how do you start learning it?
+
+Click To Tweet
+
+About the Author
+
+Anastasia Stefanuk is a passionate writer and a marketing manager at Mobilunity. The company provides professional staffing services, so she is always aware of technology news and wants to share her experience to help tech startups and companies to be up-to-date.
+
+Note: This article contains Amazon affiliate links. As an Amazon Associate, I earn from qualifying purchases.
+Tweet
+
+data guest post programming languages sql
+laurence photo laurence photo
+
+About Laurence Bradford
+
+Hey! I'm the creator of Learn to Code With Me, a blog for beginners teaching themselves how to code. Once upon a time, I was digitally unsavvy. But not anymore. Find out how I changed my life by teaching myself digital skills here .
+
+Read Next...
+The Best AWS Courses & Certifications The Best AWS Courses & Certifications
+
+The Best AWS Courses for Beginners (2021 List)
+read next post
+
+Popular Posts
+
+    The 22 Best Coding Interview Courses and Books (2021 List)
+    70 Best Programming Books for Every Coder in 2022
+    113 of the Best Places to Learn to Code For Free
+    17 Steps to Becoming a Software Engineer (Without a CS Degree)
+    43 Best Web Development Courses Online in 2021 (Free & Paid)
+
+Coding platform reviews
+
+    Coursera
+    Udemy
+    Codecademy
+    Udacity
+
+Recommendations
+
+    🎁 Best Tech & Coding Gifts
+    101+ Free Places to Learn to Code
+    Best Programming Books
+    Top 2021 Tech Skills
+
+Working in tech
+
+    Make Money While Learning to Code
+    Building Your Online Portfolio
+    Acing Your Tech Interview
+    Freelance Starter Guide
+
+Special resources
+
+    Tech Resources for POC
+    Coding Resources for Women
+    Learning to Code After Age 40
+    Teach Your Child to Code
+
+Learn to Code With Me Learn to Code With Me
+
+© 2014 - 2021 learntocodewith.me
+
+Get digital skills, be happy.
+
+Follow us
+
+    Blog
+    Podcast
+    About
+    FAQ
+    Contact
+    Permissions Policy
+    Earnings Disclaimer
+    Privacy Policy
+
+Learning tech skills has changed my life for the better. And it can do the same for you.
+LEARN TO CODE, TOO
+
+Built by Laurence Bradford with and . WordPress hosting by Kinsta . CDN by StackPath .

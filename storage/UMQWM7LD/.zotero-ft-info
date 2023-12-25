@@ -1,0 +1,16 @@
+Title:          Who Will Score? A Machine Learning Approach to Supporting Football Team Building and Transfers
+Subject:        Background: the machine learning (ML) techniques have been implemented in numerous applications, including health-care, security, entertainment, and sports. In this article, we present how the ML can be used for building a professional football team and planning player transfers. Methods: in this research, we defined numerous parameters for player assessment, and three definitions of a successful transfer. We used the Random Forest, Naive Bayes, and AdaBoost algorithms in order to predict the player transfer success. We used realistic, publicly available data in order to train and test the classifiers. Results: in the article, we present numerous experiments; they differ in the weights of parameters, the successful transfer definitions, and other factors. We report promising results (accuracy = 0.82, precision = 0.84, recall = 0.82, and F1-score = 0.83). Conclusion: the presented research proves that machine learning can be helpful in professional football team building. The proposed algorithm will be developed in the future and it may be implemented as a professional tool for football talent scouts.
+Keywords:       machine learning; big data; football support; sports analytics
+Author:         Bartosz wiklinski, Agata Gielczyk, Michal Chora
+Creator:        LaTeX with hyperref
+Producer:       pdfTeX-1.40.21
+CreationDate:   01/19/21 11:22:01
+ModDate:        01/19/21 11:24:03
+Tagged:         no
+Form:           none
+Pages:          12
+Encrypted:      no
+Page size:      595.276 x 841.89 pts (A4) (rotated 0 degrees)
+File size:      500622 bytes
+Optimized:      no
+PDF version:    1.7

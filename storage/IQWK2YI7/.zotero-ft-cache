@@ -1,0 +1,366 @@
+Jovian Jovian
+New
+  Blank Notebook    Upload Notebook    Import from URL    From Jupyter 
+Learn
+  Courses    Bootcamp    YouTube    Quizzes 
+Community
+  Discord    Blog    Forum    Explore 
+Sign In
+Learn data science and machine learning by building real-world projects on Jovian
+Sign up to execute fifa-data-analysis-project and 160,000+ data science projects. Build your own projects and share them online!
+Sign Up
+
+    PT
+    tpratik345
+    /
+    fifa-data-analysis-project 
+
+Updated  2 years ago
+ Run 
+ Run on Binder
+ Run on Colab
+ Run on Kaggle
+ Run Locally (Clone)
+  Like   Share 
+  Duplicate    Download     Present  
+ 
+Notebook
+ 
+Files
+ 
+Discussions 
+Version 12 ( 2 years ago )
+PT
+Version 12
+( 2 years ago )
+PT
+Version 11
+( 2 years ago )
+PT
+Version 10
+( 2 years ago )
+PT
+Version 9
+( 2 years ago )
+PT
+Version 8
+( 2 years ago )
+PT
+Version 7
+( 2 years ago )
+PT
+Version 6
+( 2 years ago )
+PT
+Version 5
+( 2 years ago )
+PT
+Version 4
+( 2 years ago )
+PT
+Version 3
+( 2 years ago )
+PT
+Version 2
+( 2 years ago )
+PT
+Version 1
+( 2 years ago )
+  Compare Versions   View Changes (Diff) 
+FIFA World Cup Data Analysis (1930 - 2014)
+Imports
+Data Preparation and Cleaning
+FIFA World Cup Data Analysis (1930 - 2014)
+
+The FIFA World Cup, often simply called the World Cup, is an international association football competition contested by the senior men's national teams of the members of the Fédération Internationale de Football Association (FIFA), the sport's global governing body. The championship has been awarded every four years since the inaugural tournament in 1930, except in 1942 and 1946 when it was not held because of the Second World War. The current champion is France, which won its second title at the 2018 tournament in Russia.
+
+The 21 World Cup tournaments have been won by eight national teams. Brazil have won five times, and they are the only team to have played in every tournament. The other World Cup winners are Germany and Italy, with four titles each; Argentina, France(1998 & 2018), and inaugural winner Uruguay, with two titles each; and England and Spain, with one title each.
+
+In today’s data-driven world it is essential to ﬁnd an optimal, self-explanatory, way to present the data in a way to be able to derive visual patterns that can be mapped to data patterns, in turn, making the data explorable and understandable. Here, I describe an interactive visualization for analyzing football data and identifying patterns, correlations, and insights.
+
+The dataset has been downloaded from Kaggle Datasets . The dataset has 3 files named as WorldCup.csv , WorldCupMatch.csv and WorldCupPlayer.csv . For this project 2 files ( WorldCup.csv and WorldCupMatch.csv ) are used. The libraries for data analysis and visualization used in this project are Numpy, Pandas, Matplotlib and Seaborn.
+
+ project_name = "fifa-data-analysis-project"  
+
+ !pip install jovian --upgrade --q  
+
+Imports
+
+ import numpy as np import pandas as pd import matplotlib import matplotlib.pyplot as plt import seaborn as sns import os import re import jovian %matplotlib inline 
+
+Data Preparation and Cleaning
+
+In this step we will perform following process:
+
+    Analyse the dataset
+    Data Cleaning
+    Find Missing Values
+
+ os.listdir()  
+
+ ['.ipynb_checkpoints', '.jovianrc', 'Dataset', 'fifa-data-analysis-project.ipynb']  
+
+    Data Analyzing
+
+ # Taking all the Players Data player_data_path = 'Dataset/Fifa World Cup Dataset/WorldCupPlayers.csv' player_raw_data = pd.read_csv(player_data_path, index_col= 'Player Name' ) player_raw_data 
+
+ player_raw_data.info()  
+
+<class 'pandas.core.frame.DataFrame'> Index: 37784 entries, Alex THEPOT to BASANTA Data columns (total 8 columns): RoundID 37784 non-null int64 MatchID 37784 non-null int64 Team Initials 37784 non-null object Coach Name 37784 non-null object Line-up 37784 non-null object Shirt Number 37784 non-null int64 Position 4143 non-null object Event 9069 non-null object dtypes: int64(3), object(5) memory usage: 2.6+ MB
+
+ # checking for the total MatchId player_raw_data.drop_duplicates() player_raw_data.MatchID.nunique() 
+
+ 836  
+
+ # Taking all the Match Data match_data_path = 'Dataset/Fifa World Cup Dataset/WorldCupMatches.csv' match_raw_data = pd.read_csv(match_data_path,index_col= 'MatchID' , nrows= 852 ) match_raw_data 
+
+Removing some of the duplicate rows in the dataset.
+
+ match_raw_data.drop_duplicates(inplace= True )  
+
+ match_raw_data.index  
+
+ Int64Index([ 1096, 1090, 1093, 1098, 1085, 1095, 1092, 1097, 1099, 1094, ... 300186474, 300186502, 300186501, 300186490, 300186488, 300186504, 300186508, 300186459, 300186503, 300186497], dtype='int64', name='MatchID', length=836)  
+
+ match_raw_data[match_raw_data[ 'Stage' ]== 'Final' ].index  
+
+ Int64Index([ 1087, 1134, 1174, 1278, 1343, 1463, 1633, 1765, 2063, 2198, 923, 393, 27, 3104, 8788, 43950064, 97410064, 300061509, 300186501], dtype='int64', name='MatchID')  
+
+ match_raw_data.info()  
+
+<class 'pandas.core.frame.DataFrame'> Int64Index: 836 entries, 1096 to 300186497 Data columns (total 19 columns): Year 836 non-null int64 Datetime 836 non-null object Stage 836 non-null object Stadium 836 non-null object City 836 non-null object Home Team Name 836 non-null object Home Team Goals 836 non-null int64 Away Team Goals 836 non-null int64 Away Team Name 836 non-null object Win conditions 836 non-null object Attendance 835 non-null float64 Half-time Home Goals 836 non-null int64 Half-time Away Goals 836 non-null int64 Referee 836 non-null object Assistant 1 836 non-null object Assistant 2 836 non-null object RoundID 836 non-null int64 Home Team Initials 836 non-null object Away Team Initials 836 non-null object dtypes: float64(1), int64(6), object(12) memory usage: 130.6+ KB
+
+ match_raw_data.describe()  
+
+ # Taking all the World Cup Data world_cup_final = 'Dataset/Fifa World Cup Dataset/WorldCups.csv' world_cup_final = pd.read_csv(world_cup_final) world_cup_final 
+
+ world_cup_final.info()  
+
+<class 'pandas.core.frame.DataFrame'> RangeIndex: 20 entries, 0 to 19 Data columns (total 10 columns): Year 20 non-null int64 Country 20 non-null object Winner 20 non-null object Runners-Up 20 non-null object Third 20 non-null object Fourth 20 non-null object GoalsScored 20 non-null int64 QualifiedTeams 20 non-null int64 MatchesPlayed 20 non-null int64 Attendance 20 non-null object dtypes: int64(4), object(6) memory usage: 1.7+ KB
+
+    Data Cleaning
+
+In the world_cups_data colunm of Attendance is in form of Object so we have to convert it to the int64 form.
+
+ world_cup_final[ 'Attendance' ] = world_cup_final[ 'Attendance' ].apply( lambda x: int ( "" .join(x.split( '.' ))))  
+
+ world_cup_final.info()  
+
+<class 'pandas.core.frame.DataFrame'> RangeIndex: 20 entries, 0 to 19 Data columns (total 10 columns): Year 20 non-null int64 Country 20 non-null object Winner 20 non-null object Runners-Up 20 non-null object Third 20 non-null object Fourth 20 non-null object GoalsScored 20 non-null int64 QualifiedTeams 20 non-null int64 MatchesPlayed 20 non-null int64 Attendance 20 non-null int64 dtypes: int64(5), object(5) memory usage: 1.7+ KB
+
+ world_cup_final  
+
+The Datetime column in the match_raw_data is str so we have to convert it into a Datetime obj.
+
+ type (match_raw_data[ 'Datetime' ][ 1096 ])  
+
+ str  
+
+ match_raw_data[ 'Datetime' ]  
+
+ MatchID 1096 13 Jul 1930 - 15:00 1090 13 Jul 1930 - 15:00 1093 14 Jul 1930 - 12:45 1098 14 Jul 1930 - 14:50 1085 15 Jul 1930 - 16:00 ... 300186504 05 Jul 2014 - 13:00 300186508 29 Jun 2014 - 13:00 300186459 29 Jun 2014 - 17:00 300186503 01 Jul 2014 - 13:00 300186497 01 Jul 2014 - 17:00 Name: Datetime, Length: 836, dtype: object  
+
+ match_raw_data[ 'Datetime' ] = pd.to_datetime(match_raw_data[ 'Datetime' ])  
+
+ match_raw_data[ 'Datetime' ]  
+
+ MatchID 1096 1930-07-13 15:00:00 1090 1930-07-13 15:00:00 1093 1930-07-14 12:45:00 1098 1930-07-14 14:50:00 1085 1930-07-15 16:00:00 ... 300186504 2014-07-05 13:00:00 300186508 2014-06-29 13:00:00 300186459 2014-06-29 17:00:00 300186503 2014-07-01 13:00:00 300186497 2014-07-01 17:00:00 Name: Datetime, Length: 836, dtype: datetime64[ns]  
+
+ match_data = match_raw_data.copy()  
+
+Exploratory Analysis and Visualization
+
+ sns.set_style( 'darkgrid' ) matplotlib.rcParams[ 'font.size' ] = 14 matplotlib.rcParams[ 'figure.figsize' ] = ( 12 , 6 )  
+
+Q.1) How the Attendance varries from 1930 to 2014
+
+ plt.figure(figsize=( 12 , 6 )) plt.title( 'Attendace' ) plt.xlabel( 'Year' ) plt.ylabel( 'No. of People' ) plt.plot(world_cup_final[ 'Year' ],world_cup_final[ 'Attendance' ]);  
+
+Notebook Image
+Q.2) Which country has the Most Wins in Fifa World cup?
+
+ plt.figure(figsize=( 12 , 6 )) sns.countplot(data=world_cup_final, x= 'Winner' ); plt.title( 'Which country has the Most Wins in Fifa World cup?' );  
+
+Notebook Image
+Q.3) Number of matches in each world cup season
+
+ plt.figure(figsize=( 15 , 7 )) plt.title( 'No. of matches played in each world cup' ) sns.countplot(data=match_data,y= 'Year' );  
+
+Notebook Image
+Q.4) In which city most of the matches were hosted in the year 2014?
+
+ match_data[match_data[ 'Year' ]== 2014 ]  
+
+ match_data[match_data[ 'Year' ]== 2014 ][ 'City' ].value_counts()  
+
+ Rio De Janeiro 7 Brasilia 7 Sao Paulo 6 Salvador 6 Belo Horizonte 6 Fortaleza 6 Recife 5 Porto Alegre 5 Curitiba 4 Manaus 4 Natal 4 Cuiaba 4 Name: City, dtype: int64  
+
+ final_data = match_data[match_data[ 'Year' ]== 2014 ] plt.figure(figsize=( 15 , 6 )) plt.title( 'Number of Matches Hosted at each stadium in Year 2014' ) sns.countplot(data=final_data,y= 'City' );  
+
+Notebook Image
+Q.5) What is the highest no. of Goals Scored in each World Cup since 1930?
+
+ world_cup_final.sort_values( 'GoalsScored' ,ascending= False )  
+
+ plt.figure(figsize=( 15 , 6 )) plt.title( 'No. of goal scored in each world cup' ) sns.barplot(data=world_cup_final, x= 'Year' , y= 'GoalsScored' );  
+
+Notebook Image
+Asking and Answering Questions
+Q.1) Which team has won most of the matches at home in 2014?
+
+First we will make a new column called Winner in which we decide which team has won the game(Home Team/Away Team/Tie).
+
+In the following function we have performed analysis for the game which was ended by Penalties :
+
+ def penalty_func ( x ): temp = re.findall( '\d' ,x) int_value = [ int (i) for i in temp] if int_value[ 0 ] > int_value[ 1 ]: return 'Home Team Wins' return 'Away Team Wins'  
+
+Following cell is used to calculate the Home/Away/Tie team win for the particular match.
+
+ home_team_goals = list (match_data[ 'Home Team Goals' ]) away_team_goals = list (match_data[ 'Away Team Goals' ]) win_condition = list (match_data[ 'Win conditions' ]) res=[] for i in range ( len (home_team_goals)): if (home_team_goals[i] > away_team_goals[i]): res.append( 'Home Team Wins' ) elif (home_team_goals[i]< away_team_goals[i]): res.append( 'Away Team Wins' ) elif (win_condition[i]!= ' ' ): res.append(penalty_func(win_condition[i])) else : res.append( 'Tie' )  
+
+ len (res)  
+
+ 836  
+
+ match_data[ 'Winner' ] = res  
+
+The cell below is used to show to matches where home team wins:
+
+ match_data.loc[match_data[ 'Winner' ]== 'Home Team Wins' ]  
+
+ match_data.iloc[ 1 ][ 'Home Team Name' ]  
+
+ 'USA'  
+
+ # This cell used for calulating the matches held in 2014 and won by home team match_data[(match_data[ 'Year' ]== 2014 ) & (match_data[ 'Winner' ]== 'Home Team Wins' )]  
+
+ home_win = match_data[(match_data[ 'Year' ]== 2014 ) & (match_data[ 'Winner' ]== 'Home Team Wins' )] sns.countplot(data=home_win,y= 'Home Team Name' ); plt.title( 'Most Win At Home in 2014' );  
+
+C:\Users\tprat\Anaconda3\lib\site-packages\matplotlib\backends\backend_agg.py:211: RuntimeWarning: Glyph 65533 missing from current font. font.set_text(s, 0.0, flags=flags) C:\Users\tprat\Anaconda3\lib\site-packages\matplotlib\backends\backend_agg.py:180: RuntimeWarning: Glyph 65533 missing from current font. font.set_text(s, 0, flags=flags)
+Notebook Image
+Q.2) Till now how many matches ended with Penalties ?
+
+The method match_data[match_data['Win conditions']!=' ']['Win conditions'].str.contains(pat = 'penalties') in which the first block i.e match_data['Win conditions']!=' ']['Win conditions'] will check for the win condition which is not empty and 2nd block i.e .str.contains(pat = 'penalties') will check for the word penalties in the win condition column.
+
+ tie_res = match_data[match_data[ 'Win conditions' ]!= ' ' ][ 'Win conditions' ]. str .contains(pat = 'penalties' ) penalties =match_data[match_data[ 'Win conditions' ]!= ' ' ][ 'Win conditions' ].loc[tie_res] penalties 
+
+ MatchID 914 win on penalties (5 - 4) 440 France win on penalties (3 - 4) 575 Germany FR win on penalties (4 - 1) 421 Belgium win on penalties (4 - 5) 248 Republic of Ireland win on penalties (5 - 4) 31 win on penalties (2 - 3) 28 win on penalties (3 - 4) 159 win on penalties (4 - 3) 3092 Bulgaria win on penalties (1 - 3) 3095 Sweden win on penalties (4 - 5) 3104 Brazil win on penalties (3 - 2) 8779 Argentina win on penalties (4 - 3) 8781 France win on penalties (3 - 4) 8785 Brazil win on penalties (4 - 2) 43950052 Spain win on penalties (3 - 2) 43950059 Korea Republic win on penalties (3 - 5) 97410054 Ukraine win on penalties (0 - 3) 97410057 Germany win on penalties (4 - 2) 97410059 Portugal win on penalties (1 - 3) 97410064 Italy win on penalties (5 - 3) 300061497 Paraguay win on penalties (5 - 3) 300061508 Uruguay win on penalties (4 - 2) 300186487 Brazil win on penalties (3 - 2) 300186490 Argentina win on penalties (2 - 4) 300186488 Netherlands win on penalties (4 - 3) 300186459 Costa Rica win on penalties (5 - 3) Name: Win conditions, dtype: object  
+
+ penalties.nunique()  
+
+ 24  
+
+There are 24 matches were ended with penalties from 1930 to 2014.
+
+And the matches are as follows:
+
+ match_data.loc[penalties.index]  
+
+Q.3) In which year the highest Attendance was recorded?
+
+ match_data.sort_values( 'Attendance' ,ascending= False )[[ 'Year' , 'Home Team Name' , 'Away Team Name' , 'Attendance' ]]  
+
+ max_attendance = match_data.sort_values( 'Attendance' ,ascending= False )[[ 'Home Team Name' , 'Away Team Name' , 'Attendance' ]]  
+
+ plt.figure(figsize=( 15 , 7 )) sns.scatterplot(data=match_data, x= 'Year' , y= 'Attendance' , hue= 'Winner' ); plt.title( 'On which year the highest Attendance was recorded?' );  
+
+Notebook Image
+Q.4) What is the mostly observed Win Type (Home/ Away/ Tie) since 1930?
+
+ match_data[ 'Winner' ].value_counts()  
+
+ Home Team Wins 494 Away Team Wins 182 Tie 160 Name: Winner, dtype: int64  
+
+ win_type = match_data[ 'Winner' ].value_counts() plt.title( 'What is the mostly observed Win Type (Home/ Away/ Tie) since 1930?' ) plt.pie(win_type, labels=win_type.index, autopct= '%1.1f%%' , startangle= 180 );  
+
+Notebook Image
+
+The Pie Chart illustrates that the majority of the matches won by the Home Team .
+Q.5) Top 10 countries which have won most of the games since 1930.
+
+The following cell will check for the Home/Away/Tie team win and will set the winnig country name to the new column called Winning Team :
+
+ winner_list = list (match_data[ 'Winner' ]) home_team_name = list (match_data[ 'Home Team Name' ]) away_team_name = list (match_data[ 'Away Team Name' ]) result=[] for i in range ( len (winner_list)): if ( winner_list[i] == 'Home Team Wins' ): result.append(home_team_name[i]) elif ( winner_list[i] == 'Away Team Wins' ): result.append(away_team_name[i]) else : result.append( 'Tie' )  
+
+ len (result)  
+
+ 836  
+
+ match_data[ 'Winning Team' ] = result  
+
+ match_data  
+
+ match_data[ 'Winning Team' ].value_counts()  
+
+ Tie 160 Brazil 73 Argentina 46 Italy 46 Germany FR 39 ... Tunisia 1 Wales 1 Cuba 1 Czech Republic 1 Slovenia 1 Name: Winning Team, Length: 65, dtype: int64  
+
+Here the extra parameter Tie has came so we have to remove it.
+
+ temp = match_data.where(~(match_data[ 'Winning Team' ]== 'Tie' ),np.nan,inplace= False )  
+
+ temp[ 'Winning Team' ].value_counts().head( 10 )  
+
+ Brazil 73 Argentina 46 Italy 46 Germany FR 39 Germany 31 Spain 30 France 30 Netherlands 28 England 26 Uruguay 21 Name: Winning Team, dtype: int64  
+
+ teams = temp[ 'Winning Team' ].value_counts().head( 10 ) plt.figure(figsize=( 15 , 7 )) plt.title( 'Top 10 countries which have won most of the games since 1930' ); sns.barplot(teams,teams.index); 
+
+Notebook Image
+Q.6) Which country has won most of the matches in Penalties ?
+
+Total Matches with Penalties :
+
+ penalty_matches = match_data[(match_data[ 'Win conditions' ]!= ' ' ) & ( match_data[ 'Win conditions' ]. str .contains(pat = 'penalties' ))]  
+
+ penalty_matches[ 'Winning Team' ].value_counts()  
+
+ Argentina 4 Brazil 3 Germany FR 3 France 2 Bulgaria 1 Netherlands 1 Italy 1 Korea Republic 1 Paraguay 1 Belgium 1 Germany 1 Uruguay 1 rn">Republic of Ireland 1 Ukraine 1 Spain 1 Costa Rica 1 Portugal 1 Sweden 1 Name: Winning Team, dtype: int64  
+
+ plt.figure(figsize=( 15 , 7 )); plt.title( 'Which country has won most of the matches in Penalties?' ); sns.countplot(data=penalty_matches,y= 'Winning Team' );  
+
+Notebook Image
+Summary
+The above data analysis can be summarised as follows:
+
+In the Exploratory Analysis Section I have observed:
+
+    How the attendance varries from year 1930 to 2014.
+    Brazil is having most win in the fifa world cup final.
+    Total number of matches played in each world cup, which is 64 from 2006 to 2014.
+    Also highest no. of goal scored in wach world cup since 1930 was 171 in 1998 and 2014 world cup.
+
+In the Asking and Answering Section I have observed:
+
+    Argentina wins most of the games at home.
+    Uptil 2014 there are 24 matches were ended with penalties.
+    The highest attendance was recorded in Year 1950 which was 173850 and the match was between Uruguay vs. Brazil .
+    From the pie chart it is observed that the majority of matches won by Home Team with 59.1% , nearly 21.8% matches are won by Away Team and 19.1% matches Tied .
+    Brazil is the country who has won most of the games since 1930 with a count of 73 .
+    Argentina has won most penalties(4).
+
+References and Future Work
+Future Work
+
+We have taken only the dataset for the world cup. But we have another dataset named as WorldCupPlayer.csv . Only WorldCups.csv and WorldCupMatch.csv is taken under consideration for this project. For data realted to Goal Scored by the individual player and total saves by the individual player can be retrived from the WorldCupPlayer.csv dataset. Moreover this dataset can be combined with the WorldCupMatch.csv dataset with help of MatchId , so that interesting data can be explored.
+References
+
+Following are the references:
+
+    ZerotoPandas Tutorial by JovianML: https://jovian.ml/learn/data-analysis-with-python-zero-to-pandas
+    Numpy Documentation: https://numpy.org/devdocs/user/quickstart.html
+    User guide for Pandas: https://pandas.pydata.org/docs/user_guide/index.html
+    Seaborn gallery: https://seaborn.pydata.org/examples/index.html
+    Matplotlib gallery: https://matplotlib.org/3.1.1/gallery/index.html
+    Fifa World Cup Dataset: https://www.kaggle.com/abecklas/fifa-world-cup
+
+ jovian.commit(project=project_name)  
+
+[jovian] Attempting to save notebook..
+ Chat with us
+ Email support
+ Jovian Docs
+ Feature requests
+ Report an issue
+ Our Website
+ Twitter
+ YouTube
+

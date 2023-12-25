@@ -1,0 +1,95 @@
+    Theories
+    Research Methods
+    Mental Health
+    A-level
+    Statistics
+
+Simply Psychology Logo
+
+    Statistics
+    p -value
+
+What a p -value tells you about statistical significance
+
+By Dr. Saul McLeod , published 2019
+
+P-Value Explained in Normal Distribution
+
+    When you perform a statistical test a p -value helps you determine the significance of your results in relation to the null hypothesis.
+
+The null hypothesis states that there is no relationship between the two variables being studied (one variable does not affect the other). It states the results are due to chance and are not significant in terms of supporting the idea being investigated. Thus, the null hypothesis assumes that whatever you are trying to prove did not happen.
+
+To view this video please enable JavaScript, and consider upgrading to a web browser that supports HTML5 video
+Pause
+Unmute
+Loaded : 23.55%
+0:56
+Remaining Time  - 3:36
+ 
+Auto(360p LQ )
+Share Fullscreen
+What a p-value tells you about statistical significance
+
+The alternative hypothesis is the one you would believe if the null hypothesis is concluded to be untrue.
+
+The alternative hypothesis states that the independent variable did affect the dependent variable, and the results are significant in terms of supporting the theory being investigated (i.e. not due to chance).
+
+How do you know if a p -value is statistically significant?
+
+A p-value, or probability value, is a number describing how likely it is that your data would have occurred by random chance (i.e. that the null hypothesis is true).
+
+The level of statistical significance is often expressed as a p -value between 0 and 1. The smaller the p-value, the stronger the evidence that you should reject the null hypothesis.
+
+    A p -value less than 0.05 (typically ≤ 0.05) is statistically significant. It indicates strong evidence against the null hypothesis, as there is less than a 5% probability the null is correct (and the results are random). Therefore, we reject the null hypothesis, and accept the alternative hypothesis.
+
+    However, if the p -value is below your threshold of significance (typically p < 0.05), you can reject the null hypothesis, but this does not mean that there is a 95% probability that the alternative hypothesis is true. The p -value is conditional upon the null hypothesis being true, but is unrelated to the truth or falsity of the alternative hypothesis.
+    A p -value higher than 0.05 (> 0.05) is not statistically significant and indicates strong evidence for the null hypothesis. This means we retain the null hypothesis and reject the alternative hypothesis. You should note that you cannot accept the null hypothesis, we can only reject the null or fail to reject it.
+
+    A statistically significant result cannot prove that a research hypothesis is correct (as this implies 100% certainty).
+
+    Instead, we may state our results “provide support for” or “give evidence for” our research hypothesis (as there is still a slight probability that the results occurred by chance and the null hypothesis was correct – e.g. less than 5%).
+
+How to report a p -value APA style
+
+The 6th edition of the APA style manual (American Psychological Association, 2010) states the following on the topic of reporting p-values:
+
+    “When reporting p values, report exact p values (e.g., p = .031) to two or three decimal places. However, report p values less than .001 as p < .001. The tradition of reporting p values in the form p < .10, p < .05, p < .01, and so forth, was appropriate in a time when only limited tables of critical values were available.” (p. 114)
+
+Note:
+
+    Do not use 0 before the decimal point for the statistical value p as it cannot equal 1, in other words, write p = .001 instead of p = 0.001.
+    Please pay attention to issues of italics ( p is always italicized) and spacing (either side of the = sign).
+    p = .000 (as outputted by some statistical packages such as SPSS) is impossible and should be written as p < .001.
+    The opposite of significant is "nonsignificant", not "insignficant".
+
+Why the p -value is not enough
+
+A lower p -value is sometimes interpreted as meaning there is a stronger relationship between two variables. However, statistical significance means that it is unlikely that the null hypothesis is true (less than 5%).
+
+To understand the strength of the difference between two groups (control vs. experimental) a researcher needs to calculate the effect size .
+
+How to reference this article:
+
+McLeod, S. A. (2019, May 20). What a p-value tells you about statistical significance . Simply Psychology. www.simplypsychology.org/p-value.html
+
+Further Information
+P-values and significance tests (Kahn Academy) Hypothesis testing and p-values (Kahn Academy) Wasserstein, R. L., Schirm, A. L., & Lazar, N. A. (2019). Moving to a world beyond “ p "< 0.05”. Criticism of using the “ p "< 0.05”. Effect Size (why the p -valueis not enough) Type I and Type II Errors What is a Normal Distribution in Statistics? Z-Score: Definition, Calculation and Interpretation Confidence Intervals Statistics for Psychology Publication manual of the American Psychological Association Statistics for Psychology Book Download
+
+How to reference this article:
+
+McLeod, S. A. (2019, May 20). What a p-value tells you about statistical significance . Simply Psychology. www.simplypsychology.org/p-value.html
+
+Home | About Us | Privacy Policy | Advertise | Contact Us
+
+
+Back to top
+
+Simply Psychology's content is for informational and educational purposes only. Our website is not intended to be a substitute for professional medical advice, diagnosis, or treatment.
+
+© Simply Scholar Ltd - All rights reserved
+
+Article Content
+Definition P-value interpretation Report a p-value APA style
+
+
+

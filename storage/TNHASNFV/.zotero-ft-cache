@@ -1,0 +1,812 @@
+Artiﬁcial Intelligence for Team Sports: A Survey
+RYAN BEAL, TIMOTHY J. NORMAN and SARVAPALI D. RAMCHURN
+School of Electronics and Computer Science, University of Southampton, Southampton, SO17 1BJ, UK E-mail: ryan.beal@soton.ac.uk, t.j.norman@soton.ac.uk, sdr1@soton.ac.uk
+Abstract
+The sports domain presents a number of signiﬁcant computational challenges for artiﬁcial intelligence and machine learning. In this paper we explore the techniques that have been applied to the challenges within team sports thus far. We focus on a number of diﬀerent areas, these include: match outcome prediction, tactical decision making, player investments, fantasy sports and injury prediction. By assessing the work in these areas we explore how AI is used in the predict match outcomes, and to help sports teams improve their strategic and tactical decision making. In particular, we describe the main directions in which research eﬀorts have been focused to date. This highlights a number of strengths, but also weaknesses of the models and techniques that have been employed. Finally, we discuss the research questions that exist in order to further the use of AI and machine learning in team sports.
+1 Introduction
+Sports is a domain that has grown signiﬁcantly over the last 20 years to become a key driver of many economies, while at the same time, impacting on our social and cultural fabric. According to a recent report1, the estimated size of the global sports industry is $1.3 trillion, and has an audience of over 1 billion, who may attend matches to support their favourite teams, bet in various online or oﬄine markets, or watch games on the television for pure entertainment. Sports employ over 1 million jobs in the UK alone, with those involved either playing games, managing teams, or looking after the health and ﬁtness of players. At the core of these economic and social impacts, are the individuals, players, and teams involved. Indeed, as we will demonstrate in this paper, predicting and optimising the performance in sports are challenging problems but, so far, such problems have largely been dealt with by domain experts (e.g., coaches, managers, scouts, and sports health experts) with basic analytics. Speciﬁcally, we focus on team sports as they present the most diﬃcult challenges, and tend have the greatest audience and economic beneﬁt.
+We deﬁne a team sport as a game that typically involves two teams playing against each other, each composed of a set of players with their individual roles and abilities. There are many uncertainties in team sports that aﬀect the ﬁnal outcome and performance of the teams. These decisions range from team selection, tactics (e.g., choosing where players should be placed on a football ﬁeld), player transfers (e.g., choosing which players should be sold to or bought from another team) and planning training sessions (e.g., to help players recover from injuries or improve collective performance of a team). The results of such decisions can sometimes be quickly obtained and learnt from (e.g., tactics may fail or succeed during a live game) or come through over a long period of time (e.g., a player may recover diﬀerently based on diﬀerent long-term training regimes or preparatory matches).
+1https://www.plunkettresearch.com/statistics/Industry-Statistics-Sports-Industry-Statistic-and-Market-SizeOverview.
+
+2
+
+beal, norman and ramchurn
+
+In recent years, the ﬁeld of team sports (teams, governing bodies, academies etc..) have adopted a range of technologies that collect large amounts of data from training and matches that include the movement of players during games, their health statistics, and their actual performance during such games. Players train and compete while being monitored by a number of sensors to gain more information about performances.2 This helps coaches and managers optimise training sessions and further improve performance. For example, companies such as Opta3 and STATS4, specialise in collecting and distributing sports data to teams and media outlets. Major teams around the world already use a variety of datasets to make decisions and improve their on-ﬁeld performances. This tends to lead to increases in prize money, higher proportions of TV rights and more sponsorship deals. For example, the promotion of an English Championship football team to the English Premier League, is worth £200 million in extra revenues.5 Also, professional betting companies use such datasets to exploit ineﬃciencies in the sports betting markets and maximise their proﬁts. Hedge funds who use the sports gambling markets as a way to make investments exploit these sports betting market ineﬃciencies.6
+Taken from a scientiﬁc point of view, the availability of such datasets presents a unique opportunity for the artiﬁcial intelligence (AI) and machine learning (ML) communities to develop, validate, and apply new techniques in the real world. Indeed, a number of works that attempt to solve real-world challenges (e.g., in disaster response (Ramchurn, Simpson, et al. 2016; Ramchurn, Wu, et al. 2015), and energy systems (Alan et al. 2015; Vytelingum et al. 2011)) with AI techniques, tend to rely on synthetic environments that ascribe standard probability distribution to the behaviours of the entities involved or the external phenomena that impact on their behaviours (e.g., simulating the spread of ﬁres in disasters and the ability of ﬁre brigades in extinguishing them, or the changes in energy consumption in power grids due to changes in energy pricing). In turn, in team sports, real-world data is available over long periods of time, about the same individuals and teams, in a variety of environmental contexts, thereby creating a unique live testbed for AI and ML techniques. Indeed, recent works such as (Matthews, Ramchurn, and Chalkiadakis 2012) and (Le, Yue, et al. 2017) have proposed and validated novel performance prediction and combinatorial optimisation solutions that have advanced the multi-agent and machine learning state of the art. While research in AI for team sports has grown over the last 20 years, it is as yet unclear how they relate to each other or build upon each other as they tend to either focus on speciﬁc types of team sports or speciﬁc prediction and optimisation problems that are but one part of the whole ﬁeld. Hence, in this paper, we set out to survey the literature in AI for team sports, and provide a structured framework within which existing and future approaches can be characterised and organised. By so doing, we aim to establish the current benchmarks, ﬁnd common approaches across diﬀerent types of sports, and provide the research community with novel computational challenges that have yet to be addressed or could provide real-world scenarios upon which existing AI and ML techniques could be validated.
+In what follows, we elaborate on the four key areas that we have identiﬁed where decisions and predictions can to be optimised due to the signiﬁcant performance and ﬁnancial beneﬁts that they may have:
+Match outcome prediction: Predicting the outcomes of sporting events is an important factor for a number of stakeholders. According to a BBC report, the global sports betting market is estimated to be worth around $244billion with millions of bets placed all over the world.7 This means that the prediction of match outcomes is key to the bookmakers who set the odds, and the punters who place their bets. Match outcome prediction is also an important factor for teams
+2https://www.forbes.com/sites/bernardmarr/2015/03/25/big-data-the-winning-formula-insports/#467bd87d34de.
+3https://www.optasports.com. 4https://www.stats.com. 5https://www.telegraph.co.uk/football/2016/05/28/play-oﬀ-ﬁnal-how-much-is-premier-league-promotionreally-worth/. 6https://www.businessinsider.com/inside-story-star-lizard-tony-bloom-2016-2?r=US&IR=T. 7https://www.bbc.co.uk/news/business-44362134.
+
+Artiﬁcial Intelligence for Team Sports: A Survey
+
+3
+
+that aﬀects their tactical decisions and overall recruitment and game strategy during a season. There are many uncertainties that may aﬀect the result of a given game and we will elaborate on these in the rest of this paper.
+Strategic and tactical decision making: There are a number of key decisions in the team sports process that aﬀect performance both in-game and behind the scenes. These decisions include player recruitment, tactics, team selection, developing youth players and managing injuries. Player recruitment is one of the costliest part of team sports due to the price of purchasing new players and the wages that they demand. The world’s highest transfer fee in football is £198million for Neymar in 2017 and highest salary per season in the NFL is $76million for Aaron Rodgers. The enormous value placed on these players are usually based on subjective measures by the clubs. This means that often, large sums of money can be paid for a player who never lives up to the expectations of their price-tag (Stephen Dobson, Goddard, and Stephen Dobson 2001).
+Fantasy Sport Games: Fantasy sports are games (online8,9,10 or via newspapers) open to the general public where competitors are challenged to predict the performance of real-world sports teams and players, and to choose artiﬁcial or “fantasy” teams composed of such players. The players in these fantasy teams are then awarded points based on their real-world statistics. It is estimated that over 50 million people play fantasy sports in the US while over 5 million people regularly play the Fantasy Premier League in the UK alone. Fantasy sports presents a number of interesting computational challenges that can be addressed using AI methods. These challenges include but are not limited to: prediction of individual player performance, forming optimal teams based on player performances, predicting the ﬂuctuating player values, and creating betting strategies when entering fantasy teams into competitions.
+Managing Injuries: Injuries to professional players can have a huge impact on their careers. Injuries also cause the performance of a team to decline as well as costing teams large sums of money in wages to a player who cannot play. In an annual report by JLT11, all the injuries in the English Premier League were assessed and it was shown that in the 2017-18 season, £217million in wages were paid to injured players. Due to this, teams in all professional sports are now investing signiﬁcant eﬀorts into predicting the risk of injury and helping prevent them. The predictability of injuries in sport is discussed in (Lysens et al. 1984) which suggests that injuries may be an area where AI could help beneﬁt teams and players due to the success observed when predicting health issues in the past (Srinivas, Rani, and Govrdhan 2010).
+In this review, we focus our attention on the six most popular team sports in the world: Association Football, Rugby Union, One-Day Cricket, American Football, Baseball and Basketball. We explore the existing relevant literature, provide new insights based on our own analysis of key statistics, provide a number of frameworks to structure the computational challenges involved, and highlight open areas of research.
+The rest of this review is organised as follows. Section 2 provides details of the team sports we focus on. Section 3 deals with the approaches that have been explored for predicting sporting match outcomes. Section 4 outlines the strategic and tactical decision that are made in sports and AI solutions to aid these decisions. Section 5 focuses on fantasy sports games. Section 6 outlines how AI approaches are used to help predict and therefore prevent injuries in sport. Finally, Section 7 discusses the open research areas and how they can be approached and Section 8 concludes.
+
+8https://www.draftkings.co.uk. 9https://www.fanduel.com. 10https://fantasy.premierleague.com. 11https://www.jlt.com/our-insights/our-insights/how-injuries-have-aﬀected-the-english-premier-league.
+
+4
+
+beal, norman and ramchurn
+
+2 Background
+
+In this section, we detail the key features of various team sports that present opportunities for AI research and impact. Table 1 shows the key aspects of the game that can be used for comparison.12
+In the sections that follow, we give a more detailed background of the six sports that we focus on and the diﬀerent challenges that each of these presents.13
+
+Table 1 Team Sports Features.
+
+Sport Association Football American Football Rugby Union Basketball
+ODI Cricket
+Baseball
+
+Game Duration 90 minutes (2 halves) 60 minutes (4 quarters) 80 minutes (2 halves) 48 minutes (4 quarters) 50 overs per team (300 balls) 9 innings (Each team bats and ﬁelds)
+
+# Players 11 11 15 5
+11
+9
+
+Score Frequency Goal every 69 minutes Score every 9 minutes Score every 12.5 minutes Score every 30 seconds
+n/a
+n/a
+
+2.1 Association Football
+In a game of Association Football, or football for short, each team aims to score goals (1 point) against the opposition (by getting the ball into an 24ft x 8ft goal) and the team with the most goals after the game duration wins. Football is the biggest sport in the world, making up 43% of the sports industry. There are hundreds of professional leagues across the world (e.g., the English Premier League (EPL) and Spanish La Liga are two of the worlds most popular leagues). In a classic football league each team plays every other team twice, once at home and once away. This means that the typical season consists of (2N ) − 2 games, where N is the number of teams in the league (e.g., in the EPL there are 20 teams meaning each team plays 38 games). There are also a number of cup competitions that run alongside the main leagues (e.g., The Champions League and The FA Cup).
+A number of factors can aﬀect a game of football such as weather, the quality of pitch, and injuries. There are also a number of tactical decisions (e.g., team formation and style of play) that can increase a team’s chances of winning a game. The 11 players are set up in a formation with 1 goalkeeper and 10 outﬁeld players. An example formation for the outﬁeld players is 4-4-2 which commonly denotes 4 defenders, 4 midﬁelders and 2 strikers. The team formation is a key decision in football tactics to which eﬀects team performance. Teams can also make in-game player substitutions (up to 3 in a game) which can help change the team’s current in-game performance. Injuries happen across the football season, and this can have signiﬁcant impact on the teams - in the 2016/17 EPL season there were a total of 735 injuries, which are often preventable muscular injuries.11
+Increasingly, player recruitment plays a big part in modern day football. Players are bought and sold between teams across the world. Youth players are developed through clubs academies until they are ready to play in the ﬁrst team. They can also be loaned out to other clubs to gain more experience. What makes football diﬀerent in comparison to the other sports in this paper is the rarity of goals. This is highlighted in Table 1 where (Anderson and Sally 2014) show that over the 2010/11 season there is a goal scored on average every 69 minutes. Due to this, a draw/tie is much more common in football than in other sports.
+12Score Frequency data sourced from (Anderson and Sally 2014). 13Market data sourced from - https://www.atkearney.com/communications-media-technology/article?/a/thesports-market.
+
+Artiﬁcial Intelligence for Team Sports: A Survey
+
+5
+
+2.2 American Football
+In a game of American Football14 teams aim to score touchdowns while attacking (worth 6 points), which is followed by a kick (1 point if scored). Teams can also score ﬁeld goals (3 points) or a safety (2 points). A game-day squad is made up of 45 players split into the oﬀence, defence and special15 teams. The coach makes a decision on how these players are positioned when on the ﬁeld of play and usually also makes decisions on what plays to run during the game (where a play is a tactic used to move the ball down the ﬁeld). Many factors aﬀect teams’ performances in American Football such as weather and even the air pressure of the ball.16
+American Football makes up an estimated 13% of the global sports market. However, it is mainly played in North America where the main professional league is the National Football League (NFL). There are 32 teams that make up the NFL, each team plays 16 games in the regular-season. The teams that do well in the regular-season make it into the playoﬀs where teams play up to 4 more games to determine the winner of the league. In the NFL, players are traded rather than bought or sold as in football and, instead of having youth teams to develop younger players, players are drafted from the college leagues. Much of the team and player performances in American Football are easier to quantify than other sports in this paper. This is due to the nature of the game as the yards that teams gain (which lead to points being scored) or prevent are measured and attributed to each player that contributes.
+
+2.3 Rugby Union
+In Rugby Union each team aims to score tries17 half) against the opposition, these are worth 5 points and are followed by a conversion - a kick at between the posts, worth 2 points. Teams can also score points through penalties and drop-goals18, both worth 3 points. The team with the most points after 80 minutes, wins. Teams are split into forwards and backs where the forwards are the 8 players that make up the scrum.19 Unlike football, there is a standard way to set up players on a rugby ﬁeld so there is not a formation decision for the coach to make.20 There are still many other tactical decisions for the coach to make such as: (e.g., player selection, line-out formation, style of play). Usually club rugby is played in a league format similar to football where each team plays against every other teams both home and away (e.g., in the Aviva Premiership (England) there are 12 teams, each play 22 games in a season). Rugby Union has been the fastest growing sport since it became professional in 1995. It is popular in countries such as Britain, Australia, New Zealand, South Africa. Due to Rugby being a high impact sport, it presents many injury related challenges. In particular, how can the medical teams be assisted and how can players be further monitored.
+
+2.4 Basketball
+In basketball, teams aim to score a point by getting the ball in the basket. When scored within a given zone it is worth 2 points, outside of this zone it is worth 3 points. A free throw is worth 1 point. The winning team is the team who accumulate the most points. The main league is the National Basketball Association (NBA) in the US and it makes up about 6% of the global sports market. In the NBA there are 30 teams, all teams play 82 games in the regular season and the top teams make the post-season playoﬀs (a knockout style competition to decide the overall NBA winner).
+14Referred to as American Football throughout, not to be confused with Association Football. 15Special teams are units that are on the ﬁeld during kicking plays. 16https://www.vox.com/2015/1/21/7866121/deﬂated-football-patriots-cheating. 17Try - placing the ball down in a given zone at the end of the oppositions. 18A drop-goal is scored when a player kicks the ball from hand through the opposition’s posts. 19Scrum - a method of restarting play that involves players packing closely together with their heads down and attempting to gain possession of the ball. 20https://www.ruck.co.uk/rugby-positions-roles-beginners/.
+
+6
+
+beal, norman and ramchurn
+
+Basketball is the only team sport that we consider in this paper, which is played indoors at the professional level. Thus, weather related factors do not have an aﬀect on the game. Basketball is very high scoring in comparison to the others (as highlighted in Table 1). It is also much more ﬂuid and faster ﬂowing in comparison to the other American sports which similarly to football makes quantifying an individuals impact on a game outcome more challenging. In the NBA, there are on average 296 passes per team per game, this compares to 453 per team per game in the EPL, although in football there are more players on the pitch over a bigger playing area. If we look at this per player each basketball player makes 59 passes per game, whereas each football player completes on average 41 passes per game.
+
+2.5 Cricket
+Cricket is played in a number of forms (e.g., Test and Twenty20), in this paper we focus on One Day International games (ODIs) due to existing literature also being focused on ODI games. In an ODI, there is 1 innings per team made up of 50 overs each (1 over = 6 balls), which can end earlier if all batsmen are out. In each innings, the batting team aims to score runs and bowling team aims to take wickets and prevent runs being scored. The winning team is the team with the most runs scored in their innings. Cricket is hugely popular in countries such as India, England and Australia. The Indian market in particular makes up the majority of the market and is reportedly worth $5.3 billion.
+Hitting runs and taking wickets are the main metrics used to measure player performances. Cricket, like Baseball, relies on a number of individual performances by players which make up the team performance whereas other sports rely more on the team performance as a whole. Due to both cricket and baseball being bat-and-ball games rather than invasion games like the rest of the sports in this paper, means that they present diﬀerent challenges and factors for us to consider. At the core of this is that, even though they are team games, the performance of players is mainly based on a 1v1 scenario (batsman vs bowler). This means that when we evaluate or predict performance we can focus on how an individual batsman performs against an individual bowler or vice-versa.
+
+2.6 Baseball
+Baseball is a game made up of 9 innings, where an innings is made up of both teams batting (while the other team ﬁelds) until they receive three outs. The batting team aims to score runs (a batsman gets round all bases), the ﬁelding team aims to strike batsman out (3 swing and misses) and stop runs being scored. If the score remains tied at the end of the regulated number of innings, then an extra innings is played. The team with the most runs at the end of 9 innings is the winning team. Baseball makes up 12% of the global sports market. The performances of the Baseball teams/players are often measured by key statistics based on their abilities to hit runs or get outs.21
+Baseball is mainly an American sport and the main league is Major League Baseball (MLB). In the MLB there are 30 teams where every team plays a 162 games in the regular season with the best teams making the playoﬀs. The playoﬀs is a knockout style competition formed of 12 teams, where each round is a “best out of 7 games”, to decide the “World Series” winner. Teams play games much more frequently in a Baseball season than in other sports’ which may mean players have to be rotated more and monitored closely for injury.
+21Baseball was the ﬁrst sport to really see the power of data. In the 1970s, Bill James began writing an annual “Baseball Abstract”, containing statistics he collected by hand. This inspired the Oakland A’s and Billy Beane (their General Manager) to change the way they operate by using data to make key decisions. This is documented in the book “Moneyball” by Micheal Lewis. There are many statistics collected in Baseball and the professional teams are much more advanced at using data in comparison to other sports.
+
+Artiﬁcial Intelligence for Team Sports: A Survey
+
+7
+
+3 Match Outcome Prediction
+Prediction of sports match outcomes is a complex computational problem due to the range of uncertainties that can inﬂuence match results. These include, but not limited to: the team conﬁgurations, the health of players, the location of the match (home or away), the weather, and team strategies.
+Typically match outcomes consist of up to three possible classes: home win, away win and a draw/tie. The draw/tie is a more common result in football, but it is still possible in all the team sports we focus on. When predicting these outcomes, probabilities are assigned to each possible state that the game could end in. Some models also focus on predictions for the scoreline or spread. The scoreline is the number of points/goals scored by each team and the spread is the diﬀerence between the number of points scored by each team. These are typically more challenging to predict due to the increased number of possible outcomes. By assigning a probability to each possible scoreline in a match, we are able to solve the diﬀerent prediction problems that are presented. Thus, the match outcome prediction problem can be deﬁned as:
+
+MM
+
+p(outcome) =
+
+p(X = i, Y = j)
+
+(1)
+
+i=0 j=0
+
+
+
+homewin if X > Y,
+
+
+
+
+
+outcome = awaywin if X < Y,
+
+(2)
+
+ draw
+
+if
+
+X
+
+=
+
+Y
+
+where: X = home points/goals, Y = away points/goals, M = max possible points/goals.
+The multiple sources of uncertainties that exist when predicting match outcomes are typically very diﬃcult to characterise. In what follows, we highlight the accuracy of the bookmakers in team sports and elaborate on the approaches that have been applied to predict match outcomes, scorelines and points spread. We explore the earlier literature that exist in statistics as well as literature outlining ML approaches.
+3.1 Bookmakers Accuracy
+As we will show, some of the match outcomes problems, presented by the sports in this paper, are more predictable than others. Bookmakers use sophisticated pricing models that assign “odds” to an outcome (which reﬂect the likelihood) to maximise their chances of making a proﬁt, this is discussed in (Graham and Stott 2008). By comparing who the bookmakers made favourite (shortest odds) and the actual match outcome, we calculate a percentage accuracy22 and use this to evaluate how predictable each sports outcome is. This provides an estimation of the predictability of each sport. Bookmakers price markets based on their own predictions of the match as well as using the bets that are placed as an indicator of the likely match outcome.
+To demonstrate the variability across team sports, we focus on the prediction of match outcomes (see Figure 1). As can be seen, football has the lowest accuracy showing it is the least predictable. This is to be expected due to the frequency of goals being far less than frequency of points scored in the other sports (as discussed in Section 2). A draw/tie is also much more common in football meaning there are 3 possible outcomes to consider instead of just 2. Basketball is shown to have the highest accuracy by the bookmakers. This may be due to the high number of points scored in a game or a smaller playing area with less players.
+22Odds that are given across the whole of the past season (2016/17) with historic average odds (from a number of the top bookmakers) and results data taken from https://www.oddsportal.com.
+
+8
+
+beal, norman and ramchurn
+
+Figure 1: Bookmakers Accuracy Across 2017/18 Season.
+
+3.2 Statistical Approaches
+A number of studies have focused on ﬁnding ways that the game of football could be modelled and to ﬁnd ineﬃciencies in the UK football betting market. Dixon and Coles (1997) set out to exploit the ineﬃciencies and bias in UK football betting markets. Building upon the seminal work by Maher (1982), they developed an initial model to assign probabilities to each of the diﬀerent game outcomes (home win, away win and draw/tie). Using this they are also able to form a new betting strategy. The model is based on the diﬀerent abilities of both teams, calculated from prior matches. These abilities are broken into attack and defence and normalised based on the abilities of the opponents. Their model also takes into account a home advantage as discussed in (Clarke and Norman 1995). They are able to gain positive returns in a betting strategy. They use a technique based on a Poisson regression model, modifying Maher’s basic bivariate Poisson model to give the equation shown in (3).
+
+P
+
+r(Xi,j
+
+=
+
+x,
+
+Yi,j
+
+=
+
+y)
+
+=
+
+τλ,µ(x,
+
+y)
+
+λxexp(−λ) x!
+
+µy exp(−µ) y!
+
+(3)
+
+Where, λ = αiβjγ and µ = αjβi. In these equations x and y represent the goals scored by the home and away team respectively ([x, y] ∈ N), α is the attacking parameter, β is the defensive parameter, γ represents the home advantage ([β, γ, α] ∈ R) and τ is a corrective factor used by Dixon and Coles to introduce an association between home and away goals that is missing in the independent Maher model. Finally i represents the ID of the home team and j the ID of the away team. When the model described in (Dixon and Coles 1997) is run and tested across the past 6 seasons (2013-2019), it was found to have a prediction accuracy of 56.65%.
+Dixon and Robinson (1998) studied the eﬀect of the scoring rate changing depending on the current score of a game of football. They found that the scoring rate generally increases for both teams throughout the match, most likely due to tiredness of players that leads to mistakes in defending. They also found the scoring rates of home and away teams depend on the current score. Each scoreline is modelled as a diﬀerent game-state, an example of the diﬀerent possible game-state changes throughout a game are shown in Figure 2.
+When the scores are level, the scoring rates are similar to those at 0-0. If the home team is leading, the home and away rates generally decrease and increase respectively. If the away team is leading, the rates of both home and away teams tend to increase. Their ﬁndings can be used to ﬁnd match outcome probabilities and to attempt to improve on Dixon and Coles (1997). This
+
+Artiﬁcial Intelligence for Team Sports: A Survey
+
+9
+
+Figure 2: Change in Game State for a 3-3 Scoreline (Dixon and Robinson 1998).
+
+is done by ﬁnding the probability of each state (shown in Figure 2) and integrating over all the possible times and for each possible route to arrive at the ﬁnal game state (x, y).
+Crowder et al. (2002) again builds upon the work of Dixon and Coles (1997) by changing the original models’ calculations of attack and defence eﬃciencies. The new framework assumes that the eﬃciencies evolve through time (rather than remaining constant) according to some unobserved bivariate stochastic process. The original stochastic process model is replaced with an approximation that yielded a more tractable computation without comprising the predictive power. Dixon and Pope (2004), evaluate the value and signiﬁcance of the statistical forecasts from their earlier work in relation to betting market prices. They performed a detailed re-examination of match outcome odds and correct score odds across a number of years between 1993 to 1996. They suggest that the football betting market (at the time) remained ineﬃcient23 and the earlier models discussed in (Dixon and Coles 1997) could still be used eﬀectively to earn positive returns when used with a strict trading rule to select the games to place a bet on.
+More recently, (Angelini and Angelis 2017) was able to better the forecasting accuracy of Dixon and Coles. This paper uses a Poisson autoregression with exogenous covariates (PARX) model which is discussed in (Agosto et al. 2016). By using this model, with the same betting strategy that is used in (Dixon and Coles 1997), they are able to generate betting return on investment of 33.62% on average when tested across 3 seasons (2013-16 EPL). McHale and Scarf (2011) focuses on international matches instead of English League games. The authors present a new model for the number of goals scored by each team in a match and can be used for match outcome predictions. The model used in this paper is based on copula functions (Nelsen 2006) which generate bivariate dependent discrete distributions which are used to forecast the match scorelines. As this paper is based on international football matches, it may not be as successful if used for domestic leagues due to signiﬁcant diﬀerences between international and league football. In comparison to the domestic leagues, there is a gulf in quality between teams that could play against each other internationally. Furthermore, international teams do not play as often. Therefore, datasets detailing the performance of international teams may not be as reﬂective of the current ability/form of the team and players. In a diﬀerent study, Karlis and Ntzoufras (2008) use the Skellam distribution (Skellam 1948) to predict the winning margin of games during the EPL 2006/07 season. The Skellam distribution models the diﬀerence between two independent Poisson distributed variables. Using these distributions, probabilities are assigned to the possible goal diﬀerences and therefore the match outcomes.
+Turning to American football, there are a number of applications of statistical techniques to predict match outcomes and scoreline predictions. A birth-process model (Harville 1980) uses a linear approach to create a baseline for NFL predictions in American Football, building on work that he had originally tested on college and high school American Football (Harville 1976).
+23Where ineﬃciency in the match outcome betting market will be indicated if returns are greater than the return on an uninformed, random betting strategy.
+
+10
+
+beal, norman and ramchurn
+
+More recently, (Boulier and Stekler 2003) compare their model with human prediction and the bookmakers in the NFL between 1994-2000. They evaluate the use of “Power Scores” (published in the New York Times) as a predictor by creating forecasts generated from probit regressors. A probit model is a type of regression where the dependent variable can take only two values, for example home win or away win (Cappellari and Jenkins 2003). This model was able to improve on the accuracy of the predictions made by human experts. However, it was not able improve on the bookmakers’ accuracy. In turn, Leung (2014) uses the teams’ current ability based on other rating systems such as “Elo Ratings”24, which were initially designed to rank chess players (Coulom 2007). Leung makes predictions on the outcomes of college American Football matches using historic results and a sum of other metrics25, the highest total sum is the predicted winner. The paper states that the model achieves a high accuracy, but it does not detail how this was tested. Finally, (Baker and McHale 2013) looks to predict the exact scores in a game of American football. The authors use similar methods which were used for football in (Dixon and Coles 1997). The model takes each team’s attacking and defensive abilities and ﬁnds the probabilities of the ﬁnal state of the game scoreline using a Chapman-Kolmogorov forward equation (Gardiner 2009). This achieves an accuracy of 66.9% outperforming Boulier and Stekler (2003) who achieved 61%.
+In basketball, (Zak, Huang, and Siegfried 1979) calculates the production eﬃciency of points scoring for each team and using the “Richmond” technique (Richmond 1974) they are able to estimate the potential scoring output of teams. Therefore, this could be used to make match outcome predictions. They also evaluate the basketball home-ﬁeld advantage. Finally, “Yoopick” (Goel et al. 2008) outlines a diﬀerent approach to create a sports prediction market. The market they create directly allows estimation of the entire point spread probability distribution within in a single uniﬁed market. Punters bet on the outcome of the points diﬀerence of a game landing in a given interval with the interval prices determined by by Hanson’s logarithmic market scoring rule market maker (Hanson 2007). This paper has yet to be tested against the accuracy of the more traditional betting markets.
+In the next section we will explore the ML methods that have been applied to the match outcome prediction problem for the sports this paper focuses on.
+
+3.3 Machine Learning Approaches
+Most of the ML works involve Bayesian approaches and we focus on such approaches primarily. We also generally cover other approaches that have most recently come to the fore.
+
+3.3.1 Bayesian Methods Bayesian methods have been particularly popular as they can be used to express hypotheses (potentially by experts in the game) and then learn the parameters that can lead to more accurate predictions. Another big strength of Bayesian methods is their ability to naturally quantify uncertainty, which is useful in sports where it is likely there are relatively few observations to draw conclusions from. Rue and Salavesen (2000) apply a dynamic Bayesian linear model to estimate the time dependent skills of all teams in the English Premier League (EPL). These skills are used to predict the outcomes of the matches. The model uses a Markov-Chain Monte Carlo (MCMC) method to make estimations on the attack and defence abilities of teams. The MCMC method is particularly useful to model the change in abilities of the teams across the season, therefore abilities need to be updated after each game-week. Previous results between teams are used to aid the predictions alongside the attack and defence abilities. They achieved an accuracy of 54%. At the time this was slightly better than the bookmakers accuracy for the English Premier League and Division One results.
+24These ratings are a measure of strength based on head-to-head results and quality of opponent. 25Other metrics = historic power indexes, Pythagorean wins, oﬀensive strategy (pass attempts/rush attempts) and turnover diﬀerential.
+
+Artiﬁcial Intelligence for Team Sports: A Survey
+
+11
+
+Joseph, Fenton and Neil (2006) compare a Bayesian approach to other machine learning approaches for predicting football outcomes. They test a number of algorithms on Tottenham Hotspur Football Club over the 1995–1997 seasons. The methods they compare are naive Bayesian Network (BN), a Data-Driven BN (learns the structure of the network by using the correlation between the attributes), a K-nearest neighbour implementation and a Decision Tree. The results conﬁrm the potential of Bayesian Networks when they are built by a reliable domain expert. The advantages of this, is the model is able to provide accurate predictions without requiring large datasets. However, this work is focused solely on predicting the outcomes of a single team’s results which means it would have to be re-implemented for every team if used on a wider scale. Following on from this, (Constantinou, Fenton, and Neil 2012) apply Bayesian Models to football match outcomes across two Premier League seasons. Their model (known as pi-football) uses a number of variables such as team strength, team form, team psychology and fatigue for both teams in a match to generate the outcome prediction. Some of their parameters are more subjective compared to team strength and form which can be calculated using the number of points a team has accumulated and goals scored/conceded. Pi-football is able to generate proﬁts against maximum, mean, and common bookmakers’ odds. This model was improved further in (Constantinou, Fenton, and Neil 2013) by identifying the key features (e.g., team strength, form, and fatigue with motivation) to reduce the inputs into the model. The number of features are reduced from 21 in total (10 for each team plus one representing discrepancy) to 10 (5 for each team). Other examples of Bayesian approaches to football match prediction include a study to predict results in the 2006 Germany World Cup (Suziki et al. 2009) and a Bayesian hierarchical model that was used to predict games in Italian football (Baio and Blangiardo 2008).
+Moving away from football, Bayesian methods have been applied to other sports prediction problems. In American football, (Glickman and Stern 1996) use a state-space model with Bayesian diagnostics to predict games in the NFL (tested on 1993 season). This paper focuses on predicting the points spread, as this is the main betting market in the NFL. They produce good results when compared against the “Las Vegas betting line”26 but were unable to outperform it. Thus, their model achieves an accuracy of 58.2% whereas the Las Vegas accuracy (at the time) was 63%. When comparing the mean squared errors of the point diﬀerences the model achieved 165.0 which was better than the Las Vegas result of 170.5. In Baseball, (T. Y. Yang and T. Swartz 2004) use a two-stage Bayesian model to predict the winners of games in Major League Baseball (MLB). Data from the 2001 season and a MCMC algorithm is used to carry out Bayesian inference and to simulate outcomes of future games. This model performs well and can accurately predict the winning percentage of an MLB team across a season but it does not state the accuracy when used for individual match outcomes. Finally, there is an example of Bayesian models being used for cricket outcomes in (Kaluarachchi and Aparna 2011). They test a number of methods to predict the winning team and their ﬁnal model (known as CricAI) uses a Naive Bayes Classiﬁer. On average they achieved an accuracy of 0.593 when using the Naive Bayes approach.
+The Bayesian methods that we have discussed in this section have produced some good results. However, they rely heavily on expert knowledge and also can be extremely intensive computationally for complex models. In the next section we will explore other ML methods that have been applied to the match outcome problem and the results they achieved.
+
+3.3.2 Other ML Methods A number of other machine learning methods have been applied to the sports match outcome prediction problem. In what follows we elaborate on these methods and summarise their key properties in terms of outcome prediction.
+Jayalath (2018) considers ODI Cricket prediction, and focuses on quantifying the signiﬁcance of important features using ‘classiﬁcation and regression tree’ (CART) and logistic regression approaches. The study identiﬁes that the key feature to improve a team’s chances of winning
+26https://www.complex.com/sports/2015/01/how-betting-lines-work/.
+
+12
+
+beal, norman and ramchurn
+
+is home advantage. Building on this, (Jayantha et al. 2018) creates a model for predicting ODI games using machine learning techniques and also outlines a team recommendation system, which is discussed in Section 4.3. The prediction model in the paper uses an SVM model with linear, poly and RBF kernels. They use features such as batting and bowling averages to create power rankings for each player. The model takes the line-ups of the two teams and the player statistics in these line ups. The SVM models are trained with historic win or lose percentages. When tested with the linear, poly and RBF kernels they achieve an accuracy of 70.83%, 68.75% and 75% respectively.
+As discussed in Section 3.3.1 (Joseph, Fenton, and Neil 2006) apply other machine learning techniques beyond Bayesian approaches for football. A decision tree and a K-nearest neighbour model were developed. The MC4 Decision Tree achieved an overall average test percentage result of 41.72%. The K-nearest neighbour method uses a likeness approach, where the model ﬁnds similar instances to the test case and then a voting mechanism is used to predict the outcome. This performed better than the MC4 Decision Tree by achieving a test accuracy of 50.58%, the Bayesian approach in the same paper achieved an accuracy of 59.21%. Baboota and Kaur (2018) again looks at applying machine learning techniques to football match outcomes and compares the results to bookmakers. They use feature engineering and exploratory data analysis to ﬁnd the feature set with the most important factors for predicting match outcome. They use a number of features with diﬀerent weightings such as form, shots on target, goals and more. They model the ternary classiﬁcation problem to a binary classiﬁcation one, and a prediction is made for whether a team will win the match or not. The methods that are tested by the authors are: Gaussian naive Bayes, SVM (with RBF and linear kernels), random forest and gradient boosting. They use training data from 2005-2014 in the EPL and they ﬁnd that the best performing algorithm was the gradient boosting method (56.7%), followed by the the random forest (56.4%), SVM models (RBF 54.5%, linear 54.2%) and then ﬁnally the poorest performing was the Gaussian naive Bayes method (52.6%). Similarly (Hucaljuk and Rakipovi´c 2011) test a number of features and classiﬁers. The features they use are the the form of the team, previous meetings of the teams, current league position, number of injuries and average number of goals scored and conceded in a game. Six diﬀerent learning classiﬁers are tested using these features: Naive Bayes, Bayesian Networks, LogitBoost, k-nearest neighbours, random forest and artiﬁcial neural networks. Datasets from the UEFA Champions League27 (a cup competition as mentioned in Section 2.1) are used in this paper, focusing on only 96 games. They achieve an accuracy of up to 68% when using Neural Networks. This is considerably higher than results in the EPL. This may be because in the Champions League, the best teams in Europe’s top leagues compete against weaker teams from smaller football nations in the earlier stages of the competition meaning the match outcomes are more predictable. There are also fewer games played in the Champions League, so there is less data available for testing the models as shown by the test-set in this paper only using 96 games.
+McCabe (2002) uses neural networks to predict games of Rugby League28 in Australia. This work is extended in (McCabe and Trevathan 2008) where again a model is created with a neural network system using a multi-layer perception with a number of diﬀerent features such as prior performance data, game location, team rankings etc. This model is able to perform well in Rugby League competitions with the average accuracy reaching up to 67.5%. This work was also applied to football results in the EPL. The results from this was compared to top human expert “tipsters” who also make weekly predictions on the same games in the form of a competition called TopTipper29 and they were able to reach the top percentile with the model against the other human experts.
+
+27https://www.uefa.com/uefachampionsleague/about/. 28A similar but diﬀerent sport to Rugby Union. 29http://www.toptipper.com.
+
+Artiﬁcial Intelligence for Team Sports: A Survey
+
+13
+
+Shi et al. (2013) consider the problem of predicting college basketball games in the US NCAAB league. Five diﬀerent machine learning models are developed: decision trees, rule learners, artiﬁcial neural networks (multi-layer perception), naive Bayes and a random forest, using data from 2009 to 2013. The methods all achieve between 68.4% to 74.5% accuracy. Their evaluation show that a high level of accuracy is achieved when using neural networks, and this can be used to beat humans predictors. Finally, part of the work performed in (Landers and Duperrouzel 2018) focuses on making predictions on NFL match outcomes and point spreads which they apply to “Pick’em” style30 online competitions. Their model uses 28 features such as bookmakers favourite, average points (home and away), game location and more team performance related statistics. These features are used with an average perceptron and a boosted decision tree classiﬁer algorithm to create their model. They tested the model over three NFL seasons and ﬁnd the decision tree provided the best results achieving an average accuracy of 58%. This work is compared to (Boulier and Stekler 2003) (discussed in Section 3.2) which achieves 61% and to the bookmakers who achieve 65.8% accuracy.
+In Table 2 we summarise the ML approaches that have been used for match outcome predictions. These algorithms mainly use key team performance metrics as their features such as points/goals scored and conceded, league position, form etc. However, there are some key factors that are not yet accounted for by the approaches that we have discussed. These are largely the external factors that can impact the results of sports outcomes (e.g., weather, player moods, changes in coaching, player transfers or impact of injuries).
+
+Table 2 ML Approach Summary.
+
+ML Method Neural Networks
+Decision Trees
+Clustering Methods SVM (Support Vector Machines)
+
+Sport Application
+• Applied to football in Hucaljuk and Rakipovic (2011);
+• Basketball in Shi et al. (2013); • Rugby League in McCabe and Tevathan
+(2008). • An MC4 application is used for football in
+Joseph et al. (2006); • A J48 application to basketball in Shi et
+al. (2013); • Applied to American football in Landers
+and Duperrouzel (2018). • K-nearest neighbour likeliness approach
+used for football in Joseph et al. (2006). Applied using a number of diﬀerent kernels: • To cricket in Jayantha et al. (2018); • To football in Baboota and Kaur (2018).
+
+Results Obtained • 68.8% for Champions
+League Football; • 67.5% Rugby League; • 72.2% NCAA basket-
+ball. • 41.72% for football; • 69.16% for basketball; • 58% in American foot-
+ball.
+• Achieves an accuracy of 50.58%.
+Using RBF kernel: • 75% for cricket; • 54.5% for football.
+
+Random Forest • Applied to football in Baboota and Kaur • 56.5% for football;
+
+(2018);
+
+• 62.2% for NCAA bas-
+
+• Applied to basketball in Shi et al. (2013).
+
+ketball.
+
+Gradient Boost- Applied to football in:
+
+• 56.7%;
+
+ing
+
+• Baboota and Kaur (2018);
+
+• 68.8% (Champions
+
+• Hucaljuk and Rakipovic (2011) with a
+
+League).
+
+LogitBoost approach.
+
+30Pick’em is a game within Fantasy leagues where competitors guess who will win each American Football game in the NFL game that game week.
+
+14
+
+beal, norman and ramchurn
+
+In this section we have evaluated the diﬀerent approaches that have been used to make sports outcome predictions. Across all the diﬀerent forms of predictions that we have discussed, all appear to reach a “glass ceiling” which we discuss further in Section 7. The papers we evaluated also show that football is the hardest game to predict due to the low scoring nature of the game. There are many decisions that impact the outcome of sports matches. In the following section we explore some of the decision making processes that exist in team sports.
+4 Strategic and Tactical Decision Making
+In this section, we turn our attention to the key decisions that arise when managing sports teams. In particular, to structure our discussion we propose a new framework (see Figure 3) which captures the key processes that operate in team sports and the interconnection among these processes that create a number of feedback loops. Using such a framework it is then possible to understand the importance of both machine and human decision making throughout. In more detail, player transfers presents a recruitment problem where teams want to ensure that they purchase the best possible players within their budgets. The squad of players then train to prepare for matches and develop their skills. During the training process we can optimise the development of youth players to ensure they reach their maximum potential. The next stage focuses on decisions that are made to improve teams chances of winning games. This includes opposition analysis which supports the team selection and tactical decisions made by managers/coaches. Finally, these decision making processes have feedback from the match outcomes and the in-game team performance.
+
+Backroom Decision Makers: Owners, Chairmans, Directors, General Manager
+
+Scout Information
+
+Buy Player Transfers
+Sell
+
+Squad of Players
+
+Training
+
+On Field Decision Makers: Manager, Head Coach
+
+Match Preperation
+
+Match Feedback and Statistics
+
+Team Selection
+
+Opposition Analysis
+
+Game
+
+Outcome
+
+Player Injuries
+
+Tactics
+
+Figure 3: The Team Sports Process.
+
+4.1 Player Transfers
+The recruitment of new players is a diﬀerent process in every sport and usually involves decisions from managers/coaches alongside the directors higher up in the sports organisations. In football, players are bought and sold between clubs (as discussed in Section 2) whereas, in many American sports players are drafted31 and traded. In most cases clubs gather information on players (scouting), therefore the amount teams pay for a player, relates to how well they think that
+31In a draft, teams take turns selecting from a pool of eligible players. Usually from a college or high school system.
+
+Artiﬁcial Intelligence for Team Sports: A Survey
+
+15
+
+the player will perform in the future and how much they will impact the team. There are a number of elements that add uncertainty to the process, namely concerning whether a player will continue performing well, if the player will ﬁt into their new team, if the player will settle in to a new environment/surroundings and if the player will stay ﬁt. These uncertainties are discussed when drafting a college player into the NFL in (Hendricks, DeBrock, and Koenker 2003). Here it is suggested that statistical discrimination and option value, inﬂuence choices in this market meaning that some players could be over-valued. Modelling the uncertainties that exist in future performances of players and predicting how well they will impact a team would provide huge beneﬁts to sports teams. This will allow the decision makers to evaluate the risk of player before paying large sums of money. These types of predictions can also help assign a monetary value to a player, so that a fair price is paid. There are a number of factors that aﬀect the price of a player, some of these are explored in (S. Dobson and Gerrard 1999). In Figure 4 we show the generic recruitment process that sports teams follow when investing in new players.
+
+Figure 4: The Player Recruitment Process.
+All of the stages within the player recruitment process present diﬀerent challenges that can be improved through the use of AI methods. These are discussed below and correspond to the numbered processes in Figure 4.
+1. The ﬁrst stage is identifying which areas in the team need to be improved. We can go about this ﬁrstly by looking at the statistics of the team performance to identify what in particular needs improvement (e.g., more goals in football or more wickets in cricket). We can also highlight which individual players are not pulling their weight in the team and look to improve these.
+2. The next process is gathering intelligence on a large set of players, this can be done in a number of ways. Teams have access to league statistics where they can ﬁnd information regarding player info. These statistics are becoming more detailed and could be used alongside AI to eﬃciently evaluate current ability and potential. This is an important inexpensive stage of the process as it can save money further down the line by avoiding sending scouts to watch players who are not right for a team. This can also help to identify players that are overlooked by other clubs and help ﬁnd the best value players.
+3. Once we have basic statistics on players, scouts are deployed who will gather more subjective information which may not show in the statistics. However, most teams have a limited number of scouts (N ) and a limited scouting budget. Therefore, we must optimise this process so that the scouts time is not wasted and as many players are watched as possible.
+4. The information that the scouts collect is collated alongside the statistics collected in process 2. Once all this information has been gathered, a team can use the statistics, scouts data and scouts opinions to rank the players they have watched. Using this teams can identify the players they would like to sign to improve their team and estimate the costs involved for transfer fees and/or wages.
+5. Usually in a transfer or trade window teams will want to buy and sell multiple players to improve the squad. This presents a budget optimisation challenge as we want to purchase as
+
+16
+
+beal, norman and ramchurn
+
+many highly rated players from the information gathering process who can positively impact the team. Therefore, the objective of this optimisation is to maximise the quality of the players that are purchased while staying within the constraints of the transfer/wage budgets. There are also other constraints set by the leagues such as squad sizes and wage caps. Finally, if a team is to sell their current players they can increase their transfer/wage budgets and create room for more new players. This is something that would need to be treated with caution though, as it could ruin the cohesion of the players within the team if we were to sell/buy too many players.
+The processes we have discussed aim to improve the probability that a team will be successful in the transfer market and presents interesting computational challenges that are yet to be addressed by AI. The scouting process relates to AI literature which focuses on learning from imperfect classiﬁers. An example of this is shown in (Simpson et al. 2013) where human decisions, with prior knowledge about the ability of that human’s decision making, are combined with Bayesian approaches to make decisions. This can be applied to scouting as we can use the teams scouts opinions on players, with the knowledge of their prior scouting performance, alongside AI methods to rate players. The challenge of deploying the scouts relates to optimisation literature such as (Dang et al. 2006; Ramchurn, Polukarov, et al. 2010) as we aim to maximise the number of high quality players the scouts assess while meeting the time and budget constraints. The transfer budget optimisation problem discussed in process 5 also relates to this literature as we are aiming to maximise the quality of players that are bought within the transfer and wage budgets where we can also sell current players to increase budgets.
+Boon and Sierksma (2003) discuss the scouting of new team members to ﬁll open positions and enhance the quality of teams. They calculate the potential value that new players into a team would have, focusing speciﬁcally on football. Their model uses linear programming to form an optimal team based on the quality of the players and their positional weightings that they calculate. Once an optimal team is formed they can use this for scouting purposes. Using a database of scouted players, players can be substituted into the team to calculate the eﬀects that this would have and what value would be bought into the team. This model could be improved by taking into account the multiple positions that players can play in and the diﬀerent roles players can take in diﬀerent positions (e.g., a central midﬁelder could be a defensive player and sit deeper or could be more attacking to push further forward). Boon and Sierksma mainly focus on how scouted players will impact a team rather than looking to identify players that could be scouted and ﬁnding players that may have been overlooked by other teams. The challenges presented by player transfers could also be modelled as a Case-Based Reasoning problem, where new players could be devised by evaluated by assessing similar players/transfers and similar situations that have happened in the past, by adapting the problem and solution to the new situation (Kolodner 2014).
+In the next section we explore how teams train youth players in their academies which is another route that teams can take to improve their squad and bring in new players.
+
+4.2 Training and Developing Players
+Young players can be trained by professional teams from ages as young as six.32 Thus, teams can play a huge part in how they develop players and how they bring these players into the ﬁrst team squad once they are old/good enough. The process of bringing players through youth systems can be ﬁne-tuned and optimised at many stages. This can involve making sure that their training is tuned to improve their skills eﬃciently and ensuring that they are given the right amount of experience at the right times either in the ﬁrst-teams or by being sent out on loan to smaller clubs. The challenge of personalising the training regime of youth players
+32American youth players come through a college and draft system rather than individual teams having youth teams.
+
+Artiﬁcial Intelligence for Team Sports: A Survey
+
+17
+
+therefore involves a number of prediction and optimisation problems that could be addressed by AI techniques. This is particularly so when such training regimes need to cope with signiﬁcant degrees of uncertainties in player performance (e.g., injuries, variability in mood, or weather conditions). A number of studies have explored the eﬀects of injuries to youth players. Price et al. (2004) highlights the nature and severity of injuries that occur at academy level and (Gall et al. 2010) evaluates the ﬁtness characteristics of young players in youth academies, highlighting which of these characteristics improve players chances of proceeding to higher levels.
+De Silva et al. (2018) have also used the player tracking data that is available as a tool for training youth players and for physical performance management in football. They tested their work in a professional Premier League football academy. This research uses standard statistical analysis to compare the activity demands in key playing positions, such as Central Midﬁelders and Centre Forwards. This study helps to provide insights from an elite performance environment regarding the relationship between player activity levels during training and matches and how they vary by playing position. This is an example of where machine learning based analytics could be used by a top club to extend their knowledge and make changes to some of their training practices.
+Finally, (Fister Jr et al. 2015) outlines the challenges for computational intelligence in sport. The authors discuss the problems and current work that exist in sports (not just team sports) domain and in particular training for athletes. They open up a number of research questions in the area of training for sports and showed a necessity for developing an artiﬁcial personal trainer to optimise sessions. They also outline the process of sport training, showing the key components and a programming model. The paper mainly focuses on training which is not speciﬁc to any sport or skill such as for strength and power. However, it is still a useful tool for us to identify the stages in the team sport training process that can be optimised using artiﬁcial intelligence.
+Next, we turn our focus to the team selection problem where managers/coaches select the players to play in games.
+
+4.3 Match Preparation
+Team selection is a key tactical decision in team sports which has to factor in a number of uncertainties. In essence the challenge involves picking a set of players to play in a game, which will maximise the chances of winning. The Selection must be from the registered squad of players as sports regulating bodies allow each team to select and register a squad of players governed primarily by ﬁnancial criteria (e.g., in the EPL teams are allowed to register a squad of 25). Transfer windows gives teams opportunities to make adjustments to their registered squad within the governing body’s rules.
+There are many diﬀerent combinations of possible team selections which is diﬀerent for each sport. For example in football there is a squad of 25 players and need to select a team of 11, therefore there are 4457400 diﬀerent possible team line-ups. This is calculated using nCr where n is the number of players and r is the size of the team. It is worth noting that this would change depending on the formation of the team that is selected (number of defenders, midﬁelders and forwards) as some players are unable to play in certain positions, in football there are a total of 165 possible formations that players could be formed in.
+There are number of factors that coaches must consider when selecting a team. Examples of these include, but are not limited to: player injuries, players abilities to deliver the tactics/role, the opposition team, the current ﬁtness of the players, and motivation of the coach to succeed in the game. The team selection process also involves thinking about developing younger players. This is a balancing act between selecting a team that will win against thinking about using youth players. In most cases these players are bought into games as substitutes or are selected to be used in less important games such as pre-season friendlies or cup games. It is also important to note that we must consider how players will work together as a team with the other players who are selected.
+
+18
+
+beal, norman and ramchurn
+
+In American football, cricket and baseball it is generally easier (compared to football and basketball) to identify which players have been performing well and therefore the challenge of ﬁnding a team that maximises the chances of winning is slightly easier. That said, there is a lack of academic work which has focused on solving this problem. In football and basketball it can typically be a challenge to attribute each player’s contribution to a team. In these sports there are a number of other factors that make a good performance other than just scoring or creating goals.
+Deep learning has also been applied to model the behaviours of players in both basketball and football (Le, Carr, et al. 2017; Seidl et al. 2018). Here, deep imitation learning has been used to “ghost” teams so that a team can compare the movements of its players to the league average or the top teams in the league. A simulation is run to see how an AI team would move in certain situations with the AI team created by “ghosting” the characteristics of average and top teams. This helps to identify where teams can make changes to their players’ movements and change events to improve the probability of scoring a basket/goal or reduce the probability of conceding. Le et al. (2017) is also an example of multi-agent approaches to imitate and learn the movements of players in a game of football. The authors show that having a coordination model for the roles of players gives substantially improved imitation in comparison to conventional baselines.
+Other factors that may need to be considered in this area involve predicting what an opposition will do: their line-up, their formation, their set pieces, what style they will play, what areas of the pitch they target, where a player will aim a penalty and many more. An example of work that forms teams based on an opposition is shown in (Jayantha et al. 2018) where the authors create a team recommendation system for cricket teams which is based on selecting players who increase the probability of the team winning.
+The team selection problem in sport relates to team formation literature in the multi-agents domain such as (Chalkiadakis and Boutilier 2012) which proposes new methods for coalition team formation. Coalition formation is the analysis of one or more groups of agents, called coalitions, that together jointly determine their actions. They integrate decision making during repeated coalition formation under type uncertainty using Bayesian reinforcement learning techniques. Matthews, Ramchurn and Chalkiadakis (2012) form optimal teams for fantasy sports games under the constrains that the fantasy sports problem presents (discussed further in Section 5.2). They do this by predicting the performance of football players (in terms of how may fantasy points they will score) and then form a team which maximises the number of expected points. This could be extended to aid team selection for sports teams and improve teams chances of winning. Vilar et al. (2013) discusses the complex social systems that are presented by team sports. The authors focus on the pattern-forming dynamics that emerge from collective oﬀensive and defensive behaviours. They evaluate the diﬀerences in strategies and formations of two teams in a single game of football to understand the successful and unsuccessful relationships in the teams. This type of study provides signiﬁcant results to demonstrate how complex systems analysis can help to better understand performance in football, by assessing team behaviour as a collective rather than individually. Forming optimal team line-ups in football is also discussed in (B. H. Boon 2003) which we discussed in Section 4.1 where the form teams based on the players ability and how able they are to play in each position.
+There have also been Game Theoretic approaches to optimising teams of agents in other domains. These approaches have shown success in real world applications. An example of this is shown for Stackelberg Security Games (SSG), the success of SSG is discussed in (Sinha et al. 2018). In an SSG a defender must defend a set of targets using a number of resources, whereas the attacker is able to learn the defender’s strategy and attack after planning. Fang, Stone and Tambe (2015) use game theory and the application of an SSG to optimise protection of endangered animals and ﬁsh stocks.
+
+Artiﬁcial Intelligence for Team Sports: A Survey
+
+19
+
+An important factor to be considered in the team selection process is to ensure that the players selected in the team are right for the team tactics. The approaches to tactical decision making, made by the manager/coach, are discussed in the next section.
+
+4.4 In-Game Tactics
+The in-game tactics used by teams to enhance their chances of winning games vary a lot from sport to sport. When creating tactics there are many factors that must be considered such as the opposition team and their weaknesses as well as the ability of the players available. Getting tactics right can give teams a huge advantage and can allow weaker teams to win games that they are not expected to. In football, tactics covers the formation that the team will use, the “style” that they play in, set piece selection and many more. In American Football tactics covers the plays that are selected by the coaches and coordinators.
+There have been a number of studies that aim to better understand the tactics in sports. One aim of these papers is to assess the impact of the individual actions performed by players during games. Decroos et al. (2019) aims to do this by creating a framework to value any type of player action based on its impact on the outcome of a game and use a CatBoost (Prokhorenkova et al. 2018) approach to achieve this. Fernandez and Bornn (2019) provide a model to assess the expected ball possession that each team should have in a game of football. The expected possession value (EPV) assigns a point value to every tactical option available to a player at each moment of a possession, allowing analysts to evaluate each decision that a player makes. In this paper, machine learning is used to estimate the parameters which are used in the model, such as pass and turnover probabilities which are estimated using logistic regression. A similar model is also applied to basketball (Cervone et al. 2014) where points are predicted and player decisions are valued. Similarly, (Yue et al. 2014) focus on play prediction in basketball developing models for anticipating near-future events given the current game state. These model are validated using 2012/13 NBA data and show that their model can make accurate in-game predictions. Building on this, (Zheng, Yue, and Hobbs 2016) study the problem of modelling spatiotemporal trajectories of the players using expert demonstrations. In particular, they look to see how a basketball player makes decisions with long term goals in mind, such as moving around opposition players or scoring points. They propose a model that uses both long-term and short-term goals and instantiate this as a hierarchical neural network trained using a large dataset of tracking data from professional basketball games. They show that this model generates more realistic trajectories compared to non-hierarchical baselines as judged by human expert sports analysts. This work could be improved by modelling the defensive team as well as the oﬀensive team to give a more accurate simulation of the plays. Finally for basketball, (Wang and Zemel 2016) focuses on oﬀensive play call classiﬁcation. This helps teams understand the oppositions strategies to inﬂuence the ﬁnal macth outcome. They apply variants of neural networks to SportVU33 tracking data and ﬁnd they are able to label play sequences quickly with high precision. Using a Recurrent Neural Network (RNN) they are able to achieve a precision of 90% and recall rate of 59% (when making predictions if the probability of the classiﬁer is above 70%). There is a diﬃculty to annotate datasets in sports, especially when using spatio-temporal data due to a level of subjectivity. Active learning (Cohn, Ghahramani, and Jordan 1996) could be used for this, where the data labelling cost can be signiﬁcantly reduced.
+Other papers that focus on tactics in team sports include (Bojinov and Bornn 2016) which evaluates how in football a “pressing” tactic aﬀects performance and disrupts the opposition’s defences. By doing so, they are able to deﬁne and learn a spatial map of each team’s defensive weaknesses and strengths which is useful for coaches when preparing to face an opposition. In a similar fashion, (Hobbs et al. 2018) aim to quantify the value of transitions34 in a game of football. They aim to explore how teams create goal scoring opportunities based on their transitions and
+33https://www.stats.com/sportvu-basketball/. 34overloading the opposition when they have just lost the ball.
+
+20
+
+beal, norman and ramchurn
+
+ﬁnd that if a team counter attacks immediately rather than looking to maintain possession, the chances of scoring rises by 4.4% and chances of having a shot rises by 24.4%.35
+Power, Hobbs et al. (2018) focus on set pieces in football (e.g., corners, free-kicks, penalties). They discuss a number of “myths” regarding set pieces and then prove/disprove these myths. For example, they show that a team is more likely to score from set piece than in normal possession (1.8% chance of scoring from set-pieces vs 1.1% in open play). They also ﬁnd that the type of delivery and the defensive set-up of the oppositions can signiﬁcantly aﬀect the chances of scoring. Finally, (Lucey et al. 2012) models team behaviours in football using entropy maps, created from teams ball movements, which give a measure of predictability of team behaviours across the ﬁeld. This provides a useful tool for coaches and decision makers to be able to analyse opposition teams.
+We have highlighted the studies that focus on the tactics within team sports. These approaches aim to decompose and break-down how teams play which give more interesting insights for coaches. This can be useful for teams when setting up their own tactics to maximise their chances of winning against another team. In the the next section we explore work that focuses on individual players performances.
+
+4.5 In-Game Player Performance
+Measuring player performance is an important factor in the decision making processes in team sport. This helps to provide the feedback to identify when changes need to be made to team lineups, tactics and when transfers need to be made. A number of papers focus on ways to measure performance objectively with data. Whitaker, Silva and Edwards (2017) use a Bayesian approach to determine the abilities of players using a number of diﬀerent event types. They implement a Poisson model for event types and can then infer player abilities from this. These inferences allow English Premier League players to be be ranked and for diﬀerences between players to be visualised. Power et al. (2016) focus on measuring the risk and reward of passes in a game of football. This gives new methods to evaluate player passing performance and identify key players in a team who execute the key passes consistently. Similarly, McHale and Relton (2018) also aim to identify key players in a team by using network analysis and pass diﬃculty in a game of football. They aim to provide analysis to managers and coaches for them to identify their best team lineup, and in the analysis of opposition teams.
+Power, Cherukumudi, et al. (2019) focus on the performance of football goalkeepers. They simulate each goalkeepers performance when facing a number of example shots and compare which goalkeeper would concede the least number of goals. They do this by using a “spatial descriptor” for each goalkeeper which is made up from features such as clean sheet percentage, win percentage and save percentage for in diﬀerent thirds of the goal. This type of player performance modelling was also explored within baseball to evaluate how a batter will perform against certain pitchers (Alcorn 2018). In these papers, players performances are simulated in diﬀerent scenarios to give a basis for a fair comparison of players. This type of analysis could be built on in all sports to identify the impacts that the individuals have within the complex team systems. Coaches could use this to identify how changes in their style of play, with their current set of players, would aﬀect the performance of the team. Theses simulations could also be used for player recruitment as potential new players could be simulated to show how they would perform in a new team.
+Turning to basketball, (Felsen and Lucey 2017) evaluates NBA players’ body pose and shooting styles to ﬁnd any correlations between the player body shape and shooting success. They ﬁnd statistically signiﬁcant diﬀerences in distributions of attributes describing the style of movement of diﬀerent phases of the shot. In American Football, (Burke 2019) uses Deep Learning to quantify Quarterback (QB) decision-making again allowing us to identify the NFL QB’s who have the best decision-making skills, this is a vital part of the QB position in a game of American Football.
+35This study was run over the 2016/17 EPL season.
+
+Artiﬁcial Intelligence for Team Sports: A Survey
+
+21
+
+Their model correctly identiﬁes the targeted receiver in 60% of cross-validated cases. They ﬁnd when passers target the predicted receiver, passes are completed 74% of the time, compared to 55% when the QB targets any other receiver. Their approach gives a new way for teams to quantitatively assess quarterback decision-making performance. Finally, Correia et al. (2011) assess players’ decisions when making passes in Rugby Union based on the positions of oppositions and team mates.
+In Table 3 we summarise the AI approaches that have been used for sports strategies and decision making.
+
+Table 3 Strategy and Decision Making AI Approach Summary.
+
+Method Deep Imitation Learning
+Team Formation Optimisation
+Deep Learning
+Recurrent Neural Networks Bayesian Approaches
+
+Sport Application Used to “ghost” player movement in Basketball (Le, Carr, et al. 2017) and in Football (Le et al. 2017)
+Optimal teams formed in cricket shown in (Jayantha et al. 2018) and for fantasy football shown by (Matthews, Ramchurn and Chalkiadakis 2012) using mixed-integer programming and reinforcement learning approaches. Used in (Fernandez and Bornn 2019) and (Cervone et al. 2014) to value passes in football and basketball respectively (EPV). Used by (Burke 2019) to value NFL Quarterback decision making. Used for oﬀensive play classiﬁcation in Basketball by (Wang et al. 2016).
+Whitaker, Silva and Edwards (2017) use a Bayesian approach to determine the abilities of players.
+
+Outcome These show that having a coordination model for the roles of players gives substantially improved imitation in comparison to conventional baselines. Fantasy formation ranks in top 1% of all human players and provides the the ﬁrst real- world benchmarks for sequential team formation algorithms.
+EPV creates successful metrics to values passes in football and basketball. Burke (2019) able to correctly identify the target in 60% of cases.
+Precision of 90% and recall of 59% for correctly predicting the classiﬁcation of a play outcome. This allows players in EPL to be ranked based on their abilities from the Bayesian model and give a way to visualise this.
+
+The majority of the work that we have discussed in this section focuses on ﬁnding new insights into tactical analysis in sport. These studies help identify the strengths of diﬀerent tactical process and ﬁnd new ways of evaluating player and team performances. There are good examples of work in football and basketball however not as many in American football or rugby where tactical decisions are also key to winning games. There still remains a number of areas where AI could impact tactical decision making. This work would mainly be focused around how individual agents (the players) perform in diﬀerent teams, with diﬀerent tactics and how much impact they have on the game outcomes. This type of analysis could beneﬁt all of the processes that we showed in Figure 3 as AI could improve player transfers, match preparation and help to gain better feedback from the outcomes of games.
+In the next section we turn our focus to fantasy sports games and the computational challenges that these present.
+
+22
+
+beal, norman and ramchurn
+
+5 Fantasy Sports Games
+As discussed in the Introduction, in America alone an estimated 32 million people take part in fantasy NFL games (American Football) with an average spend of $467 per person, per season totalling to around $15billion across the season and in the UK over 5 million people take part in the Fantasy Premier League for football.36 There are fantasy sports games for nearly every professional team sport and there are many diﬀerent sites and leagues ranging from competitions with millions of competitors to small leagues run between friends.
+In fantasy sports games competitors select a team of real-life players, who are assigned a value/salary, within a given budget. Dependent on how well the players perform in real life they are given corresponding fantasy points (e.g., for a goal/assist in football or a touchdown in American football). The aim of the game is to maximise how many points the selected team can obtain under the constraints of the fantasy game. Figure 5 shows the process of fantasy sports games. Initial values, based on knowledge of the players ability, are set for the players before the season starts and the fantasy competitors select an initial team. This team of players is then awarded points each game-week based on their real world performance (if the player does not play they receive no points). The values of the players can also be updated throughout the season so that the players who have performed better than expected will then cost the reﬂective amount. The fantasy league standings are updated each week and once all the N game-weeks have been completed, prizes are awarded based on the standings.
+
+Figure 5: The Fantasy Sports Game Process.
+Traditionally people compete in a league across the season, with the aim to accumulate the most points whilst having restrictions on the number of changes/transfers that can be made to a team. In these games the “game-week” processes shown in Figure 5 are repeated for every set of matches (usually once a week). Leagues such as these have been running for many years. A good example of this is the Fantasy Premier League (FPL) for football in the English Premier League, which is extremely popular in the UK and worldwide.37 In the FPL there are 38 game-weeks therefore N = 38. This means that in fantasy games such as this the transfer stage is key to success as, dependant on the fantasy league, the number of transfers are limited (e.g, in the FPL there is a limit of 1 transfer per game-week). Due to the rules on transfers, when selecting the initial team and making changes it is important to consider the players future performances as well as just the next game-week.
+More recently Daily Fantasy Sports (DFS) sites, such as FanDuel9 and DraftKings8, have seen a large growth in popularity. These sites oﬀer leagues that only run for one game-week rather than across the whole season, meaning that a new team is selected each week instead of making transfers. In these type of fantasy games new teams are formed every week from scratch, therefore in Figure 5 the value for N = 1. This means that only an initial team is set and only one future game needs to be considered when predicting the players performance.
+Although there has been signiﬁcant growth in fantasy sports, there is a lack of research focus into ways that AI could be used to improve competitors performances or using AI automated
+36http://www.forbes.com/the-70-billion-fantasy-football-market. 37Rules: https://fantasy.premierleague.com/a/help.
+
+Artiﬁcial Intelligence for Team Sports: A Survey
+
+23
+
+teams to compete against humans. There are a small number of studies in fantasy sports. The seminal work of this area, is (Matthews, Ramchurn, and Chalkiadakis 2012) provided the ﬁrst realworld benchmark for sequentially optimal team formation in this domain. More recently, (Landers and Duperrouzel 2018) use machine learning techniques for NFL fantasy leagues. When forming teams to enter into fantasy sports leagues, two key computational challenges are presented. These are:
+• Player Performance Prediction: Predicting how well a player will perform in the realworld and therefore the number of points that a player will obtain both in a single game and over a given time-period.
+• Team Formation Optimisation: Selecting an optimal team using the performance predictions so that the constrains of the fantasy league are met. This also includes the challenge of making eﬀective transfers in the longer running fantasy leagues.
+Both of these challenges can also be extrapolated to the challenges that exist in real-world sport. As we have discussed in Section 4, it can be key to predict the performance of players in a team and then form optimal teams based on player predictions. As well as using AI to form teams and aid competitors fantasy performances there are other challenges highlighted in Figure 5 that can be addressed using AI. Examples of these challenges are: player price forecasts, opponent modelling after every match (as competitors are able to see other competitors teams), draft strategies and betting strategies to maximise the chances of winning cash in DFS fantasy games.
+
+5.1 Player Performance Prediction
+Predicting the player performance is key to selecting which players are worth having in a fantasy team. If a player (and the team he plays for) performs well, more points will be accumulated for the fantasy team. There are a number of factors that need to be considered when predicting how well an individual is likely to perform and this varies signiﬁcantly based on the sport being played and the position that the player plays in. For example, in football when a striker’s performance is predicted, the aim is to predict the number of goals that he/she may score whereas for a defender we focus on predicting if his/her team will keep a clean sheet (concede no goals). Also, it must be considered how likely a player is to play in a given game, as players may not play due to injuries and tactical decisions. If a player does not play, they receive no fantasy points. These examples show a small number of the many uncertainties that need to be considered when making predictions on future performances. The predictions of games (discussed in Section 3) can also be used to help predict the number of points that a player will score, as if a player is playing in a team which is likley to win then that player would have a better chance of scoring more fantasy points.
+When predicting player points, a feature set for each player (in a given game week) is taken as an input, this is referred to as X where n is the number of features (shown in Equation 4). Example features for an American Football player would be yards gained per game, number of touchdowns scored and games played. In football, example features would be goals scored, number of assists, number of clean sheets and minutes played. The feature set could also be made up of previous fantasy points scored from a number of prior weeks. Once a feature set is formed, a target vector Y represents the points scored by the player in the given game week, corresponding to the feature data in X. Equation 4 shows X and Y for n features and i players where pixn is the nth feature for the ith player and piyw is the ith player’s points in game-week w. Next, a machine learning algorithm can be trained using X and Y to produce a function φ, that can output the prediction of Y using the features in X. A row of X, Xj can be used with this to make a prediction on the corresponding row in Y . This gives φ(Xj) = Yj. Diﬀerent ML methods can be tested across the diﬀerent sports.
+
+24
+
+beal, norman and ramchurn
+
+ p1x1 p1x2 p1x3 . . . p1xn 
+
+ p1yw 
+
+ p2x1 p2x2 p2x3 . . . p2xn 
+
+ p2yw 
+
+X =  
+
+...
+
+...
+
+...
+
+...
+
+Y =  
+
+...
+
+  
+
+(4)
+
+pix1 pix2 pix3 . . . pixn
+
+piyw
+
+When making player performance predictions in a daily fantasy contest we can be much more precise as the predictions only need to focus on how that player will perform in the speciﬁc game. Whereas, in more traditional leagues future performances must be considered as well as just the next game. Thus, a player who will perform well in multiple future games will be selected and not just one who will perform well in a single game (which may be against a poor opposition). This is considered by the model shown in (Matthews, Ramchurn, and Chalkiadakis 2012) where predictions for a players performance are made for a number of future game-weeks.
+Matthews, Ramchurn and Chalkiadakis (2012) predicts a player’s performance and the number of points that a player will score based on the prediction of a given game using the (Dixon and Robinson 1998) framework. The authors choose to use this approach as the Dixon and Robinson model treats football as a dynamic situation-dependent-process as well as its proven success in the football betting domain. Dixon and Robinson’s score predictions work by taking each club’s attacking and defending eﬃciencies from past results and then using these to derive the probabilities of the side scoring a goals in a given match (discussed in more detail in Section 3.2). Using the match outcome prediction, Matthews attributes the probability of a player scoring points based on the 4 most signiﬁcant point-scoring categories in the FPL.
+
+1. Player appearance in a game (worth 2 points per player playing over 60 minutes and 1 point for any player playing under 60 minutes). For this a three state categorical distribution is used, the states are: starting, substitute or unused. Three probabilities are computed for each category and the highest probability is assigned to the player to obtain the predicted points.
+2. Clean sheet38 (worth 4 points to a defender/goalkeeper and 1 point to a midﬁelder). For clean sheets the probability of a team not conceding can be calculated using the scoreline distributions from the Dixon and Robinson model and points can be predicted based on these probability.
+3. Goals scored (worth 6 points for a defender/goalkeeper, 5 points for a midﬁelders and 4 points for a striker). This is calculated using a Bernoulli distribution (Gelman et al. 2004) or a Binomial distribution over a single trial, describing a players probability of scoring the goal given he was playing at that time.
+4. Goals created (worth 3 points per player). Another Bernoulli distribution is used for this, again describing the players probability of creating the goal given he was playing at the time.
+
+Turning to American Football, the NFL study (Landers and Duperrouzel 2018) for player point prediction starts by engineering features from FanDuel that their model uses. In their paper they test two diﬀerent feature sets (F D1 and F D2). They also test two diﬀerent methods and compare using the diﬀerent feature sets. The methods they test are a least squares with averaged perceptron (Lehtokangas et al. 1995) and a boosted decision tree (Schapire 2003). These methods are evaluated by using the coeﬃcient of determination (R2) to measure the accuracies (R2). The boosted decision tree achieves average accuracy of 0.417 using F D1 and 0.250 using F D2 while the least squares approach achieves 0.401 on F D1 and 0.146 on F D2. Other related work has shown similar results to those in (Sugar and Swenson 2015). It is noted that diﬀerent methods could be tested for diﬀerent positions in American Football. This is because the roles of diﬀerent positions diﬀer more than in other sports (e.g, Quarterback vs Running Back).
+The current studies for player predictions show applications of machine learning techniques providing good benchmarks in both football and American Football. Further techniques could
+38When a team concedes no goals.
+
+Artiﬁcial Intelligence for Team Sports: A Survey
+
+25
+
+be tested in these sports to improve on the current benchmarks. These could also be tested with new feature sets such as time-series data which would analyse the form of the players over a given number of game-weeks. Matthews, Ramchurn and Chalkiadakis (2012) focus on the FPL fantasy game, it may be useful to test this work on a DFS site to see if it also performs well in these fantasy games. Landers and Duperrouzel (2018) only focuses on DFS so it would also be interesting to see how their predictions would work in a more traditional multiple-week league. There also remains gaps in the literature for predicting performances of players in other sports where fantasy games are popular such as Basketball and Baseball.
+The player score predictions become more valuable when combined with a good team optimiser, allowing the maximum points to be accumulated each week. The methods for team formation that currently exist in the literature are outlined in the next section.
+
+5.2 Team Formation Optimisation
+Selecting the best team of players within the given constraints of the fantasy site is vitally important, as shown in Figure 5 this process is repeated sequentially across a season with constraints for changes that can be made to the team. This process involves choosing players with diﬀerent abilities, prices and risks that need to be considered. As discussed in the previous section we may also need to consider the future performances of these players over a number of given game-weeks. In formation problems there are a number of actors, with their own abilities and characteristics that have form a team to perform a task to achieve a common objective in a real-world domain. Within the fantasy sports team formation problem there is a number of players (the actors), with their own abilities (predicted points) and we are looking to maximise the number of these points (the common objective). Therefore, it is key to get the best players possible into a high performing fantasy team. The fantasy problem relates to other works in the AI community. In particular, (Dang et al. 2006) focuses on choosing the best sensors to surveil an area, (Ramchurn, Polukarov, et al. 2010) focuses on dispatching optimal teams of emergency responders and (Chalkiadakis and Boutilier 2012) looks at the appropriate set of agents to work with in a coalition formation problem.
+In fantasy sports, the main aim is to select a number of players, all of whom are assigned a value, in diﬀerent positions within a given budget. For example in the FPL, there is around 500 players available to select from, all with a position and a given value and 15 need to be selected (2 goalkeepers, 5 defenders, 5 midﬁelders, 3 forwards). The total value of the selected team most not exceed £100m. Eleven of those ﬁfteen players are put up as your ‘starting 11’ (in a selected formation) and they will be the ones who will earn your fantasy points. The remaining players are ‘subs’ and will automatically come into the starting 11 if one of the current players does not
+
+Figure 6: Example Fantasy Team Set Ups.
+
+(a) FPL Team Selection.
+
+(b) DraftKings Team Selection.
+
+26
+
+beal, norman and ramchurn
+
+play. This means that the players are selectable in over 6.5 × 109 ways. One team is selected at the start of the season and then 1 transfer is permitted per game-week. In DFS competitions a fresh team is created each week, therefore the optimisation is simpler. Figure 6 shows example team formation set-ups from FPL and DraftKings.
+Formally, a generic fantasy sport team optimisation problem can be deﬁned as the following set of equations (excluding other diﬀerent constraints that the diﬀerent leagues have in place).
+
+ p1 → pos1 p2 → pos2 p3 → pos3 
+
+ p4 → pos4 p5 → pos5 p6 → pos6 
+
+(5)
+
+p7 → pos7
+
+...
+
+pn → posi
+
+Where a player p is added to each of the i positions in the fantasy team (only if the players position matches the slot in the fantasy team e.g, a Quarterback cannot be selected as the Running-Back in the fantasy team).
+
+N
+argmax( pointsn)
+n=1
+
+N
+
+s.t. selectedn = teamSize
+
+(6)
+
+n=1
+
+N
+valuen ≤ budget
+n=1
+
+Where n represents the ID of a player, which is used to identify if that player is selected (selectedn = {0, 1}) and what the player value is (valuen = {Z}). Our objective is to maximise the total number of points (pointsn = {R}) while staying within the given team size and ensuring that the combined salaries/values of the players is below the given budget constraint.
+Matthews, Ramchurn and Chalkiadakis (2012) approach the FPL team optimisation as a sequential team formation problem which is formalised as a Markov decision process (MDP). The model in this paper considers the limited transfers that could be made meaning that the future performances of players are considered when making changes. A reinforcement learning approach is used, working under uncertainty regarding the underlying MDP dynamics. In an MDP the agent (in this case the fantasy competitor) and the environment (fantasy game) interact continually, the agent selecting actions (by selecting a team each game-week) and the environment responding to these actions (in the form of points) and presenting new situations to the agent. Using an MDP means that the model is able to assess the possible rewards that come from the possible actions that are made (in FPL this would be the action of making a transfer). The problem can then be treated as an optimisation problem. Matthews et al., set up the problem as a Multi-Dimensional Knapsack Packing (MKP) (Korte and Vygen 2012) and solve the optimisation using IBM ILOG’s CPLEX 12.3. A number of diﬀerent set ups of the MKP were tested. These include Q-Learning and Bayesian Q-Learning with diﬀerent parameters. By doing this Matthews was able to obtain a model that ranked in the 1.1st percentile and give a benchmark for how AI and machine learning models are able to perform in the FPL.
+When forming fantasy teams for the NFL in DFS competitions, Landers and Duperrouzel (2018) compares four diﬀerent approaches for team optimisation, these are:
+1. Selecting a completely random team to loosely model the behaviour of a human with no knowledge of the sport.
+
+Artiﬁcial Intelligence for Team Sports: A Survey
+
+27
+
+2. Selecting a random team from a ﬁltered dataset with just the higher performing players. This is to loosely mimic the behaviour of a player with general knowledge about the sport.
+3. A ﬁltered optimized approach, picks a team from the ﬁltered set and uses a brute force algorithm to select the best team based on maximising the predicted points, that ﬁts the constraints.
+4. Filtered actual best selects the best possible team from the ﬁltered data set to give a view of what the best performing team would be (this approach does not consider the budget constraint on total player values).
+Using the player points prediction models discussed in the last section, 100 teams are selected using each of the above methods for each prediction method. The authors are able to evaluate the performances using the following metrics: The average points return of the 100 teams, the maximum points return and the percentage of teams that produce a proﬁt.39 This is compared against the work in (Sugar and Swenson 2015) which achieves a success rate40 of 71.4% whereas (Landers and Duperrouzel 2018) achieve a success rate of 82% for weeks 3-9 in the 2016 season. However, this would need more testing due to the small sample size (7 game weeks) meaning the results are not statistically signiﬁcant.
+Matthews, Ramchurn and Chalkiadakis (2012) were able to achieve good results by solving their optimisation problem as an MKP. As a brute force method for team optimisation is used on a ﬁltered dataset in (Landers and Duperrouzel 2018) there may be more eﬃcient ways for this to be done, such as a similar approach using CPLEX in (Matthews, Ramchurn, and Chalkiadakis 2012). Using this type of approach would ensure an optimal team is selected and improve the run-time eﬃciency in comparison to a brute force approach. Another area to explore would be to model the uncertainties in the players’ performances rather than predicting their points. This would allow teams with diﬀerent levels of risk and reward to be selected which may be useful in a DFS competition as multiple teams can be entered. This could be achieved by using a stochastic optimisation approach (Ermoliev and Wets 1988). There also remains gaps in the fantasy sports process where AI could be used to forecast the player prices, assess opponents fantasy teams and create AI betting strategies to maximise the chances of generating proﬁts in DFS fantasy games. DFS strategies are discussed in (Haugh and Singal 2018) where a portfolio of teams is used to maximise the chances of generating proﬁts.
+In Table 4 we summarise the approaches that have been used for the points prediction and optimisation in the discussed papers. In the next section we will discuss the impact that injuries have to sports teams and how AI can be used eﬀectively in this domain.
+
+6 Injury Prediction and Prevention
+Contact team sports have a high risk of injury (Drawer and Fuller 2002b). If a team is missing their star players the probability of winning matches decreases signiﬁcantly. Moreover, it is not ﬁnancially beneﬁcial to pay large wages to players who are unable to play. The economic impact of injuries is highlighted in the annual report by JLT11 who evaluate the injuries that occur in the Premier League every season. They found in the 2016-17 season over £175million of wages were paid to injured players. The impact in football is also discussed in (Drawer and Fuller 2002a). Being able to predict when these injuries are likely to occur and change real-world variables to reduce the likelihood of the injury, presents an interesting computational problem. Lysens et al. (2012) discusses the predictability of sporting injuries.
+Vast amounts of data is now collected in relation to individual players in both competitive matches and in training. All professional sports are now collecting this data in real-time for both competitive matches and training. Companies such as Catapult Sports and STATSports sell GPS
+39The amount of points needed to break even is set to 111.21. 40Success rate = number of weeks that the model would earn a proﬁt.
+
+28
+
+beal, norman and ramchurn
+
+Table 4 Fantasy Sports Approach Summary.
+
+Method Reinforcement Learning
+Least Squares and Decision Tree Mixed-Integer Programming
+Filtered Brute Force
+
+Application Used to predict future player performance and select teams in (Matthews, Ramchurn, and Chalkiadakis 2012). Used to predict player points in (Landers and Duperrouzel 2018).
+Used in (Matthews, Ramchurn, and Chalkiadakis 2012) to form optimal teams. Used as the main approach to form teams in (Landers and Duperrouzel 2018).
+
+Outcome Ranks in top 1% of all human players in the Fantasy EPL league.
+Boosted decision tree achieves 0.250 and least squares approach achieves 0.146 (R2). Forms a team quickly and ensures that an optimal selection is made.
+Runs slower and is not guaranteed the optimal team.
+
+trackers that sports teams in multiple sports across the world use to monitor their players. The type of features that are collected by these trackers include but are not limited to:
+
+• Distance covered • Meters per minute • Speeds reached • Number of sprints
+
+• Sprints distances • Intensity • Time in “red zone” • Accelerations
+
+• Average metabolic power • Heart rates • Impacts • Stress load
+
+This data alongside the historical medical data that is collected by physios and club doctors can give a feature set for players that has yet to be studied by the AI community. As well as collecting other features from the club doctors and physios, we can form a list of injuries that have occurred to the players. A formal model of the problem can be stated as follows. The list of injuries that have occurred would be the target data, y. Using y, we can extract the relevant features (from a given time frame) such as Acute:Chronic Workload and the number of competitive minutes played, alongside historic data such as previous injuries to that player. This would be the feature set (X) for a prediction model, where each row in X corresponds to each injury in y. We would also need to consider examples of where no injury occurred and append this data into X and y. This data would need to be cleaned and properly structured to provide good training and test sets when creating injury prediction models. We can then apply functions θ to these sets so that θ(Xi) = yi where yi = {1, 0} with 1 corresponding to an injury and 0 corresponding to no injury. Machine learning classiﬁcation methods can be used for θ to calculate the probabilities of a player getting injured given the feature data and identify what real-world changes can be made to reduce the chances of injury.
+There has been a number of studies in relation to injuries in sport which have mainly focused in the medical domain. Some relevant literature that support the the theory that AI could have a part to play in this domain are summarised in this section. There are a number of computational challenges that injury prediction presents for AI. The current literature is broken down into medical research and research that has been focused on the use of wearable sensors in sport teams.
+
+6.1 Sports Medicine Research
+There has been a number of studies in the Sports Medicine community focused on the causes of injuries in sports and studying a number of large datasets. Firstly, (H¨agglund, Wald´en, and Ekstrand 2006) evaluates how previous injury is a risk factor for future injuries at the top level of football. The study compares two seasons (2001-2002) worth of injury data from 12 elite Swedish
+
+Artiﬁcial Intelligence for Team Sports: A Survey
+
+29
+
+male football teams. They use a multivariate model to determine the relation between a previous injury and the risk it causes. They found players who were injured in the 2001 season had a greater risk of injury in the following season compared with non-injured players. Particularly, players with a previous hamstring, groin, and knee joint injuries were 2 to 3 times more likely to suﬀer an the same injury in the following season. This work was extended in (H¨agglund, Wald´en, and Ekstrand 2009; H¨agglund, Wald´en, and Ekstrand 2013), looking at 14 football teams across Europe between 2001-2012. This study focused on the injury characteristics and variation of injuries during a match, season and consecutive seasons over the time period discussed. It found that the rate of some injury types decreased over the last 11 years. However, training and match injury rates and the rates of muscle and severe injuries remain high. It was also found that the risk of injury increased with time in each half of matches. Clearly, such works point to patterns in datasets that could be used in machine learning algorithms to determine the risk of injury and to optimise the recovery process.
+Fuller (2018) models the eﬀect of the player workloads on the injuries in the English Premier League. The study shows how a team’s injury-burden varies from day-to-day during a season, based on a team’s match and training schedules. It also compares successful and unsuccessful Premier League teams and how their training loads eﬀect their number of injuries. They ﬁnd that a successful team undertakes fewer training sessions each week so there are fewer opportunities in which to inﬂuence training activities and to reduce injuries. A similar study (Bowen et al. 2016), investigates the relationship between physical workload and injury risk in elite youth football players. They also found higher workloads were associated with a greater injury risk. This highlights that workloads can be used as a metric in a AI model for injury prediction. Workloads have been seen as a signiﬁcant factor in injury prediction, (Hullin et al. 2016) evaluates the Acute:Chronic Workload Ratio (ACWR) in Rugby League players and ﬁnd that a greater ACWR increases injury risk. The ACWR is calculated by dividing the acute workload (fatigue) by the chronic workload (ﬁtness). This is deﬁned as:
+
+ACW Rt = Lt−7/Lt−28
+
+(7)
+
+where L is the players load41, t is the current day. Therefore, it is a ratio of the last seven days load to the last twenty-eight days load. This, along with other related variables, could be key in using machine learning to predict injury.
+There are examples of injury studies in other sports such as basketball and American Football. In basketball (Podlog et al. 2015) surveys the injuries in the National Basketball Association over a 25-year period and identiﬁes the relationship of injuries to team performance. In American Football, Ward et al. (2018), ﬁnds that regardless of the position, training days with high amounts of volume and intensity share an association with increased risk of injury while training days of a high amount of low intensity training share a relationship with a decreased risk of injury. Finally, (Zeliˇc et al. 1997) uses Decision Trees and Bayesian Classiﬁcation to diagnose sports injuries more eﬀectively, this shows a novel use of ML techniques to sports injuries and provides a useful tool for teams doctors and physiotherapists. However, it does not aim to predict and help prevent injuries.
+In the next section we discuss the applications using the data from the wearable sensors that we discussed at the start of this section.
+41A common method for calculating workload is by multiplying the athletes perceived exertion (sRPE) by session duration (e.g, if an athlete reports an sRPE of 5 and trained for 90 minutes, the athlete’s workload for the day would be 450 arbitrary units (AU)).
+
+30
+
+beal, norman and ramchurn
+
+6.2 Wearable Sensor Research
+Due to the amount of data that is collected from the wearable sensors, some sports teams have begun to look at ways that this can be used to beneﬁt sports men and women. Firstly a study Kelly et al. (2012) researched how wearable sensors can be used to automatically detect collisions in Rugby. As we discussed in Section 2.3 Rugby is very high impact sport and tackling is the most common cause of injury in Rugby, and therefore having a way of automatically modelling tackles can improve the work of the medical staﬀ. The work was compared against collisions which were manually labelled using data from elite club and international level players. The paper tested a number of diﬀerent algorithms for this problem such as Support Vector Machines, Neural Networks and Convolutional Neural Networks (CNN). The results show the model is able to identify collisions to a high level of accuracy, achieving a recall and precision rating of 0.933 and 0.958, respectively using CNNs. The model can give coaching and medical staﬀ tackle-speciﬁc measurements, in real time, which can be used in injury prevention and rehabilitation strategies. Following on from this, (Cust et al. 2018) reviewed the ways that machine learning and AI can be used to classify certain movements in sport.
+In the next section we will discuss the ﬁndings from this paper and highlight the computational challenges and open areas that exist for AI in the team sports domain.
+
+7 Discussion
+In this section, we discuss and highlight the open areas of research that still remain within the domain of artiﬁcial intelligence for team sports. In particular, we summarise the key ﬁndings from our survey and propose a number of methods and techniques to address some of the key challenges that exist.
+
+7.1 Match Outcome Prediction
+
+Our analysis in Section 3 leads us to conclude that match outcome prediction remains a signiﬁcant challenge for most team sports. To our knowledge, none of the existing work can predict match outcomes with more than 75% accuracy (see Table 5).42
+
+Table 5 Current Best Accuracy.
+
+Sport Football American Football Rugby League Cricket Basketball
+
+Accuracy 56.7% 66.9% 67.5% 75.0% 72.2%
+
+Paper Baboota and Kaur (2018) Baker and McHale (2013) McCabe and Trevathan (2008) Jayantha et al. (2018) Z.Shi (2013)
+
+These results establish benchmarks for these individual sports. However, it is not clear whether the limited prediction accuracies achieved are due to the quality of data, or whether it is due to the inherent uncertainty in the domain. To better understand what are the most important factors that determine prediction accuracy, it would be important for researchers to share their datasets, provide sensitivity analysis of their techniques, and establish what other events or features that are currently not monitored but clearly have an impact on match outcomes. For example, there are a number of factors that make it challenging to accurately predict sports match outcomes (e.g., uncertainties in team form, injuries to players, players mood, team morale, weather, playing conditions and changes in management). Finding methods to quantify how these uncertainties will impact a game is also a challenge that could be addressed with Bayesian
+42Note that football focused on domestic league games.
+
+Artiﬁcial Intelligence for Team Sports: A Survey
+
+31
+
+networks or Abductive reasoning43 that have yet to be explored. Due to the number of factors that can impact the team performance and match outcome we could use dimensionality reduction techniques can be used to remove uninformative features and simplify the characterisation of instances. If a set of the key features can be found, deep learning techniques (e.g. deep neural networks or long short term memory) could be applied eﬀectively. Stekler, Sendor and Verlander (2010) explore a number of problems with prediction models in team sports and test current models against alternative forecasting methods (such as experts and the betting market) as well as examining existing biases in the models. They conclude that one area that requires further research concerns the relative weight that forecasters place on new and old information and that there is no evidence that either statistical systems or experts are able consistently outperform the betting markets. Furthermore, (Ganguly and Frank 2018) focus their attention on a number of problems when predicting teams’ performances by calculating win probabilities (many of the papers we have evaluated use win probabilities). Their results suggest that win probabilities lack suﬃcient context, and the models should respond to in-game factors such as injuries. They also suggest that the current win probability models should incorporate a level of uncertainty due to the many possible events and scorelines that make up the match outcome. Finally, they explore the “what-ifs” in sports games and use these to model the alternative outcomes. For example, what if a team’s star player gets injured in the ﬁrst half of a game, how would this aﬀect the outcome? This highlights the fact that the majority of the current literature focuses on the ﬁnal statistics of the game such as outcomes (win/loss/draw) and scorelines. In turn, there is less focus on more granular predictions which can aid the ﬁnal outcome forecast. We propose the following more granular approaches to the problem as follows:
+• Model the problem using key match events and details to train a model that is able to recognise what outcome occurred when similar set-ups and conditions have been observed before. Deep learning techniques could be used for this approach, speciﬁcally Long Short Term Memory known as LSTMs (Hochreiter and Schmidhuber 1997), a type of recurrent neural networks which have shown to be successful in other domains when using time-series and historic datasets. Due to the vast amounts of historic datasets that are available for team sports, this approach may prove to be successful.
+• Create models based on the movements of attacking and defensive units of players in order to gain a better understanding of their performances when they are facing each other in a game. This may improve on current approaches as some teams’ attacks may be more eﬀective against speciﬁc types of defences (e.g., a blitz defence may be more successful against a running attack in American Football). Modelling the ﬁner inter-agent interactions using multi-agent simulation techniques as in emergency evacuation prediction (Ramchurn, Rogers, et al. 2008; X. Pan et al. 2007), could potentially generate better predictions of emergent behaviours.
+• Analyse the players’ personality, moods, and mental state, in the build up to games when making match outcome predictions. This would allow models to consider how player perform in certain games. For example, certain players may perform better in the ﬁnals of a competition or in ﬁghting against relegation to a lower league, while other players may “choke” and their performance will deteriorate in these types of game (Beilock and Gray 2007). Natural Language Processing techniques (Sebastiani 2002; Manning and Schu¨tze 1999; Collobert and Weston 2008) could thus be used to monitor pre/post-match press conferences and interviews that players give. This could also be used to analyse the managers’ conﬁdence levels in their scheduled pre-match interviews. Another approach could be to monitor the players’ social media accounts by using sentiment analysis on their online public posts (Pang, Lee, et al. 2008). There exist numerous approaches that aim to leverage social media by means of natural language processing (Farzindar and Inkpen 2015; Pak and Paroubek 2010). However, there are some issues that arrive from this type of analysis such as: not all players
+43a form of logical inference which starts with an observation or set of observations then seeks to ﬁnd the simplest and most likely explanation for the observations.
+
+32
+
+beal, norman and ramchurn
+
+show up in press conferences, press conferences are often pre-prepared and player’s social media accounts are often controlled by media managers/agents.
+
+7.2 Strategic and Tactical Decision Making
+In Section 4 (see Figure 3), we proposed a structured framework to analyse and improve the decision making processes in team sports. A key aspect is the recruitment of players through transfers and trading. In many cases, when a new player signs for a team, it is possible that he/she will not perform to the levels expected for the cost. This may be due to many adaptation issues based on the weather, style of play of the team, or language. Predicting the performance of a player in a new team presents an interesting machine learning challenge as it involves predicting with historical data that may not be completely relevant to the new team that he/she may join. Techniques for transfer learning (S. Pan and Q. Yang 2010) could potentially be used to address such issues as they have been shown to be particularly eﬀective at learning text data across diﬀerent domains. This gives an example of how we could use these techniques to map performance from one team to another which could be in diﬀerent leagues and countries. The orthogonal problem to the latter involves optimising the training process to help players reach their full potential. This is especially the case for youth players who may be at a club from an early age and where there are a number of decisions that need to be made to help them (e.g., should he/she be sent out on loan and should he/she play in the ﬁrst team). Using AI to support these decisions could ensure that the best development path is selected to ﬁnd the optimal results of that individual player.
+Going a step further, such techniques could then be used to optimise the scouting process (where information is gathered about players before hiring them). Clubs have limited resources to perform the scouting process as well as a limited budget to purchase or train their players. This type of problem could be addressed with Multi-Armed Bandit-based optimisation techniques (Tran-Thanh et al. 2014) or Sequential Decision Making techniques (Beck et al. 2016) that have been successfully applied in the context of selecting workers in crowd-sourcing systems or in optimising multi-robot teams in disaster response respectively.
+Building upon recent successes in applying Game Theoretic techniques (e.g., Stackelberg Games) in the security domain to defend against multiple attackers, such techniques could also be used to optimise tactics in team sports. Such techniques would need to be extended to account for the much larger number of actions and players than in traditional security games. However, the fact that sports tend to have very clearly deﬁned payoﬀs and a lot of historical data to model outcomes, may help in cutting down the complexity of the problem. Finally, it is worth noting that the growing popularity of E-Sports may present new opportunities to model games and team strategies as multi-agent systems.
+
+7.3 Fantasy Sports
+As we discussed in Section 5, to be successful in fantasy sports there are a number of real-world and in-game factors that must be considered. These include: team formation and player point prediction, changing strategies based on other competitors teams, predicting the values of players so the total value of the fantasy team is maximised, and modelling the risk of the fantasy team so that proﬁt making strategies can be created for DFS competitions.
+As well as the methods that we have described for player points prediction and team formation optimisation, there are a number of other open areas within fantasy sport. Firstly, creating and running fantasy teams presents human-machine interaction challenges which include, but are not limited to: using a mixture of human knowledge and AI predictions to give ratings for the realworld players, selecting which fantasy leagues teams should be entered in to maximise proﬁts, and exploring the problems that AI based solutions are good at in comparisons to humans. For example, it may be worth studying the aﬀects of using an AI based team formation approach
+
+Artiﬁcial Intelligence for Team Sports: A Survey
+
+33
+
+with human player performance predictions and vice-versa. This would allow us to evaluate what parts of fantasy sport games are skill and what is down to chance. This is especially important in the USA due to restrictions on gambling (Boswell 2008).
+Finally, in DFS competitions, multiple teams can be entered into the same league by a single competitor, meaning that a portfolio of teams can be entered by a competitor to maximise their chances of winning and generating proﬁts. This presents an interesting computational challenge to best maximise the risk and reward of competitors’ portfolios in a similar fashion to the way portfolios are treated in the ﬁnancial markets. This type of strategy is discussed in (Haugh and Singal 2018) and could be supported by AI work using a stochastic optimisation approach (Ermoliev and Wets 1988) as well as ideas from portfolio risk management strategies (Dunis et al. 2016).
+
+7.4 Injury Prediction
+As we showed in Section 6, sports injury prediction is an area where no signiﬁcant literature exists in the AI community. Due to the negative impact that injuries can have on players careers and teams’ performance, it presents a signiﬁcant new domain where AI can make a diﬀerence. The goal would be to highlight players who are likely to get injured in a given training session or a competitive match. To build these models it would be important to use the expertise of the doctors and physiotherapists at teams to identify what new approaches and features that could be used when predicting injury. There are many sports medicine papers that suggest Acute:Chronic Workload Ratio (ACWR) is related to injuries in team sports, meaning that this variable could be used as a feature in a predictive model. It is worth noting, however, that Bornn et al. (2019) suggest the value of ACWR may have been over-estimated by other papers.
+A key area for sports injury prediction is musculoskeletal injuries which could be prevented by changes in training load and other variables. Predictions would need to be speciﬁc to individual body-parts as diﬀerent features cause diﬀerent injuries (e.g., turning quickly and running impact may cause knee injuries, whereas overstretching and kicking may cause hamstring injuries). This means that some methods may be better at identifying diﬀerent injuries to diﬀerent body parts, for example a single model to predict hamstring injuries in footballers would be very beneﬁcial to medical staﬀ.
+Although there has been less AI work to date in the sports domain, there is existing literature which aims to predict heart attacks and cliﬀ edge events in the health care (Srinivas, Rani, and Govrdhan 2010; H. Masethe and M. Masethe 2014). Both of these papers use Bayesian techniques and classiﬁcation algorithms to asses the risk of heart attacks and disease. This type of study could be applied to sports injuries data. If prediction models for injuries were proved to be successful they would become a vital tool in the sporting world due to the economic and performance based beneﬁts that they would lead to (e.g., the ﬁnancial beneﬁts discussed in the JLT annual injury report).11
+
+7.5 Places to Publish
+It is worth highlighting a few major journals and conferences which fall outside of the sports domain, which have attracted sports related articles. These include but are not limited to: IEEE transactions in Cybernetics, IEEE Trans on TPAMI, Trans on Knowledge and Data Engineering, IEEE Trans on Neural Networks and Learning Systems. This shows the wider use of the sports as a tool to improve scientiﬁc processes and AI.
+Some options of publications directly in the sports domain are as follows: Sports Engineering, International Journal of Computer Science in Sport, MIT Sloan Sports Analytics Conference, Journal of Sports Analytics, Journal Journal of Quantitative Analysis in Sports, New England Symposium on Statistics in Sports, Workshop on Sports Analytics (ECML/PKDD) and Workshop on AI in Team Sports (AAAI). This is also summarised in (T. B. Swartz 2018).
+
+34
+
+REFERENCES
+
+8 Conclusions
+This paper has evaluated the questions that exist for the AI community in the team sports domain and has provided a structured framework for future work. We have identiﬁed a number of key research areas to give a comprehensive overview of the work to date and open areas for future work. We have also demonstrated the potential to create a unique real-world live testbed for AI and ML techniques to be validated in the future. In particular, we reviewed the works for match outcome prediction and found that due to the unpredictability of sports, the models still fail to predict outcomes signiﬁcantly better than the bookmakers and appear to reach a glass ceiling. However, we identiﬁed a number of possible methods to improve on current work and break the glass ceiling. We outlined a number of key decision making processes in the team sports domain. We then discussed the existing possibilities for applications of AI techniques to improve these processes and compared the problems posed to existing AI literature in other domains. We also reviewed the literature in the fantasy sports domain and found that AI techniques have been applied to signiﬁcantly outperform the majority of human players in the FPL competition for football. However, there are areas in the fantasy sport process where AI could be applied to further improve fantasy prediction and devise betting strategies. Finally we focused on the use of AI in injury prediction and found that there has been no signiﬁcant work by the AI community. However, there are a number of interesting Sports Medicine papers that highlight the possible features and data that could be used to build prediction models. This is supported by the existing AI literature in the health care industry using techniques to predict heart attacks (Srinivas, Rani, and Govrdhan 2010; H. Masethe and M. Masethe 2014). Overall this paper highlights the impacts that AI and ML methods could have on the team sports domain, outlining a number of processes where there are existing open areas and research questions.
+Acknowledgements
+We would like to thank Dr. Tim Matthews and Mr. Ramm Mylvagananam for their expert advice and comments while writing this paper. Ryan Beal is funded by the EPSRC NPIF doctoral training grant number EP/S515590/1.
+
+References
+Agosto, A. et al. (2016). “Modeling corporate defaults: Poisson autoregressions with exogenous covariates (PARX)”. In: Journal of Empirical Finance 38, pp. 640–663.
+Alan, A.T. et al. (2015). “Managing energy tariﬀs with agents: a ﬁeld study of a future smart energy system at home”. In: Adjunct Proceedings of the 2015 ACM International Joint Conference on Pervasive and Ubiquitous Computing and Proceedings of the 2015 ACM International Symposium on Wearable Computers.
+Alcorn, M.A. (2018). “(batter—pitcher)2vec: Statistic-Free Talent Modeling With Neural Player Embeddings”. In: MIT Sloan Sports Analytics Conference. url: http : / / www . sloansportsconference.com/wp-content/uploads/2018/02/1008.pdf.
+Anderson, C. and D. Sally (2014). The Numbers Game: Why Everything You Know About Football is Wrong. Penguin.
+Angelini, G. and L. De Angelis (2017). “PARX model for football match predictions”. In: Journal of Forecasting 36.7, pp. 795–807.
+B. H. Boon, G. Sierksma (2003). “Team formation: Matching quality supply and quality demand”. In: European Journal of Operational Research 148, pp. 277–292.
+Baboota, R. and H. Kaur (2018). “Predictive analysis and modelling football results using machine learning approach for English Premier League”. In: International Journal of Forecasting.
+Baio, G. and M. Blangiardo (2008). “Bayesian hierarchical model for the prediction of football results”. In: Journal of Applied Statistics 37.2, pp. 253–264.
+
+REFERENCES
+
+35
+
+Baker, R. and I. McHale (2013). “Forecasting exact scores in National Football League games”. In: International Journal of Forecasting 29.1, pp. 112–130.
+Beck, Z. et al. (2016). “Online Planning for Collaborative Search and Rescue by Heterogeneous Robot Teams”. In: Proceedings of the 2016 International Conference on Autonomous Agents &#38; Multiagent Systems, pp. 1024–1033.
+Beilock, S. and R. Gray (2007). “Why do athletes choke under pressure?” In: G. Tenenbaum R. C. Eklund (Eds.), Handbook of sport psychology, pp. 425–444.
+Bojinov, I. and L. Bornn (2016). “The Pressing Game: Optimal Defensive Disruption in Soccer”. In: MIT Sloan Sports Analytics Conference. url: http://www.sloansportsconference.com/ wp-content/uploads/2016/02/1475-Other-Sports.pdf.
+Bornn, L., P. Ward, and D. Norman (2019). “Training Schedule Confounds the Relationship between Acute:Chronic Workload Ratio and Injury”. In: MIT Sloan Sports Analytics Conference. url: http : / / www . sloansportsconference . com / wp - content / uploads / 2019 / 02 /
+Training- Schedule- Confounds- the- Relationship- between- Acute- Chronic- WorkloadRatio-and-Injury.pdf. Boswell, J. (2008). “Fantasy Sports: A Game of Skill That Is Implicitly Legal under State Law, and Now Explicitly Legal under Federal Law”. In: Cardozo Arts Entertainment Law Journal 25, pp. 1257–1278. Boulier, B. L. and H.O. Stekler (2003). “Predicting the outcomes of National Football League games”. In: International Journal of Forecasting 19.2, pp. 257–270. Bowen, L. et al. (2016). “Accumulated workloads and the acute:chronic workload ratio relate to injury risk in elite youth football players”. In: British Journal of Sports Medicine 51.5, pp. 452–459. Burke, B. (2019). “DeepQB: Deep Learning with Player Tracking to Quantify Quarterback Decision-Making & Performance”. In: MIT Sloan Sports Analytics Conference. url: http : //www.sloansportsconference.com/wp-content/uploads/2019/02/DeepQB.pdf. C. K. Leung, K. W. Joseph (2014). “Sports data mining: predicting results for the college football games”. In: Procedia Computer Science 35, pp. 710–719. Cappellari, Lorenzo and Stephen P. Jenkins (2003). “Multivariate probit regression using simulated maximum likelihood”. In: The Stata Journal 3.3, pp. 278–294. Cervone, D. et al. (2014). “POINTWISE: Predicting Points and Valuing Decisions in Real Time with NBA Optical Tracking Data”. In: MIT Sloan Sports Analytics Conference. url: http:
+//www.sloansportsconference.com/wp-content/uploads/2018/09/cervone_ssac_2014. pdf. Chalkiadakis, G. and C. Boutilier (2012). “Sequentially optimal repeated coalition formation under uncertainty”. In: Autonomous Agents and Multi-Agent Systems 24.3, pp. 441–484. Clarke, S. and Norman (1995). “Home ground advantage of individual clubs in English soccer”. In: Journal of the Royal Statistical Society. Series D (The Statistician) 44.4, pp. 509–521. Cohn, David A, Zoubin Ghahramani, and Michael I Jordan (1996). “Active learning with statistical models”. In: Journal of artiﬁcial intelligence research 4, pp. 129–145. Collobert, R. and J. Weston (2008). “A uniﬁed architecture for natural language processing: Deep neural networks with multitask learning”. In: Proceedings of the 25th international conference on Machine learning. ACM, pp. 160–167. Constantinou, A. C., N. Fenton, and M. Neil (2012). “pi-football: a Bayesian network model for forecasting Association Football match outcomes”. In: Knowledge-Based Systems 36, pp. 322– 339. – (2013). “Proﬁting from an ineﬃcient association football gambling market: Prediction, risk and uncertainty using Bayesian networks”. In: Knowledge-Based Systems 50, pp. 60–86. Correia, V. et al. (2011). “Prospective information for pass decisional behavior in rugby union.” In: Human movement science 30.5, pp. 984–97.
+
+36
+
+REFERENCES
+
+Coulom, R´emi (2007). “Computing Elo Ratings of Move Patterns in the Game of Go”. In: ICGA Journal 30.4.
+Crowder, M. et al. (2002). “Dynamic Modelling and Prediction of English Football League Matches for Betting”. In: Journal of the Royal Statistical Society. Series D (The Statistician) 51.2, pp. 157–168.
+Cust, E et al. (2018). “Machine and deep learning for sport-speciﬁc movement recognition: a systematic review of model development and performance”. In: Journal of Sports Sciences 37.5, pp. 568–600.
+Dang, V.D. et al. (2006). “Overlapping coalition formation for eﬃcient data fusion in multi-sensor networks”. In: Proceedings of the 21st National Conference on Artiﬁcial Intelligence. Vol. 1, pp. 635–640.
+Decroos, Tom et al. (2019). “Actions speak louder than goals: Valuing player actions in soccer”. In: Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining. ACM, pp. 1851–1861.
+Dixon, M. and S. Coles (1997). “Modelling Association Football Scores and Ineﬃciencies in the Football Betting Market”. In: Journal of the Royal Statistical Society: Series C (Applied Statistics) 46.2, pp. 265–280.
+Dixon, M. and P. Pope (2004). “The value of statistical forecasts in the UK association football betting market”. In: International Journal of Forecasting 20.4, pp. 697–711.
+Dixon, M. and M. Robinson (1998). “A birth process model for association football matches”. In: Journal of the Royal Statistical Society Series D (The Statistician) 47.3, pp. 523–538.
+Dobson, S. and B. Gerrard (1999). “The Determination of Player Transfer Fees in English Professional Soccer”. In: Journal of Sports Management 13.4, pp. 259–279.
+Dobson, Stephen, John A Goddard, and Stephen Dobson (2001). The economics of football. Cambridge University Press Cambridge.
+Drawer, S and C.W. Fuller (2002a). “An economic framework for assessing the impact of injuries in professional football.” In: Safety Science 40.6, pp. 537–556.
+– (2002b). “Evaluating the level of injury in English professional football using a risk based assessment approach”. In: British Journal of Sports Medicine 36.6, pp. 446–451.
+Dunis, C.L. et al. (2016). Artiﬁcial Intelligence in Financial Markets: Cutting Edge Applications for Risk Management, Portfolio Optimization and Economics. Springer.
+Ermoliev, Y.M. and R.B. Wets (1988). Numerical techniques for stochastic optimization. SpringerVerlag.
+Fang, F., P. Stone, and M. Tambe (2015). “When Security Games Go Green: Designing Defender Strategies to Prevent Poaching and Illegal Fishing”. In: Proceedings of the 24th International Conference on Artiﬁcial Intelligence, pp. 2589–2595.
+Farzindar, Atefeh and Diana Inkpen (2015). “Natural language processing for social media”. In: Synthesis Lectures on Human Language Technologies 8.2, pp. 1–166.
+Felsen, P. and P. Lucey (2017). ““Body Shots”: Analyzing Shooting Styles in the NBA using Body Pose”. In: MIT Sloan Sports Analytics Conference. url: http : / / www . sloansportsconference.com/wp-content/uploads/2017/02/1690.pdf.
+Fern´andez, J. and L. Bornn (2019). “Decomposing the Immeasurable Sport: A deep learning expected possession value framework for soccer”. In: MIT Sloan Sports Analytics Conference. url: http : / / www . sloansportsconference . com / wp - content / uploads / 2019 / 02 / Decomposing-the-Immeasurable-Sport.pdf.
+Fister Jr, I. et al. (2015). “Computational intelligence in sports: Challenges and opportunities within a new research domain”. In: Applied Mathematics and Computation 262, pp. 178–186.
+Fuller, C.W. (2018). “Modeling the impact of players’ workload on the injury-burden of English Premier League football clubs.” In: Scandinavian Journal of Medicine and Science in Sports 28.6, pp. 1715–1721.
+
+REFERENCES
+
+37
+
+Gall, F. le et al. (2010). “Anthropometric and ﬁtness characteristics of international, professional and amateur male graduate soccer players from an elite youth academy.” In: Journal of science and medicine in sport 13.1, pp. 90–95.
+Ganguly, S. and N. Frank (2018). “The Problem with Win Probability”. In: MIT Sloan Sports Analytics Conference. url: http : / / www . sloansportsconference . com / wp - content / uploads/2018/02/2011.pdf.
+Gardiner, Crispin (2009). Stochastic Methods. Springer. Gelman, A. et al. (2004). Bayesian Data Analysis. New York: Chapman and Hall/CRC. Glickman, M. E. and H. S. Stern (1996). “A State-Space Model for National Football League
+Scores”. In: Journal of the American Statistical Association 93, pp. 25–35. Goel, S. et al. (2008). “Yoopick: A Combinatorial Sports Prediction Market”. In: Twenty-Third
+AAAI Conference on Artiﬁcial Intelligence. Graham, I. and H. Stott (2008). “Predicting bookmaker odds and eﬃciency for UK football”. In:
+Applied Economics 40.1, pp. 99–109. H¨agglund, M, M Wald´en, and J Ekstrand (2006). “Previous injury as a risk factor for injury in
+elite football: a prospective study over two consecutive seasons”. In: British Journal of Sports Medicine 40.9, pp. 767–772. – (2009). “Injury incidence and injury patterns in professional football: the UEFA injury study”. In: British Journal of Sports Medicine 45.7, pp. 553–558. – (2013). “Fewer ligament injuries but no preventive eﬀect on muscle injuries and severe injuries: an 11-year follow-up of the UEFA Champions League injury study”. In: British Journal of Sports Medicine 47.12, pp. 732–737. Hanson, R. D. (2007). “Logarithmic Market Scoring Rules for Modular Combinatorial Information Aggregation”. In: Journal of Prediction Markets 1, pp. 1–15. Harville, D. (1976). “The Use of Linear-Model Methodology to Rate High School or College Football Teams”. In: Journal of the American Statistical Association 72.358, pp. 278–289. – (1980). “Predictions for National Football League Games Via Linear-Model Methodology”. In: Journal of the American Statistical Association 75.371, pp. 516–524. Haugh, M. B. and R. Singal (2018). “How to Play Strategically in Fantasy Sports (and Win)”. In: MIT Sloan Sports Analytics Conference. url: http://www.sloansportsconference.com/wpcontent/uploads/2018/02/1001.pdf. Hendricks, W., L. DeBrock, and R. Koenker (2003). “Uncertainty, Hiring, and Subsequent Performance: The NFL Draft”. In: Journal of Labor Economics 21.4, pp. 857–886. Hobbs, J. et al. (2018). “Quantifying the Value of Transitions in Soccer via Spatiotemporal Trajectory Clustering”. In: MIT Sloan Sports Analytics Conference. url: http : / / www . sloansportsconference.com/wp-content/uploads/2018/02/2008.pdf. Hochreiter, S. and J. Schmidhuber (1997). “Long Short-Term Memory”. In: Neural Computation 9.8, pp. 1735–1780. Hucaljuk, J. and A. Rakipovi´c (2011). “Predicting football scores using machine learning techniques”. In: Proceedings of the 34th International Convention MIPRO. Hullin, B.T. et al. (2016). “The acute:chronic workload ratio predicts injury: high chronic workload may decrease injury risk in elite rugby league players”. In: British Journal of Sports Medicine 50.4, pp. 231–236. Jayalath, K. P. (2018). “A machine learning approach to analyze ODI cricket predictors”. In: Journal of Sports Analytics 4.1, pp. 73–84. Jayantha, S. B. et al. (2018). “A team recommendation system and outcome prediction for the game of cricket”. In: Journal of Sports Analytics 4.1, pp. 263–273. Joseph, A., N. Fenton, and M. Neil (2006). “Predicting football results using Bayesian nets and other machine learning techniques”. In: Knowledge-Based Systems 19.7, pp. 544–553.
+
+38
+
+REFERENCES
+
+Kaluarachchi, A. and S. V. Aparna (2011). “CricAI: A classiﬁcation based tool to predict the outcome in ODI cricket”. In: Fifth International Conference on Information and Automation for Sustainability, pp. 250–255.
+Karlis, D. and I. Ntzoufras (2008). “Bayesian modelling of football outcomes: using the Skellam’s distribution for the goal diﬀerence”. In: IMA Journal of Management Mathematics 20.2, pp. 133–145.
+Kelly, D et al. (2012). “Automatic detection of collisions in elite level rugby union using a wearable sensing device”. In: Sports Engineering 15.2, pp. 81–92.
+Kolodner, Janet (2014). Case-based reasoning. Morgan Kaufmann. Korte, B. and J. Vygen (2012). The Knapsack Problem - Combinatorial Optimization, pp. 459–
+470. Landers, Jonathan R. and Brian Duperrouzel (2018). “Machine Learning Approaches to Com-
+peting in Fantasy Leagues for the NFL”. In: IEEE Transactions on Games. Le, H.M., P. Carr, et al. (2017). “Data-Driven Ghosting using Deep Imitation Learning”. In: MIT
+Sloan Sports Analytics Conference. url: http : / / www . sloansportsconference . com / wp content/uploads/2017/02/1671-2.pdf. Le, H.M., Y. Yue, et al. (2017). “Coordinated multi-agent imitation learning”. In: Proceedings of the 34th International Conference on Machine Learning-Volume 70, pp. 1995–2003. Lehtokangas, M. et al. (1995). “Initializing Weights of a Multilayer Perceptron Network by Using the Orthogonal Least Squares Algorithm”. In: Neural Computation 7.5, pp. 982–999. Lucey, P. et al. (2012). “Characterizing Multi-Agent Team Behavior from Partial Team Tracings: Evidence from the English Premier League”. In: Twenty-Sixth AAAI Conference on Artiﬁcial Intel ligence. Lysens, R. et al. (1984). “The Predictability of Sports Injuries”. In: Sports Medicine 1.1, pp. 6–10. Maher, M.J. (1982). “Modelling Association football scores”. In: Statistica Neerlandica 36.3, pp. 109–118. Manning, C.D. and H. Schu¨tze (1999). Foundations of statistical natural language processing. MIT press. Masethe, H.D. and M.A. Masethe (2014). “Prediction of heart disease using classiﬁcation algorithms”. In: Proceedings of the world Congress on Engineering and computer Science. Vol. 2, pp. 22–24. Matthews, T., S.D. Ramchurn, and G. Chalkiadakis (2012). “Competing with Humans at Fantasy Football: Team Formation in Large Partially-Observable Domains”. In: Twenty-Sixth AAAI Conference on Artiﬁcial Intelligence, pp. 1394–1400. McCabe, A. (2002). “An Artiﬁcially Intelligent Sports Tipper”. In: Australian Joint Conference on Artiﬁcial Intelligence 2557, pp. 718–718. McCabe, A. and J. Trevathan (2008). “Artiﬁcial Intelligence in Sports Prediction”. In: Fifth International Conference on Information Technology: New Generations (itng 2008). McHale, I. and S. Relton (2018). “Identifying key players in soccer teams using network analysis and pass diﬃculty”. In: European Journal of Operational Research 268.1, pp. 339–347. McHale, I. and P. Scarf (2011). “Modelling the dependence of goals scored by opposing teams in international soccer matches”. In: Statistical Modelling 11.3, pp. 219–236. Nelsen, Roger B. (2006). An Introduction to Copulas. Springer. Pak, Alexander and Patrick Paroubek (2010). “Twitter as a corpus for sentiment analysis and opinion mining.” In: LREC. Vol. 10, pp. 1320–1326. Pan, S.J. and Q. Yang (2010). “A survey on transfer learning”. In: IEEE Transactions on knowledge and data engineering 22.10, pp. 1345–1359. Pan, X. et al. (2007). “A multi-agent based framework for the simulation of human and social behaviors during emergency evacuations”. In: Ai & Society 22.2, pp. 113–132. Pang, Bo, Lillian Lee, et al. (2008). “Opinion mining and sentiment analysis”. In: Foundations and Trends® in Information Retrieval 2.1–2, pp. 1–135.
+
+REFERENCES
+
+39
+
+Podlog, L et al. (2015). “Time trends for injuries and illness, and their relation to performance in the National Basketball Association.” In: Journal of Science and Medicine in Sports 18.3, pp. 278–282.
+Power, P., A. Cherukumudi, et al. (2019). “Trading Places – Simulating Goalkeeper Performance using Spatial & Body-Pose Data”. In: https://statsweb-wpengine.netdna-ssl.com/wpcontent/uploads/2019/03/Trading-Placeswebsite.pdf .
+Power, P., J. Hobbs, et al. (2018). “Mythbusting Set-Pieces in Soccer”. In: MIT Sloan Sports Analytics Conference. url: http : / / www . sloansportsconference . com / wp - content / uploads/2018/02/2007.pdf.
+Power, P., H. Ruiz, et al. (2016). ““Not All Passes Are Created Equal:” Objectively Measuring the Risk and Reward of Passes in Soccer from Tracking Data”. In: Proceedings of the 23rd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, pp. 1605–1613.
+Price, R.J. et al. (2004). “The Football Association medical research programme: an audit of injuries in academy youth football”. In: British journal of sports medicine 38.4, pp. 466–471.
+Prokhorenkova, Liudmila et al. (2018). “CatBoost: unbiased boosting with categorical features”. In: Advances in Neural Information Processing Systems, pp. 6638–6648.
+Ramchurn, S.D., M. Polukarov, et al. (2010). “Coalition formation with spatial and temporal constraints”. In: Proceedings of the 9th International Conference on Autonomous Agents and Multiagent Systems. Vol. 3, pp. 1181–1188.
+Ramchurn, S.D., A. Rogers, et al. (2008). “Agent-based coordination technologies in disaster management”. In: Proceedings of the 7th international joint conference on Autonomous agents and multiagent systems: demo papers. International Foundation for Autonomous Agents and Multiagent Systems, pp. 1651–1652.
+Ramchurn, S.D., E. Simpson, et al. (2016). “A Disaster Response System based on Human-Agent Collectives”. In: Journal of Artiﬁcial Intelligence Research 57, pp. 661–708.
+Ramchurn, S.D., F. Wu, et al. (2015). “Human-agent collaboration for disaster response”. In: Journal of Autonomous Agents and Multi-Agent Systems, pp. 1–30.
+Richmond, J (1974). “Estimating the Eﬃciency of Production”. In: International Economic Review 15.2, pp. 515–21.
+Rue, H. and O. Salvesen (2000). “Prediction and retrospective analysis of soccer matches in a league”. In: Journal of the Royal Statistical Society. Series D (The Statistician) 49.3, pp. 399– 418.
+Schapire, R. E. (2003). The boosting approach to machine learning: An overview. Springer New York, pp. 149–171.
+Sebastiani, F. (2002). “Machine learning in automated text categorization”. In: ACM computing surveys (CSUR) 34.1, pp. 1–47.
+Seidl, T. et al. (2018). “Bhostgusters: Realtime Interactive Play Sketching with Synthesized NBA Defenses”. In: MIT Sloan Sports Analytics Conference. url: http : / / www . sloansportsconference.com/wp-content/uploads/2018/02/1006.pdf.
+Silva, V. De et al. (2018). “Player tracking data analytics as a tool for physical performance management in football: A case study from Chelsea Football Club Academy”. In: Sports 6.4, p. 130.
+Simpson, E. et al. (2013). “Dynamic Bayesian Combination of Multiple Imperfect Classiﬁers”. In: Decision Making and Imperfection, pp. 1–35.
+Sinha, A. et al. (2018). “Stackelberg Security Games: Looking Beyond a Decade of Success”. In: Proceedings of the Twenty-Seventh International Joint Conference on Artiﬁcial Intelligence, IJCAI-18, pp. 5494–5501.
+Skellam, J. G. (1948). “A Probability Distribution Derived from the Binomial Distribution by Regarding the Probability of Success as Variable Between the Sets of Trials”. In: Journal of the Royal Statistical Society. Series B (Methodological) 10.2, pp. 257–261.
+
+40
+
+REFERENCES
+
+Srinivas, K., B.K. Rani, and A. Govrdhan (2010). “Applications of data mining techniques in healthcare and prediction of heart attacks”. In: International Journal on Computer Science and Engineering (IJCSE) 2.02, pp. 250–255.
+Stekler, H.O., D. Sendor, and R. Verlander (2010). “Issues in sports forecasting”. In: International Journal of Forecasting 26.3, pp. 606–621.
+Sugar, G. and T. Swenson (2015). “Predicting Optimal Game Day Fantasy Football Teams”. In: url: http://cs229.stanford.edu/proj2015/115%5C_report.pdf.
+Suziki, A. K. et al. (2009). “A Bayesian approach for predicting match outcomes: The 2006 (Association) Football World Cup”. In: Journal of the Operational Research Society 61.10, pp. 1530–1539.
+Swartz, Tim B (2018). “Where Should I Publish My Sports Paper?” In: The American Statistician, pp. 1–6.
+Tran-Thanh, L. et al. (2014). “Eﬃcient crowdsourcing of unknown experts using bounded multiarmed bandits”. In: Artiﬁcial Intelligence 214, pp. 89–111.
+Vilar, L. et al. (2013). “Science of winning soccer: Emergent pattern-forming dynamics in association football”. In: Journal of Systems Science and Complexity 26.1, pp. 73–84.
+Vytelingum, P. et al. (2011). “Agent-based modeling of smart-grid market operations”. In: 2011 IEEE Power and Energy Society General Meeting, pp. 1–8.
+Wang, K.C. and R. Zemel (2016). “Classifying NBA Oﬀensive Plays Using Neural Networks”. In: MIT Sloan Sports Analytics Conference. url: http://www.sloansportsconference.com/wp-
+content/uploads/2016/02/1536- Classifying- NBA- Offensive- Plays- Using- NeuralNetworks.pdf. Ward, P. et al. (2018). “Volume and Intensity are Important Training Related Factors in Injury Incidence in American Football Athletes”. In: MIT Sloan Sports Analytics Conference. url: http://www.lukebornn.com/papers/ward_ssac_2018.pdf. Whitaker, G.A., R. Silva, and D. Edwards (2017). “A Bayesian inference approach for determining player abilities in soccer”. In: Big Data 6.4, pp. 271–290. Yang, T. Y. and T. Swartz (2004). “A Two-Stage Bayesian Model for Predicting Winners in Major League Baseball”. In: Journal of Data Science 2, pp. 61–73. Yue, Y. et al. (2014). “Learning Fine-Grained Spatial Models for Dynamic Sports Play Prediction”. In: IEEE International Conference on Data Mining, pp. 670–679. Z. Shi S. Moorthy, A. Zimmermann (2013). “Predicting NCAAB match outcomes using ML techniques – some results and lessons learned”. In: MLSA@PKDD/ECML, Sports Analytics Workshop. Zak, T., C. Huang, and J. Siegfried (1979). “Production Eﬃciency: The Case of Professional Basketball”. In: The Journal of Business 52.3, pp. 379–392. Zeliˇc, I. et al. (1997). “Induction of decision trees and Bayesian classiﬁcation applied to diagnosis of sport injuries”. In: Journal of Medical Systems 21.6, pp. 429–444. Zheng, S., Y. Yue, and J. Hobbs (2016). “Generating Long-term Trajectories Using Deep Hierarchical Networks”. In: Advances in Neural Information Processing Systems 29, pp. 1543–1551.
+

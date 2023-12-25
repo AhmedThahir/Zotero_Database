@@ -1,0 +1,171 @@
+
+JavaScript is disabled on your browser. Please enable JavaScript to use all the features on this page. Skip to main content Skip to article
+Elsevier logo ScienceDirect
+
+    Journals & Books 
+
+    Search 
+
+Register Sign in
+
+    Access through  your institution
+    Purchase PDF 
+
+Article preview
+
+    Abstract
+    Introduction
+    Section snippets
+    References (10)
+    Cited by (6) 
+
+Materials Today: Proceedings
+Materials Today: Proceedings
+Volume 28, Part 2 , 2020, Pages 825-829
+Journal home page for Materials Today: Proceedings
+Study on the effect of porosity on crack propagation
+Author links open overlay panel Saravanan a , S. Sachin b , K. Ramesh b
+Show more
+Add to Mendeley
+Share
+Cite
+https://doi.org/10.1016/j.matpr.2019.12.306 Get rights and content
+Abstract
+
+The detrimental effect of porosity in cast turbine and compressor blades has been a major issue since long. Though there has been extensive development in casting technology and the incorporation of advanced strategies to reduce the defects, the complete preclusion of porosity in the cast products has not been achieved. The influence of porosity on the path of propagation of a crack has been studied in this work. Quasi-static tensile simulation was performed on polymethyl methacrylate specimens, using Extended Finite Element Method (XFEM). This was done to observe the changes in the crack propagation path due to the presence of macro porosity. The XFEM results were validated by experimental tensile testing on the same specimens. This serves as a pilot study to understand and predict the path of crack propagation in cast components such as turbine/compressor blades with inherent porosity.
+Introduction
+
+One of the aerospace materials used as turbine/compressor blades is Ti6Al4V, an α + β type alloy. Investment Casting has been widely used for casting TiAl alloys [1]. Some reasons justifying the commercial usage of this production technique are the high temperature brittle-ductile transition, narrow solidification range, cost and time intensive machining.
+
+One of the most common issues associated with casting is porosity. The major factors contributing to porosity have often been either due to shrinkage or gas formation/entrapment. There are several studies which have investigated the effects of porosity on cast materials. Ammar et al. [2] have shown that the presence of porosity is detrimental to the mechanical properties of cast alloys as they lead to lower fatigue life, strength and ductility, and serve as crack initiation sites. Hero et al. [3] investigated on parameters such as Argon pressure, mould venting, and investment permeability on the mould filling of titanium to show the influence of each of the factors in the formation of porosity in the cast products.
+
+The pores present after casting are highly random and vary in number and size. du Plessis and Rossouw [4] reported macro porosity as large as 2.7 mm in cast Ti6Al4V alloy. Cotton et al. [5] have reported, in their work, about the existence of voids of the order of 10–20 mm in the cast titanium products. Though it is a common practice to subject the cast specimens to hot isostatic pressing (HIP) in order to eliminate or minimise the porosity, the ability of HIP to completely eliminate macro porosity is still under research. Zhang et al. [6] made one such attempt to study the applicability of HIP for healing millimetre sized pores in cast Ni based alloys.
+
+The numerical simulation of crack propagation can be attempted by meshless methods, finite element (FE) method, boundary element method etc. [7]. However, finite element method has been extensively used for the simulation of fracture problems. The propagation of crack into arbitrary directions creates discontinuity in the displacement field which demands remeshing in finite element code, at every stage of crack propagation. Nevertheless, Extended Finite element method (XFEM) precludes the necessity of remeshing by incorporating enrichment functions into the code. The modelling of crack geometry is performed independent of the mesh and eliminates the need to remesh as the crack propagates. Singh et al. [7] have shown that XFEM results were in good agreement with experimental as well as numerical remeshing solutions.
+
+The current study explores the behaviour of a crack in the presence of porosity. The influence of the pores in altering the crack trajectory due to the interaction of the stress fields is simulated using the XFEM module in Abaqus software [8] and presented here.
+Section snippets
+Details on finite element analysis
+
+In this simulation, porosity is modelled as small holes of 3 mm diameter. An edge cracked polymethyl methacrylate (PMMA) is simulated for various configurations to study the influence of small holes in affecting the crack propagation path. The properties of the PMMA [9] specimen used for the analysis is specified in Table 1.
+
+Maximum principal stress criterion [10] is used to determine the direction of crack growth which postulates the growth of the crack in the direction perpendicular to the
+Effect of the perpendicular distance between hole and the crack
+
+The first simulation study was aimed at finding out an approximate maximum perpendicular distance of the centre of the hole from the crack tip (Fig. 2) which causes the crack to completely merge into the hole for the given conditions.
+
+For this, a quasi static tensile simulation was carried out by varying the ordinate of the hole with respect to the crack, starting from 4 mm in decrements of 0.5 mm. The results of few cases are shown in Fig. 3. It was found out that the crack merges into the hole
+Experiment
+
+The tensile testing of the configurations of the specimens shown in Fig. 4 was also performed experimentally to validate the crack path obtained by XFEM simulation. A displacement controlled tensile test, at the rate of 1 mm/min was performed using a 5 kN capacity UTM of Dak System Inc. The results obtained experimentally closely match the simulated results and hence validate the XFEM study. The experimental results for the 1-hole and 3-holes specimens along with their simulated counterparts
+Conclusion
+
+Modelling porosity as small holes serves as a first approximation for this study. By distributing the holes near the crack in a defined manner, the study was able to capture the domineering effect of the holes in affecting the crack path. The experimental validation of the numerical simulation approves the usage of XFEM for the purpose required here. The outcome of this study provides a glimpse of the behaviour of a crack in materials with inherent porosity. The influence of the perpendicular
+CRediT authorship contribution statement
+
+Saravanan: Methodology, Formal analysis, Software, Writing - original draft. Sachin Sasikumar: Validation, Investigation, Writing - review & editing, Supervision. K. Ramesh: Conceptualization, Resources, Writing - review & editing, Supervision, Project administration.
+Declaration of Competing Interest
+
+The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
+References (10)
+
+    J. Aguilar et al.
+    Investment casting technology for production of TiAl low pressure turbine blades - process engineering and parameter analysis
+    Intermetallics
+    (2011)
+    H.R. Ammar et al.
+    Porosity and the fatigue behavior of hypoeutectic and hypereutectic aluminum–silicon casting alloys
+    Int. J. Fatigue
+    (2008)
+    H. Hero et al.
+    Mold filling and porosity in castings of titanium
+    Dent. Mater.
+    (1993)
+    I.V. Singh et al.
+    The numerical simulation of fatigue crack growth using extended finite element method
+    Int. J. Fatigue
+    (2012)
+    M. Duflot et al.
+    Fatigue crack growth analysis by an enriched meshless method
+    J. Comput. Appl. Math.
+    (2004)
+
+There are more references available in the full text version of this article.
+Cited by (6)
+
+    In-situ hydrogen embrittlement evaluation of as-built and heat treated laser powder bed fused Ti-6Al-4V versus conventionally cold rolled Ti-6Al-4V
+    2023, Additive Manufacturing
+    Show abstract
+    Framework to select refining parameters in Total fringe order photoelasticity (TFP)
+    2023, Optics and Lasers in Engineering
+    Citation Excerpt :
+
+    The experimental dark-field isochromatics yielded by the stress field interaction of a crack and two macro-pores (modeled as holes of 3 mm diameter) in a 6 mm epoxy specimen is shown in Fig. 13(a) (image resolution – 640 × 360 pixels). This problem is prompted by a practical example of cracks interacting with macro porosity in titanium gas turbine blades [31,32], and such problems have not been attempted in the past for fringe demodulation. The specimen was tested in a computer-controlled UTM (DAK 7200 s) in displacement control mode at the rate of 1 mm/min.
+    Show abstract
+    Phase variation and mechanical properties of waste calcium carbonate to substitute quartz in composite slab production
+    2023, International Journal of Applied Ceramic Technology
+    Hot cracks in camshaft casting: initiation and propagation
+    2023, International Journal of Cast Metals Research
+    Simulating Isochromatic Fringes from Finite Element Results of FEniCS
+    2023, Experimental Techniques
+    Understanding the Behavior of Stationary Crack Embedded in C-ring Specimen
+    2023, Lecture Notes in Mechanical Engineering
+
+View full text
+© 2019 Elsevier Ltd. All rights reserved. Selection and peer-review under responsibility of the scientific committee of the 2nd International Conference on Recent Advances in Materials & Manufacturing Technologies.
+Part of special issue
+2nd International Conference on Recent Advances in Materials & Manufacturing Technologies
+Edited by
+Vincent Shantha Kumar , Karthikeyan R , Priyank Upadhyaya
+Other articles from this issue
+
+    Thermal and mechanical simulations of the lattice structures in the conformal cooling cavities for 3D printed injection molds
+    2020
+    Baris Burak Kanbur , …, Fei Duan
+    Effect of TiN addition on corrosion behavior of spark plasma sintered 304L austenitic stainless steel in chloride media
+    2020
+    Samuel Olukayode Akinwamide , …, Peter Apata Olubambi
+    Combined global-local monitoring of hydrating concrete using embedded smart PZT sensors
+    2020
+    Amarteja Kocherla , …, Subramaniam Kolluru V.L
+
+View more articles
+Recommended articles
+
+    Ultrafiltration does provide more efficient decongestion compared to conventional treatment for acute heart failure
+    International Journal of Cardiology, Volume 234, 2017, p. 108
+    Abhilash Koratala , …, Amir Kazory
+    Stress monitoring of PET beverage bottles by Digital Photoelasticity
+    Manufacturing Letters, Volume 15, Part A, 2018, pp. 9-13
+    R.G.R. Prasath , …, Steven Danyluk
+    Revised non-ordinary state-based peridynamics and a new framework for coupling with finite element method
+    Engineering Fracture Mechanics, Volume 242, 2021, Article 107483
+    Qibang Liu , X.J. Xin
+
+Show 3 more articles
+Article Metrics
+Citations
+
+    Citation Indexes: 6 
+
+Captures
+
+    Readers: 14 
+
+plumX logo
+View details
+Elsevier logo with wordmark
+
+    About ScienceDirect
+    Remote access
+    Shopping cart
+    Advertise
+    Contact and support
+    Terms and conditions
+    Privacy policy 
+
+We use cookies to help provide and enhance our service and tailor content and ads. By continuing you agree to the use of cookies .
+
+All content on this site: Copyright © 2023 Elsevier B.V., its licensors, and contributors. All rights are reserved, including those for text and data mining, AI training, and similar technologies. For all open access content, the Creative Commons licensing terms apply.
+RELX group home page
+Feedback 

@@ -1,0 +1,345 @@
+Assessing alternative competitive balance measures for sports leagues: a theoretical examination of standard deviations, gini coefficients, the index of dissimilarity
+
+Anthony Stair
+Frostburg State University
+
+Daniel Mizak
+Frostburg State University
+
+Armond Rossi
+Frostburg State University
+
+Abstract
+This note provides a theoretical analysis of the use of standard deviations, Gini coefficients, and the Index of Dissimilarity to assess competitive balance in sports leagues. Limitations are identified for all three techniques. Each of these techniques is found to be affected by the introduction of more teams, unbalanced schedules, and inter−league play.
+
+Citation: Mizak, Daniel, Anthony Stair, and Armond Rossi, (2005) "Assessing alternative competitive balance measures for sports leagues: a theoretical examination of standard deviations, gini coefficients, the index of dissimilarity." Economics Bulletin, Vol. 12, No. 5 pp. 1−11 Submitted: September 7, 2004. Accepted: January 21, 2005. URL: http://www.economicsbulletin.com/2005/volume12/EB−04L80002A.pdf
+
+1. INTRODUCTION
+Much attention has been devoted in recent years to the issue of performance parity among the teams comprising various professional sports leagues. It is commonly accepted that a high degree of on-field parity or balance is necessary to maintain fan interest. Insufficient competitive balance can quickly disinterest followers of the have-nots as well as those fans of the sport that appreciate close contests, regardless of the contestants (this disinterest may be tempered somewhat if the league exhibits periodic rotation among the haves and the have-nots). On the other hand, too much balance typically incites critics to lament the perceived mediocrity and express a longing for the day when various dynasties took turns ruling the league. One of a league’s goals should certainly be to determine the level of competitive balance that maximizes some league objective function.
+Over the last decade and a half there have been numerous efforts to assess the level and trend of competitive balance. Researchers have considered a variety of competitive balance indicators including the range of winning percentages; the standard deviation of winning percentages (Fort 2003); the relative entropy measure of information theory; the concentration of league championships (Horowitz 1997); the Gini coefficient (Schmidt and Berri 2002); the dispersion of winning percentages, season-to-season correlation of winning percentages; and the HerfindahlHirschman index. Of these indicators, the most preferred (for in-season competitive balance) has been the standard deviation of winning percentage compared to its idealized value (Schmidt & Berri 2003).
+2. THE TRADITIONAL AND ADJUSTED GINI COEFFICIENTS
+Regarding the Gini coefficient, Utt and Fort (2002) questioned its use to measure within-season competitive balance in sports leagues for two related reasons. The first has to do with the size of the Gini’s denominator and the second with its variability.
+In the case of a traditional Gini, the denominator is fixed in size and graphically shown by the right triangle formed by the lines of perfect equality (diagonal) and perfect inequality (reverse “L”). Perfect inequality is taken to mean that all of some quantity (income or wealth) is concentrated in the hands of a single entity. However, in the case of any sports league other than a two-team league, one team cannot possess all of the league’s victories. As a consequence, the line of perfect inequality is no longer the reverse “L” formed by the horizontal and right-vertical axes. The “true” line of perfect inequality will instead take the shape of a traditional Lorenz curve, lying somewhere between the diagonal and the no longer appropriate reverse “L.” Utt and Fort (2002) correctly point out that conventionally computed Gini’s will be “too small” and go on to propose a simple fix that entails nothing more than an adjustment to the Gini’s denominator. This adjustment requires, as indicated above, a calculation of the league’s most unequal outcome and hence its true line of perfect inequality. The resulting “adjusted” Gini is then calculated in the traditional manner: The area of inequality (region between diagonal and actual Lorenz) is divided by the area between the diagonal and the “true” line of perfect inequality. Consider the illustration in Figure 1.
+1
+
+Figure 1. Illustration of the “Adjusted” Gini Coefficient
+
+A traditional Gini (tGini) calculated when the most unequal distribution of wins occurs, tGiniPI, (PI denotes Perfect Inequality) would be:
+
+tGiniPI =
+
+A + B' A + B'+B
+
+= API .5
+
+(1)
+
+where API is the area of inequality for the most unequal distribution of wins.
+
+(Recall that the tGini for the most unequal distribution of income has the value 1.0 since the API equals .5.)
+
+A traditional Gini calculated for the actual Lorenz curve shown above (which corresponds to a wins distribution less unequal than the most unequal) is:
+
+tGini = A
+
+= A
+
+(2)
+
+A + B'+B .5
+
+The Utt-Fort adjusted Gini (aGini) for the actual Lorenz shown in Figure 1 is:
+
+2
+
+aGini = A = A
+
+(3)
+
+A + B' API
+
+From these equations it can be seen that the aGini (3) may be computed from the two traditional Ginis (2) and (3) as:
+
+aGini = tGini / tGiniPI
+
+(4)
+
+The aGini’s formulation in (4) points up the second Utt & Fort concern with the use of Gini coefficients to assess competitive balance. Unlike the traditional Gini, the denominator in (4) is not fixed. For example, it can be easily shown that league expansion will diminish tGiniPI.
+
+Table I gives the tGiniPI for leagues of various sizes.
+
+Table I: The tGiniPI for Leagues of Various Sizes
+
+Number of Teams
+
+tGiniPI
+
+5
+
+0.4
+
+6
+
+0.389
+
+8
+
+0.375
+
+10
+
+0.367
+
+20
+
+0.350
+
+Having a variable denominator potentially weakens the aGini’s use for intertemporal comparisons of competitive balance.
+
+Going back to the aGini’s formulation given in (3) and reproduced below, one can see a potential solution to the “denominator” problem.
+
+aGini = A = A
+
+(3)
+
+A + B' API
+
+The solution may be to simply disregard the denominator altogether, focusing instead on area A (which is the numerator of both the tGini (2) and the aGini (3).
+
+3. THE INDEX OF DISSIMILARITY A measure of inequality known as the Index of Dissimilarity (Damgaard 2004) is linked to the concept of comparing the actual Lorenz curve with the line of perfect equality, i.e., to area A in Figure 1 and the numerator of both tGini and aGini. A version of this statistic has been used
+3
+
+extensively in sociology and human geography as an indicator of residential and geographic segregation.
+
+The Index of Dissimilarity (ID) in its traditional applications is given as:
+
+ID = 0.5 Xi - Yi
+
+(5)
+
+where X and Y are percentages (or fractions) of the total number of elements. In the case of a sports league, Xi will be constant and equal to the reciprocal of the number of teams in the league. The variable Yi is the i-th team’s share of total league wins. In its sports application the index has a simple interpretation: it represents the smallest proportion of wins that would need to be reallocated to make the teams perfectly equal. The greater the league’s competitive imbalance, the greater the reallocative effort required and hence the larger the index number.
+
+Consider the 10-team, 90-contest example shown in Table II (in this sample league every team plays each of its nine rivals twice). From equation (5) it is seen that the ID for this league is .10. This index value indicates that 10% of the league’s total wins need to be reallocated to produce perfect, on-field parity. Nine wins (.10 of 90) must be “reallocated;” five from team A and four from team B. The “transfer” of three wins to team I and six wins to team J would give each team a 9-9 season. It can be shown that this 10-team league has a Gini coefficient of 0.164 and a wining percentage standard deviation of 0.172.
+
+Table II: A 10-Team, 90-Contest Example
+
+of the Index of Dissimilarity
+
+Team W L A 14 4
+
+Xi
+
+Yi
+
+.1 .155
+
+Xi - Yi .055
+
+B 13 5 .1 .144 .044
+
+C 9 9 .1 .1
+
+0
+
+D 9 9 .1 .1
+
+0
+
+E 9 9 .1 .1
+
+0
+
+F 9 9 .1 .1
+
+0
+
+G 9 9 .1 .1
+
+0
+
+H 9 9 .1 .1
+
+0
+
+I 6 12 .1 .066 .033
+
+J 3 15 .1 .033 .066
+
+Total 90 90 1.0 1.0
+
+.2
+
+A problem with the ID derives from its simplicity. While it indicates the smallest proportion of league wins that must be reallocated to achieve parity, it does not reflect the distribution of these wins among the “giving” teams. The same total to be reallocated may come from a variety of distributions, and these distributions will reflect differing degrees of competitive balance.
+
+For example, suppose the same 10-team, 90-contest league produces the outcome shown in Table III (aside from teams A and B, the standings are identical to the previous example).
+
+4
+
+Table III: A 10-Team, 90-Contest Example
+
+of the Index of Dissimilarity (Different
+
+Outcome)
+
+Team W L Xi Yi Xi - Yi A 17 1 .1 .188 .088
+
+B 10 8 .1 .111 .011
+
+C 9 9 .1 .1
+
+0
+
+D 9 9 .1 .1
+
+0
+
+E 9 9 .1 .1
+
+0
+
+F 9 9 .1 .1
+
+0
+
+G 9 9 .1 .1
+
+0
+
+H 9 9 .1 .1
+
+0
+
+I 6 12 .1 .066 .033
+
+J 3 15 .1 .033 .066
+
+Total 90 90 1.0 1.0
+
+.2
+
+From equation (5) it is seen that the ID for this league is also .10. Again we say that 10% of the league’s total wins need to be reallocated to produce perfect, on-field parity. Nine wins (.10 of 90) must be “reallocated;” eight from team A and one from team B. As in the previous example, 2 teams must “give” wins, but in this case the distribution of wins to be given is much less uniform among the “givers.” The “transfer” of three wins to team I and six wins to team J would give each team a 9-9 season. It can be shown that this 10-team league has a Gini coefficient of 0.171 and a wining percentage standard deviation of 0.194. Both the Gini and the SD(wpct) indicate less competitive balance in this second league, but the ID remains constant.
+
+Thus, even though the ID’s interpretation is appealing in its clarity and simplicity, it nevertheless fails to pick up subtle changes in competitive balance. In addition to this problem, the ID also suffers, as does the SD(wpct), from a weakness alluded to earlier in the discussion of the Gini coefficient. Each of these competitive balance indicators has an upper bound (obtained when the league achieves its most unequal distribution of wins) that is inversely related to league size as can be seen in Table IV.
+
+Table IV: Comparison of the Standard Deviation, Traditional Gini
+
+Coefficient & the Index of Dissimilarity
+
+League Size
+
+SD (wpct)
+
+tGini
+
+ID
+
+(# of teams)
+
+4
+
+0.430
+
+0.417
+
+0.333
+
+5
+
+0.395
+
+0.400
+
+0.300
+
+6
+
+0.374
+
+0.389
+
+0.300
+
+8
+
+0.350
+
+0.375
+
+0.286
+
+10
+
+0.336
+
+0.367
+
+0.278
+
+20
+
+0.311
+
+0.350
+
+0.263
+
+5
+
+It thus becomes necessary, regardless of the measure employed, that each be “rated,” i.e., compared to the maximum value it may attain. This is especially (and obviously) true if the league’s size changes over time. (Note: In rating a Gini one is in effect computing the adjusted Gini (aGini) introduced by Utt and Fort and shown earlier in equation (4).)
+
+The need to “rate” a competitive balance measure also arises when changes occur in scheduling format. Table V shows the upper bounds for each of the three competitive balance measures under two different scheduling formats. In each case the movement from a balanced to an unbalanced format increased the upper bound.
+
+Table V: Comparison of Competitive Balance Measures under
+
+Two Different Scheduling Formats
+
+League Size
+
+SD (wpct)
+
+tGini
+
+ID
+
+(# of teams)
+
+6 (Bal. Sch.)
+
+0.374
+
+0.389
+
+0.300
+
+6 (Unbal. Sch.)
+
+0.394
+
+0.406
+
+0.317
+
+8 (Bal. Sch.)
+
+0.350
+
+0.375
+
+0.286
+
+8 (Unbal. Sch.)
+
+0.371
+
+0.395
+
+0.304
+
+4. CONCLUSIONS
+Utt and Fort (2003) sharply criticized the use of Gini coefficients to measure competitive balance in Major League Baseball. They state a preference for the use of standard deviation of winning percentages to measure competitive balance. This paper finds that Gini coefficients, the Index of Dissimilarity, and the standard deviation of winning percentages are each subject to criticism with specified changes in sports leagues. Regardless of the competitive balance measure chosen, care should be exercised when evaluating the level/trend of competitive balance in a league experiencing both size and scheduling changes.
+
+6
+
+REFERENCES Damgaard, C. Gini Coefficient. Retrieved April 16, 2004, from http://mathworld.wolfram.com/GiniCoefficient.html Fort, R. (2003). “Thinking (some more) About Competitive Balance.” Journal of Sports Economics, 4(4), 280-283. Horowitz, I. (1997). “The Increasing Competitive Balance in Major League Baseball.” Review of Industrial Organization, 12, 373-387. Schmidt, M.B. & Berri, D.J. (2002). “Competitive Balance and Market Size in Major League Baseball: A Response to Baseball’s Blue Ribbon Panel.” Review of Industrial Organization, 21, 41-54. Schmidt, M.B. & Berri, D.J. (2003). “On the Evolution of Competitive Balance: The Impact of an Increasing Global Search.” Economic Inquiry, 41(4), 692-704. Utt, J. & Fort, R. (2002). “Pitfalls to Measuring Competitive Balance with Gini Coefficients.” Journal of Sports Economics, 3(4), 367-373.
+7
+
